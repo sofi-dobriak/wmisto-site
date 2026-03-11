@@ -1,0 +1,58 @@
+@use "./vars.scss" as *;
+@use "./mixins.scss" as *;
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+main {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include tablet {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  @include laptop {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  @include desktop {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  &--mobile {
+    margin-right: auto;
+    margin-left: auto;
+
+    @include tablet {
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+
+    @include laptop {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+}
+
+#bingc-phone-button {
+  display: none !important;
+}

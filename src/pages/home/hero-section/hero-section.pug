@@ -1,0 +1,16 @@
+section.hero-section 
+  .hero-grid 
+    .hero-video-block
+      video(autoplay="" muted="" controls="" loop="" playsinline="").hero-video
+        source(src="/video/hero-video.mp4")
+    
+    .hero-text-block
+      .hero-logo-block
+        img.hero-logo(src="/images/logo.svg", alt="Logo")
+        p.hero-text Понад усім.
+      a.hero-link(href="#about") 
+        .hero-icon-container
+          svg(width="24" height="24").hero-icon
+            use(href='/images/icons.svg#icon-arrow') 
+        span.hero-link-text Гортай
+    

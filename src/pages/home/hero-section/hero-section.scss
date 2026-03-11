@@ -1,0 +1,68 @@
+.hero-section {
+  height: 100vh;
+  overflow: hidden;
+
+  .hero-grid {
+    display: flex;
+    height: 100%;
+
+    .hero-video-block {
+      flex: 0 0 50%;
+
+      .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .hero-text-block {
+      flex: 0 0 50%;
+      background-color: $blue;
+
+      .hero-logo-block {
+        position: relative;
+        top: vw-laptop(280);
+        right: vw-laptop(150);
+
+        .hero-logo {
+          margin-bottom: 20px;
+        }
+
+        .hero-text {
+          @include font-hero;
+          color: $black;
+          margin-left: vw(220);
+        }
+      }
+
+      .hero-link {
+        position: relative;
+        top: 65%;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .hero-icon-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+          border-radius: 100px;
+          border: 1px solid $black;
+
+          .hero-icon {
+            fill: $black;
+          }
+        }
+
+        .hero-link-text {
+          @include font-h4-semibold;
+          color: $black;
+        }
+      }
+    }
+  }
+}

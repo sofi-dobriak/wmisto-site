@@ -1,0 +1,52 @@
+mixin header
+  header.header.container
+    .logo-container
+      a(href="#")
+        img(src="/images/logo.svg", alt="Logo").logo
+    
+    .links-container 
+      ul.social-list
+        li.social-item
+          a(href="#").social-link
+            svg.social-icon
+              use(href="/images/icons.svg#icon-facebook")
+        li.social-item
+          a(href="#").social-link
+            svg.social-icon
+              use(href="/images/icons.svg#icon-inst")
+        li.social-item
+          a(href="#").social-link
+            svg.social-icon
+              use(href="/images/icons.svg#icon-whatsapp")
+        li.social-item
+          a(href="#").social-link
+            svg.social-icon
+              use(href="/images/icons.svg#icon-telegram")
+      
+      
+      button(type="button").pdf-btn 
+        svg.pdf-icon
+          use(href="/images/icons.svg#icon-pdf")
+        span.pdf-text PDF Презентація
+      
+
+      a(href="tel:380970000077").phone-link
+        svg.phone-icon
+          use(href="/images/icons.svg#icon-phone")
+        span.phone-text +38 (097) 000-00-77
+
+      button(type="button").cta-btn
+        span.cta-text Зворотній дзвінок
+
+      button(type="button").burger-btn
+        span.burger-text Меню
+        svg.burger-icon
+          use(href="/images/icons.svg#icon-burger-expand")
+
+
+  
+
+
+
+
+  

@@ -1,0 +1,302 @@
+@use "./vars.scss" as *;
+
+@mixin font-face($font-family, $url, $weight: normal, $style: normal, $asset-pipeline: false) {
+  @font-face {
+    font-family: "#{$font-family}";
+    font-style: "#{$style}";
+    font-weight: #{$weight};
+    src: url("#{$url}.eot");
+    src:
+      url("#{$url}.eot?#iefix") format("embedded-opentype"),
+      url("#{$url}.woff") format("woff"),
+      url("#{$url}.ttf") format("truetype");
+  }
+}
+
+// Function for converting a px based font-size to rem.
+@function rem($size) {
+  $remSize: $size / 14px;
+
+  @return #{$remSize}rem;
+}
+
+@mixin toh($max_height) {
+  @media screen and (max-height: $max_height) {
+    @content;
+  }
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+@function vw($px) {
+  @return calc($px / 1920) * 100vw;
+}
+
+@function vw-laptop($px) {
+  @return calc($px / 1512) * 100vw;
+}
+
+@function vmax($pixels, $context: $full-width) {
+  @return #{($pixels/$context) * 100}vmax;
+}
+
+@function lh($lh, $fz) {
+  @return #{($lh/$fz)}em;
+}
+
+@mixin tablet() {
+  @media screen and (width >= 768px) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (width >= 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (width >= 1920px) {
+    @content;
+  }
+}
+
+@mixin super-title() {
+  font-family: $default-font-2;
+  font-size: 17vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 70%;
+  color: $white;
+  letter-spacing: -0.06em;
+  text-decoration: none;
+
+  @include tablet {
+    font-size: 12.5vw;
+  }
+
+  @include laptop {
+    font-size: vw(180);
+  }
+}
+
+@mixin section-title() {
+  font-family: $default-font;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 80%;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+
+  @include tablet {
+    font-size: clamp(32px, calc(32px + (48 - 32) * ((100vw - 768px) / (1366 - 768))), 48px);
+  }
+
+  @include laptop {
+    font-size: vw(48);
+  }
+}
+
+@mixin article-title() {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  color: $white;
+  letter-spacing: -0.03em;
+
+  @include tablet {
+    font-size: 32px;
+  }
+
+  @include laptop {
+    font-size: vw(32);
+  }
+}
+
+@mixin block-subtitle() {
+  font-family: $default-font;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  color: $teal-deep;
+  letter-spacing: -0.03em;
+
+  @include tablet {
+    font-size: 24px;
+  }
+
+  @include laptop {
+    font-size: vw(24);
+  }
+}
+
+@mixin page-subtitle() {
+  font-family: $default-font;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+
+  @include tablet {
+    font-size: 64px;
+    line-height: 100%;
+  }
+
+  @include laptop {
+    font-size: 3.33vw;
+  }
+}
+
+@mixin general-text() {
+  font-family: $default-font;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: none;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+
+  @include tablet {
+    font-size: 16px;
+  }
+
+  @include laptop {
+    font-size: vw(16);
+    font-size: clamp(12px, calc(12px + (18 - 12) * ((100vw - 1024px) / (1920 - 1024))), 16px);
+  }
+}
+
+@mixin tiny-text() {
+  font-family: $default-font;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.06em;
+  text-decoration: none;
+}
+
+@mixin text-12() {
+  font-family: $default-font;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  color: $teal-deep;
+  letter-spacing: -0.72px;
+  letter-spacing: -0.02em;
+  text-decoration-line: underline;
+  text-decoration-thickness: auto;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-underline-position: from-font;
+  text-underline-offset: auto;
+}
+
+@mixin text-24 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%;
+  color: $teal-deep;
+  letter-spacing: -0.06em;
+}
+
+// wmisto mixins
+
+@mixin font-h1 {
+  font-family: $default-font-2;
+  font-size: vw(60);
+  font-size: vw(100);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 100px */
+  letter-spacing: -6px;
+  text-transform: uppercase;
+}
+
+@mixin font-h2 {
+  font-family: $default-font-2;
+  font-size: vw(60);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 60px */
+  letter-spacing: -3.6px;
+}
+
+@mixin font-h3 {
+  font-family: "Fixel Display";
+  font-size: vw(36);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 43.2px */
+  letter-spacing: -2.16px;
+}
+
+@mixin font-h4-semibold {
+  font-family: $default-font;
+  font-size: vw-laptop(20);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 28px */
+  letter-spacing: -0.8px;
+
+  @media screen and (min-width: 1512px) {
+    font-size: 20px;
+  }
+}
+
+@mixin font-h4-regular {
+  font-family: $default-font;
+  font-size: vw-laptop(20);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 28px */
+  letter-spacing: -0.8px;
+
+  @media screen and (min-width: 1512px) {
+    font-size: 20px;
+  }
+}
+
+@mixin font-body {
+  font-family: $default-font;
+  font-size: vw-laptop(16);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: -0.64px;
+}
+
+@mixin font-hero {
+  color: $black;
+  font-family: $default-font-2;
+  font-size: vw(60);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -3.6px;
+}
+
+@mixin font-huge {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $black;
+  font-family: $default-font;
+  font-size: vw(200);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80%; /* 160px */
+  letter-spacing: -12px;
+}
