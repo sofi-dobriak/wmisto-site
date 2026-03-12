@@ -1,0 +1,64 @@
+.form-section {
+  display: flex;
+  gap: vw(60);
+  padding: vw(100) vw(60);
+  overflow: hidden;
+  position: relative;
+
+  background:
+    linear-gradient(180deg, rgba(136, 151, 180, 0) 0%, rgba(136, 151, 180, 0.9) 100%),
+    linear-gradient(0deg, rgba(136, 151, 180, 0.8) 0%, rgba(136, 151, 180, 0.8) 100%);
+
+  .form-left-block {
+    flex: 0 0 50%;
+
+    .form-title {
+      @include font-h1;
+      color: $black;
+      max-width: vw-laptop(550);
+
+      @media screen and (min-width: 1512px) {
+        max-width: 580px;
+      }
+
+      @media screen and (min-width: 1920px) {
+        max-width: 720px;
+      }
+    }
+
+    .form-logo-block {
+      max-width: vw(453);
+      aspect-ratio: 453 / 70;
+      margin-bottom: 20px;
+
+      .form-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .form-text {
+      @include font-h3;
+      color: $black;
+    }
+  }
+
+  .form-right-block {
+    flex: 0 0 50%;
+
+    .form-image-block {
+      position: absolute;
+      right: -50%;
+      bottom: -280%;
+      z-index: -1;
+      filter: grayscale(100%);
+
+      .form-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

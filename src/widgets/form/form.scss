@@ -1,3 +1,6 @@
+@use "../../app/styles/vars.scss" as *;
+@use "../../app/styles/mixins.scss" as *;
+
 .overflow {
   position: fixed;
   width: 100%;
@@ -175,7 +178,7 @@
   }
 
   @include laptop {
-    gap: 30px;
+    gap: vw(30);
   }
 }
 
@@ -375,22 +378,26 @@
 }
 
 .form-field__input {
-  @include general-text;
+  @include font-h4-semibold;
   width: 100%;
   padding: 16px 0;
-  color: #403939;
+  color: $black;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  color: $white;
+  border-bottom: 1px solid $black;
+  color: $black;
 
   @include tablet {
     padding: 20px 0;
   }
 
+  @include laptop {
+    padding: vw(20) 0;
+  }
+
   &::placeholder {
-    @include general-text;
-    color: $sky-light;
+    @include font-h4-semibold;
+    color: $black;
   }
 }
 
@@ -418,7 +425,7 @@
 }
 
 .form__button-wrapper {
-  margin-top: 40px;
+  margin-top: vw(40);
   display: flex;
   justify-content: space-between;
   align-items: center;
