@@ -10,7 +10,10 @@ section.hero-section
         p.hero-text Понад усім.
       a.hero-link(href="#about") 
         .hero-icon-container
-          svg(width="24" height="24").hero-icon
-            use(href='/images/icons.svg#icon-arrow') 
+          .hero-icon-wrapper
+              svg(width="24" height="24").hero-icon
+                use(href='/images/icons.svg#icon-arrow') 
+              svg(width="24" height="24").hero-icon.is-secondary
+                use(href='/images/icons.svg#icon-arrow')
         span.hero-link-text Гортай
     

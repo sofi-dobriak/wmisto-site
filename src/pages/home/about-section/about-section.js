@@ -28,8 +28,26 @@ const swiper2 = new Swiper(".slider-big", {
   slidesPerView: 1,
   loop: true,
   on: {
-    slideChange() {
-      document.querySelector(".main-count").textContent = this.realIndex + 1;
+    init() {
+      document.querySelector(".current").textContent = this.realIndex + 1;
+    },
+    slideChangeTransitionStart() {
+      const countBlock = document.querySelector(".main-count");
+      const currentEl = countBlock.querySelector(".current");
+      const nextEl = countBlock.querySelector(".next");
+
+      const nextNumber = this.realIndex + 1;
+
+      if (currentEl.textContent == nextNumber) return;
+
+      nextEl.textContent = nextNumber;
+
+      countBlock.classList.add("is-changing");
+
+      setTimeout(() => {
+        currentEl.textContent = nextNumber;
+        countBlock.classList.remove("is-changing");
+      }, 600);
     },
   },
 });
