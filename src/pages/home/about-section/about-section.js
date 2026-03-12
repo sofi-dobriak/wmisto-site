@@ -47,7 +47,7 @@ const swiper2 = new Swiper(".slider-big", {
       setTimeout(() => {
         currentEl.textContent = nextNumber;
         countBlock.classList.remove("is-changing");
-      }, 600);
+      }, 800);
     },
   },
 });

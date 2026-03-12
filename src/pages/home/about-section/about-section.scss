@@ -55,19 +55,30 @@
         justify-self: center;
         padding: 20px;
         border-radius: 100%;
-      }
+        transition: all 0.4s ease-in-out;
 
-      .button-prev {
-        .nav-button-icon-prev {
-          fill: $white;
-          transform: rotate(90deg);
-        }
-      }
-
-      .button-next {
+        .nav-button-icon-prev,
         .nav-button-icon-next {
           fill: $white;
+          transform: rotate(90deg);
+          transition: all 0.4s ease-in-out;
+        }
+
+        .nav-button-icon-prev {
+          transform: rotate(90deg);
+        }
+
+        .nav-button-icon-next {
           transform: rotate(-90deg);
+        }
+
+        &:hover {
+          background-color: $white;
+
+          .nav-button-icon-prev,
+          .nav-button-icon-next {
+            fill: $black;
+          }
         }
       }
     }
@@ -102,6 +113,8 @@
 
       .main-count {
         @include font-huge;
+        $gap: 10px;
+
         color: $white;
         position: absolute;
         bottom: -70px;
@@ -110,12 +123,14 @@
         z-index: 10;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: $gap;
         height: 1em;
-        clip-path: inset(0% -50% 0% -50%);
+        line-height: 1;
+        clip-path: inset(0% -100% 0% -100%);
 
         span {
           display: block;
+          height: 1em;
           transform: translateY(0);
         }
 
@@ -125,14 +140,16 @@
 
         &.is-changing {
           span {
-            transition: transform 0.6s ease-in-out;
+            transition:
+              transform 0.9s cubic-bezier(0.36, 1, 0.86, 1),
+              opacity 0.4s ease-out;
           }
 
           .current {
-            transform: translateY(-107%);
+            transform: translateY(calc(-100% - #{$gap}));
           }
           .next {
-            transform: translateY(-107%);
+            transform: translateY(calc(-100% - #{$gap}));
             opacity: 1;
           }
         }
