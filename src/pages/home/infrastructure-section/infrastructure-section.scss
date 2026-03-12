@@ -1,16 +1,17 @@
 .infrastructure-section {
-  height: calc(100vh - 100px);
+  // height: calc(100vh - 100px);
   padding-top: vw(100);
 
   .infrastructure-title-block {
     display: flex;
     align-items: center;
     gap: vw-laptop(80);
-    margin-bottom: 40px;
+    margin-bottom: vw-laptop(40);
     padding: 0 vw(60);
 
     @media screen and (min-width: 1512px) {
       gap: 80px;
+      margin-bottom: 40px;
     }
 
     .infrastructure-title {

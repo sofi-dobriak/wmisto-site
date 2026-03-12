@@ -1,0 +1,131 @@
+.genplan-section {
+  height: calc(100vh - 100px);
+  position: relative;
+
+  .genplan-image-block {
+    height: 100%;
+    aspect-ratio: 1920 / 900;
+    position: relative;
+
+    .genplan-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+
+      .genplan-image-path {
+        stroke: $white;
+        fill: rgba($blue, 0);
+        stroke-width: 3;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+          fill: $blue;
+        }
+      }
+    }
+
+    .genplan-info-card {
+      position: absolute;
+      z-index: 10;
+      background: $ochre;
+      max-width: vw-laptop(200);
+      max-height: vw-laptop(250);
+      padding: vw-laptop(20);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      top: 55%;
+      transition: all 0.4s ease-in-out;
+      left: 39%;
+
+      @media screen and (min-width: 1512px) {
+        padding: 20px;
+      }
+
+      .genplan-info-title {
+        @include font-h3;
+        color: $black;
+        margin-bottom: 10px;
+      }
+
+      .genplan-info-text {
+        @include font-body;
+        color: $brown;
+        margin-bottom: 5px;
+      }
+
+      .genplan-info-icon {
+        display: block;
+        fill: $blue;
+        margin-bottom: 15px;
+      }
+    }
+
+    &:has(.genplan-image-path:hover) {
+      .genplan-info-card {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .genplan-card-block {
+    background-color: $brown;
+    padding: vw(40);
+    max-width: vw-laptop(320);
+    position: absolute;
+    top: vw(150);
+    left: vw(60);
+
+    @media screen and (min-width: 1512px) {
+      max-width: 320px;
+    }
+
+    .genplan-card-icon {
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .genplan-card-text {
+      @include font-h4-semibold;
+      color: $white;
+      max-width: 280px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  .genplan-sign-image-block {
+    position: absolute;
+    bottom: vw(-22.5);
+    right: vw(-150);
+    max-width: vw(780);
+    aspect-ratio: 780 / 424;
+
+    .genplan-sign-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .genplan-title-block {
+    .genplan-title {
+      position: absolute;
+      @include font-h1;
+      color: $white;
+      right: vw(60);
+      bottom: vw(216);
+    }
+
+    .genplan-text {
+      position: absolute;
+      @include font-h3;
+      color: $white;
+      max-width: vw(415);
+      right: vw(30);
+      z-index: 3;
+      bottom: vw(100);
+    }
+  }
+}
