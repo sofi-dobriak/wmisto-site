@@ -78,11 +78,7 @@
   .links-container {
     display: flex;
     align-items: center;
-    gap: vw-laptop(48);
-
-    @media screen and (min-width: 1512px) {
-      gap: 48px;
-    }
+    gap: vw(48);
 
     .social-list {
       display: flex;
@@ -230,56 +226,6 @@
           }
         }
       }
-    }
-  }
-
-  .general-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1000px;
-    background-color: $brown;
-    border: 1px solid $brown;
-    padding: vw-laptop(18) vw-laptop(28);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: $white;
-      border-radius: inherit;
-      -webkit-transition: all 0.5s ease;
-      transition: all 0.5s ease;
-      -webkit-transform: translateX(-110%) translateZ(0);
-      transform: translateX(-110%) translateZ(0);
-    }
-
-    &:hover {
-      &::before {
-        transform: translateX(0) translateZ(0);
-      }
-
-      .general-text {
-        @include font-h4-semibold;
-        color: $black;
-      }
-    }
-
-    @media screen and (min-width: 1512px) {
-      padding: 18px 28px;
-    }
-
-    .general-text {
-      @include font-h4-semibold;
-      color: $white;
-      transition: all 0.5s ease;
-      position: relative;
-      z-index: 3;
     }
   }
 

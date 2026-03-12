@@ -51,82 +51,100 @@
 //Fixel Display
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplayThin.woff2") format("woff2"),
+    url("../fonts/FixelDisplayThin.woff") format("woff");
   font-style: normal;
   font-weight: 100;
-  src: url("../fonts/FixelDisplay-Thin.woff2") format("woff2");
 }
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplayExtraLight.woff2") format("woff2"),
+    url("../fonts/FixelDisplayExtraLight.woff") format("woff");
   font-style: normal;
   font-weight: 200;
-  src: url("../fonts/FixelDisplay-ExtraLight.woff2") format("woff2");
 }
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplayLight.woff2") format("woff2"),
+    url("../fonts/FixelDisplayLight.woff") format("woff");
   font-style: normal;
   font-weight: 300;
-  src: url("../fonts/FixelDisplay-Light.woff2") format("woff2");
 }
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplayRegular.woff2") format("woff2"),
+    url("../fonts/FixelDisplayRegular.woff") format("woff");
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/FixelDisplay-Regular.woff2") format("woff2");
 }
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplayMedium.woff2") format("woff2"),
+    url("../fonts/FixelDisplayMedium.woff") format("woff");
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/FixelDisplay-Medium.woff2") format("woff2");
 }
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplaySemiBold.woff2") format("woff2"),
+    url("../fonts/FixelDisplaySemiBold.woff") format("woff");
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/FixelDisplay-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplayBold.woff2") format("woff2"),
+    url("../fonts/FixelDisplayBold.woff") format("woff");
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/FixelDisplay-Bold.woff2") format("woff2");
 }
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplayExtraBold.woff2") format("woff2"),
+    url("../fonts/FixelDisplayExtraBold.woff") format("woff");
   font-style: normal;
   font-weight: 800;
-  src: url("../fonts/FixelDisplay-ExtraBold.woff2") format("woff2");
 }
 
 @font-face {
+  font-family: "FixelDisplay";
   font-display: swap;
-  font-family: "Fixel Display";
+  src:
+    url("../fonts/FixelDisplayBlack.woff2") format("woff2"),
+    url("../fonts/FixelDisplayBlack.woff") format("woff");
   font-style: normal;
   font-weight: 900;
-  src: url("../fonts/FixelDisplay-Black.woff2") format("woff2");
 }
 
-//Fixel Display
+//CenturyGothic
 
 @font-face {
   font-display: swap;
-  font-family: "Fixel Display";
+  font-family: "CenturyGothic";
   font-style: normal;
   font-weight: 400;
   src: url("../fonts/CenturyGothic.woff2") format("woff2");
@@ -134,7 +152,7 @@
 
 @font-face {
   font-display: swap;
-  font-family: "Fixel Display";
+  font-family: "CenturyGothic";
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/CenturyGothic-Bold.woff2") format("woff2");
