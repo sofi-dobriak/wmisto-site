@@ -1,0 +1,164 @@
+.infrastructure-section {
+  height: calc(100vh - 100px);
+  padding-top: vw(100);
+
+  .infrastructure-title-block {
+    display: flex;
+    align-items: center;
+    gap: vw-laptop(80);
+    margin-bottom: 40px;
+    padding: 0 vw(60);
+
+    @media screen and (min-width: 1512px) {
+      gap: 80px;
+    }
+
+    .infrastructure-title {
+      @include font-h1;
+      color: $brown;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        right: vw-laptop(-40);
+        bottom: 5px;
+        width: 1px;
+        height: 40px;
+        background-color: $ochre;
+
+        @media screen and (min-width: 1512px) {
+          right: -40px;
+        }
+      }
+    }
+
+    .infrastructure-text {
+      @include font-h4-semibold;
+      color: $black;
+      max-width: vw-laptop(240);
+
+      @media screen and (min-width: 1512px) {
+        max-width: 240px;
+      }
+    }
+  }
+
+  .infrastructure-left-right-blocks-container {
+    display: flex;
+
+    .infrastructure-left-block {
+      flex: 0 0 50%;
+      padding: vw(60);
+      border: 1px solid $black;
+
+      .infrastructure-left-title {
+        @include font-h3;
+        color: $brown;
+        margin-bottom: vw(60);
+        max-width: vw(840);
+      }
+
+      .infrastructure-left-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: vw(60);
+        counter-reset: my-counter;
+        list-style-type: none;
+
+        .infrastructure-left-item {
+          padding: 20px 0;
+          border-top: 1px solid $ochre;
+          counter-increment: my-counter;
+          display: flex;
+          align-items: center;
+          gap: vw-laptop(20);
+
+          @media screen and (min-width: 1512px) {
+            gap: 20px;
+          }
+
+          &:nth-child(-n + 2) {
+            border-top: none;
+          }
+
+          &::before {
+            content: counter(my-counter) ".";
+            @include font-h3;
+            color: $black;
+          }
+
+          .infrastructure-left-text {
+            @include font-body;
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .infrastructure-right-block {
+      flex: 0 0 50%;
+      padding: vw(60);
+      border: 1px solid $black;
+      border-left-color: transparent;
+
+      .infrastructure-right-title {
+        @include font-h3;
+        color: $brown;
+        margin-bottom: vw(60);
+        max-width: vw(840);
+      }
+
+      .infrastructure-right-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: vw-laptop(20);
+        row-gap: vw-laptop(44);
+
+        @media screen and (min-width: 1512px) {
+          column-gap: 20px;
+          row-gap: 45px;
+        }
+
+        .infrastructure-right-item {
+          display: flex;
+          align-items: center;
+          gap: vw(72);
+
+          .infrastructure-right-num {
+            @include font-h1;
+            color: $blue;
+            position: relative;
+
+            &:after {
+              content: "";
+              position: absolute;
+              width: 1px;
+              height: vw-laptop(60);
+              transform: rotate(30deg);
+              background-color: $ochre;
+              right: vw-laptop(-30);
+              bottom: 20%;
+
+              @media screen and (min-width: 1512px) {
+                height: 60px;
+                right: -30px;
+              }
+            }
+          }
+          .infrastructure-right-text {
+            color: $black;
+
+            .infrastructure-right-minutes {
+              @include font-body;
+            }
+
+            .infrastructure-right-target {
+              @include font-h4-semibold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
