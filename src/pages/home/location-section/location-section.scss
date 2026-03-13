@@ -48,8 +48,16 @@
       @include font-h4-regular;
       color: $white;
       text-align: center;
-      max-width: vw(600);
+      max-width: vw(720);
       margin: 0 auto vw(40);
+
+      @media screen and (min-width: 1366px) {
+        max-width: vw(750);
+      }
+
+      @media screen and (min-width: 1920px) {
+        max-width: vw(600);
+      }
     }
 
     .location-link {
