@@ -1,0 +1,36 @@
+include ../../../shared/components/swiper-nav/swiper-nav.pug
+
+- 
+  const advantages = [
+      { img: 'adv-img-1', alt: 'Slide 1' },
+      { img: 'adv-img-2', alt: 'Slide 2' },
+      { img: 'adv-img-3', alt: 'Slide 3' },
+      { img: 'adv-img-4', alt: 'Slide 4' },
+      { img: 'adv-img-5', alt: 'Slide 5' },
+      { img: 'adv-img-6', alt: 'Slide 6' },
+      { img: 'adv-img-7', alt: 'Slide 7' },
+      { img: 'adv-img-8', alt: 'Slide 8' },
+      { img: 'adv-img-9', alt: 'Slide 9' },
+      { img: 'adv-img-10', alt: 'Slide 10' },
+      { img: 'adv-img-11', alt: 'Slide 11' },
+      { img: 'adv-img-12', alt: 'Slide 12' },
+      { img: 'adv-img-13', alt: 'Slide 13' },
+      { img: 'adv-img-14', alt: 'Slide 14' },
+      { img: 'adv-img-15', alt: 'Slide 15' },
+      { img: 'adv-img-16', alt: 'Slide 16' },
+      { img: 'adv-img-17', alt: 'Slide 17' },
+      { img: 'adv-img-18', alt: 'Slide 18' },
+      { img: 'adv-img-19', alt: 'Slide 19' },
+      { img: 'adv-img-20', alt: 'Slide 20' },
+    ]
+
+section.advantages-section 
+  .advantages-swiper.swiper 
+    .swiper-wrapper 
+      each item in advantages
+        .swiper-slide
+          .swiper-image-wrapper 
+            img(src=`/images/advantages/${item.img}.jpg`, alt=item.alt loading="lazy")
+
+    +swiper-nav('advantages-nav-buttons', 'advantages-button-prev', 'advantages-button-next')
+        

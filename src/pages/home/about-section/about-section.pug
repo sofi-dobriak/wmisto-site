@@ -1,5 +1,45 @@
 include ../../../shared/components/swiper-nav/swiper-nav.pug
 
+- 
+  const swiper_text = [
+    {
+      text: 'Житловий квартал бізнес-класу у найвищій точці міста з панорамними краєвидами та відкритим променадом, протяжністю у 420 метрів, що проходить крізь увесь простір, поєднуючи зелені зони, галерею крамниць та ресторанів.'
+    },
+    {
+      text: '11 будинків змінної поверховості ( від 6 до 9 поверхів) формують живу, різноманітну архітектуру кварталу без відчуття тиску висоток. Кожен будинок має власний характер і пластику фасаду, створюючи цілісне, але не одноманітне середовище, де простір дихає разом із тобою.'
+    },
+    {
+      text: 'W-Діагональ — це відкрите серце кварталу: 1.1 га зеленого променаду для дозвілля, культурних подій і щоденного життя. Саме вона формує нову міську культуру та стає точкою тяжіння не лише для мешканців, а й для всієї Вінниці.'
+    },
+    {
+      text: 'Комерційна лінія вздовж W-Діагоналі та окремий торговельний центр формують повноцінну міську інфраструктуру прямо всередині кварталу. Твій бізнес зростає разом із життям району, а все необхідне від кафешок до сервісів – знаходиться біля твого дому.'
+    },
+    {
+      text: 'Міський дитячий садок на 160 місць, площею 4590 м². Кілька хвилин і твоя дитина вже у безпечному та захищеному просторі, створеному для щасливого дитинства.'
+    },
+    {
+      text: 'Новий квартал розкриває панорами Вінниці так, що перехоплює подих: світанки над містом, вечірні вогні та види на набережну з фонтаном. Це висота, з якої місто виглядає інакше — масштабніше, світліше, по-справжньому твоїм.'
+    }
+  ]
+
+  const swiper_big_img =[
+    {img:'about-main-1', alt:'Genplan'},
+    {img:'about-main-2', alt:'Build 1'},
+    {img:'about-main-3', alt:'Yard'},
+    {img:'about-main-4', alt:'Build 2'},
+    {img:'about-main-5', alt:'Kids'},
+    {img:'about-main-6', alt:'Balconies'}
+  ]
+
+  const swiper_small_img = [
+    {img:'about-sub-1', alt:'Build 1'},
+    {img:'about-sub-2', alt:'Build 2'},
+    {img:'about-sub-3', alt:'Build 3'},
+    {img:'about-sub-4', alt:'Build 4'},
+    {img:'about-sub-5', alt:'Build 5'},
+    {img:'about-sub-6', alt:'Build 6'}
+  ]
+
 section.about-section(id="about")
   .about-text-block
     h2.about-title Про комплекс 
@@ -9,37 +49,19 @@ section.about-section(id="about")
     
     .about-text-swiper.swiper
       .swiper-wrapper
-        .swiper-slide
-          p.about-text Житловий квартал бізнес-класу у найвищій точці міста з панорамними краєвидами та відкритим променадом, протяжністю у 420 метрів, що проходить крізь увесь простір, поєднуючи зелені зони, галерею крамниць та ресторанів.
-        .swiper-slide
-          p.about-text 11 будинків змінної поверховості ( від 6 до 9 поверхів) формують живу, різноманітну архітектуру кварталу без відчуття тиску висоток. Кожен будинок має власний характер і пластику фасаду, створюючи цілісне, але не одноманітне середовище, де простір дихає разом із тобою.
-        .swiper-slide
-          p.about-text W-Діагональ — це відкрите серце кварталу: 1.1 га зеленого променаду для дозвілля, культурних подій і щоденного життя. Саме вона формує нову міську культуру та стає точкою тяжіння не лише для мешканців, а й для всієї Вінниці.
-        .swiper-slide
-          p.about-text Комерційна лінія вздовж W-Діагоналі та окремий торговельний центр формують повноцінну міську інфраструктуру прямо всередині кварталу. Твій бізнес зростає разом із життям району, а все необхідне від кафешок до сервісів – знаходиться біля твого дому.
-        .swiper-slide
-          p.about-text Міський дитячий садок на 160 місць, площею 4590 м². Кілька хвилин і твоя дитина вже у безпечному та захищеному просторі, створеному для щасливого дитинства.
-        .swiper-slide
-          p.about-text Новий квартал розкриває панорами Вінниці так, що перехоплює подих: світанки над містом, вечірні вогні та види на набережну з фонтаном. Це висота, з якої місто виглядає інакше — масштабніше, світліше, по-справжньому твоїм.
+        each item in swiper_text
+          .swiper-slide
+            p.about-text= item.text
 
     +swiper-nav('about-nav-buttons', 'about-button-prev', 'about-button-next')
   
   .slider-block
     .slider-big.swiper
       .swiper-wrapper
-        .swiper-slide
-          img.slider-img-big(src="/images/about/about-main-1.jpg", alt="Genplan" loading="lazy")
-        .swiper-slide
-          img.slider-img-big(src="/images/about/about-main-2.jpg", alt="Build 1" loading="lazy")
-        .swiper-slide
-          img.slider-img-big(src="/images/about/about-main-3.jpg", alt="Yard" loading="lazy")
-        .swiper-slide
-          img.slider-img-big(src="/images/about/about-main-4.jpg", alt="Build 2" loading="lazy")
-        .swiper-slide
-          img.slider-img-big(src="/images/about/about-main-5.jpg", alt="Kids" loading="lazy")
-        .swiper-slide
-          img.slider-img-big(src="/images/about/about-main-6.jpg", alt="Balconies" loading="lazy")
-
+        each item in swiper_big_img
+          .swiper-slide
+            img(src=`/images/about/${item.img}.jpg`, alt=item.alt loading="lazy").slider-img-big
+        
       p.main-count
         span.current 
         span.next
@@ -47,18 +69,9 @@ section.about-section(id="about")
   
     .slider-small.swiper
       .swiper-wrapper
-        .swiper-slide
-          img.slider-img-small(src="/images/about/about-sub-1.jpg" alt="Build 1" loading="lazy")
-        .swiper-slide
-          img.slider-img-small(src="/images/about/about-sub-2.jpg" alt="Build 2" loading="lazy")
-        .swiper-slide
-          img.slider-img-small(src="/images/about/about-sub-3.jpg" alt="Build 3" loading="lazy")
-        .swiper-slide
-          img.slider-img-small(src="/images/about/about-sub-4.jpg" alt="Build 4" loading="lazy")
-        .swiper-slide
-          img.slider-img-small(src="/images/about/about-sub-5.jpg" alt="Build 5" loading="lazy")
-        .swiper-slide
-          img.slider-img-small(src="/images/about/about-sub-6.jpg" alt="Build 6" loading="lazy")
+        each item in swiper_small_img
+          .swiper-slide
+            img(src=`/images/about/${item.img}.jpg`, alt=item.alt loading="lazy").slider-img-small
     
 
       

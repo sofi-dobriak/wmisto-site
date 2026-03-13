@@ -1,20 +1,37 @@
 
 include ../../../shared/components/swiper-nav/swiper-nav.pug
 
+-
+  const diagonal_slides = [
+    { img: 'w-diagonal-img-1.jpg', alt: 'Build' },
+    { img: 'w-diagonal-img-1.jpg', alt: 'Build' },
+    { img: 'w-diagonal-img-1.jpg', alt: 'Build' }
+  ]
+
+  const diagonal_texts = [
+    {
+      text: 'Перед тобою W-Діагональ — відкритий променад, що проходить через увесь простір Wmisto і об’єднує його в єдину живу систему.'
+    },
+    {
+      text: 'Концепція Wmisto побудована за логікою однієї з найвпливовіших урбаністичних моделей Європи — системи міських кварталів Барселони, створеної у XIX столітті урбаністом Ільдефонсом Серда. Її принцип простий і геніальний: будинки формують чітку структуру, а між ними з’являється простір для світла, зелені та міського життя.'
+    },
+    {
+      text: 'У Wmisto цю ідею переосмислено сучасною архітектурою. Будинки утворюють систему приватних дворів із трирівневою безпекою, а W-Діагональ — 420 метрів пішохідного променаду — проходить крізь увесь простір кварталу, поєднуючи зелені зони та місця для зустрічей.'
+    },
+    {
+      text: 'Тут архітектура, природа й міський ритм працюють разом, створюючи середовище, яке живе щодня — разом із тобою.'
+    }
+  ]
+
 section.w-diagonal-section
   .w-diagonal-left-block
     .slider-block 
       .w-diagonal-swiper.swiper
         .swiper-wrapper 
-          .swiper-slide 
-            .slider-img-wrapper(data-swiper-parallax="20%")
-              img.slider-img(src="/public/images/w-diagonal/w-diagonal-img-1.jpg", alt="Build" loading="lazy")
-          .swiper-slide 
-            .slider-img-wrapper(data-swiper-parallax="20%")
-              img.slider-img(src="/public/images/w-diagonal/w-diagonal-img-1.jpg", alt="Build" loading="lazy")
-          .swiper-slide 
-            .slider-img-wrapper(data-swiper-parallax="20%")
-              img.slider-img(src="/public/images/w-diagonal/w-diagonal-img-1.jpg", alt="Build" loading="lazy")
+          each slide in diagonal_slides
+            .swiper-slide 
+              .slider-img-wrapper(data-swiper-parallax="20%")
+                img.slider-img(src=`/images/w-diagonal/${slide.img}`, alt=slide.alt loading="lazy")
 
     +swiper-nav('w-diagonal-nav-buttons', 'w-diagonal-button-prev', 'w-diagonal-button-next')
 
@@ -25,11 +42,6 @@ section.w-diagonal-section
       use(href="/images/icons.svg#icon-sign")
     
     ul.w-diagonal-list
-      li.w-diagonal-item
-        p.w-diagonal-text Перед тобою W-Діагональ — відкритий променад, що проходить через увесь простір Wmisto і об’єднує його в єдину живу систему.
-      li.w-diagonal-item
-        p.w-diagonal-text Концепція Wmisto побудована за логікою однієї з найвпливовіших урбаністичних моделей Європи — системи міських кварталів Барселони, створеної у XIX столітті урбаністом Ільдефонсом Серда. Її принцип простий і геніальний: будинки формують чітку структуру, а між ними з’являється простір для світла, зелені та міського життя.
-      li.w-diagonal-item
-        p.w-diagonal-text У Wmisto цю ідею переосмислено сучасною архітектурою. Будинки утворюють систему приватних дворів із трирівневою безпекою, а W-Діагональ — 420 метрів пішохідного променаду — проходить крізь увесь простір кварталу, поєднуючи зелені зони та місця для зустрічей.
-      li.w-diagonal-item
-        p.w-diagonal-text Тут архітектура, природа й міський ритм працюють разом, створюючи середовище, яке живе щодня — разом із тобою.
+      each item in diagonal_texts
+        li.w-diagonal-item
+          p.w-diagonal-text= item.text

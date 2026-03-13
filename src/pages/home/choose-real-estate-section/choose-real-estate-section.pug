@@ -1,55 +1,31 @@
 include ../../../shared/components/general-btn/general-btn.pug
 
+-
+  const cards = [
+    { title: 'Однокімнатні', area: 'Від 34 м²', img: 'one-room.jpg', alt: 'Interior', reverse: false },
+    { title: 'Двокімнатні', area: 'Від 48 м²', img: 'two-room.jpg', alt: 'Interior', reverse: false },
+    { title: 'Трикімнатні', area: 'Від 69 м²', img: 'three-room.jpg', alt: 'Interior', reverse: false },
+    { title: 'Квартири з видами на фонтан', area: 'Від 20 м²', img: 'fountain.jpg', alt: 'Fountain', reverse: true },
+    { title: 'З терасами', area: 'Від 34 м²', img: 'terrace.jpg', alt: 'Terrace', reverse: true },
+    { title: 'Пентхауси', area: 'Від 8 м²', img: 'penthouse.jpg', alt: 'Penthouse', reverse: true }
+  ]
+
 section.choose-real-estate
   .choose-title-block 
     h2.choose-title ПІДІБРАТИ нерухомість
-    +general-btn('/plannings.html', 'Переглянути усі планування')
+    +general-btn({href: '/plannings.html', text: 'Переглянути усі планування'})
 
   .choose-grid
-    a.grid-link.item-1(href="/plannings.html" target="_blank") 
-      .grid-item
-        .grid-item-content
-          h3.grid-item-title Однокімнатні
-          p.grid-item-area Від 34 м²
-          .grid-item-image-block
-            img.grid-item-image(src="/images/choose-real-estate/one-room.jpg", alt="Interior")
-    
-    a.grid-link.item-2(href="/plannings.html" target="_blank") 
-      .grid-item
-        .grid-item-content 
-          h3.grid-item-title Двокімнатні
-          p.grid-item-area Від 48 м²
-          .grid-item-image-block
-            img.grid-item-image(src="/images/choose-real-estate/two-room.jpg", alt="Interior")
-
-    a.grid-link.item-3(href="/plannings.html" target="_blank") 
-      .grid-item
-        .grid-item-content 
-          h3.grid-item-title Трикімнатні
-          p.grid-item-area Від 69 м²
-          .grid-item-image-block
-            img.grid-item-image(src="/images/choose-real-estate/three-room.jpg", alt="Interior")
-
-    a.grid-link.item-4(href="/plannings.html" target="_blank") 
-      .grid-item
-        .grid-item-content 
-          p.grid-item-area Від 20 м²
-          h3.grid-item-title Квартири з видами на фонтан
-          .grid-item-image-block
-            img.grid-item-image(src="/images/choose-real-estate/fountain.jpg", alt="Fountain")
-
-    a.grid-link.item-5(href="/plannings.html" target="_blank") 
-      .grid-item
-        .grid-item-content
-          p.grid-item-area Від 34 м²
-          h3.grid-item-title З терасами
-          .grid-item-image-block
-            img.grid-item-image(src="/images/choose-real-estate/terrace.jpg", alt="Terrace")
-
-    a.grid-link.item-6(href="/plannings.html" target="_blank") 
-      .grid-item
-        .grid-item-content 
-          p.grid-item-area Від 8 м²
-          h3.grid-item-title Пентхауси
-          .grid-item-image-block
-            img.grid-item-image(src="/images/choose-real-estate/penthouse.jpg", alt="Penthouse")
+    each card, index in cards
+      a.grid-link(href="/plannings.html" target="_blank" class=`item-${index + 1}`) 
+        .grid-item
+          .grid-item-content
+            if card.reverse
+              p.grid-item-area= card.area
+              h3.grid-item-title= card.title
+            else
+              h3.grid-item-title= card.title
+              p.grid-item-area= card.area
+            
+            .grid-item-image-block
+              img.grid-item-image(src=`/images/choose-real-estate/${card.img}`, alt=card.alt)

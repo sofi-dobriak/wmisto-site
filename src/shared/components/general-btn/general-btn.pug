@@ -1,4 +1,6 @@
-mixin general-btn( href = '', text = '', customClass = '')
+mixin general-btn( options = {}) 
+  - const { type = 'button', href = '', text = '', customClass = '',  } = options
+
   if href && href !== ''
     a(href=href class=`general-btn ${customClass}`)&attributes(attributes)
       span.general-text

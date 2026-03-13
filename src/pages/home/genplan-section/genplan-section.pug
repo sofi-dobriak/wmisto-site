@@ -1,3 +1,11 @@
+-
+  const genplan_info = [
+    { text: 'Секція: 12' },
+    { text: 'Квартир: 250' },
+    { text: 'Поверхів: 8' },
+    { text: 'Площі  від: 247.4 м²' }
+  ]
+
 section.genplan-section
   .genplan-image-block 
     <svg class="genplan-image" xmlns="http://www.w3.org/2000/svg" width="1920" height="900" fill="none" viewBox="0 0 1920 900">
@@ -34,14 +42,9 @@ section.genplan-section
             use(href="/images/icons.svg#icon-sign")
       
       ul.genplan-info-list
-        li.genplan-info-item
-          p.genplan-info-text Секція: 12
-        li.genplan-info-item
-          p.genplan-info-text Квартир: 250
-        li.genplan-info-item
-          p.genplan-info-text Поверхів: 8
-        li.genplan-info-item
-          p.genplan-info-text Площі  від: 247.4 м²
+        each item in genplan_info
+          li.genplan-info-item
+            p.genplan-info-text= item.text
 
   .genplan-card-block 
     svg(width="70" height="16").genplan-card-icon

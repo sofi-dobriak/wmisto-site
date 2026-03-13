@@ -25,4 +25,5 @@ mixin form(attr)
           .input-message(data-input-message)
 
       .form__button-wrapper
-        +general-btn('submit', "Надіслати повідомлення")(data-btn-submit)
+        +general-btn({ text: 'Надіслати повідомлення', type: 'submit' })(data-btn-submit)
+        

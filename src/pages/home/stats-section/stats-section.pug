@@ -1,3 +1,66 @@
+-
+  const stats = [
+    { 
+      title: '11',
+      text: 'Окремих будинків', img: 'stats-img-1.jpg',
+      alt: 'Genplan' },
+    { 
+      title: '6-9',
+      text: 'Поверхів (без висотної перевантаженості)',
+      img: 'stats-img-2.jpg',
+      alt: 'Build' },
+    { 
+      title: '2 283',
+      text: 'Квартири',
+      img: 'stats-img-3.jpg',
+      alt: 'Interior' },
+    { 
+      title: '≈ 4 500 +',
+      text: 'мешканців = гарантований трафік для комерції',
+      img: 'stats-img-4.jpg',
+      alt: 'Park' },
+    { 
+      title: '2,7-4 м',
+      text: 'Висота стель',
+      img: 'stats-img-5.jpg',
+      alt: 'Chandeliers' },
+    { 
+      title: '2.7 га',
+      text: 'Озеленення та ландшафтного дизайну',
+      img: 'stats-img-6.jpg',
+      alt: 'Playground' },
+    { 
+      title: '1,1 га',
+      text: 'W-Діагональ — 420 метрів міського життя',
+      img: 'stats-img-7.jpg',
+      alt: 'Cafe' },
+    { 
+      title: '160',
+      text: 'міський заклад дошкільної освіти на 160 місць',
+      img: 'stats-img-8.jpg',
+      alt: 'Child draws in notebook' },
+    { 
+      title: '5 850 м²',
+      text: 'Торговельний центр',
+      img: 'stats-img-9.jpg',
+      alt: 'A woman\'s hands holding a cloth' },
+    { 
+      title: '36%',
+      text: 'Кварталу — зелені зони',
+      img: 'stats-img-10.jpg',
+      alt: 'Park paths against the background of trees' },
+    { 
+      title: '120 м²',
+      text: 'Сучасна бібліотека-коворкінг',
+      img: 'stats-img-11.jpg',
+      alt: 'Woman working on laptop' },
+    { 
+      title: '4',
+      text: 'Облаштованих укриття',
+      img: 'stats-img-12.jpg',
+      alt: 'Bench' }
+  ]
+
 section.stats-section 
   .stats-title-block
     h2.stats-title ЖК у цифрах
@@ -5,61 +68,9 @@ section.stats-section
       img(src="/images/panorama/panorama-sign.svg", alt="Sign image").stats-sign
   
   ul.stats-list
-    li.stats-item
-      h3.stats-title 11
-      p.stats-text Окремих будинків
-      .stats-image-block 
-        img(src="/images/stats/stats-img-1.jpg", alt="Genplan" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title 6-9
-      p.stats-text Поверхів (без висотної перевантаженості)
-      .stats-image-block 
-        img(src="/images/stats/stats-img-2.jpg", alt="Build" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title 2 283
-      p.stats-text Квартири
-      .stats-image-block 
-        img(src="/images/stats/stats-img-3.jpg", alt="Interior" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title ≈ 4 500 +
-      p.stats-text мешканців = гарантований трафік для комерції
-      .stats-image-block 
-        img(src="/images/stats/stats-img-4.jpg", alt="Park" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title 2,7-4 м
-      p.stats-text Висота стель
-      .stats-image-block 
-        img(src="/images/stats/stats-img-5.jpg", alt="Chandeliers" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title 2.7 га
-      p.stats-text Озеленення та ландшафтного дизайну
-      .stats-image-block 
-        img(src="/images/stats/stats-img-6.jpg", alt="Playground" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title 1,1 га
-      p.stats-text W-Діагональ — 420 метрів міського життя
-      .stats-image-block 
-        img(src="/images/stats/stats-img-7.jpg", alt="Cafe" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title 160
-      p.stats-text міський заклад дошкільної освіти на 160 місць
-      .stats-image-block 
-        img(src="/images/stats/stats-img-8.jpg", alt="Child draws in notebook" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title 5 850 м²
-      p.stats-text Торговельний центр
-      .stats-image-block 
-        img(src="/images/stats/stats-img-9.jpg", alt="A woman's hands holding a cloth" loading="lazy").stats-image
-    li.stats-item
-      h3.stats-title 36%
-      p.stats-text Кварталу — зелені зони
-      .stats-image-block 
-        img(src="/images/stats/stats-img-10.jpg", alt="Park paths against the background of trees" loading="lazy").stats-image
-    li.stats-item 
-      h3.stats-title 120 м²
-      p.stats-text Сучасна бібліотека-коворкінг
-      .stats-image-block 
-        img(src="/images/stats/stats-img-11.jpg", alt="Woman working on laptop" loading="lazy").stats-image
-    li.stats-item 
-      h3.stats-title
-      p.stats-text 
+    each item in stats
+      li.stats-item
+        h3.stats-title= item.title
+        p.stats-text= item.text
+        .stats-image-block 
+          img.stats-image(src=`/images/stats/${item.img}` alt=item.alt loading="lazy")

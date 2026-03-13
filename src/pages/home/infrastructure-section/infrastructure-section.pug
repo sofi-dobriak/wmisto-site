@@ -1,3 +1,21 @@
+-
+  const infrastructure_inside = [
+    'Заклад дошкільної освіти на 160 місць',
+    'Мультиспортивний хаб',
+    'Бібліотека-коворкінг',
+    'Торгівельний центр',
+    'Паркінги та індивідуальні гаражі',
+    'Галерея бутиків та ресторанів'
+  ]
+
+  const infrastructure_outside = [
+    { num: 1, min: 'хвилина', target: 'до зупинки громадського транспорту' },
+    { num: 5, min: 'хвилин', target: 'до школи та садочку, пішки' },
+    { num: 7, min: 'хвилин', target: 'до центру' },
+    { num: 10, min: 'хвилин', target: 'до Центрального ринку' },
+    { num: 15, min: 'хвилин', target: 'до набережної та фонтану' }
+  ]
+
 section.infrastructure-section
   .infrastructure-title-block
     h2.infrastructure-title Інфраструктура
@@ -8,45 +26,17 @@ section.infrastructure-section
       h3.infrastructure-left-title У WMisto передбачено все для щоденного комфорту:
 
       ol.infrastructure-left-list
-        li.infrastructure-left-item
-          p.infrastructure-left-text Заклад дошкільної освіти на 160 місць 
-        li.infrastructure-left-item
-          p.infrastructure-left-text Мультиспортивний хаб
-        li.infrastructure-left-item
-          p.infrastructure-left-text Бібліотека-коворкінг
-        li.infrastructure-left-item
-          p.infrastructure-left-text Торгівельний центр
-        li.infrastructure-left-item
-          p.infrastructure-left-text Паркінги та індивідуальні гаражі
-        li.infrastructure-left-item
-          p.infrastructure-left-text Галерея бутиків та ресторанів
+        each item in infrastructure_inside
+          li.infrastructure-left-item
+            p.infrastructure-left-text= item
 
     .infrastructure-right-block 
       h3.infrastructure-right-title За межами кварталу тобі знадобиться:
 
       ul.infrastructure-right-list
-        li.infrastructure-right-item
-          p.infrastructure-right-num 1
-          .infrastructure-right-text 
-            p.infrastructure-right-minutes хвилина
-            p.infrastructure-right-target до зупинки громадського транспорту
-        li.infrastructure-right-item
-          p.infrastructure-right-num 5
-          .infrastructure-right-text 
-            p.infrastructure-right-minutes хвилин
-            p.infrastructure-right-target до школи та садочку, пішки
-        li.infrastructure-right-item
-          p.infrastructure-right-num 7
-          .infrastructure-right-text 
-            p.infrastructure-right-minutes хвилин
-            p.infrastructure-right-target до центру
-        li.infrastructure-right-item
-          p.infrastructure-right-num 10
-          .infrastructure-right-text 
-            p.infrastructure-right-minutes хвилин
-            p.infrastructure-right-target до Центрального ринку
-        li.infrastructure-right-item
-          p.infrastructure-right-num 15
-          .infrastructure-right-text 
-            p.infrastructure-right-minutes хвилин
-            p.infrastructure-right-target до набережної та фонтану
+        each item in infrastructure_outside
+          li.infrastructure-right-item
+            p.infrastructure-right-num= item.num
+            .infrastructure-right-text 
+              p.infrastructure-right-minutes= item.min
+              p.infrastructure-right-target= item.target

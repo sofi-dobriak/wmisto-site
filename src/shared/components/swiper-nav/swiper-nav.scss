@@ -11,6 +11,7 @@
   .button-prev,
   .button-next {
     background: $brown;
+    border: 1px solid $brown;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,6 +34,7 @@
 
     &:hover {
       background-color: $white;
+      border-color: $brown;
       svg {
         fill: $black;
       }
