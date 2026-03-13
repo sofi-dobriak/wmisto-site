@@ -1,0 +1,47 @@
+.panorama-section {
+  height: calc(100vh - 100px);
+  position: relative;
+  // padding-top: vw(100);
+  padding-bottom: vw(100);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .panorama-title-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+
+    .panorama-title {
+      @include font-h1;
+      color: $brown;
+    }
+
+    .panorama-sign-block {
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      top: 0;
+      width: vw(900);
+
+      .panorama-sign {
+        fill: $blue;
+      }
+    }
+  }
+
+  .panorama-iframe {
+    width: 100%;
+    flex-grow: 1;
+    min-width: 0;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+  }
+}
