@@ -63,7 +63,6 @@ const swiper3 = new Swiper(".slider-small", {
 });
 
 document.querySelector(".button-prev").addEventListener("click", () => {
-  console.log("click");
   swiper1.slidePrev();
   swiper2.slidePrev();
   swiper3.slidePrev();

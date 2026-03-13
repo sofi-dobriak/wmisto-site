@@ -46,11 +46,13 @@ const renderForm = (form, elements, toast) => {
         i18next.t("sending");
 
       break;
-    case "successSand":
+    case "successSend":
       fieldsKey.forEach((key) => {
         const field = elementsParamFn.fields[key];
         field.inputWrapper.showDefaultStyle();
         field.inputWrapper.removeSelectedStyle();
+        elementsParamFn.$form.reset();
+        elementsParamFn.$btnSubmit.removeAttribute("disabled");
       });
 
       elementsParamFn.$form.reset();

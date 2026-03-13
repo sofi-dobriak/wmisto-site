@@ -203,7 +203,7 @@
 
     &[data-status="field--error"] {
       .form-field__checkbox-checkmark {
-        border-color: #ff0000;
+        border-color: #e76a6a;
       }
       .input-message {
         display: block;
@@ -374,7 +374,8 @@
   // left: 50%;
   // transform: translateX(-50%);
   z-index: 2;
-  color: red;
+  background-color: #e76a6a;
+  color: $black;
 }
 
 .form-field__input {

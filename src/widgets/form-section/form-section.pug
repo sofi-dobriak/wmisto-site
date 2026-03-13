@@ -1,0 +1,16 @@
+mixin form-section(title = '', imageLogoPath = '', imagePath = '', formType = '', text = '')
+  section.form-section
+    .form-left-block
+      h2.form-title= title
+
+      if imageLogoPath && imageLogoPath !== ""
+        .form-logo-block
+          img.form-logo(src=imageLogoPath, alt="Logo")
+          
+      p.form-text= text
+
+    .form-right-block
+      .form-image-block 
+        img.form-image(src= imagePath alt=title loading="lazy")
+      
+      +form(formType)

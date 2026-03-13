@@ -23,5 +23,5 @@ mixin form(attr)
           .input-message(data-input-message)
 
       .form__button-wrapper
-        button(type="submit").general-btn 
-          span.general-text Надіслати повідомлення
+        button(type="submit", data-btn-submit).general-btn 
+          span(data-btn-submit-text="data-btn-submit-text").general-text Надіслати повідомлення

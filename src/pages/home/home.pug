@@ -14,7 +14,6 @@ block scripts
   script(type="module", src='/src/pages/home/commercial-real-estate-section/commercial-real-estate-section.js')
   script(type="module", src='/src/pages/home/infrastructure-section/infrastructure-section.js')
   script(type="module", src='/src/pages/home/genplan-section/genplan-section.js')
-  script(type="module", src='/src/pages/home/form-section/form-section.js')
 
 block header
   +header
@@ -25,7 +24,22 @@ block content
   include ./commercial-real-estate-section/commercial-real-estate-section.pug
   include ./infrastructure-section/infrastructure-section.pug
   include ./genplan-section/genplan-section.pug
-  include ./form-section/form-section.pug
+
+  +form-section(
+    "Стати партнером", 
+    "/images/logo.svg", 
+    "/images/form-section/form-img-without-sky.jpg", 
+    "partners",
+    "Ми завжди відкриті до нових можливостей"
+  )
+
+  +form-section(
+    "Дізнайтесь актуальну вартість", 
+    "", 
+    "/images/form-section/form-img-without-sky-2.jpg", 
+    "price",
+    "Ціни та наявність у реальному часі"
+  )
 
 block footer
   +footer
