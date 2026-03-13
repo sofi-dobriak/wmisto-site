@@ -1,0 +1,126 @@
+.choose-real-estate {
+  height: calc(100vh - 100px);
+  padding-bottom: vw(100);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .choose-title-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: vw(20);
+    padding: 0 vw(20);
+
+    .choose-title {
+      @include font-h1;
+      color: $brown;
+    }
+  }
+
+  .choose-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.9fr 0.9fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "one-room two-room three-room fountain fountain"
+      "one-room two-room three-room terrace penthouse";
+    gap: 0;
+    flex-grow: 1;
+    min-height: 0;
+
+    .grid-link {
+      display: block;
+      text-decoration: none;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      border: 1px solid $black;
+      padding: vw(20);
+
+      &:hover {
+        .grid-item-image {
+          transform: scale(1.05);
+        }
+      }
+
+      &.item-1 {
+        grid-area: one-room;
+      }
+      &.item-2 {
+        grid-area: two-room;
+      }
+      &.item-3 {
+        grid-area: three-room;
+      }
+      &.item-4 {
+        grid-area: fountain;
+      }
+      &.item-5 {
+        grid-area: terrace;
+      }
+      &.item-6 {
+        grid-area: penthouse;
+      }
+
+      &:nth-child(-n + 3) {
+        .grid-item-title {
+          color: $black;
+        }
+      }
+      &:nth-child(n + 4) {
+        .grid-item-title {
+          color: $white;
+        }
+      }
+    }
+
+    .grid-item {
+      height: 100%;
+      width: 100%;
+    }
+
+    .grid-item-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+      padding: vw(20);
+
+      .grid-item-title {
+        @include font-h3;
+        margin: 0;
+        transition: color 0.3s ease;
+      }
+
+      .grid-item-area {
+        @include font-h4-semibold;
+        color: $black;
+        padding: vw(2) vw(12);
+        background-color: $white;
+        border-radius: 100px;
+        width: fit-content;
+        margin: 0;
+      }
+
+      .grid-item-image-block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+
+        .grid-item-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease-in-out;
+        }
+      }
+    }
+  }
+}

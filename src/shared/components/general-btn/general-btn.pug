@@ -1,6 +1,13 @@
-mixin general-btn(type='button',text = '', customClass = '')
-  button(type=type class=`general-btn ${customClass}`)&attributes(attributes)
-    span.general-text(data-btn-submit-text)&attributes({'data-btn-submit-text': attributes['data-btn-submit'] ? true : false})
-      = text
-      if block
-        block
+mixin general-btn( href = '', text = '', customClass = '')
+  if href && href !== ''
+    a(href=href class=`general-btn ${customClass}`)&attributes(attributes)
+      span.general-text
+        = text
+        if block
+          block
+  else
+    button(type=type class=`general-btn ${customClass}`)&attributes(attributes)
+      span.general-text(data-btn-submit-text)&attributes({'data-btn-submit-text': attributes['data-btn-submit'] ? true : false})
+        = text
+        if block
+          block
