@@ -1,0 +1,6 @@
+mixin general-btn(type='button',text = '', customClass = '')
+  button(type=type class=`general-btn ${customClass}`)&attributes(attributes)
+    span.general-text(data-btn-submit-text)&attributes({'data-btn-submit-text': attributes['data-btn-submit'] ? true : false})
+      = text
+      if block
+        block

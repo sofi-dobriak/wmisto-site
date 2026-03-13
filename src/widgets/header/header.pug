@@ -1,3 +1,5 @@
+include ../../shared/components/general-btn/general-btn.pug
+
 mixin header
   header.header
     .logo-container
@@ -71,8 +73,8 @@ mixin header
           use(href="/images/icons.svg#icon-phone")
         span.phone-text +38 (097) 000-00-77
 
-      button(type="button").general-btn
-        span.general-text Зворотній дзвінок
+
+      +general-btn('button', "Зворотній дзвінок")
 
       button(type="button").burger-btn
         span.burger-text.real Меню

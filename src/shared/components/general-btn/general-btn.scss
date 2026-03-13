@@ -1,0 +1,52 @@
+.general-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1000px;
+  background-color: $brown;
+  border: 1px solid $brown;
+  padding: vw-laptop(18) vw-laptop(28);
+  position: relative;
+  overflow: hidden;
+  color: $white;
+  cursor: pointer;
+  transition: border-color 0.5s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    border-radius: inherit;
+    transition: transform 0.5s ease;
+    transform: translateX(-101%);
+    z-index: 1;
+  }
+
+  &:hover {
+    border-color: $brown;
+
+    &::before {
+      transform: translateX(0);
+    }
+
+    .general-text {
+      color: $black;
+    }
+  }
+
+  @media screen and (min-width: 1512px) {
+    padding: 18px 28px;
+  }
+
+  .general-text {
+    @include font-h4-semibold;
+    color: $white;
+    transition: color 0.5s ease;
+    position: relative;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,10 @@
+include ./button-prev/button-prev.pug
+include ./button-next/button-next.pug
+
+mixin swiper-nav(customClass = '', prevClass = '', nextClass = '')
+  .nav-buttons-block(class=customClass)&attributes(attributes)
+    if block
+      block
+    else
+      +button-prev(prevClass)
+      +button-next(nextClass)

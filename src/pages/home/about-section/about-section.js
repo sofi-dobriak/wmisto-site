@@ -1,4 +1,5 @@
 import "./about-section.scss";
+import "../../../shared/components/swiper-nav/swiper-nav.scss";
 
 import Swiper from "swiper";
 import { EffectFade } from "swiper/modules";

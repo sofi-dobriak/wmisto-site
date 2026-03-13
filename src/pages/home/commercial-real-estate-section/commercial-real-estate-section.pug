@@ -1,3 +1,5 @@
+include ../../../shared/components/general-btn/general-btn.pug
+
 section.commercial-section
   .commercial-left-block
     p.commercial-left-title WMisto — це 11 будинків, 2 283 квартири з панорамними вікнами, індивідуальним газовим опаленням та висотою стель до 4х метрів.
@@ -20,8 +22,7 @@ section.commercial-section
       p.commercial-right-text Інвестуючи в комерційну нерухомість у Wmisto, ти купуєш трафік і престиж локації.
       p.commercial-right-text Руїни давно закритого цегельного заводу перетворюються на комфортний квартал, пульсуючий та енергійний. І твій бізнес є частиною цієї трансформації.
       
-    button(type="button").commercial-right-btn.general-btn
-      span.general-text Дізнатися більше
+    +general-btn('button', "Дізнатися більше")
 
     .commercial-sign-image-block
       img(src="/images/commercial-real-estate/commercial-real-estate-sign.svg", alt="").commercial-sign-image

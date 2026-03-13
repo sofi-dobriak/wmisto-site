@@ -1,6 +1,8 @@
+
+include ../../../shared/components/swiper-nav/swiper-nav.pug
+
 section.w-diagonal-section
   .w-diagonal-left-block
-
     .slider-block 
       .w-diagonal-swiper.swiper
         .swiper-wrapper 
@@ -14,13 +16,7 @@ section.w-diagonal-section
             .slider-img-wrapper(data-swiper-parallax="20%")
               img.slider-img(src="/public/images/w-diagonal/w-diagonal-img-1.jpg", alt="Build" loading="lazy")
 
-    .w-diagonal.nav-buttons-block 
-      button(type="button").w-diagonal-button-prev.button-prev
-        svg(width="24" height="24").nav-button-icon-prev
-          use(href="/images/icons.svg#icon-arrow")
-      button(type="button").w-diagonal-button-next.button-next
-        svg(width="24" height="24").nav-button-icon-next
-          use(href="/images/icons.svg#icon-arrow")
+    +swiper-nav('w-diagonal-nav-buttons', 'w-diagonal-button-prev', 'w-diagonal-button-next')
 
   .w-diagonal-right-block
     h2.w-diagonal-title W-Діагональ

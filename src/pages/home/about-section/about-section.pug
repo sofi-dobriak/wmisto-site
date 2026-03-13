@@ -1,3 +1,5 @@
+include ../../../shared/components/swiper-nav/swiper-nav.pug
+
 section.about-section(id="about")
   .about-text-block
     h2.about-title Про комплекс 
@@ -20,13 +22,7 @@ section.about-section(id="about")
         .swiper-slide
           p.about-text Новий квартал розкриває панорами Вінниці так, що перехоплює подих: світанки над містом, вечірні вогні та види на набережну з фонтаном. Це висота, з якої місто виглядає інакше — масштабніше, світліше, по-справжньому твоїм.
 
-    .nav-buttons-block 
-      button(type="button").button-prev
-        svg(width="24" height="24").nav-button-icon-prev
-          use(href="/images/icons.svg#icon-arrow")
-      button(type="button").button-next
-        svg(width="24" height="24").nav-button-icon-next
-          use(href="/images/icons.svg#icon-arrow")
+    +swiper-nav('about-nav-buttons', 'about-button-prev', 'about-button-next')
   
   .slider-block
     .slider-big.swiper
