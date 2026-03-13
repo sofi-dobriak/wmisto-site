@@ -1,0 +1,112 @@
+.stats-section {
+  height: calc(100vh - 100px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: vw(100);
+
+  .stats-title-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: vw(20);
+    position: relative;
+    padding: 0 vw(20);
+
+    .stats-title {
+      @include font-h1;
+      color: $brown;
+    }
+
+    .stats-sign-block {
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      top: 0;
+      width: vw(900);
+
+      .panorama-sign {
+        fill: $blue;
+      }
+    }
+  }
+
+  .stats-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    border-right: 1px solid $black;
+    border-bottom: 1px solid $black;
+    flex-grow: 1;
+    min-width: 0;
+    height: 100%;
+
+    .stats-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-top: 1px solid $black;
+      border-left: 1px solid $black;
+      background-color: $white;
+      position: relative;
+
+      &:hover {
+        .stats-title,
+        .stats-text {
+          color: $white;
+        }
+
+        .stats-image-block {
+          transform: scale(1);
+          border-radius: 0;
+        }
+      }
+
+      .stats-title {
+        @include font-h2;
+        color: $blue;
+        z-index: 3;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .stats-text {
+        @include font-h4-semibold;
+        color: $black;
+        position: relative;
+        z-index: 3;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .stats-image-block {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        transform: scale(0);
+        transition: all 0.4s ease-in-out;
+        border-radius: 25%;
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(31, 28, 29, 0.2) 0%, rgba(31, 28, 29, 0.9) 100%);
+          z-index: 2;
+        }
+
+        .stats-image {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
