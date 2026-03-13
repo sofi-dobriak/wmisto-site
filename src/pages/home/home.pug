@@ -14,6 +14,7 @@ block scripts
   script(type="module", src='/src/pages/home/commercial-real-estate-section/commercial-real-estate-section.js')
   script(type="module", src='/src/pages/home/infrastructure-section/infrastructure-section.js')
   script(type="module", src='/src/pages/home/genplan-section/genplan-section.js')
+  script(type="module", src='/src/pages/home/w-diagonal-section/w-diagonal-section.js')
 
 block header
   +header
@@ -32,6 +33,8 @@ block content
     "partners",
     "Ми завжди відкриті до нових можливостей"
   )
+
+  include ./w-diagonal-section/w-diagonal-section.pug
 
   +form-section(
     "Дізнайтесь актуальну вартість", 

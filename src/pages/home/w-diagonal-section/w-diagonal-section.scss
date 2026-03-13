@@ -1,0 +1,80 @@
+.w-diagonal-section {
+  // height: calc(100vh - 100px);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  gap: vw(105);
+  position: relative;
+  margin-top: vw-laptop(60);
+  padding: 0 vw-laptop(100);
+
+  @media screen and (min-width: 1512px) {
+    padding: 0 100px;
+    margin-top: 60;
+  }
+
+  .w-diagonal-left-block {
+    width: 70%;
+    border: 1px solid $black;
+    padding: vw(40);
+    position: relative;
+
+    .slider-block {
+      height: 100%;
+      width: 100%;
+
+      .w-diagonal-swiper {
+        height: 100%;
+
+        .swiper-wrapper {
+          .swiper-slide {
+            height: 100%;
+            overflow: hidden;
+
+            .slider-img-wrapper {
+              width: 120%;
+              height: 100%;
+              position: relative;
+              left: -10%;
+
+              .slider-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .w-diagonal-right-block {
+    width: 30%;
+
+    .w-diagonal-title {
+      @include font-h3;
+      color: $black;
+      margin-bottom: vw(20);
+    }
+
+    .w-diagonal-icon {
+      fill: $brown;
+      margin-bottom: vw(20);
+    }
+
+    .w-diagonal-list {
+      display: flex;
+      flex-direction: column;
+      gap: vw(20);
+
+      .w-diagonal-item {
+        .w-diagonal-text {
+          @include font-body;
+          color: $black;
+        }
+      }
+    }
+  }
+}
