@@ -38,6 +38,27 @@
     }
   }
 
+  &.is-white {
+    background-color: $white;
+    border-color: $white;
+
+    .general-text {
+      color: $black;
+    }
+
+    &::before {
+      background: $brown;
+    }
+
+    &:hover {
+      border-color: $white;
+
+      .general-text {
+        color: $white;
+      }
+    }
+  }
+
   @media screen and (min-width: 1512px) {
     padding: 18px 28px;
   }

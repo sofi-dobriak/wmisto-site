@@ -1,18 +1,18 @@
 .panorama-section {
   height: calc(100vh - 100px);
   position: relative;
-  // padding-top: vw(100);
-  padding-bottom: vw(100);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  padding-bottom: vw(100);
 
   .panorama-title-block {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: vw(20);
     position: relative;
+    padding: 0 vw(20);
 
     .panorama-title {
       @include font-h1;
