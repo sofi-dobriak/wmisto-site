@@ -1,6 +1,6 @@
 include ../../../shared/components/swiper-nav/swiper-nav.pug
 
-- 
+-
   const advantages = [
     { img: '/images/advantages/adv-img-1.jpg', alt: 'Slide 1', text: "11 будинків бізнес-класу, висотою 6–9 поверхів" },
     { img: '/images/advantages/adv-img-2.jpg', alt: 'Slide 2', text: "Панорамні вікна, висота стель у квартирах від 2,7 до 4 метрів" },
@@ -12,39 +12,39 @@ include ../../../shared/components/swiper-nav/swiper-nav.pug
     { img: '/images/advantages/adv-img-8.jpg', alt: 'Slide 8', text: "Пентхауси із терасами та панорамними видами" },
     { img: '/images/advantages/adv-img-9.jpg', alt: 'Slide 9', text: "1000 унікальних планувань" },
     { img: '/images/advantages/adv-img-10.jpg', alt: 'Slide 10', text: "Міський дошкільний навчальний заклад на 160 місць" },
-    // Тут була помилка: додано лапку перед Торговельний
     { img: '/images/advantages/adv-img-11.jpg', alt: 'Slide 11', text: "Торговельний центр та розвинена інфраструктура" },
     { img: '/images/advantages/adv-img-12.jpg', alt: 'Slide 12', text: "Публічний простір на W-Діагоналі площею 1,1 га" },
     { img: '/images/advantages/adv-img-13.jpg', alt: 'Slide 13', text: "Найбільший показник озеленення серед усіх новобудов Вінниці - 36 % території кварталу" },
-    { img: '/images/advantages/adv-img-14.jpg', alt: 'Slide 14', text: "Найбільший показник озеленення серед усіх новобудов Вінниці - 36 % території кварталу" },
-    { img: '/images/advantages/adv-img-15.jpg', alt: 'Slide 15', text: "Трирівневий паркінг, два однорівневих паркінги, приватні надземні гаражі та сотні паркомісць для відвідувачів" },
-    { img: '/images/advantages/adv-img-16.jpg', alt: 'Slide 16', text: "Сучасна бібліотека-коворкінг" },
-    { img: '/images/advantages/adv-img-17.jpg', alt: 'Slide 17', text: "Безбар`єрний простір" },
-    { img: '/images/advantages/adv-img-18.jpg', alt: 'Slide 18', text: "4 облаштованих укриття" },
-    { img: '/images/advantages/adv-img-19.jpg', alt: 'Slide 19', text: "Майданчики для спорту, дитячі майданчики" },
-    { img: '/images/advantages/adv-img-20.jpg', alt: 'Slide 20', text: "До школи можна дійти пішки, не переходячи дорогу" },
-    { img: '/images/advantages/adv-img-20.jpg', alt: 'Slide 21', text: "Близькість до центру, ринку, набережної" }
+    { img: '/images/advantages/adv-img-14.jpg', alt: 'Slide 14', text: "Трирівневий паркінг, два однорівневих паркінги, приватні надземні гаражі та сотні паркомісць для відвідувачів" },
+    { img: '/images/advantages/adv-img-15.jpg', alt: 'Slide 15', text: "Сучасна бібліотека-коворкінг" },
+    { img: '/images/advantages/adv-img-16.jpg', alt: 'Slide 16', text: "Безбар`єрний простір" },
+    { img: '/images/advantages/adv-img-17.jpg', alt: 'Slide 17', text: "4 облаштованих укриття" },
+    { img: '/images/advantages/adv-img-18.jpg', alt: 'Slide 18', text: "Майданчики для спорту, дитячі майданчики" },
+    { img: '/images/advantages/adv-img-19.jpg', alt: 'Slide 19', text: "До школи можна дійти пішки, не переходячи дорогу" },
+    { img: '/images/advantages/adv-img-20.jpg', alt: 'Slide 20', text: "Близькість до центру, ринку, набережної" },
   ]
 
-section.advantages-section 
-  h2.advantages-title Переваги проекту
-
-  .advantages-swiper.swiper 
-    ul.swiper-wrapper 
+section.advantages-section
+  h2.advantages__title Переваги Проєкту
+    
+  div.swiper.advantages-swiper
+    ul.advantages-list.swiper-wrapper
       each item in advantages
-        li.swiper-slide
-          .swiper-image-wrapper 
-            img(src=item.img, alt=item.alt loading="lazy")
-            
-    .adv-counter
-      p.main-count.adv-js-count
-        span.current.adv-js-current
-        span.next.adv-js-next
-      p.total.adv-js-total
-    +swiper-nav('advantages-nav-buttons', 'advantages-button-prev','advantages-button-next')
+        li.advantages-item.swiper-slide
+          .advantages-image-block
+            img(src=item.img, alt=item.alt loading="lazy").advantages-image
+    
+  .adv-counter
+    p.main-count.adv-js-count
+      span.current.adv-js-current
+      span.next.adv-js-next
+    p.total.adv-js-total
+
+  +swiper-nav('advantages-nav-buttons', 'advantages-button-prev','advantages-button-next')
 
   .advantages-text-block.swiper
     ul.swiper-wrapper 
       each item in advantages
         li.swiper-slide
           p.advantages-text= item.text
+

@@ -1,6 +1,7 @@
 .about-section {
   display: flex;
   height: calc(100vh - 100px);
+  scroll-margin-top: 200px;
 
   .about-text-block {
     width: 50%;

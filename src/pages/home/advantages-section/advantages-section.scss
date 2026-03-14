@@ -1,156 +1,172 @@
 .advantages-section {
-  height: calc(100vh - 100px);
-  padding-top: vw(100);
-  overflow: hidden;
+  height: 100vh;
   position: relative;
-
-  .advantages-title {
-    @include font-h2;
-    color: $brown;
-    position: absolute;
-    top: 55%;
-    transform: translateX(-50%);
-    z-index: 10;
-    max-width: vw(364);
-    left: calc(vw(380) - 20px);
-  }
+  padding-top: vw(100);
 
   .advantages-swiper {
     width: 100%;
     overflow: visible;
-    margin: 0 auto;
-    position: relative;
+    position: static;
+  }
 
-    .swiper-wrapper {
+  .swiper-wrapper {
+    will-change: transform;
+  }
+
+  .advantages__title {
+    @include font-h2;
+    color: $brown;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 10;
+    top: 60%;
+    left: vw(150);
+    transform: translateY(-60%);
+    max-width: vw(366);
+    z-index: 10;
+  }
+
+  .adv-counter {
+    display: flex;
+    align-items: end;
+    flex-direction: row-reverse;
+    gap: vw(60);
+    position: absolute;
+    left: calc(50% - vw(470));
+    top: calc(vw(760) - vw(60));
+    z-index: 10;
+    pointer-events: none;
+
+    .main-count {
+      @include font-huge;
+      $gap: 10px;
+      color: $white;
       display: flex;
-      align-items: flex-start;
-      will-change: transform;
+      flex-direction: column;
+      gap: $gap;
+      height: 1em;
+      line-height: 1;
+      clip-path: inset(0% -100% 0% -100%);
 
-      .swiper-slide {
-        width: vw(380);
-        height: vw(380);
-        transition:
-          width 0.8s ease-in-out,
-          height 0.8s ease-in-out;
-        will-change: width, height;
-        position: relative;
-
-        .swiper-image-wrapper {
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-
-        &.swiper-slide-active {
-          width: vw(760);
-          height: vw(760);
-        }
-      }
-    }
-
-    .adv-counter {
-      display: flex;
-      align-items: end;
-      flex-direction: row-reverse;
-      gap: vw(60);
-      position: absolute;
-      left: calc(50% - vw(470));
-      top: calc(vw(760) - vw(160));
-      z-index: 10;
-      pointer-events: none;
-
-      .main-count {
-        @include font-huge;
-        $gap: 10px;
-        color: $white;
-        display: flex;
-        flex-direction: column;
-        gap: $gap;
+      span {
+        display: block;
         height: 1em;
-        line-height: 1;
-        clip-path: inset(0% -100% 0% -100%);
+        transform: translateY(0);
+      }
 
+      .next {
+        opacity: 0;
+      }
+
+      &.is-changing {
         span {
-          display: block;
-          height: 1em;
-          transform: translateY(0);
+          transition:
+            transform 0.8s cubic-bezier(0.36, 1, 0.86, 1),
+            opacity 0.8s ease-out;
         }
 
+        .current {
+          transform: translateY(calc(-100% - #{$gap}));
+        }
         .next {
-          opacity: 0;
+          transform: translateY(calc(-100% - #{$gap}));
+          opacity: 1;
         }
-
-        &.is-changing {
-          span {
-            transition:
-              transform 0.9s cubic-bezier(0.36, 1, 0.86, 1),
-              opacity 0.4s ease-out;
-          }
-
-          .current {
-            transform: translateY(calc(-100% - #{$gap}));
-          }
-          .next {
-            transform: translateY(calc(-100% - #{$gap}));
-            opacity: 1;
-          }
-        }
-      }
-
-      .total {
-        @include font-h3;
-        color: $black;
-        padding-bottom: 20px;
       }
     }
 
-    .advantages-nav-buttons {
-      position: absolute;
-      top: vw(380);
-      left: 85%;
-      transform: translate(-50%, 320%);
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
-      z-index: 10;
-
-      .advantages-button-prev,
-      .advantages-button-next {
-        pointer-events: auto;
-        cursor: pointer;
-      }
+    .total {
+      @include font-h3;
+      color: $black;
+      padding-bottom: 20px;
     }
+  }
+
+  .advantages-nav-buttons {
+    right: -15%;
+    top: unset;
+    transform: translateY(60%);
   }
 
   .advantages-text-block {
     position: absolute;
     top: 60%;
     transform: translateY(-50%);
-    right: calc(vw(150));
-    z-index: 10;
-    max-width: vw(420);
-    overflow: hidden;
+    right: vw(100);
+    left: auto;
+
+    max-width: vw-laptop(348);
 
     .swiper-wrapper {
       .swiper-slide {
-        opacity: 0 !important;
-        pointer-events: none;
-        transition: opacity 1s ease;
-
         .advantages-text {
           @include font-h3;
           color: $brown;
         }
       }
-      .swiper-slide-active {
-        opacity: 1 !important;
-        pointer-events: auto;
+    }
+  }
+
+  .advantages-title-info-text {
+    width: 330px;
+  }
+
+  .advantages-list {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    height: calc((480 / 1512) * 100vw);
+
+    @media (max-width: 1023px) {
+      height: calc((420 / 1023) * 100vw);
+    }
+
+    @media (max-width: 767px) {
+      height: 78vw;
+    }
+
+    .advantages-item {
+      display: flex;
+      flex-direction: column;
+      width: vw(380);
+      height: vw(380);
+      cursor: pointer;
+      transition:
+        width 0.8s ease-in-out,
+        height 0.8s ease-in-out;
+      will-change: width, height;
+
+      .advantages-image-block {
+        overflow: hidden;
+        flex-grow: 1;
+      }
+
+      &.swiper-slide-active {
+        width: vw(760);
+        height: vw(760);
+      }
+
+      .advantages__list__item__center-text-block {
+        opacity: 0;
+        pointer-events: none;
+        height: 0;
+      }
+
+      .advantages__list__item__title {
+        display: block;
+      }
+
+      .advantages-image-block {
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .advantages-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s ease-in-out;
       }
     }
   }
