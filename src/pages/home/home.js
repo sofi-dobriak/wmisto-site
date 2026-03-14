@@ -20,5 +20,6 @@ import "./stats-section/stats-section.js";
 import "./advantages-section/advantages-section.js";
 import "./gallery-section/gallery-section.js";
 import "./developer-section/developer-section.js";
+import "./construction-progress-section/construction-progress-section.js";
 
 import "@shared/scripts/liquid-glass-animation/liquid-glass-animation";

@@ -1,5 +1,4 @@
 .developer-section {
-  padding-top: vw(100);
   position: relative;
 
   .developer-image-block {
@@ -15,16 +14,21 @@
 
   .developer-card-block {
     background: rgba(212, 209, 202, 0.2);
-    backdrop-filter: blur(60px);
+    backdrop-filter: blur(30px);
 
     display: flex;
-    width: vw(620);
-    padding: vw(40);
+    width: vw-laptop(620);
+    padding: vw-laptop(60);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: vw(40);
     margin: auto;
+
+    @media screen and (min-width: 1512px) {
+      width: 620px;
+      padding: 60px;
+    }
 
     .developer-title {
       @include font-h2;
@@ -52,7 +56,6 @@
       @include font-h4-regular;
       color: $black;
       text-align: center;
-      width: vw(500);
     }
 
     .developer-link {

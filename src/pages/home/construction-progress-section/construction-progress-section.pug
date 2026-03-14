@@ -1,0 +1,51 @@
+- 
+  const construction_cards = [
+    {
+      img:'/images/construction-progress/construction-img-1.jpg',
+      alt:"Construction progress image 1",
+      link: '#',
+      day: '02',
+      month:"Лютого",
+      year: "2026"
+    },
+    {
+      img:'/images/construction-progress/construction-img-2.jpg',
+      alt:"Construction progress image 2",
+      link: '#',
+      day: '10',
+      month:"Cічня",
+      year: "2026"
+    },
+    {
+      img:'/images/construction-progress/construction-img-3.jpg',
+      alt:"Construction progress image 3",
+      link: '#',
+      day: '29',
+      month:"Листопада",
+      year: "2025"
+    }
+  ]
+
+section.construction-progress 
+  h2.construction-title Хід будівництва
+
+  ul.construction-list 
+    each item in construction_cards 
+      li.construction-item 
+        a.construction-link(href=item.link) 
+
+          .construction-image-block
+            img(src=item.img, alt=item.alt, loading="lazy").construction-image
+          
+          
+          .construction-date-icon-block
+            .construction-date 
+              p.construction-day=item.day 
+
+              .construction-month-year-block
+                p.construction-month=item.month 
+                p.construction-year=item.year     
+
+            svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none").construction-icon
+              line(x1="21" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1").icon-line
+              path(d="M9.35254 5.89844L2.94238 12.3076L9.35254 18.7178" stroke="currentColor" stroke-width="1").icon-arrowhead
