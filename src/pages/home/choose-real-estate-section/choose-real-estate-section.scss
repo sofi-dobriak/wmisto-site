@@ -29,6 +29,8 @@
     gap: 0;
     flex-grow: 1;
     min-height: 0;
+    border-top: 1px solid $black;
+    border-left: 1px solid $black;
 
     .grid-link {
       display: block;
@@ -36,7 +38,8 @@
       height: 100%;
       width: 100%;
       position: relative;
-      border: 1px solid $black;
+      border-right: 1px solid $black;
+      border-bottom: 1px solid $black;
       padding: vw(20);
 
       &:hover {
