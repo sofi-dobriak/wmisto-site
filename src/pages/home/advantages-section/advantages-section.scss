@@ -1,7 +1,11 @@
 .advantages-section {
-  height: 100vh;
+  // Висота має залежати від розміру активної картки + відступи
+  min-height: vw(900);
+  display: flex;
+  align-items: center; // Центруємо контент вертикально
   position: relative;
-  padding-top: vw(100);
+  padding: vw(100) 0;
+  overflow: hidden;
 
   .advantages-swiper {
     width: 100%;
@@ -19,7 +23,7 @@
     text-transform: uppercase;
     position: absolute;
     z-index: 10;
-    top: 60%;
+    top: 62%;
     left: vw(150);
     transform: translateY(-60%);
     max-width: vw(366);
@@ -84,13 +88,13 @@
 
   .advantages-nav-buttons {
     right: -15%;
-    top: unset;
-    transform: translateY(60%);
+    top: 50%;
+    transform: translateY(vw(310));
   }
 
   .advantages-text-block {
     position: absolute;
-    top: 60%;
+    top: 65%;
     transform: translateY(-50%);
     right: vw(100);
     left: auto;
@@ -115,15 +119,8 @@
     width: 100%;
     display: flex;
     align-items: start;
-    height: calc((480 / 1512) * 100vw);
-
-    @media (max-width: 1023px) {
-      height: calc((420 / 1023) * 100vw);
-    }
-
-    @media (max-width: 767px) {
-      height: 78vw;
-    }
+    // height: calc((480 / 1512) * 100vw);
+    height: vw(760);
 
     .advantages-item {
       display: flex;
