@@ -3,9 +3,9 @@ include ../../../shared/components/swiper-nav/swiper-nav.pug
 
 -
   const diagonal_slides = [
-    { img: 'w-diagonal-img-1.jpg', alt: 'Build' },
-    { img: 'w-diagonal-img-1.jpg', alt: 'Build' },
-    { img: 'w-diagonal-img-1.jpg', alt: 'Build' }
+    { img: '/images/w-diagonal/w-diagonal-img-1.jpg', alt: 'Build' },
+    { img: '/images/w-diagonal/w-diagonal-img-1.jpg', alt: 'Build' },
+    { img: '/images/w-diagonal/w-diagonal-img-1.jpg', alt: 'Build' }
   ]
 
   const diagonal_texts = [
@@ -31,7 +31,7 @@ section.w-diagonal-section
           each slide in diagonal_slides
             .swiper-slide 
               .slider-img-wrapper(data-swiper-parallax="20%")
-                img.slider-img(src=`/images/w-diagonal/${slide.img}`, alt=slide.alt loading="lazy")
+                img.slider-img(src=slide.img, alt=slide.alt loading="lazy")
 
     +swiper-nav('w-diagonal-nav-buttons', 'w-diagonal-button-prev', 'w-diagonal-button-next')
 

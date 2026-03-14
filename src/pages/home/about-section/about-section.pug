@@ -23,21 +23,21 @@ include ../../../shared/components/swiper-nav/swiper-nav.pug
   ]
 
   const swiper_big_img =[
-    {img:'about-main-1', alt:'Genplan'},
-    {img:'about-main-2', alt:'Build 1'},
-    {img:'about-main-3', alt:'Yard'},
-    {img:'about-main-4', alt:'Build 2'},
-    {img:'about-main-5', alt:'Kids'},
-    {img:'about-main-6', alt:'Balconies'}
+    {img:'/images/about/about-main-1.jpg', alt:'Genplan'},
+    {img:'/images/about/about-main-2.jpg', alt:'Build 1'},
+    {img:'/images/about/about-main-3.jpg', alt:'Yard'},
+    {img:'/images/about/about-main-4.jpg', alt:'Build 2'},
+    {img:'/images/about/about-main-5.jpg', alt:'Kids'},
+    {img:'/images/about/about-main-6.jpg', alt:'Balconies'}
   ]
 
   const swiper_small_img = [
-    {img:'about-sub-1', alt:'Build 1'},
-    {img:'about-sub-2', alt:'Build 2'},
-    {img:'about-sub-3', alt:'Build 3'},
-    {img:'about-sub-4', alt:'Build 4'},
-    {img:'about-sub-5', alt:'Build 5'},
-    {img:'about-sub-6', alt:'Build 6'}
+    {img:'/images/about/about-sub-1.jpg', alt:'Build 1'},
+    {img:'/images/about/about-sub-2.jpg', alt:'Build 2'},
+    {img:'/images/about/about-sub-3.jpg', alt:'Build 3'},
+    {img:'/images/about/about-sub-4.jpg', alt:'Build 4'},
+    {img:'/images/about/about-sub-5.jpg', alt:'Build 5'},
+    {img:'/images/about/about-sub-6.jpg', alt:'Build 6'}
   ]
 
 section.about-section(id="about")
@@ -60,18 +60,18 @@ section.about-section(id="about")
       .swiper-wrapper
         each item in swiper_big_img
           .swiper-slide
-            img(src=`/images/about/${item.img}.jpg`, alt=item.alt loading="lazy").slider-img-big
+            img(src=item.img, alt=item.alt loading="lazy").slider-img-big
         
-      p.main-count
-        span.current 
-        span.next
-      p.total
+      p.main-count.js-about-main-count
+        span.current.js-about-current 
+        span.next.js-about-next
+      p.total.js-about-total
   
     .slider-small.swiper
       .swiper-wrapper
         each item in swiper_small_img
           .swiper-slide
-            img(src=`/images/about/${item.img}.jpg`, alt=item.alt loading="lazy").slider-img-small
+            img(src=item.img, alt=item.alt loading="lazy").slider-img-small
     
 
       

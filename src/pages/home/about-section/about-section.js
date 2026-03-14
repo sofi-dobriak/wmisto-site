@@ -3,75 +3,118 @@ import "../../../shared/components/swiper-nav/swiper-nav.scss";
 import "../../../shared/components/general-btn/general-btn.scss";
 
 import Swiper from "swiper";
-import { EffectFade } from "swiper/modules";
+import { EffectFade, Controller } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
-const swiper1 = new Swiper(".about-text-swiper", {
-  modules: [EffectFade],
-  allowTouchMove: false,
-  speed: 600,
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
-  loop: true,
+// ─── Utils ───────────────────────────────────────────────────────────────────
+
+const formatNum = (num) => (num < 10 ? `0${num}` : num);
+
+// ─── DOM ─────────────────────────────────────────────────────────────────────
+
+const getElements = () => ({
+  countBlock: document.querySelector(".js-about-main-count"),
+  currentEl: document.querySelector(".js-about-main-count .js-about-current"),
+  nextEl: document.querySelector(".js-about-main-count .js-about-next"),
+  totalEl: document.querySelector(".js-about-total"),
+  prevBtn: document.querySelector(".about-button-prev"),
+  nextBtn: document.querySelector(".about-button-next"),
 });
 
-const slidesCount = document.querySelectorAll(".slider-big .swiper-slide").length;
-document.querySelector(".total").textContent = `/ 0${slidesCount}`;
+// ─── Counter ─────────────────────────────────────────────────────────────────
 
-const swiper2 = new Swiper(".slider-big", {
-  allowTouchMove: false,
-  speed: 1000,
-  observer: true,
-  observeParents: true,
-  watchOverflow: true,
-  slidesPerView: 1,
-  loop: true,
-  on: {
-    init() {
-      document.querySelector(".current").textContent = this.realIndex + 1;
+const initCounter = (totalEl, slidesCount) => {
+  if (totalEl) {
+    totalEl.textContent = `/ ${formatNum(slidesCount)}`;
+  }
+};
+
+const animateCounter = (currentEl, nextEl, countBlock, realIndex) => {
+  const nextNumber = realIndex + 1;
+
+  if (!currentEl || !nextEl || currentEl.textContent == nextNumber) return;
+
+  nextEl.textContent = nextNumber;
+  countBlock.classList.add("is-changing");
+
+  setTimeout(() => {
+    currentEl.textContent = nextNumber;
+    countBlock.classList.remove("is-changing");
+  }, 800);
+};
+
+// ─── Swipers ─────────────────────────────────────────────────────────────────
+
+const initTextSwiper = () =>
+  new Swiper(".about-text-swiper", {
+    modules: [EffectFade, Controller],
+    allowTouchMove: false,
+    speed: 600,
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    loop: true,
+  });
+
+const initBigSwiper = (textSwiper, els) => {
+  const { currentEl, nextEl, countBlock } = els;
+
+  const swiper = new Swiper(".slider-big", {
+    modules: [Controller],
+    allowTouchMove: false,
+    speed: 1000,
+    observer: true,
+    observeParents: true,
+    watchOverflow: true,
+    slidesPerView: 1,
+    loop: true,
+    on: {
+      init() {
+        document.querySelector(".js-about-current").textContent = this.realIndex + 1;
+      },
+      slideChangeTransitionStart() {
+        animateCounter(currentEl, nextEl, countBlock, this.realIndex);
+      },
     },
-    slideChangeTransitionStart() {
-      const countBlock = document.querySelector(".main-count");
-      const currentEl = countBlock.querySelector(".current");
-      const nextEl = countBlock.querySelector(".next");
+  });
 
-      const nextNumber = this.realIndex + 1;
+  swiper.controller.control = textSwiper;
+  textSwiper.controller.control = swiper;
 
-      if (currentEl.textContent == nextNumber) return;
+  return swiper;
+};
 
-      nextEl.textContent = nextNumber;
+const initSmallSwiper = () =>
+  new Swiper(".slider-small", {
+    allowTouchMove: false,
+    speed: 1000,
+    observer: true,
+    observeParents: true,
+    watchOverflow: true,
+    slidesPerView: 1,
+    loop: true,
+  });
 
-      countBlock.classList.add("is-changing");
+// ─── Navigation buttons ───────────────────────────────────────────────────────
 
-      setTimeout(() => {
-        currentEl.textContent = nextNumber;
-        countBlock.classList.remove("is-changing");
-      }, 800);
-    },
-  },
-});
+const bindNavButtons = (prevBtn, nextBtn, swipers) => {
+  prevBtn.addEventListener("click", () => swipers.forEach((s) => s.slidePrev()));
+  nextBtn.addEventListener("click", () => swipers.forEach((s) => s.slideNext()));
+};
 
-const swiper3 = new Swiper(".slider-small", {
-  allowTouchMove: false,
-  speed: 1000,
-  observer: true,
-  observeParents: true,
-  watchOverflow: true,
-  slidesPerView: 1,
-  loop: true,
-});
+// ─── Init ─────────────────────────────────────────────────────────────────────
 
-document.querySelector(".button-prev").addEventListener("click", () => {
-  swiper1.slidePrev();
-  swiper2.slidePrev();
-  swiper3.slidePrev();
-});
+function initAboutSwiper() {
+  const els = getElements();
 
-document.querySelector(".button-next").addEventListener("click", () => {
-  swiper1.slideNext();
-  swiper2.slideNext();
-  swiper3.slideNext();
-});
+  const slidesCount = document.querySelectorAll(".slider-big .swiper-slide").length;
+  initCounter(els.totalEl, slidesCount);
+
+  const textSwiper = initTextSwiper();
+  const bigSwiper = initBigSwiper(textSwiper, els);
+  const smallSwiper = initSmallSwiper();
+
+  bindNavButtons(els.prevBtn, els.nextBtn, [bigSwiper, smallSwiper]);
+}
+
+document.addEventListener("DOMContentLoaded", () => initAboutSwiper());

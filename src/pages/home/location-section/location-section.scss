@@ -17,11 +17,25 @@
   }
 
   .location-map-block {
+    position: relative;
+
     iframe {
       width: 100%;
       height: 80%;
       display: block;
       border: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    &.is-active::after {
+      display: none;
     }
   }
 
