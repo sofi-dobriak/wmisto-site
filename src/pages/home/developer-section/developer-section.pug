@@ -1,0 +1,18 @@
+include ../../../shared/components/general-btn/general-btn.pug
+
+section.developer-section
+  .developer-image-block 
+    img(src="/images/developer/developer-sign.svg", alt="Sign image").developer-image
+  
+  .developer-card-block 
+    h2.developer-title Забудовник
+
+    svg(width="70" height="16").developer-icon
+      use(href="/images/icons.svg#icon-sign")
+    
+    .developer-logo-block 
+      img(src="/images/developer/developer-logo.svg", alt="").developer-logo
+    
+    p.developer-text D121 — національний девелопер із європейським корінням, заснований 2020 року. Автор двох відомих проєктів у Вінниці: ЖК КЕЛЬЦЕ та унікального ЖК The TENTH House, який визнано кращим архітектурним проєктом України.
+
+    +general-btn({href:"#", text:"Сайт забудовника", customClass:"developer-link"})
