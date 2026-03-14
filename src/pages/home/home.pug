@@ -20,6 +20,7 @@ block scripts
   script(type="module", src='/src/pages/home/location-section/location-section.js')
   script(type="module", src='/src/pages/home/stats-section/stats-section.js')
   script(type="module", src='/src/pages/home/advantages-section/advantages-section.js')
+  script(type="module", src='/src/pages/home/gallery-section/gallery-section.js')
 
 block header
   +header
@@ -53,6 +54,8 @@ block content
     "price",
     "Ціни та наявність у реальному часі"
   )
+
+  include ./gallery-section/gallery-section.pug
 
 block footer
   +footer

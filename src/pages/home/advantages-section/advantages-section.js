@@ -42,6 +42,7 @@ function initAdvantagesSwiper() {
     modules: [EffectFade, Controller],
     allowTouchMove: false,
     speed: 800,
+    initialSlide: 2,
     effect: "fade",
     fadeEffect: {
       crossFade: true,
@@ -66,10 +67,11 @@ function initAdvantagesSwiper() {
         swiper_text.slideTo(this.activeIndex);
       },
       setTransition: function (swiper, duration) {
+        swiper.wrapperEl.style.transitionTimingFunction = "cubic-bezier(0.36, 1, 0.86, 1)";
         swiper.wrapperEl.style.transitionDuration = `${duration}ms`;
       },
       setTranslate: function (swiper, translate) {
-        if (swiper.animating) return;
+        // if (swiper.animating) return;
 
         const { activeW, inactiveW, gap } = getSizes();
         const activeIndex = swiper.activeIndex;
@@ -85,7 +87,7 @@ function initAdvantagesSwiper() {
           swiper.wrapperEl.style.transform = `translate3d(${newTranslate}px, 0, 0)`;
         }
 
-        swiper.wrapperEl.style.transform = `translate3d(${newTranslate}px, 0, 0)`;
+        // swiper.wrapperEl.style.transform = `translate3d(${newTranslate}px, 0, 0)`;
       },
 
       slideChangeTransitionStart: function (swiper) {
@@ -124,6 +126,12 @@ function initAdvantagesSwiper() {
       swiper.slideTo(swiper.activeIndex + 1, 800);
     }
   });
+
+  setTimeout(() => {
+    swiper.update();
+    // Примусово викликаємо твій кастомний транслейт, щоб він став рівно
+    swiper.emit("setTranslate", swiper, swiper.translate);
+  }, 100);
 }
 
 document.addEventListener("DOMContentLoaded", () => initAdvantagesSwiper());

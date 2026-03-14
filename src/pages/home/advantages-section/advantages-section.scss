@@ -132,8 +132,8 @@
       height: vw(380);
       cursor: pointer;
       transition:
-        width 0.8s ease-in-out,
-        height 0.8s ease-in-out;
+        width 0.8s cubic-bezier(0.36, 1, 0.86, 1),
+        height 0.8s cubic-bezier(0.36, 1, 0.86, 1);
       will-change: width, height;
 
       .advantages-image-block {
@@ -146,16 +146,6 @@
         height: vw(760);
       }
 
-      .advantages__list__item__center-text-block {
-        opacity: 0;
-        pointer-events: none;
-        height: 0;
-      }
-
-      .advantages__list__item__title {
-        display: block;
-      }
-
       .advantages-image-block {
         overflow: hidden;
         height: 100%;
@@ -166,7 +156,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.8s ease-in-out;
+        transition: transform 0.8s cubic-bezier(0.36, 1, 0.86, 1);
       }
     }
   }
