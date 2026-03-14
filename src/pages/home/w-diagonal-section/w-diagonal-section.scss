@@ -24,6 +24,7 @@
         .swiper-wrapper {
           .swiper-slide {
             height: 100%;
+            max-height: vw(666);
             overflow: hidden;
 
             .slider-img-wrapper {
