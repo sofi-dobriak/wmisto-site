@@ -1,0 +1,42 @@
+- 
+  const news_cards = [
+    {
+      date: '19 січня 2026',
+      img: '/images/news/news-img-1.jpg',
+      alt:"Міський пейзаж з висоти пташиного польоту",
+      title:"Регулярний звіт з будівництва за січень.",
+      link:"#"
+    },
+    {
+      date: '05 грудня 2025',
+      img: '/images/news/news-img-2.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Побудовано фундамент будинку та зведено металеві сваї. Роботяться підготовчі роботи.",
+      link:"#"
+    },
+    {
+      date: '23 листопада 2025',
+      img: '/images/news/news-img-3.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Підготовчі роботи.",
+      link:"#"
+    }
+  ]
+
+section.news-section
+  h2.news-title Новини
+
+  ul.news-list 
+    each item in news_cards 
+      li.news-item 
+        a(href=item.link).news-link
+          .news-icon-date-block
+            .news-icon-block
+              svg(width="12" height="12").news-icon
+                use(href='/images/icons.svg#icon-plus')
+            p.news-date= item.date 
+
+          h3.news-title= item.title
+
+          .news-image-block 
+            img(src=item.img, alt=item.alt, loading="lazy").news-image

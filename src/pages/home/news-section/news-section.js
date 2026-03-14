@@ -1,0 +1,1 @@
+import "./news-section.scss";

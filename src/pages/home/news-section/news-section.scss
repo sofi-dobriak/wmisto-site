@@ -1,0 +1,118 @@
+.news-section {
+  padding-top: vw(200);
+  min-height: vw(90);
+
+  .news-title {
+    @include font-h2;
+    color: $brown;
+    text-align: center;
+    margin-bottom: vw(40);
+  }
+
+  .news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .news-item {
+      padding: vw(20);
+      border-right: 1px solid $black;
+      overflow: hidden;
+      height: vw(600);
+
+      &:hover {
+        .news-link {
+          .news-image-block {
+            &::before {
+              transform: scaleY(0);
+            }
+          }
+
+          .news-icon-date-block {
+            .news-icon-block {
+              background-color: $brown;
+
+              .news-icon {
+                stroke: $white;
+              }
+            }
+          }
+        }
+      }
+
+      .news-link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+
+        .news-icon-date-block {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: vw(40);
+
+          .news-icon-block {
+            width: vw(44);
+            height: vw(44);
+            border-radius: 50%;
+            border: 1px solid $black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $white;
+            transition: all 0.4s ease-in-out;
+
+            .news-icon {
+              stroke: $black;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+
+          .news-date {
+            @include font-h4-regular;
+            color: $black;
+          }
+        }
+
+        .news-title {
+          @include font-h3;
+          color: $brown;
+          text-align: left;
+          margin-bottom: vw(40);
+        }
+
+        .news-image-block {
+          margin-top: auto;
+          aspect-ratio: 600/200;
+          overflow: hidden;
+          min-height: vw(300);
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            max-height: vw(150);
+            background-color: $white;
+            z-index: 1;
+            transform-origin: top;
+            transition: transform 0.4s ease-in-out;
+            will-change: transform;
+          }
+
+          .news-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            will-change: transform;
+            transition: transform 0.4s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,7 @@
 .advantages-section {
-  // Висота має залежати від розміру активної картки + відступи
   min-height: vw(900);
   display: flex;
-  align-items: center; // Центруємо контент вертикально
+  align-items: center;
   position: relative;
   padding: vw(100) 0;
   overflow: hidden;
