@@ -26,3 +26,19 @@ $khaki: #7d7a62;
 $full-width: 1200;
 $work-width: 80;
 $screen-height: 720;
+
+:root {
+  /* Color styles */
+  --white: #e9f6fb;
+  --black: #0e0f10;
+  --blue-header: #5cb5e0cc;
+  --blue-layout: #5cb5e0e6;
+  --blue: #5cb5e0;
+  --light: #a2bdca;
+  --dark: #323235;
+
+  // --------------------------------
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Text-size styles */
+}

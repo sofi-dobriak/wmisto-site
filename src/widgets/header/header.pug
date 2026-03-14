@@ -21,61 +21,38 @@ mixin header
             </clipPath>
           </defs>
         </svg>
+
+    -
+      const social_links = [
+        { icon: 'facebook', href: '#' },
+        { icon: 'inst', href: '#' },
+        { icon: 'whatsapp', href: '#' },
+        { icon: 'telegram', href: '#' },
+        { icon: 'tiktok', href: '#' },
+        { icon: 'youtube', href: '#' }
+      ]
     
     .links-container 
       ul.social-list
-        li.social-item
-          a(href="#").social-link
-            svg.social-icon.real 
-              use(href="/images/icons.svg#icon-facebook")
-            svg.social-icon.fake
-              use(href="/images/icons.svg#icon-facebook")
-        li.social-item
-          a(href="#").social-link
-            svg.social-icon.real
-              use(href="/images/icons.svg#icon-inst")
-            svg.social-icon.fake
-              use(href="/images/icons.svg#icon-inst")
-        li.social-item
-          a(href="#").social-link
-            svg.social-icon.real
-              use(href="/images/icons.svg#icon-whatsapp")
-            svg.social-icon.fake
-              use(href="/images/icons.svg#icon-whatsapp")
-        li.social-item
-          a(href="#").social-link
-            svg.social-icon.real
-              use(href="/images/icons.svg#icon-telegram")
-            svg.social-icon.fake
-              use(href="/images/icons.svg#icon-telegram")
-        li.social-item
-          a(href="#").social-link
-            svg.social-icon.real
-              use(href="/images/icons.svg#icon-tiktok")
-            svg.social-icon.fake
-              use(href="/images/icons.svg#icon-tiktok")
-        li.social-item
-          a(href="#").social-link
-            svg.social-icon.real
-              use(href="/images/icons.svg#icon-youtube")
-            svg.social-icon.fake
-              use(href="/images/icons.svg#icon-youtube")
-      
+        each item in social_links
+          li.social-item
+            a(href=item.href).social-link
+              svg.social-icon.real 
+                use(href=`/images/icons.svg#icon-${item.icon}`)
+              svg.social-icon.fake
+                use(href=`/images/icons.svg#icon-${item.icon}`)
       
       button(type="button").pdf-btn 
         svg.pdf-icon
           use(href="/images/icons.svg#icon-pdf")
         span.pdf-text PDF Презентація
       
-
       a(href="tel:380970000077").phone-link
         svg.phone-icon
           use(href="/images/icons.svg#icon-phone")
         span.phone-text +38 (097) 000-00-77
 
-
       +general-btn({ text: 'Зворотній дзвінок', type: 'button' })
-
 
       button(type="button").burger-btn
         span.burger-text.real Меню

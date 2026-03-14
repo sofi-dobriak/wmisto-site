@@ -1,8 +1,19 @@
 .advantages-section {
   height: calc(100vh - 100px);
   padding-top: vw(100);
-  padding-bottom: vw(200);
   overflow: hidden;
+  position: relative;
+
+  .advantages-title {
+    @include font-h2;
+    color: $brown;
+    position: absolute;
+    top: 55%;
+    transform: translateX(-50%);
+    z-index: 10;
+    max-width: vw(364);
+    left: calc(vw(380) - 20px);
+  }
 
   .advantages-swiper {
     width: 100%;
@@ -13,11 +24,16 @@
     .swiper-wrapper {
       display: flex;
       align-items: flex-start;
+      will-change: transform;
 
       .swiper-slide {
         width: vw(380);
         height: vw(380);
-        transition: all 0.4s ease-in-out;
+        transition:
+          width 0.8s ease-in-out,
+          height 0.8s ease-in-out;
+        will-change: width, height;
+        position: relative;
 
         .swiper-image-wrapper {
           width: 100%;
@@ -34,8 +50,63 @@
         &.swiper-slide-active {
           width: vw(760);
           height: vw(760);
-          transition: all 0.4s ease-in-out;
         }
+      }
+    }
+
+    .adv-counter {
+      display: flex;
+      align-items: end;
+      flex-direction: row-reverse;
+      gap: vw(60);
+      position: absolute;
+      left: calc(50% - vw(470));
+      top: calc(vw(760) - vw(160));
+      z-index: 10;
+      pointer-events: none;
+
+      .main-count {
+        @include font-huge;
+        $gap: 10px;
+        color: $white;
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+        height: 1em;
+        line-height: 1;
+        clip-path: inset(0% -100% 0% -100%);
+
+        span {
+          display: block;
+          height: 1em;
+          transform: translateY(0);
+        }
+
+        .next {
+          opacity: 0;
+        }
+
+        &.is-changing {
+          span {
+            transition:
+              transform 0.9s cubic-bezier(0.36, 1, 0.86, 1),
+              opacity 0.4s ease-out;
+          }
+
+          .current {
+            transform: translateY(calc(-100% - #{$gap}));
+          }
+          .next {
+            transform: translateY(calc(-100% - #{$gap}));
+            opacity: 1;
+          }
+        }
+      }
+
+      .total {
+        @include font-h3;
+        color: $black;
+        padding-bottom: 20px;
       }
     }
 
@@ -53,6 +124,33 @@
       .advantages-button-next {
         pointer-events: auto;
         cursor: pointer;
+      }
+    }
+  }
+
+  .advantages-text-block {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    right: calc(vw(150));
+    z-index: 10;
+    max-width: vw(420);
+    overflow: hidden;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        opacity: 0 !important;
+        pointer-events: none;
+        transition: opacity 1s ease;
+
+        .advantages-text {
+          @include font-h3;
+          color: $brown;
+        }
+      }
+      .swiper-slide-active {
+        opacity: 1 !important;
+        pointer-events: auto;
       }
     }
   }
