@@ -2,34 +2,28 @@
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
-// Define a variable that will store the Lenis smooth scrolling object
-let lenis;
 
+let lenis;
 let isInited = false;
+
 export const initSmoothScrolling = () => {
-  // Instantiate the Lenis object with specified properties
   if (isInited) return lenis;
 
   lenis = new Lenis({
     lerp: 0.1,
-    infinite: false, // Lower values create a smoother scroll effect
-    smoothWheel: true, // Enables smooth scrolling for mouse wheel events
+    infinite: false,
+    smoothWheel: true,
   });
 
-  // Update ScrollTrigger each time the user scrolls
   lenis.on("scroll", () => ScrollTrigger.update());
   window.lenis = lenis;
-  window.addEventListener("stop-scroll", () => {
-    lenis.stop();
-  });
-  window.addEventListener("start-scroll", () => {
-    lenis.start();
-  });
+
+  window.addEventListener("stop-scroll", () => lenis.stop());
+  window.addEventListener("start-scroll", () => lenis.start());
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-
       const targetId = this.getAttribute("href");
       const target = document.querySelector(targetId);
 
@@ -37,20 +31,31 @@ export const initSmoothScrolling = () => {
         setTimeout(() => {
           lenis.scrollTo(target, {
             offset: -10,
-            duration: 1, // в секундах
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+            duration: 1,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           });
         }, 10);
       }
     });
   });
-  // Define a function to run at each animation frame
+
   const scrollFn = (time) => {
-    lenis.raf(time); // Run Lenis' requestAnimationFrame method
-    requestAnimationFrame(scrollFn); // Recursively call scrollFn on each frame
+    lenis.raf(time);
+    requestAnimationFrame(scrollFn);
   };
-  // Start the animation frame loop
   requestAnimationFrame(scrollFn);
+
+  // ОНОВЛЕННЯ ВИСОТИ: додаємо ТУТ (перед return)
+  window.addEventListener("load", () => {
+    lenis.resize();
+    ScrollTrigger.refresh();
+  });
+
+  // Також додаємо ресайз при зміні розміру вікна
+  window.addEventListener("resize", () => {
+    lenis.resize();
+  });
+
   isInited = true;
   return lenis;
 };
