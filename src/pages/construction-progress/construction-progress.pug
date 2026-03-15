@@ -1,0 +1,22 @@
+extends /../index.pug
+
+block variable
+  -
+    var title_page = 'construction-progress'
+    var id_page = 'id-page-construction-progress'
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+
+block header
+  +header() 
+
+block content
+  include ./progress-section/progress-section.pug
+
+block footer
+  +footer()
+
+block scripts
+  script(type="module" src="/src/pages/construction-progress/construction-progress.js")

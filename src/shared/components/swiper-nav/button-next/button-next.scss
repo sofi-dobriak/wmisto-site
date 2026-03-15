@@ -1,0 +1,31 @@
+@use "../../../../app/styles/mixins.scss" as *;
+@use "../../../../app/styles/vars.scss" as *;
+
+.button-next {
+  background: $brown;
+  border: 1px solid $brown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: vw(20);
+  border-radius: 100%;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+
+  svg {
+    fill: $white;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &.button-next svg {
+    transform: rotate(-90deg);
+  }
+
+  &:hover {
+    background-color: $white;
+    border-color: $brown;
+    svg {
+      fill: $black;
+    }
+  }
+}

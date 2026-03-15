@@ -1,3 +1,8 @@
+@use "../../app/styles/mixins.scss" as *;
+@use "../../app/styles/vars.scss" as *;
+@use "../../shared/components/swiper-nav/button-next/button-next.scss" as *;
+@use "../../shared/components/swiper-nav/button-prev/button-prev.scss" as *;
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -8,7 +13,7 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     max-width: 343px;
 
@@ -21,34 +26,30 @@
     }
   }
 
-  &__input {
-    display: flex;
-    padding: 4px 28px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: orange;
-    border-radius: 100px;
-    background: $accent-color;
-    @include general-text;
-    width: 86px;
-    pointer-events: none;
-  }
-
   &__more {
-    @include general-text;
-    margin-top: 16px;
-    text-transform: uppercase;
-    text-decoration: underline;
-    text-underline-position: from-font;
+    @include font-h4-semibold;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 40px;
 
     @include tablet {
       margin-top: 32px;
     }
 
     @include laptop {
-      margin-top: 40px;
+      margin-top: vw(40);
+    }
+  }
+
+  &__icon {
+    width: vw-laptop(24);
+    height: vw-laptop(24);
+    flex-shrink: 0;
+
+    @media screen and (min-width: 1512px) {
+      width: 24px;
+      height: 24px;
     }
   }
 
@@ -57,22 +58,35 @@
     align-items: center;
     gap: 12px;
 
+    @include laptop {
+      gap: vw(12);
+    }
+
     &__current {
-      @include general-text;
+      @include font-h4-regular;
       padding: 12px 24px;
-      background-color: $sky-light;
-      border-radius: 100px;
-      color: $navy-dark;
+      color: $black;
 
       @include tablet {
         padding: 22px 48px;
       }
+
+      @include laptop {
+        padding: vw(12) vw(24);
+        gap: vw(56);
+      }
     }
 
     &__max {
-      @include general-text;
-      color: $sky-light;
+      @include font-h4-regular;
+      color: $black;
       text-wrap: nowrap;
+    }
+
+    &__decor {
+      flex-shrink: 0;
+      width: vw(32);
+      height: vw(54);
     }
   }
 }

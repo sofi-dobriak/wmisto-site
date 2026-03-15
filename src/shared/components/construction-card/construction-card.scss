@@ -1,8 +1,12 @@
+@use "../../../app/styles/mixins.scss" as *;
+@use "../../../app/styles/vars.scss" as *;
+
 .construction-item {
   border-right: 1px solid $black;
   padding: vw(20);
   height: vw(620);
   overflow: hidden;
+  border-top: 1px solid #000;
 
   &:hover {
     .construction-image {

@@ -1,0 +1,23 @@
+@use "../../../app/styles/mixins.scss" as *;
+@use "../../../app/styles/vars.scss" as *;
+@use "../../../widgets/pagination/pagination" as *;
+@use "../../../shared/components/construction-card/construction-card" as *;
+
+.progress-section {
+  padding-top: vw(200);
+
+  .progress-title {
+    @include font-h2;
+    color: $brown;
+    text-align: center;
+    margin-bottom: vw(40);
+    text-transform: uppercase;
+  }
+
+  .progress-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid $black;
+    margin-bottom: vw(140);
+  }
+}
