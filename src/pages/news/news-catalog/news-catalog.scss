@@ -1,0 +1,24 @@
+@use "../../../app/styles/mixins.scss" as *;
+@use "../../../app/styles/vars.scss" as *;
+@use "../../../widgets/pagination/pagination" as *;
+@use "../../../shared/components/news-card/news-card" as *;
+
+.news-catalog-section {
+  padding-top: vw(200);
+
+  .news-catalog-title {
+    @include font-h2;
+    color: $brown;
+    text-align: center;
+    margin-bottom: vw(40);
+    text-transform: uppercase;
+  }
+
+  .news-catalog-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: vw(140);
+    border-bottom: 1px solid $black;
+    margin-bottom: vw(140);
+  }
+}

@@ -1,0 +1,100 @@
+include ../../../shared/components/news-card/news-card.pug
+include ../../../widgets/pagination/pagination.pug
+
+-
+  const news_cards = [
+    {
+      date: '19 січня 2026',
+      img: '/images/news/news-img-1.jpg',
+      alt:"Міський пейзаж з висоти пташиного польоту",
+      title:"Регулярний звіт з будівництва за січень.",
+      link:"#"
+    },
+    {
+      date: '05 грудня 2025',
+      img: '/images/news/news-img-2.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Побудовано фундамент будинку та зведено металеві сваї. Роботяться підготовчі роботи.",
+      link:"#"
+    },
+    {
+      date: '23 листопада 2025',
+      img: '/images/news/news-img-3.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Підготовчі роботи.",
+      link:"#"
+    },
+    {
+      date: '19 січня 2026',
+      img: '/images/news/news-img-1.jpg',
+      alt:"Міський пейзаж з висоти пташиного польоту",
+      title:"Регулярний звіт з будівництва за січень.",
+      link:"#"
+    },
+    {
+      date: '05 грудня 2025',
+      img: '/images/news/news-img-2.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Побудовано фундамент будинку та зведено металеві сваї. Роботяться підготовчі роботи.",
+      link:"#"
+    },
+    {
+      date: '23 листопада 2025',
+      img: '/images/news/news-img-3.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Підготовчі роботи.",
+      link:"#"
+    },
+    {
+      date: '19 січня 2026',
+      img: '/images/news/news-img-1.jpg',
+      alt:"Міський пейзаж з висоти пташиного польоту",
+      title:"Регулярний звіт з будівництва за січень.",
+      link:"#"
+    },
+    {
+      date: '05 грудня 2025',
+      img: '/images/news/news-img-2.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Побудовано фундамент будинку та зведено металеві сваї. Роботяться підготовчі роботи.",
+      link:"#"
+    },
+    {
+      date: '23 листопада 2025',
+      img: '/images/news/news-img-3.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Підготовчі роботи.",
+      link:"#"
+    },
+    {
+      date: '19 січня 2026',
+      img: '/images/news/news-img-1.jpg',
+      alt:"Міський пейзаж з висоти пташиного польоту",
+      title:"Регулярний звіт з будівництва за січень.",
+      link:"#"
+    },
+    {
+      date: '05 грудня 2025',
+      img: '/images/news/news-img-2.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Побудовано фундамент будинку та зведено металеві сваї. Роботяться підготовчі роботи.",
+      link:"#"
+    },
+    {
+      date: '23 листопада 2025',
+      img: '/images/news/news-img-3.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Підготовчі роботи.",
+      link:"#"
+    }
+  ]
+
+
+section.news-catalog-section
+  h1.news-catalog-title Новини
+
+  ul.news-catalog-list 
+    each item in news_cards 
+      +news-card(item)
+  
+  +pagination()

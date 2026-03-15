@@ -99,13 +99,12 @@ include ../../../widgets/pagination/pagination.pug
       month:"Листопада",
       year: "2025"
     }
-    
   ]
 
-section.progress-section 
-  h1.progress-title Хід будівництва
+section.progress-catalog-section 
+  h1.progress-catalog-title Хід будівництва
 
-  ul.progress-list 
+  ul.progress-catalog-list 
     each item in construction_cards 
       +construction_card(item)
   

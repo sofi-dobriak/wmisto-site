@@ -28,4 +28,14 @@
       fill: $black;
     }
   }
+
+  &:disabled {
+    opacity: 0.3;
+    background-color: transparent;
+    cursor: not-allowed;
+
+    svg {
+      fill: $black;
+    }
+  }
 }

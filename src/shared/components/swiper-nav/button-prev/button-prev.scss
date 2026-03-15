@@ -33,10 +33,10 @@
   &:disabled {
     opacity: 0.3;
     background-color: transparent;
+    cursor: not-allowed;
 
     svg {
       fill: $black;
-      opacity: 0.3;
     }
   }
 }

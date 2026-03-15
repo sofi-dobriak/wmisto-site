@@ -1,3 +1,6 @@
+@use "../../../app/styles/mixins.scss" as *;
+@use "../../../app/styles/vars.scss" as *;
+
 .news-item {
   padding: 0 vw(20);
   border-right: 1px solid $black;

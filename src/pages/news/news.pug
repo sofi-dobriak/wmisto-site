@@ -1,0 +1,22 @@
+extends /../index.pug
+
+block variable
+  -
+    var title_page = 'news'
+    var id_page = 'id-page-news'
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+
+block header
+  +header() 
+
+block content
+  include ./news-catalog/news-catalog.pug
+
+block footer
+  +footer()
+
+block scripts
+  script(type="module" src="/src/pages/news/news.js")
