@@ -1,5 +1,5 @@
 import "./w-diagonal-section.scss";
-import "../../../shared/components/swiper-nav/swiper-nav.scss";
+import "@/shared/components/swiper-nav/swiper-nav.scss";
 
 import Swiper from "swiper";
 import { Navigation, Parallax } from "swiper/modules";

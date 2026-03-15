@@ -1,5 +1,5 @@
-@use "../../../../app/styles/mixins.scss" as *;
-@use "../../../../app/styles/vars.scss" as *;
+@use "/src/app/styles/mixins.scss" as *;
+@use "/src/app/styles/vars.scss" as *;
 
 .button-next {
   background: $brown;

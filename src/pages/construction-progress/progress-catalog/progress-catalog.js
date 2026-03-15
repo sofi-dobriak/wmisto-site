@@ -1,1 +1,1 @@
-import "./progress-catalog.scss";
+

@@ -1,7 +1,7 @@
-@use "../../../app/styles/mixins.scss" as *;
-@use "../../../app/styles/vars.scss" as *;
-@use "../../../widgets/pagination/pagination" as *;
-@use "../../../shared/components/news-card/news-card" as *;
+@use "/src/app/styles/mixins.scss" as *;
+@use "/src/app/styles/vars.scss" as *;
+@use "@/widgets/pagination/pagination" as *;
+@use "@/shared/components/news-card/news-card" as *;
 
 .news-catalog-section {
   padding-top: vw(200);

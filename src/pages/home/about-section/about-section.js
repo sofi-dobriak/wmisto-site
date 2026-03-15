@@ -1,6 +1,6 @@
 import "./about-section.scss";
-import "../../../shared/components/swiper-nav/swiper-nav.scss";
-import "../../../shared/components/general-btn/general-btn.scss";
+import "@/shared/components/swiper-nav/swiper-nav.scss";
+import "@/shared/components/general-btn/general-btn.scss";
 
 import Swiper from "swiper";
 import { EffectFade, Controller } from "swiper/modules";

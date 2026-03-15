@@ -1,5 +1,5 @@
 import "./gallery-section.scss";
-import "../../../shared/components/swiper-nav/swiper-nav.scss";
+import "@/shared/components/swiper-nav/swiper-nav.scss";
 
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";

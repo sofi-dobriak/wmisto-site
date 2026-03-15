@@ -9,6 +9,9 @@ block meta
   title= title_page
   meta(name='description', content='')
 
+block scripts
+  script(type="module", src='/src/pages/progress-single/progress-single.js')
+
 block header
   +header() 
 
@@ -19,5 +22,3 @@ block content
 block footer
   +footer()
 
-block scripts
-  script(type="module" src="/src/pages/construction-progress-single/construction-progress-single.js")
