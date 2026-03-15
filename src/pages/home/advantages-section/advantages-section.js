@@ -90,12 +90,13 @@ const initMainSwiper = (swiper_text, els) => {
     speed: 800,
     watchSlidesProgress: true,
     initialSlide: 2,
-    centeredSlides: true,
+    centeredSlides: false,
     allowTouchMove: false,
     slideToClickedSlide: false,
     on: {
-      init() {
-        document.querySelector(".adv-js-current").textContent = this.realIndex + 1;
+      init(swiper) {
+        document.querySelector(".adv-js-current").textContent = formatNum(this.realIndex + 1);
+        applyCustomTranslate(swiper);
       },
       slideChange() {
         swiper_text.slideTo(this.activeIndex);

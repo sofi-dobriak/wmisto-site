@@ -131,10 +131,15 @@
         width 0.8s cubic-bezier(0.36, 1, 0.86, 1),
         height 0.8s cubic-bezier(0.36, 1, 0.86, 1);
       will-change: width, height;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
 
       .advantages-image-block {
         overflow: hidden;
         flex-grow: 1;
+        height: 100%;
+        width: 100%;
+        aspect-ratio: 1 / 1;
       }
 
       &.swiper-slide-active {
@@ -142,16 +147,13 @@
         height: vw(760);
       }
 
-      .advantages-image-block {
-        overflow: hidden;
-        height: 100%;
-      }
-
       .advantages-image {
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.36, 1, 0.86, 1);
+        backface-visibility: hidden;
         transition: transform 0.8s cubic-bezier(0.36, 1, 0.86, 1);
       }
     }
