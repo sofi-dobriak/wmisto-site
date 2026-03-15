@@ -1,8 +1,13 @@
 .footer {
-  padding: vw(200) vw(20) vw(38);
-  display: grid;
-  grid-template-columns: 1.75fr 1.5fr 1fr;
-  height: auto;
+  padding: vw(200) vw(20) vw(16);
+  position: relative;
+
+  .footer-main-block {
+    display: grid;
+    grid-template-columns: 1.75fr 1.5fr 1fr;
+    height: auto;
+    padding-bottom: vw(40);
+  }
 
   .footer-contacts-block {
     padding: vw(30);
@@ -36,7 +41,7 @@
             overflow: hidden;
             display: flex;
             align-items: center;
-            height: vw(36); // Висота під футер
+            height: vw(36);
           }
 
           .footer-social-item-inner {
@@ -200,5 +205,59 @@
     .footer-form-link {
       padding: vw(16);
     }
+  }
+
+  .footer-privacy-policy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .privacy-site-text-block {
+      display: flex;
+      align-items: center;
+      gap: vw(12);
+
+      .privacy-text {
+        @include font-body;
+        color: $black;
+      }
+    }
+
+    .up-link {
+      display: flex;
+      align-items: center;
+      gap: vw(12);
+      margin-right: vw(260);
+
+      .up-icon-wrapper {
+        border-radius: 50%;
+        border: 1px solid $black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: vw(64);
+        height: vw(64);
+
+        .up-icon {
+          width: vw(24);
+          height: vw(24);
+          flex-shrink: 0;
+          transform: rotate(180deg);
+        }
+      }
+
+      .up-link-text {
+        @include font-body;
+        color: $black;
+      }
+    }
+  }
+
+  .dev-logo {
+    position: absolute;
+    bottom: 0;
+    right: vw(10);
+    width: 44px;
+    height: 40px;
   }
 }
