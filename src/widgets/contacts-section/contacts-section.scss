@@ -64,10 +64,15 @@
           gap: vw(16);
 
           svg {
-            width: vw(36);
-            height: vw(36);
+            width: vw-laptop(24);
+            height: vw-laptop(24);
             fill: $brown;
             flex-shrink: 0;
+
+            @media screen and (min-width: 1512px) {
+              width: 24px;
+              height: 24px;
+            }
           }
 
           p,
@@ -113,7 +118,11 @@
               overflow: hidden;
               display: flex;
               align-items: center;
-              height: vw(36);
+              height: vw-laptop(24);
+
+              @media screen and (min-width: 1512px) {
+                height: 24px;
+              }
             }
 
             .contacts-social-item-inner {
@@ -125,10 +134,15 @@
               transition: transform 0.4s ease-in-out;
 
               .contacts-social-icon {
-                width: vw(36);
-                height: vw(36);
+                width: vw-laptop(24);
+                height: vw-laptop(24);
                 fill: $brown;
                 flex-shrink: 0;
+
+                @media screen and (min-width: 1512px) {
+                  width: 24px;
+                  height: 24px;
+                }
               }
 
               .contacts-social-text {
