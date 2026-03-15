@@ -1,0 +1,39 @@
+include /shared/components/swiper-nav/swiper-nav.pug
+
+section.progress-single
+  .progress-single-swiper.swiper 
+    .swiper-wrapper 
+      .swiper-slide 
+        img(src="/images/progress-single/progress-single-1.jpg", alt="Slide 1")
+      .swiper-slide 
+        img(src="/images/progress-single/progress-single-2.jpg", alt="Slide 2")
+  
+  +swiper-nav('progress-single-nav-buttons', 'progress-single-button-prev', 'progress-single-button-next')
+
+  .progress-text-block 
+    .construction-date 
+      p.progress-day= 10
+
+      .progress-month-year-block
+        p.progress-month Січня
+        p.progress-year 2026
+    
+    p.progress-text На сьогодні вже введені в експлуатацію, приймають гостей та приносять власникам пасивний дохід перші два будинки апарт-готелю.
+  
+    p.progress-text Зараз тривають роботи над зведенням третього будинку:
+  
+    ul.progress-list
+      li.progress-item
+        p.progress-text Монолітний каркас вже залили на 80 відсотків. 
+      li.progress-item
+        p.progress-text Зовнішні стіни виконали на 50%.
+      li.progress-item
+        p.progress-text Внутрішні стіни та перегородки влаштували на 15%. 
+      li.progress-item
+        p.progress-text Сходові марші та майданчики залиті до рівня восьмого поверху. 
+      li.progress-item
+        p.progress-text В будинку розпочали влаштування металопластикових вікон. 
+      
+    p.progress-text Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+
+    +general-btn({href:'#', text:'Дізнатися більше'})

@@ -1,0 +1,23 @@
+extends /../index.pug
+
+block variable
+  -
+    var title_page = 'Хід будівництва'
+    var id_page = 'id-page-construction-progress-single'
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+
+block header
+  +header() 
+
+block content
+  include ./progress-single-section/progress-single-section.pug
+  +contacts()
+
+block footer
+  +footer()
+
+block scripts
+  script(type="module" src="/src/pages/construction-progress-single/construction-progress-single.js")
