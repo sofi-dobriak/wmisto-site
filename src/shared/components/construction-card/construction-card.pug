@@ -1,0 +1,17 @@
+mixin construction_card(item)
+  li.construction-item&attributes(attributes)
+    a.construction-link(href=item.link) 
+      .construction-image-block
+        img(src=item.img, alt=item.alt, loading="lazy").construction-image
+      
+      .construction-date-icon-block
+        .construction-date 
+          p.construction-day= item.day 
+
+          .construction-month-year-block
+            p.construction-month= item.month 
+            p.construction-year= item.year     
+
+        svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none").construction-icon
+          line(x1="21" y1="12" x2="5" y2="12" stroke="currentColor" stroke-width="1").icon-line
+          path(d="M9.35254 5.89844L2.94238 12.3076L9.35254 18.7178" stroke="currentColor" stroke-width="1").icon-arrowhead

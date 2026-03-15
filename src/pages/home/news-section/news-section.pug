@@ -1,4 +1,6 @@
-- 
+include ../../../shared/components/news-card/news-card.pug
+
+-
   const news_cards = [
     {
       date: '19 січня 2026',
@@ -28,15 +30,4 @@ section.news-section(id="news")
 
   ul.news-list 
     each item in news_cards 
-      li.news-item 
-        a(href=item.link).news-link
-          .news-icon-date-block
-            .news-icon-block
-              svg(width="12" height="12").news-icon
-                use(href='/images/icons.svg#icon-plus')
-            p.news-date= item.date 
-
-          h3.news-title= item.title
-
-          .news-image-block 
-            img(src=item.img, alt=item.alt, loading="lazy").news-image
+      +news-card(item)
