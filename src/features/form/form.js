@@ -84,7 +84,7 @@ const lang = langDetect();
           sending: "Надіслати",
           field_too_short: "Телефон має містити принаймні {{cnt}} символів",
           field_too_long: "Телефон має містити не більше {{cnt}} символів",
-          only_number: "Тут лише цифри",
+          only_number: "Поле може містити тільки цифри",
           required: "Це поле є обов`язковим",
           sendingSuccessTitle: "Повідомлення надіслано",
           sendingSuccessText: "Чекайте відповіді наших менеджерів",

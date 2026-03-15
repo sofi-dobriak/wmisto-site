@@ -275,8 +275,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 24px;
-    height: 24px;
+    width: vw(24);
+    height: vw(24);
 
     svg {
       width: 100%;
@@ -370,7 +370,7 @@
 
 .input-message {
   position: absolute;
-  bottom: -16px;
+  bottom: -15px;
   // left: 50%;
   // transform: translateX(-50%);
   z-index: 2;
@@ -387,6 +387,7 @@
   border: none;
   border-bottom: 1px solid $black;
   color: $black;
+  position: relative;
 
   @include tablet {
     padding: 20px 0;

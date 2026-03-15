@@ -1,6 +1,6 @@
 include ../../shared/components/general-btn/general-btn.pug
 
-mixin form(attr)
+mixin form(attr, customClass='')
   .form-wrapper(data-form-wrapper)
     form(data-form=attr autocomplete="off" contact-form-js).form
       .inputs-wrapper
@@ -8,22 +8,24 @@ mixin form(attr)
         //- Поле: Ім'я
         .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive").first-offset
           .form-field__required 
-            svg: use(href="./icons.svg#Required")
+            svg: use(href="/images/icons.svg#icon-star")
           input(type='text' name="name" placeholder="Ім’я").form-field__input
           .input-message(data-input-message)
 
         //- Поле: Телефон
         .form-field.form-field-input(data-field-input data-field-phone data-status="field--inactive")
           .form-field__required 
-            svg: use(href="./icons.svg#Required")
+            svg: use(href="/images/icons.svg#icon-star")
           input(type='text' name="phone" placeholder="Телефон").form-field__input
           .input-message(data-input-message)
 
         //- Поле: Email
         .form-field.form-field-input(data-field-input data-field-email data-status="field--inactive")
+          .form-field__required 
+            svg: use(href="/images/icons.svg#icon-star")
           input(type='email' name="email" placeholder="Email").form-field__input
           .input-message(data-input-message)
 
       .form__button-wrapper
-        +general-btn({ text: 'Надіслати повідомлення', type: 'submit' })(data-btn-submit)
+        +general-btn({ text: 'Надіслати повідомлення', type: 'submit', customClass:customClass })(data-btn-submit)
         

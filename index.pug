@@ -24,11 +24,12 @@ html(lang="en" data-status="local")
     body(class= id= id_page)
       block header
 
-      main.page__inner(data-scroll-container)
-        .page__content
-          block content
+      .scroll-wrapper(data-scroll-container)
+        main.page__inner
+          .page__content
+            block content
 
-      block footer
+        block footer
       
       block modal
 

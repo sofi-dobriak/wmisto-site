@@ -23,7 +23,7 @@ mixin header
         </svg>
 
     -
-      const social_links = [
+      const header_social_links = [
         { icon: 'facebook', href: '#' },
         { icon: 'inst', href: '#' },
         { icon: 'whatsapp', href: '#' },
@@ -33,8 +33,8 @@ mixin header
       ]
     
     .links-container 
-      ul.social-list
-        each item in social_links
+      ul.header-social-list
+        each item in header_social_links
           li.social-item
             a(href=item.href).social-link
               svg.social-icon.real 

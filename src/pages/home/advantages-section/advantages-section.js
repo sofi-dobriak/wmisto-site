@@ -60,7 +60,11 @@ const applyCustomTranslate = (swiper) => {
   const widthOfPrevSlides = activeIndex * inactiveW;
   const gapsOfPrevSlides = activeIndex * gap;
   const centerOffset = (swiper.width - activeW) / 2;
-  const newTranslate = -widthOfPrevSlides - gapsOfPrevSlides + centerOffset;
+
+  let newTranslate = -widthOfPrevSlides - gapsOfPrevSlides + centerOffset;
+
+  const maxTranslate = swiper.maxTranslate();
+  if (newTranslate < maxTranslate) newTranslate = maxTranslate;
 
   if (!isNaN(newTranslate)) {
     swiper.translate = newTranslate;
@@ -93,6 +97,8 @@ const initMainSwiper = (swiper_text, els) => {
     centeredSlides: false,
     allowTouchMove: false,
     slideToClickedSlide: false,
+    resistanceRatio: 0,
+    edgeSwipeDetection: true,
     on: {
       init(swiper) {
         document.querySelector(".adv-js-current").textContent = formatNum(this.realIndex + 1);

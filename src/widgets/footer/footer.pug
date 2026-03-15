@@ -1,3 +1,85 @@
 mixin footer
-  footer
+  -
+    const schedule = [
+      { day: 'Пн-Сб', time: 'з 9:00 до 19:00' },
+      { day: 'Нд', time: 'з 10:00 до 18:00' }
+    ]
 
+    const contacts_info = [
+      { type: 'phone', href: 'tel:+380970000077', text: '+38 (097) 000-00-77', icon: 'phone' },
+      { type: 'email', href: 'mailto:wmistovn@gmail.com', text: 'wmistovn@gmail.com', icon: 'email' }
+    ]
+
+    const footer_social_links = [
+      { icon: 'telegram', text: 'Telegram', href: '#' },
+      { icon: 'whatsapp', text: 'Whatsapp', href: '#' },
+      { icon: 'facebook', text: 'Facebook', href: '#' },
+      { icon: 'inst', text: 'Instagram', href: '#' },
+      { icon: 'tiktok', text: 'Tik Tok', href: '#' },
+      { icon: 'youtube', text: 'Youtube', href: '#' }
+    ]
+
+  footer.footer(id="contacts")
+    .footer-contacts-block 
+      h2.contacts-title Контакти
+    
+      .address-list
+        .address-item 
+          .sale-office-group
+            h3.address-title Відділ продажів: 
+            .address-icon-text-block
+              svg.address-icon 
+                use(href='/images/icons.svg#icon-location')
+              p.address-text м. Вінниця, вул. Шевченка 282
+            +general-btn({href:"#", text:'Прокласти маршрут'})(target="_blank").address-link
+
+          .schedule-phone-email-block
+            .schedule-block
+              h3.schedule-title Графік роботи:
+              .schedule-icon-text-block
+                svg.schedule-icon
+                  use(href='/images/icons.svg#icon-clock')
+                .schedule-text-block 
+                  each item in schedule
+                    p.schedule-text #{item.day} #{item.time}
+            
+            .phone-email-block
+              h3.phone-email-title Зв'язок з нами:
+              each item in contacts_info
+                div(class=`${item.type}-block`)
+                  svg(class=`${item.type}-icon`)
+                    use(href=`/images/icons.svg#icon-${item.icon}`)
+                  a(href=item.href class=`${item.type}-link`)= item.text
+
+        .address-item 
+          .complex-address-group
+            h3.address-title Адреса комплексу:
+            .address-icon-text-block
+              svg.address-icon 
+                use(href='/images/icons.svg#icon-location')
+              p.address-text м. Вінниця, вул. Шевченка 282
+            +general-btn({href:"#", text:'Прокласти маршрут', customClass:'address-link'})(target="_blank").address-link
+
+          .social-block 
+            h3.social-title Соцмережі:
+            ul.footer-social-list
+              each item in footer_social_links
+                li.footer-social-item
+                  a(href=item.href target="_blank").footer-social-link
+                    .footer-social-link-content
+                      .footer-social-item-inner.real
+                        svg.footer-social-icon
+                          use(href=`/images/icons.svg#icon-${item.icon}`)
+                        span.footer-social-text= item.text
+                      .footer-social-item-inner.fake
+                        svg.footer-social-icon
+                          use(href=`/images/icons.svg#icon-${item.icon}`)
+                        span.footer-social-text= item.text
+
+    .footer-map-block
+      iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.4159321231073!2d24.691274999999997!3d48.9074673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4730c1371d639fa1%3A0x6e4a9a797635a489!2z0LLRg9C70LjRhtGPINCT0LXRgtGM0LzQsNC90LAg0JTQvtGA0L7RiNC10L3QutCwLCAyNywg0IbQstCw0L3Qvi3QpNGA0LDQvdC60ZbQstGB0YzQuiwg0IbQstCw0L3Qvi3QpNGA0LDQvdC60ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3NjAwMA!5e0!3m2!1suk!2sua!4v1773398799680!5m2!1suk!2sua" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+
+    .footer-form-block
+      h3.form-title Залишилися запитання?
+      p.form-description Ми допоможемо підібрати планування та відповімо на усі ваші запитання!
+      +form(footer, 'footer-form-link is-white')

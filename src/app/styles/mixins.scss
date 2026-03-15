@@ -193,12 +193,16 @@
 
 @mixin tiny-text() {
   font-family: $default-font;
-  font-size: 14px;
+  font-size: vw-laptop(14);
   font-style: normal;
   font-weight: 500;
   line-height: 100%;
   letter-spacing: -0.06em;
   text-decoration: none;
+
+  @media screen and (min-width: 1512px) {
+    font-size: 14px;
+  }
 }
 
 @mixin text-12() {
