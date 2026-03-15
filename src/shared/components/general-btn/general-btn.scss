@@ -59,6 +59,27 @@
     }
   }
 
+  &.after-is-blue {
+    background-color: $brown;
+    border-color: $brown;
+
+    .general-text {
+      color: $white;
+    }
+
+    &::before {
+      background: $blue;
+    }
+
+    &:hover {
+      border-color: $black;
+
+      .general-text {
+        color: $black;
+      }
+    }
+  }
+
   @media screen and (min-width: 1512px) {
     padding: 18px 28px;
   }

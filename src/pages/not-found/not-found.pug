@@ -1,0 +1,22 @@
+extends /../index.pug
+
+block variable
+  -
+    var title_page = 'not-found'
+    var id_page = 'id-page-not-found'
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+
+block header
+  +header() 
+
+block content
+  include ./not-found-section/not-found-section.pug
+
+block footer
+  +footer()
+
+block scripts
+  script(type="module" src="/src/pages/not-found/not-found.js")

@@ -1,0 +1,210 @@
+.contacts-section {
+  padding: vw(200) vw(20) vw(16);
+  height: auto;
+  padding-bottom: vw(40);
+  display: grid;
+  grid-template-columns: 1.75fr 1.5fr 1fr;
+
+  .contacts-block {
+    padding: vw(30);
+    border: 1px solid $black;
+
+    @media screen and (min-width: 1280px) {
+      padding: vw(30);
+    }
+
+    .contacts-title {
+      @include font-h2;
+      color: $brown;
+      margin-bottom: vw(62);
+    }
+
+    .address-list {
+      display: flex;
+      align-items: stretch;
+      gap: vw(40);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .address-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: vw(40);
+
+        .address-title,
+        .schedule-title,
+        .phone-email-title,
+        .social-title {
+          @include font-h4-semibold;
+          color: $brown;
+          margin-bottom: vw(10);
+        }
+
+        .social-block {
+          margin-top: vw(40);
+        }
+
+        .schedule-phone-email-block {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: vw(40);
+          margin-top: vw(40);
+        }
+
+        .address-icon-text-block,
+        .schedule-icon-text-block,
+        .phone-block,
+        .email-block,
+        .social-link {
+          display: flex;
+          align-items: center;
+          gap: vw(16);
+
+          svg {
+            width: vw(36);
+            height: vw(36);
+            fill: $brown;
+            flex-shrink: 0;
+          }
+
+          p,
+          a,
+          span {
+            @include font-body;
+            color: $black;
+            text-decoration: none;
+          }
+        }
+
+        .schedule-icon-text-block {
+          align-items: flex-start;
+
+          .schedule-text-block {
+            display: flex;
+            flex-direction: column;
+            gap: vw(6);
+          }
+        }
+
+        .address-link {
+          display: inline-block;
+          margin-top: vw(10);
+          padding: vw(16) vw(28);
+        }
+      }
+
+      .contacts-social-list {
+        display: flex;
+        flex-direction: column;
+        gap: vw(12);
+        padding: 0;
+        list-style: none;
+
+        .contacts-social-item {
+          .contacts-social-link {
+            display: block;
+            text-decoration: none;
+
+            .contacts-social-link-content {
+              position: relative;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              height: vw(36);
+            }
+
+            .contacts-social-item-inner {
+              display: flex;
+              align-items: center;
+              gap: vw(16);
+              width: 100%;
+              height: 100%;
+              transition: transform 0.4s ease-in-out;
+
+              .contacts-social-icon {
+                width: vw(36);
+                height: vw(36);
+                fill: $brown;
+                flex-shrink: 0;
+              }
+
+              .contacts-social-text {
+                @include font-body;
+                color: $black;
+              }
+            }
+
+            .real {
+              transform: translateY(0%);
+            }
+            .fake {
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: translateY(105%);
+            }
+
+            &:hover {
+              .real {
+                transform: translateY(-105%);
+              }
+              .fake {
+                transform: translateY(0%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contacts-map-block {
+    position: relative;
+    border-top: 1px solid $black;
+    border-right: 1px solid $black;
+    border-bottom: 1px solid $black;
+
+    iframe {
+      width: 100%;
+      height: 99%;
+      display: block;
+      border: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    &.is-active::after {
+      display: none;
+    }
+  }
+
+  .contacts-form-block {
+    background-color: $blue;
+    padding: vw(30) vw(56);
+
+    .form-title {
+      @include font-h3;
+      color: $black;
+      margin-bottom: vw(12);
+    }
+
+    .form-description {
+      @include font-body;
+      color: $black;
+      margin-bottom: vw(40);
+    }
+
+    .contacts-form-link {
+      padding: vw(16);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+include /shared/components/general-btn/general-btn.pug
+
+section.not-found 
+  h1.not-found-title 404
+  p.not-found-text Сторінка не знайдена, але квартири — доступні
+
+  ul.not-found-list
+    li.not-found-item
+      +general-btn({href:"/home.html", text:"На головну"})
+    li.not-found-item
+      +general-btn({href:"/plannings.html", text:"Переглянути квартири"})
