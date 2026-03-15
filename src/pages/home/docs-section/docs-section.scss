@@ -1,4 +1,105 @@
 .docs-section {
   padding-top: vw(200);
-  min-height: (90vw);
+
+  .docs-title {
+    @include font-h2;
+    color: $brown;
+    margin-bottom: vw(40);
+    text-align: center;
+  }
+
+  .docs-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid $black;
+    border-left: 1px solid $black;
+
+    .docs-item {
+      border-right: 1px solid $black;
+      border-bottom: 1px solid $black;
+      padding: vw(40);
+
+      &:hover {
+        .docs-link {
+          .docs-title-image-block {
+            .docs-image {
+              transform: scale(1.05);
+            }
+            .docs-item-title span {
+              text-decoration-color: rgba($black, 1);
+            }
+          }
+        }
+
+        .docs-icon {
+          .icon-line {
+            transform: scaleX(2.5);
+          }
+          .icon-arrowhead {
+            transform: translateX(-8px);
+          }
+        }
+      }
+
+      .docs-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .docs-title-image-block {
+          display: flex;
+          align-items: center;
+          gap: vw(40);
+
+          .docs-image-block {
+            aspect-ratio: 90/124;
+            max-width: vw(90);
+            max-height: vw(124);
+
+            .docs-image {
+              width: 100%;
+              height: 100%;
+              display: block;
+              object-fit: cover;
+              object-position: center;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+
+          .docs-item-title {
+            @include font-h4-regular;
+            color: $black;
+            margin: 0;
+            max-width: vw(604);
+
+            span {
+              display: inline;
+              text-decoration: underline;
+              text-decoration-color: rgba($black, 0);
+              text-underline-offset: 4px;
+              text-decoration-thickness: 1px;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+
+        .docs-icon {
+          width: 24px;
+          height: 24px;
+          color: $black;
+          transform: rotate(145deg);
+          overflow: visible;
+
+          .icon-line {
+            transition: all 0.4s ease-in-out;
+            transform-origin: center;
+          }
+
+          .icon-arrowhead {
+            transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+    }
+  }
 }
