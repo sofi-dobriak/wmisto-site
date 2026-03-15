@@ -1,0 +1,63 @@
+.not-found-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: vw(100);
+
+  .not-found-visual {
+    position: relative;
+    height: 100%;
+
+    .not-found-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .not-found-sign-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      max-width: vw(890);
+      pointer-events: none;
+
+      .not-found-sign {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .not-found-content {
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    padding: vw(60);
+
+    .not-found-text-inner {
+      margin: auto;
+
+      .not-found-title {
+        @include font-huge;
+        color: $white;
+        margin-bottom: vw(20);
+      }
+
+      .not-found-text {
+        @include font-h3;
+        color: $black;
+        margin-bottom: vw(60);
+      }
+
+      .not-found-list {
+        display: flex;
+        align-items: center;
+        gap: vw(16);
+      }
+    }
+  }
+}
