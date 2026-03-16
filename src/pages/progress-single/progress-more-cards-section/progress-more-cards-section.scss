@@ -1,0 +1,21 @@
+@use "/src/app/styles/mixins.scss" as *;
+@use "/src/app/styles/vars.scss" as *;
+@use "@/shared/components/construction-card/construction-card.scss";
+
+.progress-more-section {
+  // padding-top: vw(200);
+  padding-bottom: vw(200);
+
+  .progress-more-title {
+    @include font-h2;
+    color: $brown;
+    padding: 0 vw(20);
+    margin-bottom: vw(40);
+  }
+
+  .progress-more-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid $black;
+  }
+}

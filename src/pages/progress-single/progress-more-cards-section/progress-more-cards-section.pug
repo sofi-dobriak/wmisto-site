@@ -1,0 +1,36 @@
+include /shared/components/construction-card/construction-card.pug
+
+- 
+  const construction_cards = [
+    {
+      img:'/images/construction-progress/construction-img-1.jpg',
+      alt:"Construction progress image 1",
+      link: 'progress-single.html',
+      day: '02',
+      month:"Лютого",
+      year: "2026"
+    },
+    {
+      img:'/images/construction-progress/construction-img-2.jpg',
+      alt:"Construction progress image 2",
+      link: 'progress-single.html',
+      day: '10',
+      month:"Cічня",
+      year: "2026"
+    },
+    {
+      img:'/images/construction-progress/construction-img-3.jpg',
+      alt:"Construction progress image 3",
+      link: 'progress-single.html',
+      day: '29',
+      month:"Листопада",
+      year: "2025"
+    }
+  ]
+
+section.progress-more-section 
+  h2.progress-more-title Більше звітів
+
+  ul.progress-more-list 
+    each item in construction_cards 
+      +construction_card(item)
