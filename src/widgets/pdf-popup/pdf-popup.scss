@@ -1,0 +1,13 @@
+.pdf-popup-block {
+  .pdf-popup-title {
+    @include font-h3;
+    color: $black;
+    margin-bottom: vw(12);
+  }
+
+  .pdf-popup-text {
+    @include font-body;
+    color: $black;
+    margin-bottom: vw(40);
+  }
+}

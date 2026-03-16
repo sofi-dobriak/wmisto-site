@@ -10,6 +10,11 @@ export const initPopups = () => {
 
     const togglePopup = (isOpen) => {
       backdrop.classList.toggle("is-open", isOpen);
+
+      if (!isOpen) {
+        backdrop.querySelector(".success-popup-block")?.remove();
+      }
+
       window.dispatchEvent(new Event(isOpen ? "stop-scroll" : "start-scroll"));
     };
 
@@ -27,4 +32,7 @@ export const initPopups = () => {
 
     backdrop.toggle = togglePopup;
   });
+
+  window.addEventListener("stop-scroll", () => document.body.classList.add("no-scroll"));
+  window.addEventListener("start-scroll", () => document.body.classList.remove("no-scroll"));
 };

@@ -39,6 +39,11 @@
     transform: translateY(100%);
     display: flex;
     flex-direction: column;
+    max-width: vw-laptop(480);
+
+    @media screen and (min-width: 1512px) {
+      max-width: 480px;
+    }
 
     .close-btn {
       display: flex;
@@ -51,6 +56,7 @@
       background: none;
       border: none;
       cursor: pointer;
+      z-index: 999;
 
       .close-text {
         @include font-h4-semibold;

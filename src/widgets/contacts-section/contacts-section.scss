@@ -204,6 +204,7 @@
   .contacts-form-block {
     background-color: $blue;
     padding: vw(30) vw(56);
+    position: relative;
 
     .form-title {
       @include font-h3;
@@ -219,6 +220,29 @@
 
     .contacts-form-link {
       padding: vw(14) vw(18);
+    }
+
+    .success-popup-block {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      background-color: $blue;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: vw(30);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.4s ease-in-out;
+      width: 100%;
+
+      &.is-active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
     }
   }
 }

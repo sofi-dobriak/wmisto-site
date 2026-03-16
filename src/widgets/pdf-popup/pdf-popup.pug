@@ -1,0 +1,8 @@
+include /shared/components/popup/popup.pug
+
+mixin pdf-popup()
+  +popup('call-popup').js-pdf-popup
+    .pdf-popup-block
+      .pdf-popup-title PDF презентація
+      .pdf-popup-text Ми допоможемо підібрати планування та відповімо на усі ваші запитання!
+      +form('pdf-popup')

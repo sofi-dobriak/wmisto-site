@@ -370,12 +370,16 @@
 
 .input-message {
   position: absolute;
-  bottom: -15px;
+  bottom: -10px;
   // left: 50%;
   // transform: translateX(-50%);
   z-index: 2;
   background-color: #e76a6a;
   color: $black;
+
+  @media screen and (min-width: 1512px) {
+    bottom: -15px;
+  }
 }
 
 .form-field__input {

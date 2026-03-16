@@ -1,0 +1,13 @@
+.call-popup-block {
+  .call-popup-title {
+    @include font-h3;
+    color: $black;
+    margin-bottom: vw(12);
+  }
+
+  .call-popup-text {
+    @include font-body;
+    color: $black;
+    margin-bottom: vw(40);
+  }
+}

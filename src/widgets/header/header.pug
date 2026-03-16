@@ -42,7 +42,7 @@ mixin header
               svg.social-icon.fake
                 use(href=`/images/icons.svg#icon-${item.icon}`)
       
-      button(type="button").pdf-btn 
+      button(type="button").pdf-btn.js-pdf-popup-open
         svg.pdf-icon
           use(href="/images/icons.svg#icon-pdf")
         span.pdf-text PDF Презентація
@@ -52,7 +52,7 @@ mixin header
           use(href="/images/icons.svg#icon-phone")
         span.phone-text +38 (097) 000-00-77
 
-      +general-btn({ text: 'Зворотній дзвінок', type: 'button' })
+      +general-btn({ text: 'Зворотній дзвінок', type: 'button', customClass:'js-call-popup-open'})
 
       button(type="button").burger-btn.js-burger-btn
         span.burger-text.real Меню
@@ -61,6 +61,9 @@ mixin header
           use(href="/images/icons.svg#icon-burger-expand")
   
   +menu()
+  +call-popup()
+  +pdf-popup()
+  
   template#success-popup-template
     +success-popup()
   
