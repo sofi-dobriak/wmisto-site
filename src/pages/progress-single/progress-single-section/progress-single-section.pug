@@ -1,14 +1,11 @@
 include /shared/components/swiper-nav/swiper-nav.pug
+include /shared/components/back-link/back-link.pug
 
 section.progress-single
   .progress-single-grid
 
     .progress-single-visual
-      a.back-link(href="/construction-progress.html")
-          .back-icon-wrapper
-            svg.back-icon
-              use(href='/images/icons.svg#icon-arrow') 
-          span.back-link-text Назад
+      +back-link('/construction-progress.html')
 
       .progress-single-swiper.swiper 
         .swiper-wrapper 
@@ -21,7 +18,7 @@ section.progress-single
           .swiper-slide 
             img(src="/images/progress-single/progress-single-2.jpg", alt="Slide 2")
       
-      +swiper-nav('progress-single-nav', 'progress-single-button-prev is-white', 'progress-single-button-next is-white')
+      +swiper-nav('progress-single-nav', 'progress-single-button-prev', 'progress-single-button-next')
 
     .progress-text-block 
       .construction-date 

@@ -1,0 +1,33 @@
+include /shared/components/news-card/news-card.pug
+
+-
+  const single_news_cards = [
+    {
+      date: '19 січня 2026',
+      img: '/images/news/news-img-1.jpg',
+      alt:"Міський пейзаж з висоти пташиного польоту",
+      title:"Регулярний звіт з будівництва за січень.",
+      link:"/news.html"
+    },
+    {
+      date: '05 грудня 2025',
+      img: '/images/news/news-img-2.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Побудовано фундамент будинку та зведено металеві сваї. Роботяться підготовчі роботи.",
+      link:"/news.html"
+    },
+    {
+      date: '23 листопада 2025',
+      img: '/images/news/news-img-3.jpg',
+      alt:"Екстер'єр будинку",
+      title:"Підготовчі роботи.",
+      link:"/news.html"
+    }
+  ]
+
+section.news-single-more-cards-section
+  h2.news-single-title Більше Новин
+
+  ul.news-single-list 
+    each item in single_news_cards 
+      +news-card(item)

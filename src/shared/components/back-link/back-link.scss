@@ -1,0 +1,34 @@
+.back-link {
+  position: absolute;
+  top: vw(20);
+  left: vw(20);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: vw(12);
+
+  .back-icon-wrapper {
+    border-radius: 50%;
+    border: 1px solid $brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: vw(64);
+    height: vw(64);
+    background-color: $white;
+
+    .back-icon {
+      width: vw(24);
+      height: vw(24);
+      flex-shrink: 0;
+      transform: rotate(90deg);
+      fill: $brown;
+    }
+  }
+
+  .back-link-text {
+    @include font-body;
+    color: $brown;
+    line-height: 120%;
+  }
+}

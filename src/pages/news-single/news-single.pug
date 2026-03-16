@@ -1,0 +1,24 @@
+extends /../index.pug
+
+block variable
+  -
+    var title_page = 'news-single'
+    var id_page = 'id-page-news-single'
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+
+block header
+  +header() 
+
+block content
+  include ./news-single-section/news-single-section.pug
+  include ./news-single-more-cards/news-single-more-cards.pug
+  +contacts()
+
+block footer
+  +footer()
+
+block scripts
+  script(type="module" src="/src/pages/news-single/news-single.js")

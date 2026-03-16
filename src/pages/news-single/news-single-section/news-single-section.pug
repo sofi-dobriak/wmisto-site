@@ -1,0 +1,72 @@
+include /shared/components/swiper-nav/swiper-nav.pug
+include /shared/components/back-link/back-link.pug
+include /shared/components/general-btn/general-btn.pug
+
+-
+  const news_social_links = [
+    { icon: 'telegram', text: 'Telegram', href: '#' },
+    { icon: 'whatsapp', text: 'Whatsapp', href: '#' },
+    { icon: 'facebook', text: 'Facebook', href: '#' },
+    { icon: 'inst', text: 'Instagram', href: '#' },
+    { icon: 'tiktok', text: 'Tik Tok', href: '#' },
+    { icon: 'youtube', text: 'Youtube', href: '#' }
+  ]
+
+section.news-single-section 
+  .news-single-grid
+    .news-single-title-social-block
+      .news-back-date-block 
+        .back-link-block
+          +back-link('/news.html')
+        p.news-date 19 січня 2026
+      
+      h1.news-title Знижка до кінця року на всі квартири з терасами
+
+      ul.news-social-list
+        each item in news_social_links
+          li.news-social-item
+            a(href=item.href target="_blank").news-social-link
+              svg.news-social-icon
+                use(href=`/images/icons.svg#icon-${item.icon}`)
+              span.news-social-text= item.text
+
+    .news-single-content-block
+      p.news-single-text На сьогодні вже введені в експлуатацію, приймають гостей та приносять власникам пасивний дохід перші два будинки апарт-готелю.
+
+      p.news-single-list-title Зараз тривають роботи над зведенням третього будинку:
+
+      ul.news-single-list
+        li.news-single-item Монолітний каркас вже залили на 80 відсотків.
+        li.news-single-item Зовнішні стіни виконали на 50%.
+        li.news-single-item Внутрішні стіни та перегородки влаштували на 15%.
+        li.news-single-item Сходові марші та майданчики залиті до рівня восьмого поверху.
+        li.news-single-item В будинку розпочали влаштування металопластикових вікон.
+      
+      p.news-single-text Завдяки злагодженій та організованій роботі будівництво йде швидкими темпами, графік запланованих будівельних робіт суттєво випереджено.
+
+      .news-single-swiper-wrapper
+        .news-single-swiper.swiper 
+          .swiper-wrapper 
+            .swiper-slide 
+              img(src="/images/news-single/news-single-1.jpg", alt="Slide 1")
+            .swiper-slide 
+              img(src="/images/news-single/news-single-1.jpg", alt="Slide 1")
+            .swiper-slide 
+              img(src="/images/news-single/news-single-1.jpg", alt="Slide 1")
+            .swiper-slide 
+              img(src="/images/news-single/news-single-1.jpg", alt="Slide 1")
+
+        +swiper-nav('news-single-nav', 'news-single-button-prev', 'news-single-button-next')
+
+      p.news-single-text На усіх етапах, від будівництва до заселення гостів, забудовник та керуюча компанія беруть на себе всі питання — це супровід під ключ, коли інвестор отримує свої дивіденди та задоволення від співпраці. В залежності від заповненості готелю, дохід власників номерів може скласти до 12% річних. Девелопер MBT Group подбав про те, аби апарт-готель був дуже комфортним, а його гості отримали задоволення та спогади на все життя від неперевершеного відпочинку в горах.
+    
+      .news-single-image-block 
+        img(src="/images/news-single/news-single-2.jpg", alt="Дівчина полива квіти на балконі").news-single-image
+      
+      .news-single-video
+        .news-single-video-wrap
+          video(controls poster="/images/news-single/video-cover.jpg" playsinline)
+            source(src="https://smarto.agency/wp-content/themes/smartoagency/static/smartorange_showreel1.mp4", type="video/mp4")
+            <p>Ваш браузер не підтримує HTML5 відео.</p>
+      
+      +general-btn({href:"#", text:"Дізнатися більше у відділі продажів"})

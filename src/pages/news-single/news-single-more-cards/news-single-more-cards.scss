@@ -1,0 +1,16 @@
+.news-single-more-cards-section {
+  padding-bottom: vw(200);
+
+  .news-single-title {
+    @include font-h2;
+    color: $brown;
+    margin-bottom: vw(40);
+    padding: vw(20) 0;
+    text-transform: uppercase;
+  }
+
+  .news-single-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
