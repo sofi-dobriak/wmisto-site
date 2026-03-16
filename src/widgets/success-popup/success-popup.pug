@@ -1,0 +1,12 @@
+include /shared/components/general-btn/general-btn.pug
+
+mixin success-popup 
+  .success-popup-block.js-success-popup-block
+    .success-popup-title-text-block
+      h2.success-popup-title Дякуємо за звернення
+      p.success-popup-text Ми зв’яжемось з вами найближчим часом для уточнення деталей!
+
+    .success-popup-image-block 
+      img(src="/images/handshake.svg", alt="Картинка з рукостисканням").success-popup-image
+    
+    +general-btn({type:button, text:"Закрити повідомлення", customClass:"success-popup-link js-success-popup-link"})

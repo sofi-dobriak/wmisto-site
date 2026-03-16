@@ -80,8 +80,8 @@ const lang = langDetect();
           // Так называемый namespace по умолчанию
           name: "Ім’я:*",
           phone: "Телефон:*",
-          send: "Надіслати",
-          sending: "Надіслати",
+          send: "Надіслати повідомлення",
+          sending: "Надіслати повідомлення",
           field_too_short: "Поле може містити тільки цифри",
           // field_too_short: "Телефон має містити принаймні {{cnt}} символів",
           field_too_long: "Телефон має містити не більше {{cnt}} символів",
@@ -236,7 +236,7 @@ export default class FormMonster {
 
           // if (true) {
           if (error === 0) {
-            this.watchedState.status = "successSand";
+            this.watchedState.status = "successSend";
             return true;
           }
           /* eslint-disable-next-line */

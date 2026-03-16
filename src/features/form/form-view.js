@@ -7,6 +7,13 @@ const renderForm = (form, elements, toast) => {
   const elementsParamFn = elements;
   const fieldsKey = Object.keys(elements.fields);
 
+  const setBtnText = (key) => {
+    const btnText = elementsParamFn.$btnSubmit.querySelector("[data-btn-submit-text]");
+    if (btnText) {
+      btnText.innerHTML = i18next.t(key);
+    }
+  };
+
   switch (form.status) {
     case "renderErrorValidation":
       elementsParamFn.$btnSubmit.setAttribute("disabled", true);
@@ -42,8 +49,7 @@ const renderForm = (form, elements, toast) => {
       });
 
       elementsParamFn.$btnSubmit.setAttribute("disabled", true);
-      elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text="data-btn-submit-text"]').innerHTML =
-        i18next.t("sending");
+      setBtnText("sending");
 
       break;
     case "successSend":
@@ -57,8 +63,7 @@ const renderForm = (form, elements, toast) => {
 
       elementsParamFn.$form.reset();
       elementsParamFn.$btnSubmit.setAttribute("disabled", false);
-      elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text="data-btn-submit-text"]').innerHTML =
-        i18next.t("send");
+      setBtnText("send");
       /*  */
       window.dispatchEvent(new Event("succesFormSend"));
       if (elementsParamFn.successAction === "toster") {
@@ -82,8 +87,10 @@ const renderForm = (form, elements, toast) => {
       //   title: 'Bir hata oluştu',
       // });
       elementsParamFn.$btnSubmit.removeAttribute("disabled");
-      elementsParamFn.$btnSubmit.querySelector('[data-btn-submit-text="data-btn-submit-text"]').innerHTML =
-        i18next.t("send");
+      if (typeof elementsParamFn.successAction === "function") {
+        elementsParamFn.successAction();
+      }
+      setBtnText("send");
       break;
 
     default:

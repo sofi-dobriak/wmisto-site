@@ -1,5 +1,5 @@
-mixin general-btn( options = {}) 
-  - const { type = 'button', href = '', text = '', customClass = '',  } = options
+mixin general-btn(options = {}) 
+  - const { type = 'button', href = '', text = '', customClass = '' } = options
 
   if href && href !== ''
     a(href=href class=`general-btn ${customClass}`)&attributes(attributes)
@@ -9,7 +9,14 @@ mixin general-btn( options = {})
           block
   else
     button(type=type class=`general-btn ${customClass}`)&attributes(attributes)
-      span.general-text(data-btn-submit-text)&attributes({'data-btn-submit-text': attributes['data-btn-submit'] ? true : false})
-        = text
-        if block
-          block
+
+      if attributes['data-btn-submit'] !== undefined
+        span.general-text(data-btn-submit-text="data-btn-submit-text")
+          = text
+          if block
+            block
+      else
+        span.general-text
+          = text
+          if block
+            block

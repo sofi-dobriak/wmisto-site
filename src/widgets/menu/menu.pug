@@ -1,5 +1,6 @@
-mixin menu
+include /shared/components/popup/popup.pug
 
+mixin menu
   -
     const menu_big_links = [
       {title: "ГОЛОВНА", url: '/home.html'},
@@ -20,25 +21,16 @@ mixin menu
       {title: "Контакти", url: '#contacts'},
     ]
 
-  .menu-backdrop.js-menu-backdrop&attributes(attributes) 
-    .menu(data-lenis-prevent data-menu)
-      button(type="button").close-btn.js-close-btn
-        span.close-text.real Меню
-        span.close-text.fake Меню
-        svg.close-icon
-          use(href="/images/icons.svg#icon-close")
-
-      ul.menu-big-list 
-        each val, index in menu_big_links
-          li.menu-big-item 
-            - const isActive = index == 0 ? 'active' : ''
-            a(href=val.url class=isActive+' menu__link' data-title=val.title).menu-big-link #{val.title}
+  +popup('menu')
+    ul.menu-big-list 
+      each val, index in menu_big_links
+        li.menu-big-item 
+          - const isActive = index == 0 ? 'active' : ''
+          a(href=val.url class=isActive+' menu__link' data-title=val.title).menu-big-link #{val.title}
       
-      ul.menu-small-list 
-        each val, index in menu_small_links
-          li.menu-small-item 
-            - const isActive = index == 0 ? 'active' : ''
-            a(href=val.url class=isActive+' menu__link' data-title=val.title).menu-small-link #{val.title}
+    ul.menu-small-list 
+      each val, index in menu_small_links
+        li.menu-small-item 
+          - const isActive = index == 0 ? 'active' : ''
+          a(href=val.url class=isActive+' menu__link' data-title=val.title).menu-small-link #{val.title}
     
-      .popup-sign-block 
-        img(src="/images/popup-sign.svg", alt="Декор").popup-sign

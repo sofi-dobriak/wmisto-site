@@ -1,0 +1,115 @@
+.backdrop {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    background-color 0.6s cubic-bezier(0.36, 1, 0.86, 1),
+    visibility 0.6s cubic-bezier(0.36, 1, 0.86, 1);
+
+  &.is-open {
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: visible;
+    pointer-events: auto;
+
+    .popup-content {
+      transform: translateY(0);
+    }
+  }
+
+  &.js-inited .popup-content {
+    transition: transform 0.6s cubic-bezier(0.36, 1, 0.86, 1);
+  }
+
+  .popup-content {
+    position: relative;
+    top: 0;
+    right: 0;
+    background-color: $blue;
+    height: 100%;
+    padding: vw(100) vw(60);
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+
+    .close-btn {
+      display: flex;
+      align-items: center;
+      gap: vw(16);
+      overflow: hidden;
+      position: absolute;
+      top: vw(35);
+      right: vw(20);
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      .close-text {
+        @include font-h4-semibold;
+        color: $black;
+
+        &.real {
+          display: block;
+          transition: all 0.4s ease-in-out;
+          transform: translateY(0%);
+        }
+
+        &.fake {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateY(105%);
+          transition: all 0.4s ease-in-out;
+        }
+      }
+
+      &:hover {
+        .close-text {
+          &.real {
+            transform: translateY(-105%);
+          }
+          &.fake {
+            transform: translateY(0%);
+          }
+        }
+      }
+
+      .close-icon {
+        position: relative;
+        overflow: hidden;
+        display: block;
+      }
+    }
+
+    .popup-sign-block {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      max-width: vw(475);
+      opacity: 0.05;
+      pointer-events: none;
+
+      .popup-sign {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &.popup-form,
+  &.popup-callback {
+    .popup-content {
+      max-width: vw(500);
+    }
+  }
+}

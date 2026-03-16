@@ -47,6 +47,12 @@
   .form-right-block {
     flex: 0 0 45%;
 
+    .form-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
     .form-image-block {
       position: absolute;
       right: -35%;
@@ -61,6 +67,33 @@
         height: 100%;
         object-fit: cover;
         object-position: top;
+      }
+    }
+
+    .success-popup-block {
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+      background-color: $blue;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: vw(30);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.4s ease-in-out;
+      width: 100%;
+
+      &.is-active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .success-popup-image-block {
+        display: none;
       }
     }
   }

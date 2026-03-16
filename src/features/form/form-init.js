@@ -2,13 +2,19 @@ import * as yup from "yup";
 import i18next from "i18next";
 import FormMonster from "./form";
 import SexyInput from "./input";
-// import { successPopup } from "@shared/scripts/popup/successPopup";
 
-const openSuccessPopup = () => {
-  const popup = document.getElementById("success-popup");
-  if (popup) {
-    popup.classList.add("popup--open");
-    popup.style.display = "flex";
+const showSuccess = (formRef) => {
+  formRef.reset();
+
+  const template = document.getElementById("success-popup-template");
+  if (template) {
+    const html = template.innerHTML;
+
+    const container = formRef.closest(".js-form-container") || formRef;
+    container.insertAdjacentHTML("beforeend", html);
+
+    const successBlock = container.querySelector(".success-popup-block");
+    setTimeout(() => successBlock?.classList.add("is-active"), 10);
   }
 };
 
@@ -53,7 +59,6 @@ const initCustomSelects = (formRef) => {
 
 const configureForm = (formRef, onSuccess) => {
   const btnRef = formRef.querySelector("[data-btn-submit]");
-
   initCustomSelects(formRef);
 
   new FormMonster({
@@ -62,8 +67,7 @@ const configureForm = (formRef, onSuccess) => {
       $btnSubmit: btnRef,
       showSuccessMessage: false,
       successAction: () => {
-        // successPopup.open();
-        openSuccessPopup();
+        showSuccess(formRef);
         onSuccess && onSuccess();
       },
       fields: {
@@ -140,7 +144,7 @@ const configureFormFooter = (formRef, onSuccess) => {
       $btnSubmit: btnRef,
       showSuccessMessage: false,
       successAction: () => {
-        openSuccessPopup();
+        showSuccess(formRef);
         onSuccess && onSuccess();
       },
       fields: {
@@ -198,7 +202,7 @@ const configurePartnershipForm = (formRef, onSuccess) => {
       $btnSubmit: btnRef,
       showSuccessMessage: false,
       successAction: () => {
-        openSuccessPopup();
+        showSuccess(formRef);
         onSuccess && onSuccess();
       },
       fields: {

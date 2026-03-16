@@ -30,7 +30,7 @@ export const initSmoothScrolling = () => {
       if (target) {
         setTimeout(() => {
           lenis.scrollTo(target, {
-            offset: -10,
+            offset: -100,
             duration: 1,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           });

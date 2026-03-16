@@ -1,3 +1,7 @@
+include /widgets/success-popup/success-popup.pug
+
+
+
 mixin form-section(title = '', imageLogoPath = '', imagePath = '', formType = '', text = '')
   section.form-section
     .form-left-block
@@ -9,8 +13,9 @@ mixin form-section(title = '', imageLogoPath = '', imagePath = '', formType = ''
           
       p.form-text= text
 
-    .form-right-block
+    .form-right-block.js-form-container
       .form-image-block 
         img.form-image(src= imagePath alt=title loading="lazy")
       
-      +form(formType, '')
+      .form-wrapper.js-form-container
+        +form(formType, '')
