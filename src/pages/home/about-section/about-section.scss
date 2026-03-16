@@ -25,7 +25,7 @@
       max-width: vw-laptop(480);
       margin: 0 auto;
 
-      @media screen and (min-width: 1512px) {
+      @include laptop-1512 {
         max-width: 480px;
       }
     }
@@ -97,9 +97,7 @@
 
         &.is-changing {
           span {
-            transition:
-              transform 0.9s cubic-bezier(0.36, 1, 0.86, 1),
-              opacity 0.4s ease-out;
+            transition: $transition;
           }
 
           .current {
@@ -136,5 +134,5 @@
 }
 
 .count-move {
-  transform: translateY(-100%); // Уїхала вгору
+  transform: translateY(-100%);
 }

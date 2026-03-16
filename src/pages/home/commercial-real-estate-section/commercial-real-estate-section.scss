@@ -39,7 +39,6 @@
       left: 0;
       height: auto;
       aspect-ratio: 960 / 800;
-      // z-index: -1;
 
       .commercial-left-img {
         width: 100%;
@@ -83,7 +82,7 @@
       margin-bottom: 20px;
       max-width: vw-laptop(340);
 
-      @media screen and (min-width: 1512px) {
+      @include laptop-1512 {
         max-width: 340px;
       }
 
@@ -92,13 +91,10 @@
         color: $black;
         max-width: vw-laptop(320);
 
-        @media screen and (min-width: 1512px) {
+        @include laptop-1512 {
           max-width: 340px;
         }
       }
-    }
-
-    .commercial-right-btn {
     }
 
     .commercial-sign-image-block {

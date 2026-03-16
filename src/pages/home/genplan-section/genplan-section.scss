@@ -16,7 +16,7 @@
         stroke: $white;
         fill: rgba($blue, 0);
         stroke-width: 3;
-        transition: all 0.4s ease-in-out;
+        transition: $transition;
 
         &:hover {
           fill: $blue;
@@ -35,10 +35,10 @@
       visibility: hidden;
       pointer-events: none;
       top: 55%;
-      transition: all 0.4s ease-in-out;
+      transition: $transition;
       left: 39%;
 
-      @media screen and (min-width: 1512px) {
+      @include laptop-1512 {
         padding: 20px;
       }
 
@@ -77,7 +77,7 @@
     top: vw(150);
     left: vw(60);
 
-    @media screen and (min-width: 1512px) {
+    @include laptop-1512 {
       max-width: 320px;
     }
 

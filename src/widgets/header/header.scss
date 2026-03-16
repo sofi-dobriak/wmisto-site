@@ -18,7 +18,7 @@
     max-height: 60px;
     cursor: pointer;
 
-    @media screen and (min-width: 1512px) {
+    @include laptop-1512 {
       width: 215px;
     }
 
@@ -95,7 +95,7 @@
             height: vw-laptop(24);
             fill: $black;
 
-            @media screen and (min-width: 1512px) {
+            @include laptop-1512 {
               width: 24px;
               height: 24px;
             }
@@ -103,7 +103,7 @@
 
           .real {
             display: block;
-            transition: all 0.4s ease-in-out;
+            transition: $transition;
             transform: translateY(0%);
           }
 
@@ -112,7 +112,7 @@
             top: 0;
             left: 0;
             transform: translateY(105%);
-            transition: all 0.4s ease-in-out;
+            transition: $transition;
           }
 
           &:hover {
@@ -140,7 +140,7 @@
         transform-origin: 50% 50%;
         transform-box: fill-box;
 
-        @media screen and (min-width: 1512px) {
+        @include laptop-1512 {
           width: 24px;
           height: 24px;
         }
@@ -161,7 +161,7 @@
           background-color: $black;
           transform-origin: left;
           transform: scaleX(0);
-          transition: transform 0.3s ease-out;
+          transition: $transition;
         }
       }
 
@@ -190,7 +190,7 @@
         transform-origin: 50% 50%;
         transform-box: fill-box;
 
-        @media screen and (min-width: 1512px) {
+        @include laptop-1512 {
           width: 24px;
           height: 24px;
         }
@@ -211,7 +211,7 @@
           background-color: $black;
           transform-origin: left;
           transform: scaleX(0);
-          transition: transform 0.3s ease-out;
+          transition: $transition;
         }
       }
 
@@ -242,7 +242,7 @@
 
       &.real {
         display: block;
-        transition: all 0.4s ease-in-out;
+        transition: $transition;
         transform: translateY(0%);
       }
 
@@ -251,7 +251,7 @@
         top: 0;
         left: 0;
         transform: translateY(105%);
-        transition: all 0.4s ease-in-out;
+        transition: $transition;
       }
     }
 
@@ -276,11 +276,11 @@
       height: vw-laptop(24);
       position: relative;
       overflow: hidden;
-      transition: transform 0.4s ease-in-out;
+      transition: $transition;
       display: block;
       transform: scaleY(1);
 
-      @media screen and (min-width: 1512px) {
+      @include laptop-1512 {
         width: 24px;
         height: 24px;
       }

@@ -38,7 +38,7 @@
         object-fit: cover;
         object-position: center;
         will-change: transform;
-        transition: all 0.4s ease-in-out;
+        transition: $transition;
       }
     }
 
@@ -74,12 +74,12 @@
         overflow: visible;
 
         .icon-line {
-          transition: transform 0.4s ease;
+          transition: $transition;
           transform-origin: center;
         }
 
         .icon-arrowhead {
-          transition: transform 0.4s ease;
+          transition: $transition;
         }
       }
     }

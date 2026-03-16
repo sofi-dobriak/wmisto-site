@@ -1,4 +1,3 @@
-import "./pagination.scss";
 import gsap from "gsap";
 
 export function paginationInit(containerSelector, cardSelector, paginationSelector = ".pagination") {

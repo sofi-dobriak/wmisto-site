@@ -46,7 +46,7 @@
           display: block;
           object-fit: cover;
           object-position: center;
-          transition: all 0.4s ease-in-out;
+          transition: $transition;
         }
       }
 
@@ -63,7 +63,7 @@
           text-decoration-color: rgba($black, 0);
           text-underline-offset: 4px;
           text-decoration-thickness: 1px;
-          transition: all 0.4s ease-in-out;
+          transition: $transition;
         }
       }
     }
@@ -76,12 +76,12 @@
       overflow: visible;
 
       .icon-line {
-        transition: all 0.4s ease-in-out;
+        transition: $transition;
         transform-origin: center;
       }
 
       .icon-arrowhead {
-        transition: all 0.4s ease-in-out;
+        transition: $transition;
       }
     }
   }

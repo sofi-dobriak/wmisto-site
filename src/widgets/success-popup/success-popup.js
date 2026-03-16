@@ -1,6 +1,3 @@
-import "./success-popup.scss";
-import "@/shared/components/general-btn/general-btn.scss";
-
 const initSuccessPopup = () => {
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".js-success-popup-link");

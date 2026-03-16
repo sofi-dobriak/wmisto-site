@@ -1,6 +1,3 @@
-import "./progress-single-section.scss";
-import "@/shared/components/back-link/back-link.scss";
-
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -12,7 +9,7 @@ export const initProgressSwiper = () => {
 
   new Swiper(swiperElement, {
     modules: [Navigation],
-    speed: 400,
+    speed: 500,
     slidesPerView: 1,
     loop: false,
     navigation: {

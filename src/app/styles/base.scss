@@ -15,12 +15,21 @@ body {
   }
 }
 
-html {
+html.is-loading {
   height: 100%;
+
+  &.is-loading {
+    body {
+      opacity: 0;
+      visibility: hidden;
+      background-color: $white;
+    }
+  }
 }
 
 body {
   height: 100%;
+  transition: opacity 0.4s ease;
 
   &.no-scroll {
     overflow: hidden;

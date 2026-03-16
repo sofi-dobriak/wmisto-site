@@ -50,7 +50,7 @@
             height: vw-laptop(24);
             fill: $brown;
 
-            @media screen and (min-width: 1512px) {
+            @include laptop-1512 {
               width: 24px;
               height: 24px;
             }
@@ -139,17 +139,6 @@
         .news-single-button-next {
           width: vw(64);
           height: vw(64);
-
-          &.swiper-button-disabled {
-            opacity: 1;
-            pointer-events: auto;
-            background-color: $brown;
-            cursor: pointer;
-
-            svg {
-              fill: $white;
-            }
-          }
         }
       }
     }

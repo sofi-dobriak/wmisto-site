@@ -10,7 +10,7 @@
   overflow: hidden;
   color: $white;
   cursor: pointer;
-  transition: border-color 0.5s ease;
+  transition: $transition;
 
   &::before {
     content: "";
@@ -21,7 +21,7 @@
     height: 100%;
     background: $white;
     border-radius: inherit;
-    transition: transform 0.5s ease;
+    transition: $transition;
     transform: translateX(-101%);
     z-index: 1;
   }
@@ -80,14 +80,14 @@
     }
   }
 
-  @media screen and (min-width: 1512px) {
+  @include laptop-1512 {
     padding: 18px 28px;
   }
 
   .general-text {
     @include font-h4-semibold;
     color: $white;
-    transition: color 0.5s ease;
+    transition: $transition;
     position: relative;
     z-index: 2;
   }

@@ -63,9 +63,7 @@
 
       &.is-changing {
         span {
-          transition:
-            transform 0.8s cubic-bezier(0.36, 1, 0.86, 1),
-            opacity 0.8s ease-out;
+          transition: transform 0.5s cubic-bezier(0.36, 1, 0.86, 1);
         }
 
         .current {
@@ -128,8 +126,8 @@
       height: vw(380);
       cursor: pointer;
       transition:
-        width 0.8s cubic-bezier(0.36, 1, 0.86, 1),
-        height 0.8s cubic-bezier(0.36, 1, 0.86, 1);
+        width 0.5s cubic-bezier(0.36, 1, 0.86, 1),
+        height 0.5s cubic-bezier(0.36, 1, 0.86, 1);
       will-change: width, height;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
@@ -152,9 +150,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.8s cubic-bezier(0.36, 1, 0.86, 1);
+        transition: transform 0.5s cubic-bezier(0.36, 1, 0.86, 1);
         backface-visibility: hidden;
-        transition: transform 0.8s cubic-bezier(0.36, 1, 0.86, 1);
+        transition: transform 0.5s cubic-bezier(0.36, 1, 0.86, 1);
       }
     }
   }

@@ -1,8 +1,3 @@
-@use "../../app/styles/mixins.scss" as *;
-@use "../../app/styles/vars.scss" as *;
-@use "../../shared/components/swiper-nav/button-next/button-next.scss" as *;
-@use "../../shared/components/swiper-nav/button-prev/button-prev.scss" as *;
-
 .pagination {
   display: flex;
   justify-content: center;
@@ -48,7 +43,7 @@
     height: vw-laptop(24);
     flex-shrink: 0;
 
-    @media screen and (min-width: 1512px) {
+    @include laptop-1512 {
       width: 24px;
       height: 24px;
     }

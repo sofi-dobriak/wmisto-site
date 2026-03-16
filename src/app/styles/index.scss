@@ -1,3 +1,31 @@
 @use "./reset";
 @use "./fonts";
 @use "./base";
+
+@import "@/shared/components/swiper-nav/swiper-nav.scss";
+@import "@/shared/components/general-btn/general-btn.scss";
+@import "@/shared/components/back-link/back-link.scss";
+@import "@/shared/components/construction-card/construction-card.scss";
+@import "@/shared/components/docs_card/docs_card.scss";
+@import "@/shared/components/news-card/news-card.scss";
+@import "@/shared/components/popup/popup.scss";
+@import "@/shared/components/swiper-nav/button-next/button-next.scss";
+@import "@/shared/components/swiper-nav/button-prev/button-prev.scss";
+
+@import "@/widgets/form-section/form-section.scss";
+@import "@/widgets/call-popup/call-popup.scss";
+@import "@/widgets/contacts-section/contacts-section.scss";
+@import "@/widgets/menu/menu.scss";
+@import "@/widgets/pdf-popup/pdf-popup.scss";
+@import "@/widgets/pagination/pagination.scss";
+@import "@/widgets/success-popup/success-popup.scss";
+@import "@/widgets/form/form.scss";
+@import "@/widgets/header/header.scss";
+@import "@/widgets/footer/footer.scss";
+
+@import "@pages/home/home.scss";
+@import "@/pages/construction-progress/construction-progress.scss";
+@import "@/pages/news/news.scss";
+@import "@pages/news-single/news-single.scss";
+@import "@pages/not-found/not-found.scss";
+@import "@/pages/progress-single/progress-single.scss";

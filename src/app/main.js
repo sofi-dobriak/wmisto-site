@@ -14,3 +14,11 @@ import "@shared/scripts/scroll/leniscroll";
 const modules = import.meta.glob(["../widgets/**/*.js", "../features/**/*.js", "../shared/ui/**/*.js"], {
   eager: true,
 });
+
+window.addEventListener("load", () => {
+  document.documentElement.classList.remove("is-loading");
+});
+
+setTimeout(() => {
+  document.documentElement.classList.remove("is-loading");
+}, 3000);

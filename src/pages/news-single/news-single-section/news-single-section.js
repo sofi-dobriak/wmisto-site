@@ -1,7 +1,3 @@
-import "./news-single-section.scss";
-import "@/shared/components/back-link/back-link.scss";
-import "../news-single-more-cards/news-single-more-cards";
-
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -13,7 +9,7 @@ export const initNewsSwiper = () => {
 
   new Swiper(swiperElement, {
     modules: [Navigation],
-    speed: 400,
+    speed: 500,
     slidesPerView: 1,
     loop: false,
     navigation: {

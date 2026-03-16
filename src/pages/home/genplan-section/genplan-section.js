@@ -1,1 +1,1 @@
-import "./genplan-section.scss";
+

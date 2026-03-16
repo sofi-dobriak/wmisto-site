@@ -1,7 +1,3 @@
-import "./about-section.scss";
-import "@/shared/components/swiper-nav/swiper-nav.scss";
-import "@/shared/components/general-btn/general-btn.scss";
-
 import Swiper from "swiper";
 import { EffectFade, Controller } from "swiper/modules";
 import "swiper/css";
@@ -41,7 +37,7 @@ const animateCounter = (currentEl, nextEl, countBlock, realIndex) => {
   setTimeout(() => {
     currentEl.textContent = nextNumber;
     countBlock.classList.remove("is-changing");
-  }, 800);
+  }, 500);
 };
 
 // ─── Swipers ─────────────────────────────────────────────────────────────────
@@ -50,7 +46,7 @@ const initTextSwiper = () =>
   new Swiper(".about-text-swiper", {
     modules: [EffectFade, Controller],
     allowTouchMove: false,
-    speed: 600,
+    speed: 500,
     effect: "fade",
     fadeEffect: { crossFade: true },
     loop: true,
@@ -62,7 +58,7 @@ const initBigSwiper = (textSwiper, els) => {
   const swiper = new Swiper(".slider-big", {
     modules: [Controller],
     allowTouchMove: false,
-    speed: 1000,
+    speed: 500,
     observer: true,
     observeParents: true,
     watchOverflow: true,
@@ -87,7 +83,7 @@ const initBigSwiper = (textSwiper, els) => {
 const initSmallSwiper = () =>
   new Swiper(".slider-small", {
     allowTouchMove: false,
-    speed: 1000,
+    speed: 500,
     observer: true,
     observeParents: true,
     watchOverflow: true,

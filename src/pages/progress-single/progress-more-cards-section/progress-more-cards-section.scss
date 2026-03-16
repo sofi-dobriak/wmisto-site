@@ -1,9 +1,4 @@
-@use "/src/app/styles/mixins.scss" as *;
-@use "/src/app/styles/vars.scss" as *;
-@use "@/shared/components/construction-card/construction-card.scss";
-
 .progress-more-section {
-  // padding-top: vw(200);
   padding-bottom: vw(200);
 
   .progress-more-title {

@@ -15,7 +15,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.36, 1, 0.86, 1);
 
   &.is-active {
     opacity: 1;

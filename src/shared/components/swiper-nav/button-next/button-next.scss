@@ -9,12 +9,12 @@
   justify-content: center;
   padding: vw(20);
   border-radius: 100%;
-  transition: all 0.4s ease-in-out;
+  transition: $transition;
   cursor: pointer;
 
   svg {
     fill: $white;
-    transition: all 0.4s ease-in-out;
+    transition: $transition;
   }
 
   &.button-next svg {

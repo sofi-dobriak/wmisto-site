@@ -1,5 +1,3 @@
-import "./pdf-popup.scss";
-
 import { initPopups } from "@/shared/components/popup/popup";
 
 const initPdfPopup = () => {

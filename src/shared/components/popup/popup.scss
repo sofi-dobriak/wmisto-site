@@ -11,9 +11,8 @@
   background-color: rgba(0, 0, 0, 0);
   visibility: hidden;
   pointer-events: none;
-  transition:
-    background-color 0.6s cubic-bezier(0.36, 1, 0.86, 1),
-    visibility 0.6s cubic-bezier(0.36, 1, 0.86, 1);
+
+  transition: $transition;
 
   &.is-open {
     background-color: rgba(0, 0, 0, 0.5);
@@ -26,7 +25,7 @@
   }
 
   &.js-inited .popup-content {
-    transition: transform 0.6s cubic-bezier(0.36, 1, 0.86, 1);
+    transition: $transition;
   }
 
   .popup-content {
@@ -41,7 +40,7 @@
     flex-direction: column;
     max-width: vw-laptop(480);
 
-    @media screen and (min-width: 1512px) {
+    @include laptop-1512 {
       max-width: 480px;
     }
 
@@ -64,7 +63,7 @@
 
         &.real {
           display: block;
-          transition: all 0.4s ease-in-out;
+          transition: $transition;
           transform: translateY(0%);
         }
 
@@ -73,7 +72,7 @@
           top: 0;
           left: 0;
           transform: translateY(105%);
-          transition: all 0.4s ease-in-out;
+          transition: $transition;
         }
       }
 

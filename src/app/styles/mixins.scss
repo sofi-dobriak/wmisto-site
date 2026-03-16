@@ -50,6 +50,30 @@
   @return #{($lh/$fz)}em;
 }
 
+@mixin laptop-1512 {
+  @media screen and (min-width: 1512px) {
+    @content;
+  }
+}
+
+@mixin to-desktop() {
+  @media screen and (max-width: 1919px) {
+    @content;
+  }
+}
+
+@mixin to-laptop() {
+  @media screen and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin to-tablet() {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 @mixin tablet() {
   @media screen and (width >= 768px) {
     @content;
@@ -64,18 +88,6 @@
 
 @mixin desktop() {
   @media screen and (width >= 1920px) {
-    @content;
-  }
-}
-
-@mixin from($min_width) {
-  @media screen and (min-width: $min_width) {
-    @content;
-  }
-}
-
-@mixin to($max_width) {
-  @media screen and (max-width: $max_width) {
     @content;
   }
 }
@@ -200,7 +212,7 @@
   letter-spacing: -0.06em;
   text-decoration: none;
 
-  @media screen and (min-width: 1512px) {
+  @include laptop-1512 {
     font-size: 14px;
   }
 }
@@ -269,7 +281,7 @@
   line-height: 140%; /* 28px */
   letter-spacing: -0.8px;
 
-  @media screen and (min-width: 1512px) {
+  @include laptop-1512 {
     font-size: 20px;
   }
 }
@@ -282,7 +294,7 @@
   line-height: 140%; /* 28px */
   letter-spacing: -0.8px;
 
-  @media screen and (min-width: 1512px) {
+  @include laptop-1512 {
     font-size: 20px;
   }
 }
@@ -295,7 +307,7 @@
   line-height: 140%; /* 22.4px */
   letter-spacing: -0.64px;
 
-  @media screen and (min-width: 1512px) {
+  @include laptop-1512 {
     font-size: 16px;
   }
 }

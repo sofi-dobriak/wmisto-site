@@ -1,4 +1,3 @@
-import "./menu.scss";
 import { initPopups } from "@/shared/components/popup/popup";
 
 const initMenu = () => {

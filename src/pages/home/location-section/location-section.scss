@@ -86,7 +86,7 @@
       flex-shrink: 0;
       margin-bottom: vw(20);
 
-      @media screen and (min-width: 1512px) {
+      @include laptop-1512 {
         max-width: 256px;
       }
     }

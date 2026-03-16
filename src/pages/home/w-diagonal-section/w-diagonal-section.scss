@@ -1,5 +1,4 @@
 .w-diagonal-section {
-  // height: calc(100vh - 100px);
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -15,7 +14,7 @@
     position: relative;
 
     .slider-block {
-      height: 100%;
+      height: vw(666);
       width: 100%;
 
       .w-diagonal-swiper {
@@ -24,14 +23,17 @@
         .swiper-wrapper {
           .swiper-slide {
             height: 100%;
-            max-height: vw(666);
             overflow: hidden;
+            position: relative;
 
             .slider-img-wrapper {
-              width: 120%;
               height: 100%;
-              position: relative;
-              left: -10%;
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
 
               .slider-img {
                 width: 100%;

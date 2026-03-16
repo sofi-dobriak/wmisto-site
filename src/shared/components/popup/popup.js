@@ -2,6 +2,7 @@ import "./popup.scss";
 
 export const initPopups = () => {
   const backdrops = document.querySelectorAll(".js-backdrop");
+  if (!backdrops) return;
 
   backdrops.forEach((backdrop) => {
     setTimeout(() => backdrop.classList.add("js-inited"), 100);

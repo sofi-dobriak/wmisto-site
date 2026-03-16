@@ -1,1 +1,1 @@
-import "./hero-section.scss";
+

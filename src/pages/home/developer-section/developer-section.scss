@@ -8,9 +8,6 @@
     top: 50%;
     transform: translateY(-50%);
     left: 0;
-
-    .developer-image {
-    }
   }
 
   .developer-card-block {
@@ -26,7 +23,7 @@
     gap: vw(40);
     margin: auto;
 
-    @media screen and (min-width: 1512px) {
+    @include laptop-1512 {
       width: 620px;
       padding: 60px;
     }
@@ -57,9 +54,6 @@
       @include font-h4-regular;
       color: $black;
       text-align: center;
-    }
-
-    .developer-link {
     }
   }
 }
