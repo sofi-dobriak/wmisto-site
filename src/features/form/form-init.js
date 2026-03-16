@@ -86,7 +86,7 @@ const configureForm = (formRef, onSuccess) => {
           }),
           rule: yup
             .string()
-            .required(i18next.t("only_number"))
+            .required(i18next.t("required"))
             .min(17, i18next.t("field_too_short", { cnt: 19 - 7 })),
           defaultMessage: i18next.t("phone"),
           valid: false,
@@ -163,7 +163,7 @@ const configureFormFooter = (formRef, onSuccess) => {
           }),
           rule: yup
             .string()
-            .required(i18next.t("only_number"))
+            .required(i18next.t("required"))
             .min(17, i18next.t("field_too_short", { cnt: 19 - 7 })),
           defaultMessage: i18next.t("phone"),
           valid: false,
@@ -221,7 +221,7 @@ const configurePartnershipForm = (formRef, onSuccess) => {
           }),
           rule: yup
             .string()
-            .required(i18next.t("only_number"))
+            .required(i18next.t("required"))
             .min(17, i18next.t("field_too_short", { cnt: 19 - 7 })),
           defaultMessage: i18next.t("phone"),
           valid: false,
