@@ -1,4 +1,4 @@
-include ../../shared/components/general-btn/general-btn.pug
+include /shared/components/general-btn/general-btn.pug
 
 mixin header
   header.header
@@ -54,15 +54,12 @@ mixin header
 
       +general-btn({ text: 'Зворотній дзвінок', type: 'button' })
 
-      button(type="button").burger-btn
+      button(type="button").burger-btn.js-burger-btn
         span.burger-text.real Меню
         span.burger-text.fake Меню
         svg.burger-icon
           use(href="/images/icons.svg#icon-burger-expand")
-
   
-
-
-
+  +menu()
 
   

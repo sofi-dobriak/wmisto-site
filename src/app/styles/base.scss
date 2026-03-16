@@ -1,6 +1,10 @@
 @use "./vars.scss" as *;
 @use "./mixins.scss" as *;
 
+* {
+  scroll-behavior: smooth;
+}
+
 html {
   height: 100%;
 }
