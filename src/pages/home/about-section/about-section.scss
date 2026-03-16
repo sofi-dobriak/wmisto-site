@@ -97,7 +97,7 @@
 
         &.is-changing {
           span {
-            transition: $transition;
+            transition: $counter-transition;
           }
 
           .current {

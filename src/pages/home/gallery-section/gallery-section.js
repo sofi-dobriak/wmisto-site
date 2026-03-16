@@ -5,7 +5,7 @@ import "swiper/css/effect-fade";
 
 const swiper = new Swiper(".gallery-swiper", {
   modules: [Navigation],
-  speed: 500,
+  speed: 800,
   slidesPerView: 3,
   spaceBetween: 20,
   navigation: {

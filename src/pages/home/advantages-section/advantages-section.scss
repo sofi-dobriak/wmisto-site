@@ -63,7 +63,7 @@
 
       &.is-changing {
         span {
-          transition: transform 0.5s cubic-bezier(0.36, 1, 0.86, 1);
+          transition: $counter-transition;
         }
 
         .current {
@@ -116,7 +116,6 @@
     width: 100%;
     display: flex;
     align-items: start;
-    // height: calc((480 / 1512) * 100vw);
     height: vw(760);
 
     .advantages-item {
@@ -125,9 +124,7 @@
       width: vw(380);
       height: vw(380);
       cursor: pointer;
-      transition:
-        width 0.5s cubic-bezier(0.36, 1, 0.86, 1),
-        height 0.5s cubic-bezier(0.36, 1, 0.86, 1);
+      transition: $counter-transition;
       will-change: width, height;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
@@ -150,9 +147,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s cubic-bezier(0.36, 1, 0.86, 1);
+        transition: $counter-transition;
         backface-visibility: hidden;
-        transition: transform 0.5s cubic-bezier(0.36, 1, 0.86, 1);
+        transition: $counter-transition;
       }
     }
   }

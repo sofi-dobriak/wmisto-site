@@ -9,7 +9,7 @@ export const initNewsSwiper = () => {
 
   new Swiper(swiperElement, {
     modules: [Navigation],
-    speed: 500,
+    speed: 800,
     slidesPerView: 1,
     loop: false,
     navigation: {

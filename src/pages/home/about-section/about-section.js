@@ -37,7 +37,7 @@ const animateCounter = (currentEl, nextEl, countBlock, realIndex) => {
   setTimeout(() => {
     currentEl.textContent = nextNumber;
     countBlock.classList.remove("is-changing");
-  }, 500);
+  }, 800);
 };
 
 // ─── Swipers ─────────────────────────────────────────────────────────────────
@@ -46,7 +46,7 @@ const initTextSwiper = () =>
   new Swiper(".about-text-swiper", {
     modules: [EffectFade, Controller],
     allowTouchMove: false,
-    speed: 500,
+    speed: 800,
     effect: "fade",
     fadeEffect: { crossFade: true },
     loop: true,
@@ -58,7 +58,7 @@ const initBigSwiper = (textSwiper, els) => {
   const swiper = new Swiper(".slider-big", {
     modules: [Controller],
     allowTouchMove: false,
-    speed: 500,
+    speed: 800,
     observer: true,
     observeParents: true,
     watchOverflow: true,
@@ -83,7 +83,7 @@ const initBigSwiper = (textSwiper, els) => {
 const initSmallSwiper = () =>
   new Swiper(".slider-small", {
     allowTouchMove: false,
-    speed: 500,
+    speed: 800,
     observer: true,
     observeParents: true,
     watchOverflow: true,

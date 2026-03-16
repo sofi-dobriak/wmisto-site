@@ -47,7 +47,7 @@ const animateCounter = (currentEl, nextEl, countBlock, realIndex) => {
   setTimeout(() => {
     currentEl.textContent = nextNumber;
     countBlock.classList.remove("is-changing");
-  }, 500);
+  }, 800);
 };
 
 // ─── Translate ───────────────────────────────────────────────────────────────
@@ -74,7 +74,7 @@ const initTextSwiper = () =>
   new Swiper(".advantages-text-block", {
     modules: [EffectFade, Controller],
     allowTouchMove: false,
-    speed: 500,
+    speed: 800,
     initialSlide: 2,
     effect: "fade",
     fadeEffect: { crossFade: true },
@@ -87,7 +87,7 @@ const initMainSwiper = (swiper_text, els) => {
     modules: [Navigation, Controller],
     slidesPerView: "auto",
     spaceBetween: window.innerWidth <= 767 ? 10 : window.innerWidth <= 1023 ? 16 : 20,
-    speed: 500,
+    speed: 800,
     watchSlidesProgress: true,
     initialSlide: 2,
     centeredSlides: true,
@@ -123,14 +123,14 @@ const bindNavButtons = (swiper, prevBtn, nextBtn) => {
   prevBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     if (swiper.activeIndex > 0) {
-      swiper.slideTo(swiper.activeIndex - 1, 500);
+      swiper.slideTo(swiper.activeIndex - 1, 800);
     }
   });
 
   nextBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     if (swiper.activeIndex < swiper.slides.length - 1) {
-      swiper.slideTo(swiper.activeIndex + 1, 500);
+      swiper.slideTo(swiper.activeIndex + 1, 800);
     }
   });
 };
