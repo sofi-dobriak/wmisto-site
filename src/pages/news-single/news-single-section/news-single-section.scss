@@ -89,7 +89,7 @@
       margin-bottom: vw(40);
 
       .news-single-item {
-        @include font-h4-regular;
+        @include font-body;
         color: $black;
         position: relative;
         padding-left: vw(40);

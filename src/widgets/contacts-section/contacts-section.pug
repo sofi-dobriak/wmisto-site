@@ -70,11 +70,7 @@ mixin contacts
                   li.contacts-social-item
                     a(href=item.href target="_blank").contacts-social-link
                       .contacts-social-link-content
-                        .contacts-social-item-inner.real
-                          svg.contacts-social-icon
-                            use(href=`/images/icons.svg#icon-${item.icon}`)
-                          span.contacts-social-text= item.text
-                        .contacts-social-item-inner.fake
+                        .contacts-social-item-inner
                           svg.contacts-social-icon
                             use(href=`/images/icons.svg#icon-${item.icon}`)
                           span.contacts-social-text= item.text

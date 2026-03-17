@@ -150,25 +150,6 @@
                 color: $black;
               }
             }
-
-            .real {
-              transform: translateY(0%);
-            }
-            .fake {
-              position: absolute;
-              top: 0;
-              left: 0;
-              transform: translateY(105%);
-            }
-
-            &:hover {
-              .real {
-                transform: translateY(-105%);
-              }
-              .fake {
-                transform: translateY(0%);
-              }
-            }
           }
         }
       }
