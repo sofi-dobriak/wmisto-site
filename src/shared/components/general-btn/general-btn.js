@@ -1,1 +1,0 @@
-import "./general-btn.scss";

@@ -35,7 +35,7 @@
   padding: vw(40) vw(20);
   position: relative;
   border: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out !important;
 
   &__top {
     display: flex;
@@ -51,6 +51,7 @@
     padding: vw(20);
     position: relative;
     margin-bottom: vw(12);
+    transition: all 0.2s ease-in-out;
 
     &-label {
       position: absolute;
@@ -105,19 +106,15 @@
   }
 
   @media (hover: hover) {
-    transition: 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+
     &:hover {
       border-color: $black;
     }
 
     &__image-wrap,
     &__image {
-      transition: 0.25s ease-in-out;
-    }
-
-    &__image-wrap &:hover &__image,
-    &:hover {
-      border-color: var(--color-yellow);
+      transition: all 0.25s ease-in-out;
     }
 
     &:hover &__image-wrap {

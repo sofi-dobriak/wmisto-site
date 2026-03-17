@@ -1,9 +1,19 @@
 import Swiper from "swiper";
-import { Navigation, Parallax, EffectFade } from "swiper/modules";
+import { Navigation, Parallax } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 document.addEventListener("DOMContentLoaded", () => {
+  initDiagonalSwiper();
+  initDiagonalAnim();
+});
+
+function initDiagonalSwiper() {
   const swiper = new Swiper(".w-diagonal-swiper", {
     modules: [Navigation, Parallax],
     speed: 1200,
@@ -15,4 +25,32 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: ".w-diagonal-button-next",
     },
   });
-});
+}
+
+function initDiagonalAnim() {
+  const section = document.querySelector(".w-diagonal-section");
+  if (!section) return;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top 70%",
+      toggleActions: "play none none none",
+    },
+  });
+
+  tl.fromTo(
+    [".w-diagonal-title", ".w-diagonal-icon", ".w-diagonal-list"],
+    {
+      opacity: 0,
+      y: 80,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: "power2.out",
+      stagger: 0.4,
+    },
+  );
+}

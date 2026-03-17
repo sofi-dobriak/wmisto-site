@@ -1,9 +1,5 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Swiper from "swiper";
-import { Navigation, Autoplay } from "swiper/modules";
-
-import "./home.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 

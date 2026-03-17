@@ -95,7 +95,6 @@
       .grid-item-title {
         @include font-h3;
         margin: 0;
-        transition: $transition;
       }
 
       .grid-item-area {
@@ -123,7 +122,7 @@
           object-fit: cover;
           object-position: center;
           will-change: transform;
-          transition: $transition;
+          transition: $transition-long;
         }
       }
     }
