@@ -1,0 +1,36 @@
+include /widgets/pagination/pagination.pug
+
+.plannings__list(data-planning-list data-not-found-title="Планування не знайдено")
+  for val in []
+    a(href="#").planning-card
+      .planning-card__top 2-к / 247.4 м²
+      .planning-card__image
+        img(src="/images/eoselya.svg").planning-card__image-label
+        .planning-card__image-wrap
+          img(src="/images/test-plan.png", alt="", srcset="")
+      .planning-card__bottom Будинок: 3 Секція: 2 Поверх: 15
+
+.plannings__load-more
+  +pagination()(data-pagination)
+
+template#empty-planning-list
+  .empty-planning-list
+    .empty-planning-list__text
+      | Планування не знайдено
+
+template#flat-card-template
+  a.planning-card(href='/single-flat?id={{id}}' data-id='{{id}}')
+    .planning-card__image
+      .planning-card__image-wrap
+        img(src='{{img_big}}' loading='lazy' alt='' onerror='this.style.opacity = 0;')
+    .planning-card__middle
+      .planning-card__middle__title {{rooms}}-к
+      span /
+      .planning-card__middle__title {{area}} м²
+    .planning-card__bottom
+      .planning-card__bottom-group
+        | Секція:&nbsp; {{section}}
+      .planning-card__bottom-group
+        | Будинок:&nbsp; {{build}}
+      .planning-card__bottom-group
+        | Поверх:&nbsp; {{floor}}

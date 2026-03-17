@@ -1,0 +1,29 @@
+extends /../index.pug
+
+block variable
+  -
+    var title_page = 'Планування'
+    var id_page = 'id-page-plannings'
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+
+block header
+  +header() 
+
+block content
+  section.plannings-section
+    h1.plannings-title Планування
+
+    .plannings__content
+        include ./plannings-filter/plannings-filter.pug
+        include ./plannings-catalog/plannings-catalog.pug
+        
+  +contacts()
+
+block footer
+  +footer()
+
+block scripts
+  script(type="module" src="/src/pages/plannings/plannings.js")

@@ -29,3 +29,16 @@ $screen-height: 720;
 
 $transition: all 0.5s cubic-bezier(0.36, 1, 0.86, 1);
 $counter-transition: all 0.8s cubic-bezier(0.36, 1, 0.86, 1);
+
+:root {
+  --color-ffffff: rgba(255, 255, 255, 1);
+  --color-white: rgba(219, 226, 234, 1);
+  --color-body-description: rgba(153, 159, 164, 1);
+  --color-gray: rgba(77, 88, 88, 1);
+  --color-red: rgba(228, 3, 44, 1);
+  --color-black: rgba(16, 24, 32, 1);
+  --color-deep-black: rgba(9, 16, 22, 1);
+  --page-side-fields: 20px;
+  --section-v-offset: 200px;
+  --header-h: 88px;
+}

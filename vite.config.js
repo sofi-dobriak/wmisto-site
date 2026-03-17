@@ -8,7 +8,7 @@ import { exec } from "child_process";
 
 const entryPoints = glob.sync(["index.pug", "src/pages/**/*.pug"]).reduce((acc, path) => {
   const name = basename(path, ".pug");
-  const key = `${name}.html`;
+  const key = name === "index" ? "index.html" : `${name}.html`;
   acc[key] = resolve(__dirname, path);
   return acc;
 }, {});
@@ -46,12 +46,16 @@ function generateAutoIncludes() {
 }
 
 export default defineConfig({
+  optimizeDeps: {
+    entries: ["src/app/index.js", "src/pages/**/*.js"],
+    include: ["jquery", "ion-rangeslider"],
+  },
   plugins: [
-    iconsSpritesheet({
-      inputDir: "./src/shared/icons",
-      outputDir: "./public",
-      fileName: "icons.svg",
-    }),
+    // iconsSpritesheet({
+    //   inputDir: "./src/shared/icons",
+    //   outputDir: "./public",
+    //   fileName: "icons.svg",
+    // }),
     {
       name: "vite-plugin-auto-build",
       apply: "serve",

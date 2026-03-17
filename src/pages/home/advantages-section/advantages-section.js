@@ -80,8 +80,8 @@ const initTextSwiper = () =>
     fadeEffect: { crossFade: true },
   });
 
-const initMainSwiper = (swiper_text, els) => {
-  const { currentEl, nextEl, countBlock } = els;
+const initMainSwiper = (swiper_text, elements) => {
+  const { currentEl, nextEl, countBlock } = elements;
 
   return new Swiper(".advantages-swiper", {
     modules: [Navigation, Controller],
@@ -138,20 +138,20 @@ const bindNavButtons = (swiper, prevBtn, nextBtn) => {
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
 function initAdvantagesSwiper() {
-  const els = getElements();
+  const elements = getElements();
 
-  if (!els.swiperElement) {
+  if (!elements.swiperElement) {
     console.error("Swiper element not found");
     return;
   }
 
-  const totalSlides = els.swiperElement.querySelectorAll(".swiper-slide").length;
-  initCounter(els.totalEl, totalSlides);
+  const totalSlides = elements.swiperElement.querySelectorAll(".swiper-slide").length;
+  initCounter(elements.totalEl, totalSlides);
 
   const swiper_text = initTextSwiper();
-  const swiper = initMainSwiper(swiper_text, els);
+  const swiper = initMainSwiper(swiper_text, elements);
 
-  bindNavButtons(swiper, els.prevBtn, els.nextBtn);
+  bindNavButtons(swiper, elements.prevBtn, elements.nextBtn);
 }
 
 document.addEventListener("DOMContentLoaded", () => initAdvantagesSwiper());

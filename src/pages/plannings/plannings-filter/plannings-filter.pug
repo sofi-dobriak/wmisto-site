@@ -1,0 +1,53 @@
+.plannings__filter.js-s3d-filter.js-s3d-filter__checkboxes(data-filter)
+  .plannings__filter-group
+    div.plannings__filter-group-title Кімнатність:
+    label.planning-checkbox(for="rooms1")
+      input#rooms1(type="checkbox" name="" value="1" data-type="roomsforfilter" data-roomsforfilter="1")
+      span 1к
+    label.planning-checkbox(for="rooms2")
+      input#rooms2(type="checkbox" name="" value="2" data-type="roomsforfilter" data-roomsforfilter="2")
+      span 2к
+    label.planning-checkbox(for="rooms3")
+      input#rooms3(type="checkbox" name="" value="3" data-type="roomsforfilter" data-roomsforfilter="3")
+      span 3к
+    label.planning-checkbox(for="section")
+      input#section(type="checkbox", name="" value="section" data-type="section" data-section="1")
+      span Секція
+    label.planning-checkbox(for="terrace")
+      input#terrace(type="checkbox", name="" value="terrace" data-type="terrace" data-terrace="1")
+      span З терасою
+    label.planning-checkbox(for="penthouse")
+      input#penthouse(type="checkbox", name="" value="penthouse" data-type="penthouse" data-penthouse="1")
+      span Пентхаус
+    label.planning-checkbox(for="fountain")
+      input#fountain(type="checkbox", name="" value="fountain" data-type="fountain" data-fountain="1")
+      span З виглядом на фонтан
+    label.planning-checkbox(smart)
+      input#smart(type="checkbox", name="" value="smart" data-type="smart" data-smart="1")
+      span Смарт квартири
+
+  .plannings__filter-group.plannings__filter-group--range
+    <div class="Range js-filter-range">
+      <div class="Range__title plannings__filter-group-title">Площа</div>
+      <input class="Range__input Range__input--first" data-type="area" data-border="min" />
+      <input class="Range__input" data-type="area" data-border="max" />
+        <div class="Range__item ">
+          <input class="js-s3d-filter__area--input " data-type="area" data-min="30" data-max="250" data-from="30" data-to="250">
+        </div>
+    </div>
+
+  .plannings__filter-group.plannings__filter-group--range
+    <div class="Range js-filter-range">
+      <div class="Range__title plannings__filter-group-title">Поверх:</div>
+      <input class="Range__input Range__input--first" data-type="floor" data-border="min" />
+      <input class="Range__input" data-type="floor" data-border="max" />
+        <div class="Range__item ">
+          <input class="js-s3d-filter__floor--input " data-type="floor" data-min="2" data-max="18" data-from="2" data-to="18">
+        </div>
+    </div>
+
+  .planning-reset-button(id="resetFilter")
+    span Скинути фільтри
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.64645 3.64645C3.84171 3.45118 4.15829 3.45118 4.35355 3.64645L8 7.29289L11.6464 3.64645C11.8417 3.45118 12.1583 3.45118 12.3536 3.64645C12.5488 3.84171 12.5488 4.15829 12.3536 4.35355L8.70711 8L12.3536 11.6464C12.5488 11.8417 12.5488 12.1583 12.3536 12.3536C12.1583 12.5488 11.8417 12.5488 11.6464 12.3536L8 8.70711L4.35355 12.3536C4.15829 12.5488 3.84171 12.5488 3.64645 12.3536C3.45118 12.1583 3.45118 11.8417 3.64645 11.6464L7.29289 8L3.64645 4.35355C3.45118 4.15829 3.45118 3.84171 3.64645 3.64645Z" fill="#EFF0F7"/>
+    </svg>

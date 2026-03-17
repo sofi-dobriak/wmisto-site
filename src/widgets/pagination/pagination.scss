@@ -3,39 +3,22 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: vw(140);
 
   &__utility {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: vw(48);
     justify-content: center;
     width: 100%;
     max-width: 343px;
-
-    @include tablet {
-      gap: 32px;
-    }
-
-    @include laptop {
-      gap: vw(48);
-    }
   }
 
   &__more {
     @include font-h4-semibold;
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 40px;
-
-    @include tablet {
-      margin-top: 32px;
-    }
-
-    @include laptop {
-      margin-top: vw(40);
-    }
+    gap: vw(12);
+    margin-top: vw(40);
   }
 
   &__icon {
@@ -52,25 +35,14 @@
   .pagination-count {
     display: flex;
     align-items: center;
-    gap: 12px;
-
-    @include laptop {
-      gap: vw(12);
-    }
+    gap: vw(12);
 
     &__current {
       @include font-h4-regular;
-      padding: 12px 24px;
       color: $black;
-
-      @include tablet {
-        padding: 22px 48px;
-      }
-
-      @include laptop {
-        padding: vw(12) vw(24);
-        gap: vw(56);
-      }
+      background-color: transparent;
+      border: none;
+      max-width: 28px;
     }
 
     &__max {

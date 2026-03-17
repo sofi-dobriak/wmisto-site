@@ -1,17 +1,33 @@
 include ../../shared/components/swiper-nav/button-prev/button-prev.pug
 include ../../shared/components/swiper-nav/button-next/button-next.pug
 
-mixin pagination()
+mixin pagination(options = {})
+  //- attributes — сюди прилетить (data-pagination)
   .pagination&attributes(attributes)
     .pagination__utility 
-      +button-prev.pagination__prev(disabled)
+      +button-prev.pagination__prev(disabled data-pagination="prev")
+      
       .pagination-count
-        .pagination-count__current 01
-        <svg class="pagination-count__decor" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 32 54" fill="none">
-          <rect x="30.5" y="1" width="1" height="60" transform="rotate(30 30.5 1)" fill="#D4D1CA"/>
-        </svg>
-        .pagination-count__max з 59 сторінок
-      +button-next.pagination__next
-    button.pagination__more Завантажити ще
+        //- JS шукає [name="pagination-current"]
+        input.pagination-count__current(
+          type="text" 
+          name="pagination-current" 
+          value="01" 
+          readonly
+        )
+        
+        svg.pagination-count__decor(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 54" fill="none")
+          rect(x="30.5" y="1" width="1" height="60" transform="rotate(30 30.5 1)" fill="#D4D1CA")
+        
+        .pagination-count__max з 
+          //- JS знайде цей span і замінить "..." на реальну цифру (totalPages)
+          span(data-planning-pages-count) ... 
+          |  сторінок
+          
+      +button-next.pagination__next(data-pagination="next")
+
+    //- Кнопка "Завантажити ще"
+    button.pagination__more(type="button" data-more) 
+      span Завантажити ще
       svg.pagination__icon 
         use(href="/images/icons.svg#icon-arrow")

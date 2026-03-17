@@ -332,3 +332,239 @@
   line-height: 80%; /* 160px */
   letter-spacing: -12px;
 }
+
+// !YARKOVYTSYA
+
+@mixin text-style-1920-h-1() {
+  font-size: 120px;
+  @media screen and (min-width: 1025px) {
+    font-size: Min(120px, pxWidthInVw(120));
+  }
+  font-family: Inter Tight;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 90%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin text-style-1920-h-2() {
+  font-size: 60px;
+  @media screen and (min-width: 1025px) {
+    font-size: Min(60px, pxWidthInVw(60));
+  }
+  font-family: Inter Tight;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin text-style-1920-h-3() {
+  font-size: 36px;
+  @media screen and (min-width: 1025px) {
+    font-size: Min(36px, pxWidthInVw(36));
+  }
+  font-family: Inter Tight;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin text-style-1920-h-4() {
+  font-size: 24px;
+  @media screen and (min-width: 1025px) {
+    font-size: Min(24px, pxWidthInVw(24));
+  }
+  font-family: Inter Tight;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin text-style-1920-body() {
+  font-size: 16px;
+  @media screen and (min-width: 1025px) {
+    font-size: Min(16px, pxWidthInVw(16));
+  }
+  font-family: Inter Tight;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin text-style-1920-tiny() {
+  font-size: 12px;
+  font-family: Inter Tight;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin text-style-1920-decorative() {
+  font-size: 100px;
+  @media screen and (min-width: 1025px) {
+    font-size: Min(100px, pxWidthInVw(100));
+  }
+  font-family: Comforter;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin text-style-768-h-1() {
+  @media screen and (max-width: 1024px) {
+    font-size: 60px;
+    font-family: Inter Tight;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 90%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@mixin text-style-768-h-2() {
+  @media screen and (max-width: 1024px) {
+    font-size: 48px;
+    font-family: Inter Tight;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@mixin text-style-768-h-3() {
+  @media screen and (max-width: 1024px) {
+    font-size: 24px;
+    font-family: Inter Tight;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@mixin text-style-768-h-4() {
+  @media screen and (max-width: 1024px) {
+    font-size: 20px;
+    font-family: Inter Tight;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 140%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@mixin text-style-768-decorative() {
+  @media screen and (max-width: 1024px) {
+    font-size: 64px;
+    font-family: Comforter;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@mixin text-style-375-h-1() {
+  @media screen and (max-width: 600px) {
+    font-size: 40px;
+    font-family: Inter Tight;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 90%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@mixin text-style-375-h-2() {
+  @media screen and (max-width: 600px) {
+    font-size: 28px;
+    font-family: Inter Tight;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@mixin text-style-375-h-3() {
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+    font-family: Inter Tight;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+@mixin text-style-375-decorative() {
+  @media screen and (max-width: 600px) {
+    font-size: 40px;
+    font-family: Comforter;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 120%;
+    text-decoration: none;
+    text-transform: none;
+  }
+}
+
+.text-style-1920-h-1 {
+  @include text-style-1920-h-1;
+}
+.text-style-1920-h-2 {
+  @include text-style-1920-h-2;
+}
+.text-style-1920-h-3 {
+  @include text-style-1920-h-3;
+}
+.text-style-1920-h-4 {
+  @include text-style-1920-h-4;
+}
+.text-style-1920-body {
+  @include text-style-1920-body;
+}
+.text-style-1920-tiny {
+  @include text-style-1920-tiny;
+}
+.text-style-1920-decorative {
+  @include text-style-1920-decorative;
+}
+.text-style-768-h-1 {
+  @include text-style-768-h-1;
+}
+.text-style-768-h-2 {
+  @include text-style-768-h-2;
+}
+.text-style-768-h-3 {
+  @include text-style-768-h-3;
+}
+.text-style-768-h-4 {
+  @include text-style-768-h-4;
+}
+.text-style-768-decorative {
+  @include text-style-768-decorative;
+}
+.text-style-375-h-1 {
+  @include text-style-375-h-1;
+}
+.text-style-375-h-2 {
+  @include text-style-375-h-2;
+}
+.text-style-375-h-3 {
+  @include text-style-375-h-3;
+}
+.text-style-375-decorative {
+  @include text-style-375-decorative;
+}
+
+@function vh_calc($px) {
+  @return calc($px / 1920) * 100vh;
+}
