@@ -5,7 +5,7 @@
   border-radius: 1000px;
   background-color: $brown;
   border: 1px solid $brown;
-  padding: vw-laptop(18) vw-laptop(28);
+  padding: vw(18) vw(28);
   position: relative;
   overflow: hidden;
   color: $white;
@@ -78,10 +78,6 @@
         color: $black;
       }
     }
-  }
-
-  @include laptop-1512 {
-    padding: 18px 28px;
   }
 
   .general-text {

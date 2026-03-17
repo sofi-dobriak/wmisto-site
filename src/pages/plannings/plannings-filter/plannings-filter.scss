@@ -1,8 +1,8 @@
 @import "/src/app/styles/smart-grid.scss";
 
 .plannings__filter {
-  width: calc(30% - var(--gap));
-  border: 1px solid$black;
+  width: calc(20% - var(--gap));
+  border: 1px solid $black;
   padding: vw(40) vw(20);
 
   &.collapsed {
@@ -28,7 +28,7 @@
   @include to(600px) {
     padding: 12px;
     border-radius: 20px;
-    border: 1px solid var(--White, #dbe2ea);
+    border: 1px solid $white;
     width: calc(100% - var(--page-side-fields) * 2);
     margin-left: auto;
     margin-right: auto;
@@ -52,6 +52,7 @@
     height: 35px;
     width: auto;
     margin-right: auto;
+
     @include to(1024px) {
       margin-right: 16px;
     }
@@ -63,30 +64,37 @@
     align-items: center;
     row-gap: 4px;
     column-gap: 4px;
+
     & > :first-child:not(img) {
       width: 100%;
       padding-left: 12px;
       padding-right: 12px;
+
       @include from(1025px) {
         margin-bottom: 12px;
       }
+
       @include to(1024px) {
         margin-bottom: 16px;
       }
+
       @include to(600px) {
       }
     }
+
     @include to(1024px) {
       width: 100%;
       &--range {
         width: calc(50% - var(--gap) * 0.5);
       }
     }
+
     @include from-to(601px, 1024px) {
       &--range {
         width: calc(40% - var(--gap));
       }
     }
+
     @include to(600px) {
       &--range {
         width: 100%;
@@ -176,9 +184,9 @@
   .irs {
     --irs-point: 15px;
     --irs-color-text: var(--color-black);
-    --irs-color-bg-line: var(--color-white);
+    --irs-color-bg-line: $white;
     --irs-color-bar: var(--color-black);
-    --irs-color-point: var(--color-white);
+    --irs-color-point: $white;
     --irs-color-point-stroke: var(--color-black);
     margin-bottom: -20px;
 
@@ -205,9 +213,9 @@
 
   &__title {
     width: 100%;
-    //   @include text-style-3-d-fonts-1920-body-regular;
     margin-bottom: var(--space-1);
     margin-bottom: 16px;
+
     @include to(600px) {
       padding-left: var(--page-side-fields);
       padding-right: var(--page-side-fields);
@@ -282,18 +290,19 @@
 .irs {
   --irs-height: 40px;
   --irs-point: 15px;
-  --irs-color-text: var(--color-white);
-  --irs-color-bg-line: var(--color-white);
-  --irs-color-bar: var(--color-white);
-  --irs-color-point: var(--color-white);
-  --irs-color-point-hover: var(--color-white);
-  --irs-color-point-stroke: var(--color-white);
+  --irs-color-text: $white;
+  --irs-color-bg-line: $white;
+  --irs-color-bar: $white;
+  --irs-color-point: $white;
+  --irs-color-point-hover: $white;
+  --irs-color-point-stroke: $white;
+
   height: var(--irs-height);
 
   &--flat .irs-line {
-    height: 2px;
+    height: 1px;
     top: calc(var(--irs-point) / 2);
-    background: var(--irs-color-bg-line);
+    background: $brown;
   }
 
   &--flat .irs-bar {
@@ -309,6 +318,7 @@
     border-radius: 50%;
     overflow: hidden;
     box-sizing: content-box;
+    background-color: $white;
     transition: transform 0.4s ease-in-out;
   }
 
@@ -318,7 +328,7 @@
     margin: 0;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: $white;
     border: 1px solid var(--irs-color-point-stroke);
   }
 
@@ -339,7 +349,7 @@
 
 .irs--flat .irs-handle.state_hover > i:first-child,
 .irs--flat .irs-handle:hover > i:first-child {
-  background-color: var(--color-white);
+  background-color: $white;
 }
 
 @media screen and (min-width: 1023px) {

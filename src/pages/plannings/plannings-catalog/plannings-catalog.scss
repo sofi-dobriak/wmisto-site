@@ -3,18 +3,18 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: max-content;
   gap: 20px;
-  width: calc(70% - var(--gap));
-  @include from-to(601px, 1024px) {
-    // width: calc(60% - var(--gap));
-  }
+  width: calc(80% - var(--gap));
+
   @include to(600px) {
     width: 100%;
     padding-left: var(--page-side-fields);
     padding-right: var(--page-side-fields);
   }
+
   @include to(1630px) {
     grid-template-columns: repeat(3, 1fr);
   }
+
   @include to(1395px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -32,39 +32,18 @@
 .planning-card {
   text-decoration: none;
   color: var(--color-body-description);
-
   padding: vw(40) vw(20);
   position: relative;
   border: 1px solid transparent;
   transition: all 0.2s ease-in-out;
 
-  // @include from-to(601px, 1024px) {
-  //   padding-left: 20px;
-  //   padding-right: 20px;
-  // }
-  // @include to(600px) {
-  //   padding-bottom: calc(12px + 46px + 20px);
-  // }
-
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     @include to(600px) {
       flex-direction: column-reverse;
-    }
-  }
-  &__label {
-    border-radius: 100px;
-    border: 1px solid var(--color-white);
-    padding: 8px 12px;
-    text-transform: uppercase;
-    color: var(--color-white);
-    @include text-style-1920-tiny;
-    text-transform: uppercase;
-    @include to(600px) {
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 
@@ -123,33 +102,6 @@
       align-items: center;
       text-transform: uppercase;
     }
-  }
-
-  .empty-planning-list .plannings-favourite-button {
-    @include to(600px) {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  .button-primary {
-    width: 100%;
-    justify-content: center;
-    @include to(600px) {
-      padding-left: 0;
-      padding-right: 0;
-      .button-primary__circle {
-        display: none;
-      }
-    }
-  }
-
-  .link-underlined {
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   @media (hover: hover) {

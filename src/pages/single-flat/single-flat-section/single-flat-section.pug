@@ -1,0 +1,73 @@
+include /shared/components/back-link/back-link.pug
+include /shared/components/general-btn/general-btn.pug
+
+.single-flat__top
+  +back-link('/plannings.html')
+
+  .single-flat__title-tabs-block
+    .single-flat__title
+      span 2-к
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 54" fill="none">
+        <rect x="30.5" y="1" width="1" height="60" transform="rotate(30 30.5 1)" fill="#D4D1CA"/>
+      </svg>
+      span 247.4 м
+    
+    .single-flat__tabs
+      .tab(data-flat-image="/images/single-flat/single-flat-img.png").active
+        span Планування
+      .tab(data-flat-image="/images/single-flat/single-flat-genplan.png")
+        span На генплані
+  
+.single-flat__info
+  div.text-style-1920-body-titles.single-flat__info-group 
+    .single-flat__info__label 
+      span.single-flat__info__label__num 3
+      span.single-flat__info__label__desc Черга
+    .single-flat__info__label
+      span.single-flat__info__label__num 3
+      span.single-flat__info__label__desc Секція
+  svg.single-flat__info__icon-sign
+    use(href="/images/icons.svg#icon-sign")
+  .single-flat__info-group
+    .single-flat__info-group__description 
+      span Планування також зустрічається на таких поверхах:
+      span 7, 8, 12, 18, 19        
+  .single-flat__info-group.hide-on-mobile
+    +general-btn({ text: 'Забронювати', type: 'button', customClass:'button-main js-call-popup-open'})
+
+.single-flat__images
+  .single-flat__image-block
+    .single-flat__image-block-wrap
+      img(src="/images/single-flat/single-flat-img.png", alt="flat image", srcset="" loading="lazy" data-flat-image-container)
+
+-
+  const flatSpecs = [
+    { title: 'Гардеробна:', value: '5.87 м²' },
+    { title: 'Пральня/підсобне приміщення:', value: '5.47 м²' },
+    { title: 'Ванна кімната:', value: '5.41 м²' },
+    { title: 'Коридор:', value: '5.82 м²' },
+    { title: 'Сходи:', value: '8.95 м²' },
+    { title: 'Садова зона:', value: '2.05 м²' },
+    { title: 'Кухня:', value: '28.32 м²' },
+    { title: 'Спальня:', value: '48.80 м²' },
+    { title: 'Тераса:', value: '14.82 м²' },
+    { title: 'Під\'їзд:', value: '2.77 м²' }
+  ]
+
+.single-flat__info2
+  .single-flat__info2-group 
+    .single-flat__info2-row
+      span.single-flat__info2-row__title Загальна площа: 
+      span.single-flat__info2-row__value 76.3 м²
+    .single-flat__info2-row
+      span.single-flat__info2-row__title Житлова площа: 
+      span.single-flat__info2-row__value 76.3 м²
+      
+  .single-flat__info2-group
+    each spec in flatSpecs
+      .single-flat__info2-row
+        span.single-flat__info2-row__title= spec.title
+        span.single-flat__info2-row__value= spec.value
+
+  .single-flat__info2-group.hide-on-tablet  
+    +general-btn({type:"button", text:"Завантажити PDF", customClass:"button-main is-white"})(data-pdf-download)

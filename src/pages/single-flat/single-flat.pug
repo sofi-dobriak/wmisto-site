@@ -1,0 +1,28 @@
+extends /../index.pug
+
+block variable
+  -
+    var title_page = 'Планування 2-к / 247.4 м²'
+    var id_page = 'id-page-single-flat'
+
+block meta
+  title= title_page
+  meta(name='description', content='')
+
+block header
+  +header() 
+
+block content
+  .single-flat
+    .single-flat__content
+      include ./single-flat-section/single-flat-section.pug
+      include ./postponement-section/postponement-section.pug
+      include ./other-flats-section/other-flats-section.pug
+
+  +contacts()
+
+block footer
+  +footer()
+
+block scripts
+  script(type="module" src="/src/pages/single-flat/single-flat.js")

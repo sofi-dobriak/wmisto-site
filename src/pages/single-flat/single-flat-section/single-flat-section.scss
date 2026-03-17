@@ -1,0 +1,322 @@
+.single-flat {
+  &__top {
+    grid-area: top;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+
+    @include from(1025px) {
+      margin-bottom: 40px;
+    }
+
+    .single-flat-back-button {
+      width: 30%;
+
+      @include to(600px) {
+        width: auto;
+      }
+    }
+  }
+
+  &__title-tabs-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: vw(20);
+    margin: auto;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: vw(16);
+    @include font-h2;
+    color: $brown;
+    margin-top: vw(40);
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  &__images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: flex-start;
+    grid-area: img;
+  }
+
+  &__image-block {
+    width: 100%;
+
+    &-wrap {
+      position: relative;
+      padding-bottom: 50vh;
+
+      @include to(600px) {
+        padding-bottom: 100%;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: vw(28);
+    grid-area: info1;
+    padding-left: vw(20);
+    padding-right: vw(20);
+
+    .button-primary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .hide-on-mobile {
+      width: 100%;
+    }
+
+    &__label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: vw(18) vw(38);
+      border-radius: 100px;
+      border: 1px solid $ochre;
+      background: $white;
+      width: vw(100);
+      height: vw(100);
+
+      &__num {
+        @include font-h3;
+        color: $black;
+      }
+
+      &__desc {
+        @include font-tiny;
+        color: $black;
+      }
+    }
+
+    &__icon-sign {
+      height: vw(16);
+      width: vw(70);
+      margin: 0 auto;
+      fill: $blue;
+    }
+
+    &-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      .button-main {
+        margin: 0 auto;
+      }
+
+      &__description {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        @include font-body;
+        color: $black;
+        text-align: center;
+      }
+    }
+
+    &-group:first-child {
+      @include to(600px) {
+        display: none;
+      }
+    }
+  }
+
+  &__info2 {
+    grid-area: info2;
+
+    @include from-to(601px, 1024px) {
+      padding-right: 74px;
+    }
+
+    @include from(1025px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @include to(600px) {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .button-main {
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    &-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 32px;
+      row-gap: 4px;
+
+      @include to(600px) {
+        margin-bottom: 20px;
+      }
+
+      .button-main {
+        border-color: $brown;
+      }
+    }
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+
+      &__title {
+        max-width: 220px;
+      }
+
+      &__value {
+        min-width: 50px;
+      }
+
+      &__title,
+      &__value {
+        @include font-body;
+        color: $black;
+      }
+    }
+  }
+}
+
+.s3d-pdf-popup {
+  font-family: $default-font;
+
+  .pdf-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 50%;
+    background-color: #ffff;
+  }
+
+  .swal2-popup {
+    padding: 48px 0;
+    border-radius: 0;
+  }
+
+  .swal2-close {
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+  }
+
+  .swal2-close:hover {
+    transform: rotate(180deg);
+  }
+
+  .swal2-title {
+    position: relative;
+    @include font-h2;
+    font-size: 32px;
+    text-transform: uppercase;
+    padding: 0;
+    margin-bottom: 20px;
+    color: $black;
+  }
+
+  .swal2-title::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50px;
+    height: 1px;
+    background-color: #d1d9e1;
+  }
+
+  .swal2-actions {
+    margin: 0;
+
+    button {
+      padding: 20px 32px;
+      border-radius: 128px;
+      background-color: $brown;
+      color: $white;
+      border: 1px solid $brown;
+
+      svg {
+        stroke: $white;
+      }
+
+      &:hover {
+        color: $black;
+
+        svg {
+          stroke: $black;
+        }
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+
+        span {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  .swal2-confirm {
+    background: var(--color-gradient);
+    border-color: var(--border-brand-900);
+    color: var(--color-black);
+    font-weight: 300;
+    &:hover {
+      background: var(--color-yellow) !important;
+      background-image: none !important;
+      border-color: var(--border-brand-900);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+.toastify {
+  border-radius: 8px;
+  background: var(--color-yellow);
+  color: var(--color-black);
+}

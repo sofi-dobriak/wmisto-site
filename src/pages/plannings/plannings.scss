@@ -28,12 +28,14 @@
     margin-left: auto;
     flex-direction: column;
     row-gap: 42px;
+
     .incredible-button {
       margin-top: 0;
     }
     & > * {
       margin-top: calc(var(--section-v-offset) * 0.5);
     }
+
     @include to(1024px) {
       width: 100%;
       margin: auto;

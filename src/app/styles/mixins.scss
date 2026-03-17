@@ -275,15 +275,11 @@
 
 @mixin font-h4-semibold {
   font-family: $default-font;
-  font-size: vw-laptop(20);
+  font-size: vw(20);
   font-style: normal;
   font-weight: 600;
   line-height: 140%; /* 28px */
   letter-spacing: -0.8px;
-
-  @include laptop-1512 {
-    font-size: 20px;
-  }
 }
 
 @mixin font-h4-regular {
@@ -331,6 +327,19 @@
   font-weight: 400;
   line-height: 80%; /* 160px */
   letter-spacing: -12px;
+}
+
+@mixin font-tiny {
+  font-family: $default-font;
+  font-size: vw-laptop(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 19.6px */
+  letter-spacing: -0.56px;
+
+  @include laptop-1512() {
+    font-size: 14px;
+  }
 }
 
 // !YARKOVYTSYA

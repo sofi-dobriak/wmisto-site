@@ -1,0 +1,262 @@
+@import "@/pages/single-flat/single-flat-section/single-flat-section.scss";
+@import "@/pages/single-flat/postponement-section/postponement-section.scss";
+@import "@/pages/single-flat/other-flats-section/other-flats-section.scss";
+
+.single-flat {
+  padding-top: 100px;
+  padding-bottom: vw(140);
+
+  &__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: vw(20);
+    grid-template-areas:
+      "top top top"
+      "info2 img info1";
+
+    @include to(1441px) {
+      grid-template-columns: 1fr 3fr 1fr;
+    }
+    @include to(1240px) {
+      grid-template-columns: 1fr 2.5fr 1fr;
+    }
+
+    @include to(1024px) {
+      grid-template-areas:
+        "top top"
+        "img img"
+        "info2 info1";
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0;
+      row-gap: 20px;
+    }
+
+    @include to(600px) {
+      grid-template-areas:
+        "top"
+        "img"
+        "info2"
+        "info1";
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 30px;
+    }
+
+    .installment-block {
+      margin-top: 100px;
+      grid-column-start: 1;
+      grid-column-end: 4;
+
+      @include from-to(601px, 1024px) {
+        margin-top: 60px;
+      }
+
+      @include to(600px) {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+.tab {
+  display: flex;
+  padding: vw(5) vw(12);
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid $brown;
+  color: $brown;
+  @include font-body;
+  transition: all 0.2s ease-in-out;
+
+  &:not(.active) {
+    cursor: pointer;
+  }
+
+  &:hover {
+    background-color: $brown;
+    border-color: $brown;
+    color: $white;
+  }
+
+  &.active {
+    background-color: $brown;
+    border-color: $brown;
+    color: $white;
+    pointer-events: none;
+  }
+}
+
+// .installment-block {
+//   &__content {
+//     padding-top: 20px;
+//     padding-bottom: 100px;
+//     border-top: 1px solid var(--White, #dbe2ea);
+//     border-bottom: 1px solid var(--White, #dbe2ea);
+//     column-gap: pxWidthInVw(337);
+//     row-gap: 20px;
+//     display: grid;
+//     grid-template-columns: auto auto;
+//     grid-template-rows: auto auto;
+//     grid-template-areas:
+//       "title text"
+//       "img text";
+//     @include to(1024px) {
+//       grid-template-areas:
+//         "title"
+//         "img"
+//         "text";
+//       grid-template-columns: 1fr;
+//       padding-bottom: 80px;
+//     }
+//     @include from-to(601px, 1024px) {
+//       row-gap: 40px;
+//     }
+//   }
+//   &__text {
+//     grid-area: text;
+//     @include to(600px) {
+//       margin-top: 20px;
+//     }
+//     p ~ p {
+//       margin-top: 20px;
+//     }
+//     button {
+//       margin-top: 40px;
+//     }
+//   }
+//   &__title {
+//     grid-area: title;
+//     @include from(1025px) {
+//       padding-right: 30%;
+//     }
+//     @include from-to(601px, 1024px) {
+//       margin-bottom: -20px;
+//       padding-right: 35%;
+//     }
+//   }
+//   &__img {
+//     grid-area: img;
+//     overflow: hidden;
+//     &-wrap {
+//       position: relative;
+//       padding-bottom: 62.5%;
+//       @include to(1024px) {
+//         padding-bottom: 49%;
+//       }
+//       img {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//       }
+//     }
+//     &-overlay {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//     }
+//     &-overlay {
+//       z-index: 2;
+//       background-color: var(--color-black);
+//     }
+//   }
+//   &__img-overlay {
+//   }
+// }
+
+// .single-flat-slider {
+//   padding-top: 20px;
+//   @include to(1024px) {
+//     margin-bottom: var(--section-v-offset);
+//   }
+//   @include to(600px) {
+//     margin-bottom: 80px;
+//   }
+//   .swiper-container {
+//     padding-top: 40px;
+//     padding-bottom: 40px;
+//     @include to(1024px) {
+//       padding-top: 20px;
+//     }
+//   }
+//   &__content {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+//   &__nav {
+//     display: flex;
+//     align-items: center;
+//     gap: 12px;
+//     @include to(600px) {
+//       gap: 4px;
+//     }
+//     &-button {
+//       border-radius: 50%;
+//       background-color: var(--color-black);
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       width: 46px;
+//       height: 46px;
+//       @media (hover: hover) {
+//         transition: 0.2s ease-in-out;
+//         position: relative;
+//         background-color: transparent;
+//         overflow: hidden;
+//         span,
+//         svg {
+//           position: relative;
+//           z-index: 2;
+//         }
+//         &:after {
+//           content: "";
+//           position: absolute;
+//           left: 0;
+//           top: 0;
+//           width: 100%;
+//           height: 100%;
+//           background-color: var(--color-red);
+//           transform: translateY(-105%);
+//           transition: 0.2s ease-in;
+//           // z-index: -1;
+//           border-radius: 100px;
+//         }
+//         &:before {
+//           content: "";
+//           position: absolute;
+//           left: 0;
+//           top: 0;
+//           width: 100%;
+//           height: 100%;
+//           background-color: var(--color-deep-black);
+//           transition: 0.2s ease-out;
+//           // z-index: -1;
+//           border-radius: 100px;
+//         }
+//         &:hover {
+//           color: var(--color-white);
+//         }
+//         &:hover:after {
+//           transform: translateY(0);
+//         }
+//         &:hover:before {
+//           transform: translateY(100%);
+//         }
+//         &:hover svg [fill] {
+//           fill: var(--color-white);
+//         }
+//         &:hover svg [stroke] {
+//           stroke: var(--color-white);
+//         }
+//       }
+//     }
+//   }
+// }

@@ -4,13 +4,17 @@ import { initPopups } from "@/shared/components/popup/popup";
 const initCallPopup = () => {
   initPopups();
 
-  const openBtn = document.querySelector(".js-call-popup-open");
-  const popup = document.querySelector(".js-call-popup");
+  document.addEventListener("click", (e) => {
+    const openBtn = e.target.closest(".js-call-popup-open");
+    if (!openBtn) return;
 
-  if (!openBtn || !popup) return;
-
-  openBtn.addEventListener("click", (e) => {
     e.preventDefault();
+
+    const popup = document.querySelector(".js-call-popup");
+    if (!popup) {
+      console.error("Попап .js-call-popup не знайдено в розмітці!");
+      return;
+    }
 
     if (typeof popup.toggle === "function") {
       popup.toggle(true);
