@@ -6,7 +6,7 @@ import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 
 function initTranslations() {
-  const lang = document.documentElement.lang || "en";
+  const lang = document.documentElement.lang || "ua";
   const translations = {
     en: {
       "Підготовка до завантаження": "Preparing for download",
@@ -174,11 +174,11 @@ async function getPdfLink() {
 }
 
 function sliderHandler() {
-  const slider = new Swiper("[data-single-flat-slider]", {
+  const slider = new Swiper(".js-single-flat-slider", {
     modules: [Navigation],
     navigation: {
-      nextEl: "[data-single-flat-slider-next]",
-      prevEl: "[data-single-flat-slider-prev]",
+      nextEl: ".single-flat-slider-next",
+      prevEl: ".single-flat-slider-prev",
     },
     breakpoints: {
       320: {

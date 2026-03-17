@@ -1,0 +1,26 @@
+include /shared/components/swiper-nav/swiper-nav.pug
+
+.single-flat-slider
+  .single-flat-slider__content
+    .single-flat-slider__title ІНШІ ПЛАНУВАННЯ
+    +swiper-nav('single-flat-slider-nav', 'single-flat-slider-prev', 'single-flat-slider-next')
+
+
+  .js-single-flat-slider.swiper-container
+    .swiper-wrapper
+      each val in [1,2,3,4,5,6,7,8,9,0]
+        a.swiper-slide.planning-card(href='/single-flat?id=25' data-id='25')
+          .planning-card__image
+            .planning-card__image-wrap
+              img(src='/images/plannings/KV-96-3AS2_1.png' loading='lazy' alt='' onerror='this.style.opacity = 0;')
+          .planning-card__middle
+            .planning-card__middle__title 2-к
+            span /
+            .planning-card__middle__title 247.4 м²
+          .planning-card__bottom
+            .planning-card__bottom-group
+              | Секція:&nbsp; 1
+            .planning-card__bottom-group
+              | Будинок:&nbsp; 1
+            .planning-card__bottom-group
+              | Поверх:&nbsp; 1
