@@ -1,0 +1,65 @@
+.installment-block {
+  &__content {
+    padding: 0 vw(20) vw(100);
+    column-gap: vw(140);
+    row-gap: vw(20);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "title text"
+      "img text";
+
+    @include to(1024px) {
+      grid-template-areas:
+        "title"
+        "img"
+        "text";
+      grid-template-columns: 1fr;
+      padding-bottom: 80px;
+    }
+
+    @include from-to(601px, 1024px) {
+      row-gap: 40px;
+    }
+  }
+
+  &__text {
+    grid-area: text;
+
+    @include font-body;
+    color: $black;
+
+    @include to(600px) {
+      margin-top: 20px;
+    }
+
+    p ~ p {
+      margin-top: vw(20);
+    }
+
+    button {
+      margin-top: vw(40);
+    }
+  }
+
+  &__title {
+    grid-area: title;
+
+    @include font-h2;
+    color: $brown;
+  }
+
+  &__img {
+    grid-area: img;
+    overflow: hidden;
+    max-width: vw(1120);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-fit: cover;
+    }
+  }
+}

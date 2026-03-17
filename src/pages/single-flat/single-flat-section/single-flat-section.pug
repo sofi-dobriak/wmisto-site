@@ -62,12 +62,11 @@ include /shared/components/general-btn/general-btn.pug
     .single-flat__info2-row
       span.single-flat__info2-row__title Житлова площа: 
       span.single-flat__info2-row__value 76.3 м²
-      
   .single-flat__info2-group
     each spec in flatSpecs
       .single-flat__info2-row
         span.single-flat__info2-row__title= spec.title
         span.single-flat__info2-row__value= spec.value
-
+        
   .single-flat__info2-group.hide-on-tablet  
     +general-btn({type:"button", text:"Завантажити PDF", customClass:"button-main is-white"})(data-pdf-download)
