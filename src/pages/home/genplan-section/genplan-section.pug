@@ -46,15 +46,28 @@ section.genplan-section(id="genplan")
           li.genplan-info-item
             p.genplan-info-text= item.text
 
-  .genplan-card-block 
+  .genplan-card-block.hide-on-tablet.hide-on-mobile
     svg(width="70" height="16").genplan-card-icon
       use(href="/images/icons.svg#icon-sign")
 
     p.genplan-card-text Залиш проблеми внизу – живи і відпочивай понад усім.
 
-  .genplan-sign-image-block
+  .genplan-sign-image-block.hide-on-tablet.hide-on-mobile
       img(src="/images/genplan/genplan-sign.svg", alt="Sign").genplan-sign-image
   
-  .genplan-title-block 
+  .genplan-title-block.hide-on-tablet.hide-on-mobile
     h2.genplan-title Ти понад усім
     p.genplan-text В центрі подій, у власному ритмі
+
+  .tab-genplan-cards-sign-block
+    .genplan-tab-card-block
+      svg(width="70" height="16").genplan-tab-card-icon
+        use(href="/images/icons.svg#icon-sign")
+      p.genplan-tab-card-text Залиш проблеми внизу – живи і відпочивай понад усім.
+
+    .genplan-tab-sign-image-block
+      img(src="/images/genplan/genplan-tab-sign.svg", alt="Sign").genplan-sign-image
+
+    .genplan-tab-title-block
+      h2.genplan-tab-title Ти понад усім
+      p.genplan-tab-text В центрі подій, у власному ритмі

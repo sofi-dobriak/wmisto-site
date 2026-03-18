@@ -7,15 +7,45 @@
   position: relative;
   padding: vw(100) vw(60) 0;
 
+  @include to(1023px) {
+    padding-top: 140px;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+
+  @include to(767px) {
+    flex-direction: column;
+    gap: 36px;
+    padding: 60px 0 0;
+  }
+
   .w-diagonal-left-block {
     width: 70%;
     border: 1px solid $black;
     padding: vw(40);
     position: relative;
 
-    .slider-block {
-      height: vw(666);
+    @include to(1023px) {
       width: 100%;
+      padding: 20px;
+    }
+
+    @include to(767px) {
+      border: none;
+      padding: 0;
+    }
+
+    .slider-block {
+      width: 100%;
+      aspect-ratio: 1200/666;
+
+      @include to(1023px) {
+        aspect-ratio: 728/408;
+      }
+
+      @include to(767px) {
+        aspect-ratio: 375/220;
+      }
 
       .w-diagonal-swiper {
         height: 100%;
@@ -55,21 +85,42 @@
   .w-diagonal-right-block {
     width: 30%;
 
+    @include to(1023px) {
+      width: 100%;
+    }
+
+    @include to(767px) {
+      padding: 0 20px;
+    }
+
     .w-diagonal-title {
       @include font-h3;
       color: $black;
       margin-bottom: vw(20);
+
+      @include to(1023px) {
+        text-align: center;
+      }
     }
 
     .w-diagonal-icon {
       fill: $brown;
       margin-bottom: vw(20);
+
+      @include to(1023px) {
+        display: block;
+        margin: 0 auto 20px;
+      }
     }
 
     .w-diagonal-list {
       display: flex;
       flex-direction: column;
       gap: vw(20);
+
+      @include to(1023px) {
+        gap: 20px;
+      }
 
       .w-diagonal-item {
         .w-diagonal-text {

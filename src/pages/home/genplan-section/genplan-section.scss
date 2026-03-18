@@ -2,15 +2,36 @@
   height: calc(100vh - 100px);
   position: relative;
 
+  @include to(1023px) {
+    position: static;
+    height: auto;
+  }
+
   .genplan-image-block {
     height: 100%;
     aspect-ratio: 1920 / 900;
     position: relative;
+    overflow: hidden;
+
+    @include to(1023px) {
+      height: 610px;
+    }
+
+    @include to(767px) {
+      height: 400px;
+    }
 
     .genplan-image {
       width: 100%;
       height: auto;
       object-fit: cover;
+      object-position: center;
+
+      @include to(1023px) {
+        position: relative;
+        left: 40%;
+        transform: translateX(-50%);
+      }
 
       .genplan-image-path {
         stroke: $white;
@@ -40,6 +61,14 @@
 
       @include from(1512) {
         padding: 20px;
+      }
+
+      @include to(1023px) {
+        max-width: 200px;
+        max-height: 250px;
+        padding: 20px;
+        top: 50%;
+        left: 27%;
       }
 
       .genplan-info-title {
@@ -126,6 +155,94 @@
       right: vw(30);
       z-index: 3;
       bottom: vw(100);
+    }
+  }
+
+  .tab-genplan-cards-sign-block {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: vw-tablet(60);
+    padding: 60px 20px;
+    position: relative;
+    margin-bottom: 60px;
+
+    @include to(480px) {
+      padding: 20px;
+      flex-direction: column;
+      gap: 80px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .genplan-tab-card-block {
+      background-color: $brown;
+      padding: 40px 20px;
+      max-width: 320px;
+
+      .genplan-tab-card-icon {
+        display: block;
+        margin: 0 auto 20px;
+      }
+
+      .genplan-tab-card-text {
+        @include font-h4-semibold;
+        color: $white;
+        max-width: 280px;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+
+    .genplan-tab-sign-image-block {
+      aspect-ratio: 630 / 307;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      fill: $ochre;
+
+      @include to(767px) {
+        aspect-ratio: 543 / 264;
+        max-height: 300px;
+        max-width: 400px;
+        right: -20px;
+      }
+
+      .genplan-tab-sign-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .genplan-tab-title-block {
+      margin-right: 60px;
+
+      @include to(767px) {
+        margin-right: 0;
+      }
+
+      .genplan-tab-title {
+        @include font-h1;
+        color: $black;
+        max-width: 292px;
+
+        @include to(767px) {
+          text-align: center;
+          margin-bottom: 8px;
+        }
+      }
+
+      .genplan-tab-text {
+        @include font-h3;
+        color: $black;
+        max-width: 292px;
+
+        @include to(767px) {
+          text-align: center;
+        }
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   initDiagonalSwiper();
-  initDiagonalAnim();
+  // initDiagonalAnim();
 });
 
 function initDiagonalSwiper() {
