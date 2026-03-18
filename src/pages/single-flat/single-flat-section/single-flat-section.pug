@@ -38,7 +38,7 @@ include /shared/components/general-btn/general-btn.pug
 .single-flat__images
   .single-flat__image-block
     .single-flat__image-block-wrap
-      img(src="/images/single-flat/single-flat-img.png", alt="flat image", srcset="" loading="lazy" data-flat-image-container)
+      img(src="/images/single-flat/single-flat-img.png" alt="flat image" loading="lazy" data-flat-image-container)
 
 -
   const flatSpecs = [
@@ -69,4 +69,4 @@ include /shared/components/general-btn/general-btn.pug
         span.single-flat__info2-row__value= spec.value
         
   .single-flat__info2-group.hide-on-tablet  
-    +general-btn({type:"button", text:"Завантажити PDF", customClass:"button-main is-white"})(data-pdf-download)
+    +general-btn({type:"button", text:"Завантажити PDF", customClass:"button-main is-white"})(data-pdf-download="")

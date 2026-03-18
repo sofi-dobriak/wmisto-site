@@ -148,7 +148,7 @@ async function getPdfLink() {
           </div>
         `,
         confirmButtonText: `
-          <a href="${data.data}" target='_blank'>
+          <a href="${data.data}" target="_blank">
             <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M9.52556 14.3176L16.6836 7.60691L17.3675 8.33645L9.36753 15.8364L9.02556 16.157L8.68359 15.8364L0.683593 8.33645L1.36753 7.60691L8.52556 14.3176L8.52556 0.47168L9.52556 0.47168L9.52556 14.3176Z" fill="var(--color-black)"/>
             </svg>
