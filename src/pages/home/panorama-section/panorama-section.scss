@@ -6,6 +6,14 @@
   flex-direction: column;
   padding-top: vw(100);
 
+  @include to(1023px) {
+    padding-top: 140px;
+  }
+
+  @include to(767px) {
+    padding-top: 60px;
+  }
+
   .panorama-title-block {
     display: flex;
     align-items: center;
@@ -13,6 +21,16 @@
     margin-bottom: vw(20);
     position: relative;
     padding: 0 vw(20);
+
+    @include to(1023px) {
+      margin-bottom: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    @include to(767px) {
+      margin-bottom: 12px;
+    }
 
     .panorama-title {
       @include font-h1;
@@ -37,6 +55,14 @@
     flex-grow: 1;
     min-width: 0;
     position: relative;
+
+    @include to(1023px) {
+      aspect-ratio: 767 / 600;
+    }
+
+    @include to(767px) {
+      aspect-ratio: 375 / 420;
+    }
 
     iframe {
       width: 100%;
