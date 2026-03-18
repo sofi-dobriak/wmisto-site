@@ -8,7 +8,7 @@
     margin-bottom: vw-laptop(40);
     padding: 0 vw(60);
 
-    @include laptop-1512 {
+    @include from(1512) {
       gap: 80px;
       margin-bottom: 40px;
     }
@@ -27,7 +27,7 @@
         height: 80%;
         background-color: $ochre;
 
-        @include laptop-1512 {
+        @include from(1512) {
           right: -40px;
         }
       }
@@ -38,7 +38,7 @@
       color: $black;
       max-width: vw-laptop(240);
 
-      @include laptop-1512 {
+      @include from(1512) {
         max-width: 240px;
       }
     }
@@ -74,7 +74,7 @@
           align-items: center;
           gap: vw-laptop(20);
 
-          @include laptop-1512 {
+          @include from(1512) {
             gap: 20px;
           }
 
@@ -115,7 +115,7 @@
         column-gap: vw-laptop(20);
         row-gap: vw-laptop(44);
 
-        @include laptop-1512 {
+        @include from(1512) {
           column-gap: 20px;
           row-gap: 45px;
         }
@@ -140,7 +140,7 @@
               right: vw-laptop(-30);
               bottom: 20%;
 
-              @include laptop-1512 {
+              @include from(1512) {
                 height: 60px;
                 right: -30px;
               }

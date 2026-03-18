@@ -12,6 +12,30 @@
   cursor: pointer;
   transition: $transition;
 
+  @include to(1023px) {
+    padding: 16px 28px;
+  }
+
+  @include to(767px) {
+    padding: 12px;
+  }
+
+  .general-text {
+    @include font-h4-semibold;
+    color: $white;
+    transition: $transition;
+    position: relative;
+    z-index: 2;
+
+    @include to(1023px) {
+      font-size: 20px;
+    }
+
+    @include to(767px) {
+      font-size: 14px;
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -35,6 +59,14 @@
 
     .general-text {
       color: $black;
+    }
+
+    svg {
+      fill: $black !important;
+
+      path {
+        fill: $black !important;
+      }
     }
   }
 
@@ -78,13 +110,5 @@
         color: $black;
       }
     }
-  }
-
-  .general-text {
-    @include font-h4-semibold;
-    color: $white;
-    transition: $transition;
-    position: relative;
-    z-index: 2;
   }
 }

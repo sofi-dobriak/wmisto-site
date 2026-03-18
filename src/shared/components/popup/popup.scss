@@ -42,8 +42,27 @@
     max-width: vw-laptop(480);
     opacity: 0;
 
-    @include laptop-1512 {
+    @include from(1512) {
       max-width: 480px;
+    }
+
+    @include to(1023px) {
+      max-width: 480px;
+      padding: 60px;
+
+      &.popup-menu {
+        width: 580px;
+        padding: 100px 60px;
+      }
+    }
+
+    @include to(767px) {
+      padding: 60px 20px;
+
+      &.popup-menu {
+        width: 580px;
+        padding: 72px 20px;
+      }
     }
 
     .close-btn {
@@ -59,9 +78,18 @@
       cursor: pointer;
       z-index: 999;
 
+      @include to(1023px) {
+        top: 20px;
+        right: 20px;
+      }
+
       .close-text {
         @include font-h4-semibold;
         color: $black;
+
+        @include to(1023px) {
+          font-size: 20px;
+        }
 
         &.real {
           display: block;
@@ -103,6 +131,15 @@
       max-width: vw(475);
       opacity: 0.05;
       pointer-events: none;
+      z-index: -1;
+
+      @include to(1023px) {
+        max-width: calc((280 / 1023) * 100vw);
+      }
+
+      @include to(767px) {
+        max-width: 475px;
+      }
 
       .popup-sign {
         width: 100%;

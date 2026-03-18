@@ -95,3 +95,42 @@ section {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+.show-on-desktop {
+  @include to(1023px) {
+    display: none;
+  }
+}
+
+.show-on-tablet {
+  @include to(767px) {
+    display: none !important;
+  }
+  @include from(1023px) {
+    display: none !important;
+  }
+}
+
+.show-on-mobile {
+  @include from(767px) {
+    display: none !important;
+  }
+}
+
+.hide-on-mobile {
+  @include to(767px) {
+    display: none !important;
+  }
+}
+
+.hide-on-tablet {
+  @include from-to(767px, 1023px) {
+    display: none !important;
+  }
+}
+
+.hide-on-desktop {
+  @include from(1023px) {
+    display: none !important;
+  }
+}

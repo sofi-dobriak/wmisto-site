@@ -38,7 +38,7 @@
       transition: $transition;
       left: 39%;
 
-      @include laptop-1512 {
+      @include from(1512) {
         padding: 20px;
       }
 
@@ -77,7 +77,7 @@
     top: vw(150);
     left: vw(60);
 
-    @include laptop-1512 {
+    @include from(1512) {
       max-width: 320px;
     }
 

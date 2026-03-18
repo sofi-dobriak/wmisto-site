@@ -22,6 +22,11 @@ mixin menu
     ]
 
   +popup('menu')
+    a(href="tel:380970000077").phone-link.hide-on-desktop
+      svg.phone-icon
+        use(href="/images/icons.svg#icon-phone")
+      span.phone-text +38 (097) 000-00-77
+
     ul.menu-big-list 
       each val, index in menu_big_links
         li.menu-big-item 

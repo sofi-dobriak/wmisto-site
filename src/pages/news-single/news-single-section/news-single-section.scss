@@ -50,7 +50,7 @@
             height: vw-laptop(24);
             fill: $brown;
 
-            @include laptop-1512 {
+            @include from(1512) {
               width: 24px;
               height: 24px;
             }

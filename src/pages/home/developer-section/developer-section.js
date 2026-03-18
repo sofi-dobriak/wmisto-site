@@ -14,7 +14,7 @@ function initDeveloperAnim() {
 
   if (card) {
     gsap.to(card, {
-      y: -250,
+      y: -150,
       ease: "none",
       scrollTrigger: {
         trigger: section,

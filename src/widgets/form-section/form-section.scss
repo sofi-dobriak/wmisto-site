@@ -17,7 +17,7 @@
       color: $black;
       max-width: vw-laptop(550);
 
-      @include laptop-1512 {
+      @include from(1512) {
         max-width: 580px;
       }
 
@@ -75,6 +75,7 @@
       inset: 0;
       z-index: 10;
       background-color: $blue;
+      height: 100%;
 
       display: flex;
       flex-direction: column;

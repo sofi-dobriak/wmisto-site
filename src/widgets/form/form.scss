@@ -21,7 +21,7 @@
   .form-wrap {
     transition: $transition;
 
-    @include tablet {
+    @include to(1023px) {
       width: 688px;
     }
 
@@ -60,10 +60,6 @@
 
     transform: translate(-50%, -50%);
   }
-
-  // @include desktop {
-  //   width: 580px;
-  // }
 }
 
 .call-us__container {
@@ -96,8 +92,6 @@
 
 .close-btn {
   position: absolute;
-  // border-radius: 50%;
-  // background-color: $light-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,15 +155,11 @@
 .inputs-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: vw(30);
   width: 100%;
 
-  @include tablet {
-    gap: 20px;
-  }
-
-  @include laptop {
-    gap: vw(30);
+  @include to(1023px) {
+    gap: 28px;
   }
 }
 
@@ -273,6 +263,11 @@
       width: 100%;
       height: 100%;
     }
+
+    @include to(1023px) {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 
@@ -368,7 +363,7 @@
   background-color: #e76a6a;
   color: $black;
 
-  @include laptop-1512 {
+  @include from(1512) {
     bottom: -15px;
   }
 }
@@ -384,17 +379,27 @@
   color: $black;
   position: relative;
 
-  @include tablet {
+  @include to(1023px) {
+    font-size: 20px;
     padding: 20px 0;
   }
 
-  @include laptop {
-    padding: vw(20) 0;
+  @include to(767px) {
+    padding: 16px 0;
+    font-size: 14px;
   }
 
   &::placeholder {
     @include font-h4-semibold;
     color: $black;
+
+    @include to(1023px) {
+      font-size: 20px;
+    }
+
+    @include to(767px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -426,6 +431,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include to(1023px) {
+    margin-top: 26px;
+  }
 }
 
 .submit-btn__text {
@@ -443,6 +452,10 @@
 
 .input-message {
   @include tiny-text;
+
+  @include to(1023px) {
+    font-size: 10px;
+  }
 }
 
 .footer .iti--allow-dropdown input {

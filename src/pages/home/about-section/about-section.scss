@@ -25,7 +25,7 @@
       max-width: vw-laptop(480);
       margin: 0 auto;
 
-      @include laptop-1512 {
+      @include from(1512) {
         max-width: 480px;
       }
     }

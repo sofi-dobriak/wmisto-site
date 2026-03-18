@@ -45,18 +45,23 @@ mixin header
       button(type="button").pdf-btn.js-pdf-popup-open
         svg.pdf-icon
           use(href="/images/icons.svg#icon-pdf")
-        span.pdf-text PDF Презентація
+        span.pdf-text.hide-on-tablet.hide-on-mobile  PDF Презентація
+        span.pdf-text.hide-on-desktop.hide-on-mobile PDF 
       
-      a(href="tel:380970000077").phone-link
+      a(href="tel:380970000077").phone-link.hide-on-tablet.hide-on-mobile
         svg.phone-icon
           use(href="/images/icons.svg#icon-phone")
         span.phone-text +38 (097) 000-00-77
 
-      +general-btn({ text: 'Зворотній дзвінок', type: 'button', customClass:'js-call-popup-open'})
+      button(type="button").general-btn.call-popup-btn.js-call-popup-open
+        span.call-text.general-text.hide-on-mobile Зворотній дзвінок
+        <svg class="call-icon hide-on-tablet hide-on-desktop" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M5.60741 3.99959C5.38404 3.9998 5.1633 4.04721 4.95898 4.13728C4.75474 4.22732 4.57144 4.35848 4.42089 4.52303C4.2703 4.68767 4.15527 4.88207 4.08398 5.09334C4.01272 5.30456 3.98673 5.5286 4.00683 5.75057C4.27093 8.23215 5.11704 10.617 6.47656 12.7115C7.71165 14.6512 9.35913 16.2963 11.3027 17.5289C13.3919 18.8811 15.7706 19.7253 18.2461 19.9937C18.4691 20.0138 18.6941 19.9872 18.9062 19.9156C19.1184 19.844 19.3134 19.7288 19.4785 19.5777C19.6435 19.4266 19.7745 19.2424 19.8643 19.0377C19.954 18.8328 19.9999 18.6109 19.999 18.3873V15.9791C20.0088 15.5853 19.8733 15.2015 19.6182 14.901C19.3631 14.6007 19.0067 14.4043 18.6162 14.3492C17.8439 14.2475 17.0853 14.0585 16.3555 13.7867C16.0675 13.6787 15.754 13.6553 15.4531 13.7193C15.1526 13.7833 14.8768 13.9324 14.6582 14.148L13.6357 15.1685C11.6219 14.0257 9.95476 12.361 8.80956 10.3512L9.83105 9.33064C10.0472 9.1124 10.1966 8.83681 10.2607 8.5367C10.3248 8.23667 10.3014 7.92445 10.1934 7.63728C9.921 6.90885 9.73174 6.15127 9.62988 5.38045C9.57515 4.99486 9.38176 4.64223 9.08593 4.38826C8.78991 4.13419 8.41092 3.99575 8.0205 3.99959H5.60741Z" fill="none"/>
+        </svg>
 
       button(type="button").burger-btn.js-burger-btn
-        span.burger-text.real Меню
-        span.burger-text.fake Меню
+        span.burger-text.real.hide-on-mobile Меню
+        span.burger-text.fake.hide-on-mobile Меню
         svg.burger-icon
           use(href="/images/icons.svg#icon-burger-expand")
   

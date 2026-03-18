@@ -23,7 +23,7 @@
     gap: vw(40);
     margin: auto;
 
-    @include laptop-1512 {
+    @include from(1512) {
       width: 620px;
       padding: 60px;
     }

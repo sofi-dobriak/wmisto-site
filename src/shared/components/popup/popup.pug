@@ -1,10 +1,10 @@
 mixin popup(name)
   .backdrop.js-backdrop(class=`popup-${name}`)&attributes(attributes) 
-    .popup-content(data-lenis-prevent)
+    .popup-content(class=`popup-${name}`)(data-lenis-prevent)
       button(type="button").close-btn.js-close-btn
 
         if name === 'menu'
-          span.close-text.real Закрити
+          span.close-text.real Меню
           span.close-text.fake Закрити
   
         svg.close-icon

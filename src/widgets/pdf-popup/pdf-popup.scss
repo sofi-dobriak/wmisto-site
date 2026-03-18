@@ -3,11 +3,31 @@
     @include font-h3;
     color: $black;
     margin-bottom: vw(12);
+
+    @include to(1023px) {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    @include to(767px) {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
   }
 
   .pdf-popup-text {
     @include font-body;
     color: $black;
     margin-bottom: vw(40);
+
+    @include to(1023px) {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    @include to(767px) {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
   }
 }
