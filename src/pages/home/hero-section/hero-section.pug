@@ -1,14 +1,19 @@
 section.hero-section(id="hero")
   .hero-grid 
     .hero-video-block
-      video(autoplay="" muted="" controls="" loop="" playsinline="").hero-video
+      video(autoplay="" muted="" controls=false loop="" playsinline="").hero-video
         source(src="/video/hero-video.mp4")
     
     .hero-text-block
       .hero-logo-block
         img.hero-logo(src="/images/logo.svg", alt="Logo")
         p.hero-text Понад усім.
-      a.hero-link(href="#about") 
+
+      .hero-desc-block.hide-on-desktop
+        p.hero-desc Житловий квартал бізнес-класу на найвищій точці Вінниці з панорамними видами на місто та чарівний фонтан “Roshen”.
+        +general-btn({href: '/plannings.html', text: 'Переглянути усі планування',customCLass:"hero-plannings-link"})
+
+      a.hero-link(href="#about").hide-on-mobile
         .hero-icon-container
           .hero-icon-wrapper
               svg.hero-icon
