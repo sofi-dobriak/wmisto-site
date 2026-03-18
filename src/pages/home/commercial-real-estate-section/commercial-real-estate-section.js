@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// document.addEventListener('DOMContentLoaded', () => initCommercialAnim())
+// document.addEventListener("DOMContentLoaded", () => initCommercialAnim());
 
 function initCommercialAnim() {
   const section = document.querySelector(".commercial-section");

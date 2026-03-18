@@ -340,8 +340,25 @@
   }
 }
 
-// !YARKOVYTSYA
+@mixin font-mob-h3 {
+  font-family: $default-font;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 28.8px */
+  letter-spacing: -1.44px;
+}
 
+@mixin font-mob-h4-semibold {
+  font-family: $default-font;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 19.6px */
+  letter-spacing: -0.56px;
+}
+
+// !YARKOVYTSYA
 @mixin text-style-1920-h-1() {
   font-size: 120px;
   @media screen and (min-width: 1025px) {

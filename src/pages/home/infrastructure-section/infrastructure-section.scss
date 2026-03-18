@@ -1,6 +1,14 @@
 .infrastructure-section {
   padding-top: vw(100);
 
+  @include to(1023px) {
+    padding-top: 140px;
+  }
+
+  @include to(767px) {
+    padding: 60px 20px 0;
+  }
+
   .infrastructure-title-block {
     display: flex;
     align-items: center;
@@ -13,10 +21,29 @@
       margin-bottom: 40px;
     }
 
+    @include to(1023px) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+
+    @include to(767px) {
+      margin-bottom: 28px;
+    }
+
     .infrastructure-title {
       @include font-h1;
       color: $brown;
       position: relative;
+
+      @include to(1023px) {
+        font-size: 64px;
+      }
+
+      @include to(767px) {
+        @include font-mob-h3;
+      }
 
       &::after {
         position: absolute;
@@ -30,6 +57,10 @@
         @include from(1512) {
           right: -40px;
         }
+
+        @include to(1023px) {
+          display: none;
+        }
       }
     }
 
@@ -41,22 +72,62 @@
       @include from(1512) {
         max-width: 240px;
       }
+
+      @include to(1023px) {
+        max-width: none;
+        font-size: 20px;
+      }
+
+      @include to(767px) {
+        @include font-mob-h4-semibold;
+        max-width: 240px;
+        text-align: center;
+      }
     }
   }
 
   .infrastructure-left-right-blocks-container {
     display: flex;
+    border: 1px solid $black;
+
+    @include to(1023px) {
+      flex-direction: column;
+    }
 
     .infrastructure-left-block {
       flex: 0 0 50%;
       padding: vw(60);
-      border: 1px solid $black;
+      border-right: 1px solid $black;
+
+      @include to(1023px) {
+        padding: 60px;
+      }
+
+      @include to(767px) {
+        padding: 40px 20px;
+        border-bottom: 1px solid $black;
+        border-right-color: transparent;
+      }
 
       .infrastructure-left-title {
         @include font-h3;
         color: $brown;
         margin-bottom: vw(60);
         max-width: vw(840);
+
+        @include to(1023px) {
+          margin: 0 auto;
+          margin-bottom: 60px;
+          max-width: 650px;
+          font-size: 36px;
+          text-align: center;
+        }
+
+        @include to(767px) {
+          @include font-mob-h3;
+          max-width: 295px;
+          margin-bottom: 24px;
+        }
       }
 
       .infrastructure-left-list {
@@ -65,6 +136,14 @@
         column-gap: vw(60);
         counter-reset: my-counter;
         list-style-type: none;
+
+        @include to(1023px) {
+          column-gap: 60px;
+        }
+
+        @include to(767px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
 
         .infrastructure-left-item {
           padding: 20px 0;
@@ -78,19 +157,45 @@
             gap: 20px;
           }
 
+          @include to(1023px) {
+            gap: 20px;
+          }
+
           &:nth-child(-n + 2) {
             border-top: none;
+          }
+
+          @include to(767px) {
+            &:nth-child(1) {
+              border-bottom: 1px solid $ochre;
+            }
           }
 
           &::before {
             content: counter(my-counter) ".";
             @include font-h3;
             color: $black;
+
+            @include to(1023px) {
+              font-size: 36px;
+            }
+
+            @include to(767px) {
+              @include font-mob-h3;
+            }
           }
 
           .infrastructure-left-text {
             @include font-body;
             color: $black;
+
+            @include to(1023px) {
+              font-size: 16px;
+            }
+
+            @include to(767px) {
+              font-size: 14px;
+            }
           }
         }
       }
@@ -99,14 +204,34 @@
     .infrastructure-right-block {
       flex: 0 0 50%;
       padding: vw(60);
-      border: 1px solid $black;
-      border-left-color: transparent;
+
+      @include to(1023px) {
+        padding: 60px;
+      }
+
+      @include to(767px) {
+        padding: 40px 20px;
+      }
 
       .infrastructure-right-title {
         @include font-h3;
         color: $brown;
         margin-bottom: vw(60);
         max-width: vw(840);
+
+        @include to(1023px) {
+          margin: 0 auto;
+          margin-bottom: 60px;
+          max-width: 650px;
+          font-size: 36px;
+          text-align: center;
+        }
+
+        @include to(767px) {
+          @include font-mob-h3;
+          margin-bottom: 24px;
+          max-width: 250px;
+        }
       }
 
       .infrastructure-right-list {
@@ -120,15 +245,31 @@
           row-gap: 45px;
         }
 
+        @include to(767px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
         .infrastructure-right-item {
           display: flex;
           align-items: center;
           gap: vw(72);
 
+          @include to(1023px) {
+            gap: 72px;
+          }
+
           .infrastructure-right-num {
             @include font-h1;
             color: $blue;
             position: relative;
+
+            @include to(1023px) {
+              font-size: 64px;
+            }
+
+            @include to(767px) {
+              font-size: 42px;
+            }
 
             &:after {
               content: "";
@@ -144,6 +285,15 @@
                 height: 60px;
                 right: -30px;
               }
+
+              @include to(1023px) {
+                right: -30px;
+              }
+
+              @include to(767px) {
+                height: 40px;
+                bottom: 0;
+              }
             }
           }
           .infrastructure-right-text {
@@ -151,10 +301,22 @@
 
             .infrastructure-right-minutes {
               @include font-body;
+
+              @include to(1023px) {
+                font-size: 14px;
+              }
             }
 
             .infrastructure-right-target {
               @include font-h4-semibold;
+
+              @include to(1023px) {
+                font-size: 16px;
+              }
+
+              @include to(767px) {
+                font-size: 14px;
+              }
             }
           }
         }
