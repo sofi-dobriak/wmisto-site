@@ -38,6 +38,14 @@
   @return calc($px / 1920) * 100vw;
 }
 
+@function vw-tablet($px) {
+  @return calc($px / 1023) * 100vw;
+}
+
+@function vw-mobile($px) {
+  @return calc($px / 767) * 100vw;
+}
+
 @function vw-laptop($px) {
   @return calc($px / 1512) * 100vw;
 }

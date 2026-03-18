@@ -1,6 +1,7 @@
 .hero-section {
   height: 100vh;
   overflow: hidden;
+  position: static;
 
   @include to(1023px) {
     height: 100svh;
@@ -21,7 +22,7 @@
 
       @include to(1023px) {
         flex: unset;
-        height: 65%;
+        height: 60%;
       }
 
       .hero-video {
@@ -37,7 +38,7 @@
 
       @include to(1023px) {
         flex: unset;
-        height: 35%;
+        height: 40%;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -103,7 +104,7 @@
         gap: 16px;
         max-width: 452px;
         position: relative;
-        margin-top: 90px;
+        margin-top: 70px;
 
         @include to(767px) {
           gap: 20px;
@@ -141,7 +142,7 @@
         @include to(1023px) {
           top: unset;
           position: absolute;
-          bottom: 12px;
+          bottom: 40px;
           left: 20px;
         }
 

@@ -44,7 +44,7 @@ section.about-section(id="about")
   .about-text-block
     h2.about-title Про комплекс 
     
-    svg(width="70" height="16").about-icon
+    svg(width="70" height="16").about-icon.hide-on-mobile
       use(href="/images/icons.svg#icon-sign")
     
     .about-text-swiper.swiper
@@ -53,7 +53,7 @@ section.about-section(id="about")
           .swiper-slide
             p.about-text= item.text
 
-    +swiper-nav('about-nav-buttons', 'about-button-prev', 'about-button-next')
+    +swiper-nav('about-nav-buttons hide-on-tablet hide-on-mobile', 'about-button-prev', 'about-button-next')
   
   .slider-block
     .slider-big.swiper
@@ -61,13 +61,15 @@ section.about-section(id="about")
         each item in swiper_big_img
           .swiper-slide
             img(src=item.img, alt=item.alt loading="lazy").slider-img-big
+      
+      +swiper-nav('about-nav-buttons hide-on-desktop', 'about-button-prev', 'about-button-next')
         
       p.main-count.js-about-main-count
         span.current.js-about-current 
         span.next.js-about-next
       p.total.js-about-total
   
-    .slider-small.swiper
+    .slider-small.swiper.hide-on-mobile
       .swiper-wrapper
         each item in swiper_small_img
           .swiper-slide

@@ -14,8 +14,8 @@ const getElements = () => ({
   currentEl: document.querySelector(".js-about-main-count .js-about-current"),
   nextEl: document.querySelector(".js-about-main-count .js-about-next"),
   totalEl: document.querySelector(".js-about-total"),
-  prevBtn: document.querySelector(".about-button-prev"),
-  nextBtn: document.querySelector(".about-button-next"),
+  prevBtn: document.querySelectorAll(".about-button-prev"),
+  nextBtn: document.querySelectorAll(".about-button-next"),
 });
 
 // ─── Counter ─────────────────────────────────────────────────────────────────
@@ -93,9 +93,9 @@ const initSmallSwiper = () =>
 
 // ─── Navigation buttons ───────────────────────────────────────────────────────
 
-const bindNavButtons = (prevBtn, nextBtn, swipers) => {
-  prevBtn.addEventListener("click", () => swipers.forEach((s) => s.slidePrev()));
-  nextBtn.addEventListener("click", () => swipers.forEach((s) => s.slideNext()));
+const bindNavButtons = (prevBtns, nextBtns, swipers) => {
+  prevBtns.forEach((btn) => btn.addEventListener("click", () => swipers.forEach((s) => s.slidePrev())));
+  nextBtns.forEach((btn) => btn.addEventListener("click", () => swipers.forEach((s) => s.slideNext())));
 };
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
