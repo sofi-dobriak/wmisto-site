@@ -64,13 +64,14 @@
 section.stats-section(id="statistics")
   .stats-title-block
     h2.stats-title ЖК у цифрах
-    .stats-sign-block 
+    .stats-sign-block.hide-on-tablet.hide-on-mobile
       img(src="/images/panorama/panorama-sign.svg", alt="Sign image").stats-sign
   
   ul.stats-list
     each item in stats
       li.stats-item
-        h3.stats-title= item.title
-        p.stats-text= item.text
+        .stats-title-text-block
+          h3.stats-title= item.title
+          p.stats-text= item.text
         .stats-image-block 
           img.stats-image(src=`/images/stats/${item.img}` alt=item.alt loading="lazy")
