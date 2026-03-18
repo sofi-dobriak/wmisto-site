@@ -5,12 +5,24 @@
   flex-direction: column;
   overflow: hidden;
 
+  @include to(1023px) {
+    padding-top: 100px;
+    height: auto;
+  }
+
   .choose-title-block {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: vw(20);
     padding: 0 vw(20);
+
+    @include to(1023px) {
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
 
     .choose-title {
       @include font-h1;
@@ -31,6 +43,29 @@
     border-top: 1px solid $black;
     border-left: 1px solid $black;
 
+    @include to(1023px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-areas:
+        "one-room one-room"
+        "two-room two-room"
+        "three-room three-room"
+        "fountain fountain"
+        "terrace penthouse";
+    }
+
+    @include to(767px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-areas:
+        "one-room one-room"
+        "two-room two-room"
+        "three-room three-room"
+        "fountain fountain"
+        "terrace terrace"
+        "penthouse penthouse";
+    }
+
     .grid-link {
       display: block;
       text-decoration: none;
@@ -40,6 +75,17 @@
       border-right: 1px solid $black;
       border-bottom: 1px solid $black;
       padding: vw(20);
+
+      @include to(1023px) {
+        min-height: 280px;
+        padding: 20px;
+      }
+
+      @include to(767px) {
+        min-height: unset;
+        aspect-ratio: 16/9;
+        padding: 8px;
+      }
 
       &:hover {
         .grid-item-image {
@@ -92,6 +138,10 @@
       z-index: 2;
       padding: vw(20);
 
+      @include to(1023px) {
+        flex-direction: column-reverse;
+      }
+
       .grid-item-title {
         @include font-h3;
         margin: 0;
@@ -105,6 +155,10 @@
         border-radius: 100px;
         width: fit-content;
         margin: 0;
+
+        @include to(1023px) {
+          padding: 2px 12px;
+        }
       }
 
       .grid-item-image-block {
@@ -123,6 +177,10 @@
           object-position: center;
           will-change: transform;
           transition: $transition-long;
+
+          @include to(1023px) {
+            object-position: center 56%;
+          }
         }
       }
     }

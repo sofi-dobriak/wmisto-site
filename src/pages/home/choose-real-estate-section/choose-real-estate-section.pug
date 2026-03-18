@@ -2,12 +2,12 @@ include /shared/components/general-btn/general-btn.pug
 
 -
   const cards = [
-    { title: 'Однокімнатні', area: 'Від 34 м²', img: 'one-room.jpg', alt: 'Interior', reverse: false },
-    { title: 'Двокімнатні', area: 'Від 48 м²', img: 'two-room.jpg', alt: 'Interior', reverse: false },
-    { title: 'Трикімнатні', area: 'Від 69 м²', img: 'three-room.jpg', alt: 'Interior', reverse: false },
-    { title: 'Квартири з видами на фонтан', area: 'Від 20 м²', img: 'fountain.jpg', alt: 'Fountain', reverse: true },
-    { title: 'З терасами', area: 'Від 34 м²', img: 'terrace.jpg', alt: 'Terrace', reverse: true },
-    { title: 'Пентхауси', area: 'Від 8 м²', img: 'penthouse.jpg', alt: 'Penthouse', reverse: true }
+    { title: 'Однокімнатні', area: 'Від 34 м²', img: '/images/choose-real-estate/one-room.jpg', tab_img:"/images/choose-real-estate/one-room-tab.jpg", alt: 'Interior', reverse: false },
+    { title: 'Двокімнатні', area: 'Від 48 м²', img: '/images/choose-real-estate/two-room.jpg',tab_img:"/images/choose-real-estate/two-room-tab.jpg", alt: 'Interior', reverse: false },
+    { title: 'Трикімнатні', area: 'Від 69 м²', img: '/images/choose-real-estate/three-room.jpg', tab_img:"/images/choose-real-estate/three-room-tab.jpg", alt: 'Interior', reverse: false },
+    { title: 'Квартири з видами на фонтан', area: 'Від 20 м²', img: '/images/choose-real-estate/fountain.jpg', tab_img:"/images/choose-real-estate/fountain.jpg", alt: 'Fountain', reverse: true },
+    { title: 'З терасами', area: 'Від 34 м²', img: '/images/choose-real-estate/terrace.jpg', tab_img:"/images/choose-real-estate/terrace.jpg", alt: 'Terrace', reverse: true },
+    { title: 'Пентхауси', area: 'Від 8 м²', img: '/images/choose-real-estate/penthouse.jpg', tab_img:"/images/choose-real-estate/penthouse.jpg",  alt: 'Penthouse', reverse: true }
   ]
 
 section.choose-real-estate(id="choose-real-estate")
@@ -28,4 +28,5 @@ section.choose-real-estate(id="choose-real-estate")
               p.grid-item-area= card.area
             
             .grid-item-image-block
-              img.grid-item-image(src=`/images/choose-real-estate/${card.img}`, alt=card.alt)
+              img.grid-item-image(src=card.img, alt=card.alt).hide-on-tablet.hide-on-mobile
+              img.grid-item-image(src=card.tab_img, alt=card.alt).hide-on-desktop
