@@ -363,6 +363,14 @@
   background-color: #e76a6a;
   color: $black;
 
+  @include to(1023px) {
+    bottom: -14px;
+  }
+
+  @include to(767px) {
+    bottom: -10px;
+  }
+
   @include from(1512) {
     bottom: -15px;
   }
@@ -454,6 +462,10 @@
   @include tiny-text;
 
   @include to(1023px) {
+    font-size: 14px;
+  }
+
+  @include to(767px) {
     font-size: 10px;
   }
 }

@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
-  initGenplanAnim();
+  // initGenplanAnim();
 });
 
 function initGenplanAnim() {

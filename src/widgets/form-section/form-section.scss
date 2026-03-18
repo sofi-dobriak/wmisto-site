@@ -9,6 +9,15 @@
     linear-gradient(180deg, rgba(136, 151, 180, 0) 0%, rgba(136, 151, 180, 0.9) 100%),
     linear-gradient(0deg, rgba(136, 151, 180, 0.8) 0%, rgba(136, 151, 180, 0.8) 100%);
 
+  @include to(1023px) {
+    padding: 100px 60px;
+    flex-direction: column;
+  }
+
+  @include to(767px) {
+    padding: 40px 20px;
+  }
+
   .form-left-block {
     flex: 0 0 50%;
 
@@ -24,12 +33,27 @@
       @media screen and (min-width: 1920px) {
         max-width: 720px;
       }
+
+      @include to(1023px) {
+        font-size: 64px;
+        max-width: none;
+      }
+
+      @include to(767px) {
+        font-size: 42px;
+        margin-bottom: 12px;
+        letter-spacing: -2.52px;
+      }
     }
 
     .form-logo-block {
       max-width: vw(453);
       aspect-ratio: 453 / 70;
       margin-bottom: 20px;
+
+      @include to(1023px) {
+        max-width: 453px;
+      }
 
       .form-logo {
         width: 100%;
@@ -41,6 +65,15 @@
     .form-text {
       @include font-h3;
       color: $black;
+
+      @include to(1023px) {
+        font-size: 36px;
+      }
+
+      @include to(767px) {
+        font-size: 14px;
+        letter-spacing: -0.56px;
+      }
     }
   }
 
@@ -61,6 +94,15 @@
       height: 800px;
       z-index: -1;
       filter: grayscale(100%);
+
+      @include to(1023px) {
+        top: 200px;
+        left: 0;
+      }
+
+      @include to(767px) {
+        left: 100px;
+      }
 
       .form-image {
         width: 100%;
@@ -87,12 +129,33 @@
       transition: all 0.4s ease-in-out;
       width: 100%;
 
+      .success-popup-title {
+        @include to(1023px) {
+          font-size: 64px;
+        }
+
+        @include to(767px) {
+          font-size: 42px;
+        }
+      }
+
+      .success-popup-text {
+        @include to(1023px) {
+          font-size: 20px;
+        }
+
+        @include to(767px) {
+          font-size: 16px;
+        }
+      }
+
       &.is-active {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
       }
 
+      .popup-sign-block,
       .success-popup-image-block {
         display: none;
       }

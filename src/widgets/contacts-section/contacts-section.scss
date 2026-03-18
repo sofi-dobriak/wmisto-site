@@ -225,6 +225,23 @@
         visibility: visible;
         pointer-events: auto;
       }
+
+      .success-popup-title {
+        @include to(1023px) {
+          font-size: 64px;
+        }
+      }
+
+      .success-popup-text {
+        @include to(1023px) {
+          font-size: 20px;
+        }
+      }
+
+      .popup-sign-block,
+      .success-popup-image-block {
+        display: none;
+      }
     }
   }
 }
