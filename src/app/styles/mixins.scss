@@ -333,6 +333,10 @@
   line-height: 140%; /* 28px */
   letter-spacing: -0.8px;
 
+  @include to(1023px) {
+    font-size: 20px;
+  }
+
   @include to(767px) {
     font-size: 14px;
     letter-spacing: -0.56px;

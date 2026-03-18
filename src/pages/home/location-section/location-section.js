@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   addClickToLocationIframe();
-  initLocationAnim();
+  // initLocationAnim();
 });
 
 function addClickToLocationIframe() {

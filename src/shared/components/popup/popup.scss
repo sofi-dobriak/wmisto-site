@@ -20,7 +20,6 @@
     pointer-events: auto;
 
     .popup-content {
-      opacity: 1;
       transform: translateY(0);
     }
   }
@@ -40,7 +39,6 @@
     display: flex;
     flex-direction: column;
     max-width: vw-laptop(480);
-    opacity: 0;
 
     @include from(1512) {
       max-width: 480px;
