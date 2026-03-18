@@ -3,15 +3,23 @@
   position: relative;
   overflow: hidden;
 
+  @include to(1023px) {
+    height: auto;
+    padding-top: 140px;
+  }
+
+  @include to(767px) {
+    padding-top: 60px;
+  }
+
   .gallery-title {
     @include font-h1;
     color: $brown;
     text-align: center;
-    position: absolute;
-    left: 40%;
-    top: 15%;
-    transform: translateY(-50%);
-    z-index: 10;
+
+    @include to(1023px) {
+      left: 33%;
+    }
   }
 
   .gallery-swiper {
@@ -20,6 +28,14 @@
     .gallery-list {
       .gallery-item {
         height: vw(790);
+
+        @include to(1023px) {
+          height: vw-tablet(740);
+        }
+
+        @include to(767px) {
+          height: 432px;
+        }
 
         .gallery-image {
           width: 100%;
@@ -44,6 +60,14 @@
   .gallery-swiper-ellipse-top {
     top: calc(-1 * vw(600) + vw(80));
     border-radius: 0 0 50% 50%;
+
+    @include to(1023px) {
+      border-radius: 0 0 35% 35%;
+    }
+
+    @include to(767px) {
+      border-radius: 0 0 25% 25%;
+    }
   }
 
   .gallery-swiper-ellipse-bottom {
@@ -52,6 +76,14 @@
     display: flex;
     justify-content: center;
     z-index: 15;
+
+    @include to(1023px) {
+      border-radius: 35% 35% 0 0;
+    }
+
+    @include to(767px) {
+      border-radius: 25% 25% 0 0;
+    }
 
     .gallery-nav-buttons {
       position: absolute;

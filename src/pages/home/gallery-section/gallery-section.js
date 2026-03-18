@@ -13,4 +13,21 @@ const swiper = new Swiper(".gallery-swiper", {
     nextEl: ".gallery-button-next",
   },
   loop: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.3,
+      spaceBetween: 10,
+      centeredSlides: true,
+    },
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 20,
+      centeredSlides: true,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      centeredSlides: false,
+    },
+  },
 });
