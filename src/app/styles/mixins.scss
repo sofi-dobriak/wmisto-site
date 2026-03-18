@@ -255,6 +255,16 @@
   line-height: 100%; /* 100px */
   letter-spacing: -6px;
   text-transform: uppercase;
+
+  @include to(1023px) {
+    font-size: 64px;
+    letter-spacing: -3.84px;
+  }
+
+  @include to(767px) {
+    font-size: 42px;
+    letter-spacing: -2.52px;
+  }
 }
 
 @mixin font-h2 {
@@ -264,6 +274,18 @@
   font-weight: 500;
   line-height: 100%; /* 60px */
   letter-spacing: -3.6px;
+
+  @include to(1023px) {
+    font-size: 48px;
+    letter-spacing: -2.88px;
+    text-transform: uppercase;
+  }
+
+  @include to(767px) {
+    font-size: 36px;
+    letter-spacing: -2.16px;
+    text-transform: uppercase;
+  }
 }
 
 @mixin font-h3 {
@@ -273,6 +295,16 @@
   font-weight: 500;
   line-height: 120%; /* 43.2px */
   letter-spacing: -1.16px;
+
+  @include to(1023px) {
+    font-size: 36px;
+    letter-spacing: -2.16px;
+  }
+
+  @include to(767px) {
+    font-size: 24px;
+    letter-spacing: -1.44px;
+  }
 }
 
 @mixin font-h4-semibold {
@@ -282,6 +314,11 @@
   font-weight: 600;
   line-height: 140%; /* 28px */
   letter-spacing: -0.8px;
+
+  @include to(767px) {
+    font-size: 14px;
+    letter-spacing: -0.56px;
+  }
 }
 
 @mixin font-h4-regular {
@@ -291,6 +328,11 @@
   font-weight: 400;
   line-height: 140%; /* 28px */
   letter-spacing: -0.8px;
+
+  @include to(767px) {
+    font-size: 14px;
+    letter-spacing: -0.56px;
+  }
 }
 
 @mixin font-body {
@@ -303,6 +345,15 @@
 
   @include from(1512) {
     font-size: 16px;
+  }
+
+  @include to(1023px) {
+    font-size: 16px;
+  }
+
+  @include to(767px) {
+    font-size: 14px;
+    letter-spacing: -0.56px;
   }
 }
 
