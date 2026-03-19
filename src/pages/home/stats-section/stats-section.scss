@@ -9,6 +9,7 @@
   @include to(1023px) {
     padding-top: 140px;
     height: auto;
+    overflow: visible;
   }
 
   @include to(767px) {
@@ -58,6 +59,10 @@
 
     @include to(1023px) {
       grid-template-columns: repeat(1, 1fr);
+      @include to(1023px) {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     .stats-item {
@@ -72,6 +77,10 @@
 
       @include to(1023px) {
         flex-direction: row;
+        overflow: visible;
+        position: sticky;
+        top: calc(100px + (var(--item-index) - 1) * 10px);
+        z-index: var(--item-index); // кожна наступна картка поверх
       }
 
       .stats-title-text-block {

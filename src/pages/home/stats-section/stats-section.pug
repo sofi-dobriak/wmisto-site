@@ -68,8 +68,8 @@ section.stats-section(id="statistics")
       img(src="/images/panorama/panorama-sign.svg", alt="Sign image").stats-sign
   
   ul.stats-list
-    each item in stats
-      li.stats-item
+    each item, index in stats
+      li.stats-item(style=`--item-index: ${index + 1}`)
         .stats-title-text-block
           h3.stats-title= item.title
           p.stats-text= item.text
