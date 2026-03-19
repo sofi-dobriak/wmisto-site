@@ -2,12 +2,26 @@
   padding-top: vw(200);
   padding-bottom: vw(140);
 
+  @include to(1023px) {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+  @include to(767px) {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
   .progress-catalog-title {
     @include font-h2;
     color: $brown;
     text-align: center;
     margin-bottom: vw(40);
     text-transform: uppercase;
+
+    @include to(1023px) {
+      margin-bottom: 40px;
+    }
   }
 
   .progress-catalog-list {
@@ -15,5 +29,14 @@
     grid-template-columns: repeat(3, 1fr);
     border-bottom: 1px solid $black;
     margin-bottom: vw(140);
+
+    @include to(1023px) {
+      grid-template-columns: 1fr;
+      margin-bottom: 140px;
+    }
+
+    @include to(767px) {
+      margin-bottom: 60px;
+    }
   }
 }
