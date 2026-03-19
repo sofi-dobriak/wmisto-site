@@ -37,6 +37,7 @@
       grid-template-columns: 1fr;
       margin-bottom: 140px;
       row-gap: 40px;
+      padding: 0 20px;
     }
 
     @include to(767px) {

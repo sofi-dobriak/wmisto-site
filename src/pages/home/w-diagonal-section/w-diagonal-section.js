@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   initDiagonalSwiper();
-  // initDiagonalAnim();
+  initDiagonalAnim();
 });
 
 function initDiagonalSwiper() {
@@ -34,7 +34,7 @@ function initDiagonalAnim() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: section,
-      start: "top 70%",
+      start: "top 50%",
       toggleActions: "play none none none",
     },
   });

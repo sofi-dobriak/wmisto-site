@@ -232,6 +232,8 @@
 
     @include to(1023px) {
       min-height: 650px;
+      border-top: 0;
+      border-left: 1px solid $black;
     }
 
     @include to(767px) {

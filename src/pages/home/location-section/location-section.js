@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   addClickToLocationIframe();
-  // initLocationAnim();
+  initLocationAnim();
 });
 
 function addClickToLocationIframe() {
@@ -27,7 +27,7 @@ function initLocationAnim() {
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: section,
+      trigger: ".location-title-block",
       start: "top 50%",
       toggleActions: "play none none none",
     },

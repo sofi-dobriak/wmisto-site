@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
-  // initDeveloperAnim();
+  initDeveloperAnim();
 });
 
 function initDeveloperAnim() {
@@ -21,6 +21,7 @@ function initDeveloperAnim() {
         start: "top bottom",
         end: "bottom top",
         scrub: 1,
+        toggleActions: "play none none none",
       },
     });
   }
