@@ -7,7 +7,7 @@ mixin contacts
     ]
 
     const contacts_info = [
-      { type: 'phone', href: 'tel:+380970000077', text: '+38 (097) 000-00-77', icon: 'phone' },
+      { type: 'email', href: 'tel:+380970000077', text: '+38 (097) 000-00-77', icon: 'phone' },
       { type: 'email', href: 'mailto:wmistovn@gmail.com', text: 'wmistovn@gmail.com', icon: 'email' }
     ]
 
@@ -81,6 +81,6 @@ mixin contacts
     .contacts-form-block
       h3.form-title Залишилися запитання?
       p.form-description Ми допоможемо підібрати планування та відповімо на усі ваші запитання!
-      +form(contacts, 'contacts-form-link after-is-blue')
+      +form(contacts, 'contacts-form-link is-white')
       
         

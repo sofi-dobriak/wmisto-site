@@ -1,13 +1,25 @@
 .contacts-section {
-  padding: 0 vw(20) vw(16);
+  padding: 0 vw(20) vw(40);
   height: auto;
-  padding-bottom: vw(40);
   display: grid;
   grid-template-columns: 1.75fr 1.5fr 1fr;
+
+  @include to(1023px) {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 20px 40px;
+  }
 
   .contacts-block {
     padding: vw(30);
     border: 1px solid $black;
+
+    @include to(1023px) {
+      padding: 60px;
+    }
+
+    @include to(767px) {
+      padding: 40px 20px;
+    }
 
     @media screen and (min-width: 1280px) {
       padding: vw(30);
@@ -17,6 +29,10 @@
       @include font-h2;
       color: $brown;
       margin-bottom: vw(62);
+
+      @include to(1023px) {
+        margin-bottom: 40px;
+      }
     }
 
     .address-list {
@@ -26,6 +42,14 @@
       margin: 0;
       padding: 0;
       list-style: none;
+
+      @include to(1023px) {
+        gap: 40px;
+      }
+
+      @include to(767px) {
+        flex-direction: column;
+      }
 
       .address-item {
         flex: 1;
@@ -40,6 +64,10 @@
           @include font-h4-semibold;
           color: $brown;
           margin-bottom: vw(10);
+
+          @include to(1023px) {
+            margin-bottom: 10px;
+          }
         }
 
         .social-block {
@@ -52,6 +80,11 @@
           justify-content: space-between;
           gap: vw(40);
           margin-top: vw(40);
+
+          @include to(1023px) {
+            gap: 40px;
+            margin-top: 40px;
+          }
         }
 
         .address-icon-text-block,
@@ -63,6 +96,10 @@
           align-items: center;
           gap: vw(16);
 
+          @include to(1023px) {
+            gap: 16px;
+          }
+
           svg {
             width: vw-laptop(24);
             height: vw-laptop(24);
@@ -70,6 +107,11 @@
             flex-shrink: 0;
 
             @include from(1512) {
+              width: 24px;
+              height: 24px;
+            }
+
+            @include to(1023px) {
               width: 24px;
               height: 24px;
             }
@@ -91,6 +133,10 @@
             display: flex;
             flex-direction: column;
             gap: vw(6);
+
+            @include to(1023px) {
+              gap: 6px;
+            }
           }
         }
 
@@ -98,6 +144,11 @@
           display: inline-block;
           margin-top: vw(10);
           padding: vw(16) vw(28);
+
+          @include to(1023px) {
+            margin-top: 10px;
+            padding: 16px 28px;
+          }
         }
       }
 
@@ -107,6 +158,10 @@
         gap: vw(12);
         padding: 0;
         list-style: none;
+
+        @include to(1023px) {
+          gap: 12px;
+        }
 
         .contacts-social-item {
           .contacts-social-link {
@@ -123,6 +178,10 @@
               @include from(1512) {
                 height: 24px;
               }
+
+              @include to(1023px) {
+                height: 24px;
+              }
             }
 
             .contacts-social-item-inner {
@@ -133,6 +192,10 @@
               height: 100%;
               transition: $transition;
 
+              @include to(1023px) {
+                gap: 10px;
+              }
+
               .contacts-social-icon {
                 width: vw-laptop(24);
                 height: vw-laptop(24);
@@ -140,6 +203,11 @@
                 flex-shrink: 0;
 
                 @include from(1512) {
+                  width: 24px;
+                  height: 24px;
+                }
+
+                @include to(1023px) {
                   width: 24px;
                   height: 24px;
                 }
@@ -161,6 +229,14 @@
     border-top: 1px solid $black;
     border-right: 1px solid $black;
     border-bottom: 1px solid $black;
+
+    @include to(1023px) {
+      min-height: 650px;
+    }
+
+    @include to(767px) {
+      min-height: 420px;
+    }
 
     iframe {
       width: 100%;
@@ -187,20 +263,50 @@
     padding: vw(30) vw(56);
     position: relative;
 
+    @include to(1023px) {
+      padding: 100px 60px;
+    }
+
+    @include to(767px) {
+      padding: 40px 28px;
+    }
+
     .form-title {
       @include font-h3;
       color: $black;
       margin-bottom: vw(12);
+
+      @include to(1023px) {
+        @include font-h1;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      @include to(767px) {
+        font-size: 36px;
+      }
     }
 
     .form-description {
       @include font-body;
       color: $black;
       margin-bottom: vw(40);
+
+      @include to(1023px) {
+        @include font-h4-regular;
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto 60px;
+      }
     }
 
     .contacts-form-link {
       padding: vw(14) vw(18);
+
+      @include to(1023px) {
+        padding: 14px 18px;
+        margin: auto;
+      }
     }
 
     .success-popup-block {
@@ -219,6 +325,19 @@
       pointer-events: none;
       transition: $transition;
       width: 100%;
+
+      .success-popup-title-text-block {
+        @include to(1023px) {
+          max-width: 100%;
+          text-align: center;
+        }
+      }
+
+      .success-popup-link {
+        @include to(1023px) {
+          margin: 0 auto;
+        }
+      }
 
       &.is-active {
         opacity: 1;
