@@ -1,17 +1,16 @@
 .construction-item {
   border-right: 1px solid $black;
   padding: vw(20);
-  aspect-ratio: 640/620;
+  height: vw(620);
   overflow: hidden;
   border-top: 1px solid #000;
 
   @include to(1023px) {
-    aspect-ratio: 768/560;
+    height: auto;
     padding: 40px 20px;
   }
 
   @include to(767px) {
-    aspect-ratio: 375/320;
     padding: 20px;
   }
 
@@ -36,7 +35,9 @@
     overflow: hidden;
 
     @include to(1023px) {
-      aspect-ratio: 768/420;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      min-height: unset;
     }
 
     @include to(767px) {
