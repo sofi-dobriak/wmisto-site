@@ -150,6 +150,24 @@
           left: 20px;
           transform: none;
           bottom: 20px;
+
+          .about-button-prev,
+          .about-button-next {
+            background-color: $white;
+            border-color: $white;
+
+            svg {
+              fill: $black;
+            }
+
+            &:hover {
+              background-color: $brown;
+
+              svg {
+                fill: $white;
+              }
+            }
+          }
         }
       }
 
