@@ -1,9 +1,19 @@
 .construction-item {
   border-right: 1px solid $black;
   padding: vw(20);
-  height: vw(620);
+  aspect-ratio: 640/620;
   overflow: hidden;
   border-top: 1px solid #000;
+
+  @include to(1023px) {
+    aspect-ratio: 768/560;
+    padding: 40px 20px;
+  }
+
+  @include to(767px) {
+    aspect-ratio: 375/320;
+    padding: 20px;
+  }
 
   &:hover {
     .construction-image {
@@ -20,64 +30,70 @@
     }
   }
 
-  .construction-link {
+  .construction-image-block {
+    aspect-ratio: 600/460;
+    margin-bottom: vw(32);
     overflow: hidden;
 
-    .construction-image-block {
-      aspect-ratio: 600/460;
-      margin-bottom: vw(32);
-      overflow: hidden;
+    @include to(1023px) {
+      aspect-ratio: 768/420;
+      margin-bottom: 40px;
+    }
 
-      .construction-image {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-        object-position: center;
-        will-change: transform;
-        transition: $transition;
+    @include to(767px) {
+      aspect-ratio: 335/212;
+      margin-bottom: 20px;
+    }
+
+    .construction-image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      will-change: transform;
+      transition: $transition;
+    }
+  }
+
+  .construction-date-icon-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .construction-date {
+      .construction-day {
+        @include font-h2;
+        color: $brown;
+      }
+
+      .construction-month-year-block {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .construction-month,
+        .construction-year {
+          @include font-h4-regular;
+          color: $black;
+        }
       }
     }
 
-    .construction-date-icon-block {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .construction-icon {
+      width: 24px;
+      height: 24px;
+      color: $black;
+      transform: rotate(145deg);
+      overflow: visible;
 
-      .construction-date {
-        .construction-day {
-          @include font-h2;
-          color: $brown;
-        }
-
-        .construction-month-year-block {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-
-          .construction-month,
-          .construction-year {
-            @include font-h4-regular;
-            color: $black;
-          }
-        }
+      .icon-line {
+        transition: $transition;
+        transform-origin: center;
       }
 
-      .construction-icon {
-        width: 24px;
-        height: 24px;
-        color: $black;
-        transform: rotate(145deg);
-        overflow: visible;
-
-        .icon-line {
-          transition: $transition;
-          transform-origin: center;
-        }
-
-        .icon-arrowhead {
-          transition: $transition;
-        }
+      .icon-arrowhead {
+        transition: $transition;
       }
     }
   }
