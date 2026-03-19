@@ -3,6 +3,10 @@
   border-bottom: 1px solid $black;
   padding: vw(40);
 
+  @include to(1023px) {
+    padding: 40px;
+  }
+
   &:hover {
     .docs-link {
       .docs-title-image-block {
@@ -35,10 +39,27 @@
       align-items: center;
       gap: vw(40);
 
+      @include to(1023px) {
+        gap: 40px;
+      }
+
+      @include to(767px) {
+        gap: 28px;
+      }
+
       .docs-image-block {
         aspect-ratio: 90/124;
         max-width: vw(90);
         max-height: vw(124);
+
+        @include to(1023px) {
+          max-width: 90px;
+          max-height: 124px;
+        }
+
+        @include to(767px) {
+          display: none;
+        }
 
         .docs-image {
           width: 100%;
@@ -56,6 +77,14 @@
         margin: 0;
         max-width: vw(604);
         word-break: break-word;
+
+        @include to(1023px) {
+          max-width: 65%;
+        }
+
+        @include to(767px) {
+          max-width: 100%;
+        }
 
         span {
           display: inline;

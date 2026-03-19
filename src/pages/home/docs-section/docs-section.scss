@@ -2,11 +2,29 @@
   padding-top: vw(200);
   padding-bottom: vw(200);
 
+  @include to(1023px) {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+  @include to(767px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   .docs-title {
     @include font-h2;
     color: $brown;
     margin-bottom: vw(40);
     text-align: center;
+
+    @include to(1023px) {
+      margin-bottom: 40px;
+    }
+
+    @include to(767px) {
+      margin-bottom: 20px;
+    }
   }
 
   .docs-list {
@@ -14,5 +32,9 @@
     grid-template-columns: repeat(2, 1fr);
     border-top: 1px solid $black;
     border-left: 1px solid $black;
+
+    @include to(1023px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
