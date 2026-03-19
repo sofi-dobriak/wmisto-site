@@ -1,6 +1,3 @@
-@use "/src/app/styles/mixins.scss" as *;
-@use "/src/app/styles/vars.scss" as *;
-
 .news-item {
   padding: 0 vw(20);
   border-right: 1px solid $black;
@@ -10,6 +7,16 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+
+  @include to(1023px) {
+    height: auto;
+    padding: 40px 20px;
+    border-bottom: 1px solid $black;
+  }
+
+  @include to(767px) {
+    padding: 20px;
+  }
 
   &:hover {
     .news-link {
@@ -25,6 +32,7 @@
 
           .news-icon {
             stroke: $white;
+            flex-shrink: 0;
           }
         }
       }
@@ -43,6 +51,10 @@
       justify-content: space-between;
       margin-bottom: vw(40);
 
+      @include to(1023px) {
+        margin-bottom: 8px;
+      }
+
       .news-icon-block {
         width: vw(44);
         height: vw(44);
@@ -53,6 +65,11 @@
         justify-content: center;
         background-color: $white;
         transition: $transition;
+
+        @include to(1023px) {
+          width: 44px;
+          height: 44px;
+        }
 
         .news-icon {
           stroke: $black;
@@ -71,14 +88,28 @@
       color: $brown;
       text-align: left;
       margin-bottom: vw(40);
+
+      @include to(1023px) {
+        margin-bottom: 40px;
+      }
+
+      @include to(767px) {
+        margin-bottom: 20px;
+      }
     }
 
     .news-image-block {
       margin-top: auto;
-      aspect-ratio: 600/200;
+      aspect-ratio: 600/300;
       overflow: hidden;
       min-height: vw(300);
       position: relative;
+
+      @include to(1023px) {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        min-height: unset;
+      }
 
       &::before {
         content: "";
@@ -92,6 +123,10 @@
         transform-origin: top;
         transition: $transition;
         will-change: transform;
+
+        @include to(1023px) {
+          display: none;
+        }
       }
 
       .news-image {

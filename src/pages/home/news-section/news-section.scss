@@ -1,15 +1,35 @@
 .news-section {
   padding-top: vw(200);
 
+  @include to(1023px) {
+    padding-top: 140px;
+  }
+
+  @include to(767px) {
+    padding-top: 60px;
+  }
+
   .news-title {
     @include font-h2;
     color: $brown;
     text-align: center;
     margin-bottom: vw(40);
+
+    @include to(1023px) {
+      margin-bottom: 40px;
+    }
+
+    @include to(767px) {
+      margin-bottom: 20px;
+    }
   }
 
   .news-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @include to(1023px) {
+      grid-template-columns: 1fr;
+    }
   }
 }

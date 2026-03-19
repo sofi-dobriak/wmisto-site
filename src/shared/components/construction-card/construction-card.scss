@@ -37,7 +37,6 @@
 
     @include to(1023px) {
       aspect-ratio: 768/420;
-      margin-bottom: 40px;
     }
 
     @include to(767px) {
