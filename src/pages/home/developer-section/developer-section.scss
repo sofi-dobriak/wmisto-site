@@ -39,17 +39,15 @@
 
     @include to(1023px) {
       gap: 40px;
-      padding: 80px 60px;
+      padding: 40px;
       width: 100%;
       max-width: 500px;
-      max-height: 644px;
     }
 
     @include to(767px) {
       gap: 28px;
-      padding: 40px 28px;
+      padding: 28px;
       max-width: 335px;
-      max-height: 472px;
     }
 
     @include from(1512) {
