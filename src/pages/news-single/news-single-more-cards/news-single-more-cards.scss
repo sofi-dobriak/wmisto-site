@@ -1,16 +1,48 @@
 .news-single-more-cards-section {
   padding-bottom: vw(200);
 
+  @include to(1023px) {
+    padding-bottom: 140px;
+  }
+
+  @include to(767px) {
+    padding-bottom: 60px;
+  }
+
   .news-single-title {
     @include font-h2;
     color: $brown;
     margin-bottom: vw(40);
-    padding: vw(20);
+    padding: 0 vw(20);
     text-transform: uppercase;
+
+    @include to(1023px) {
+      margin-bottom: 40px;
+      padding: 0 20px;
+    }
+
+    @include to(767px) {
+      text-align: center;
+    }
   }
 
   .news-single-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
+    @include to(1023px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 0 20px;
+
+      .news-item {
+        padding: 0 0 20px;
+        border-right: none;
+
+        &:last-child {
+          padding: 0;
+        }
+      }
+    }
   }
 }

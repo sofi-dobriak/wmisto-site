@@ -1,10 +1,22 @@
 .news-single-section {
   padding-bottom: vw(200);
 
+  @include to(1023px) {
+    padding-bottom: 140px;
+  }
+
+  @include to(767px) {
+    padding-bottom: 60px;
+  }
+
   .news-single-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: start;
+
+    @include to(1023px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .news-single-title-social-block {
@@ -15,11 +27,34 @@
     border-left: 1px solid $brown;
     border-bottom: 1px solid $brown;
 
+    @include to(1023px) {
+      position: static;
+      padding: 40px;
+      margin-top: 100px;
+    }
+
+    @include to(767px) {
+      padding: 40px 20px;
+      margin-top: 72px;
+    }
+
     .news-back-date-block {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: vw(40);
+
+      .back-link-block .back-link {
+        position: static;
+      }
+
+      @include to(1023px) {
+        margin-bottom: 40px;
+      }
+
+      @include to(767px) {
+        margin-bottom: 20px;
+      }
 
       .news-date {
         @include font-body;
@@ -31,6 +66,14 @@
       @include font-h3;
       color: $brown;
       margin-bottom: vw(40);
+
+      @include to(1023px) {
+        margin-bottom: 40px;
+      }
+
+      @include to(767px) {
+        margin-bottom: 20px;
+      }
     }
 
     .news-social-list {
@@ -39,11 +82,19 @@
       gap: vw(20);
       flex-wrap: wrap;
 
+      @include to(1023px) {
+        gap: 20px;
+      }
+
       .news-social-item {
         .news-social-link {
           display: flex;
           align-items: center;
           gap: vw(16);
+
+          @include to(1023px) {
+            gap: 8px;
+          }
 
           .news-social-icon {
             width: vw-laptop(24);
@@ -51,6 +102,11 @@
             fill: $brown;
 
             @include from(1512) {
+              width: 24px;
+              height: 24px;
+            }
+
+            @include to(1023px) {
               width: 24px;
               height: 24px;
             }
@@ -73,26 +129,58 @@
     border-bottom: 1px solid $brown;
     min-width: 0;
 
+    @include to(1023px) {
+      padding: 40px;
+    }
+
+    @include to(767px) {
+      padding: 40px 20px;
+    }
+
     .news-single-text {
       @include font-h4-regular;
       color: $black;
       margin-bottom: vw(40);
+
+      @include to(1023px) {
+        margin-bottom: 40px;
+      }
+
+      @include to(767px) {
+        margin-bottom: 20px;
+      }
     }
 
     .news-single-list-title {
       @include font-h4-semibold;
       color: $black;
       margin-bottom: vw(12);
+
+      @include to(1023px) {
+        margin-bottom: 12px;
+      }
     }
 
     .news-single-list {
       margin-bottom: vw(40);
+
+      @include to(1023px) {
+        margin-bottom: 40px;
+      }
+
+      @include to(1023px) {
+        margin-bottom: 20px;
+      }
 
       .news-single-item {
         @include font-body;
         color: $black;
         position: relative;
         padding-left: vw(40);
+
+        @include to(1023px) {
+          padding-left: 20px;
+        }
 
         &:before {
           position: absolute;
@@ -109,19 +197,40 @@
       width: 100%;
       margin-bottom: vw(60);
 
+      @include to(1023px) {
+        margin-bottom: 60px;
+      }
+
       .news-single-swiper {
         height: vw(485);
         overflow: hidden;
         width: 100%;
 
+        @include to(1023px) {
+          height: auto;
+          aspect-ratio: 688 /404;
+        }
+
+        @include to(767px) {
+          aspect-ratio: 335/436;
+        }
+
         .swiper-slide {
           height: 100%;
           padding: 0 vw(100);
+
+          @include to(1023px) {
+            padding: 0;
+          }
 
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+
+            @include to(1023px) {
+              object-fit: contain;
+            }
           }
         }
       }
@@ -135,16 +244,40 @@
         display: flex;
         gap: vw(8);
 
+        @include to(1023px) {
+          gap: 8px;
+          bottom: -30px;
+        }
+
         .news-single-button-prev,
         .news-single-button-next {
           width: vw(64);
           height: vw(64);
+
+          @include to(1023px) {
+            width: 64px;
+            height: 64px;
+          }
+
+          @include to(767px) {
+            width: 48px;
+            height: 48px;
+          }
         }
       }
     }
 
     .news-single-image-block {
       margin-bottom: vw(40);
+
+      @include to(1023px) {
+        margin-bottom: 40px;
+      }
+
+      @include to(767px) {
+        height: auto;
+        aspect-ratio: 335/396;
+      }
 
       .news-single-image {
         width: 100%;
@@ -157,6 +290,10 @@
     .news-single-video {
       width: 100%;
       margin-bottom: vw(40);
+
+      @include to(1023px) {
+        margin-bottom: 40px;
+      }
 
       .news-single-video-wrap {
         position: relative;

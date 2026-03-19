@@ -11,6 +11,7 @@ export const initNewsSwiper = () => {
     modules: [Navigation],
     speed: 800,
     slidesPerView: 1,
+    spaceBetween: 10,
     loop: false,
     navigation: {
       prevEl: ".news-single-button-prev",
