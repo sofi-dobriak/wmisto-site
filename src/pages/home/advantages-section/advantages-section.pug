@@ -33,17 +33,26 @@ section.advantages-section(id="advantages")
         li.advantages-item.swiper-slide
           .advantages-image-block
             img(src=item.img, alt=item.alt).advantages-image
-    
-  .adv-counter
+
+    .adv-m-controls.hide-on-desktop
+      .adv-counter
+        p.main-count.adv-tab-js-count
+          span.current.adv-tab-js-current
+          span.next.adv-tab-js-next
+        p.total.adv-tab-js-total
+      
+      +swiper-nav('advantages-nav-buttons hide-on-desktop', 'advantages-button-prev','advantages-button-next')
+      
+  .adv-counter.hide-on-tablet.hide-on-mobile
     p.main-count.adv-js-count
       span.current.adv-js-current
       span.next.adv-js-next
     p.total.adv-js-total
 
-  +swiper-nav('advantages-nav-buttons', 'advantages-button-prev','advantages-button-next')
+  +swiper-nav('advantages-nav-buttons hide-on-tablet hide-on-mobile', 'advantages-button-prev','advantages-button-next')
 
   .advantages-text-block.swiper
-    ul.swiper-wrapper 
+    ul.swiper-wrapper.hide-on-mobile
       each item in advantages
         li.swiper-slide
           p.advantages-text= item.text

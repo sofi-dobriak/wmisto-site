@@ -65,6 +65,7 @@
     .developer-icon {
       margin: 0 auto;
       fill: $brown;
+      flex-shrink: 0;
     }
 
     .developer-logo-block {

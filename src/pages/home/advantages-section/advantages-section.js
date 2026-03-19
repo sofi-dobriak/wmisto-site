@@ -9,11 +9,26 @@ const formatNum = (num) => (num < 10 ? `0${num}` : num);
 
 const getSizes = () => {
   const ww = window.innerWidth;
-  return {
-    activeW: (760 / 1920) * ww,
-    inactiveW: (380 / 1920) * ww,
-    gap: 20,
-  };
+
+  if (ww <= 767) {
+    return {
+      activeW: 375,
+      inactiveW: 375,
+      gap: 10,
+    };
+  } else if (ww <= 1023) {
+    return {
+      activeW: (534 / 1023) * ww,
+      inactiveW: (444 / 1023) * ww,
+      gap: 16,
+    };
+  } else {
+    return {
+      activeW: (760 / 1920) * ww,
+      inactiveW: (380 / 1920) * ww,
+      gap: 20,
+    };
+  }
 };
 
 // ─── DOM ─────────────────────────────────────────────────────────────────────
@@ -37,7 +52,9 @@ const initCounter = (totalEl, totalSlides) => {
 };
 
 const animateCounter = (currentEl, nextEl, countBlock, realIndex) => {
-  const nextNumber = formatNum(realIndex + 1);
+  // const nextNumber = formatNum(realIndex + 1);
+  const width = window.innerWidth;
+  const nextNumber = width <= 1023 ? realIndex + 1 : formatNum(realIndex + 1);
 
   if (!currentEl || !nextEl || currentEl.textContent === nextNumber) return;
 
@@ -54,6 +71,7 @@ const animateCounter = (currentEl, nextEl, countBlock, realIndex) => {
 
 const applyCustomTranslate = (swiper) => {
   const { activeW, inactiveW, gap } = getSizes();
+
   const activeIndex = swiper.activeIndex;
 
   const widthOfPrevSlides = activeIndex * inactiveW;
@@ -119,22 +137,28 @@ const initMainSwiper = (swiper_text, elements) => {
 
 // ─── Navigation buttons ───────────────────────────────────────────────────────
 
-const bindNavButtons = (swiper, prevBtn, nextBtn) => {
-  prevBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (swiper.activeIndex > 0) {
-      swiper.slideTo(swiper.activeIndex - 1, 800);
-    }
+const bindNavButtons = (swiper) => {
+  const prevBtns = document.querySelectorAll(".advantages-button-prev");
+  const nextBtns = document.querySelectorAll(".advantages-button-next");
+
+  prevBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (swiper.activeIndex > 0) {
+        swiper.slideTo(swiper.activeIndex - 1, 800);
+      }
+    });
   });
 
-  nextBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (swiper.activeIndex < swiper.slides.length - 1) {
-      swiper.slideTo(swiper.activeIndex + 1, 800);
-    }
+  nextBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (swiper.activeIndex < swiper.slides.length - 1) {
+        swiper.slideTo(swiper.activeIndex + 1, 800);
+      }
+    });
   });
 };
-
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
 function initAdvantagesSwiper() {

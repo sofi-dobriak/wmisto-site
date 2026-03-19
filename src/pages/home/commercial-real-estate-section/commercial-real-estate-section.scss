@@ -97,12 +97,12 @@
     position: relative;
     padding: vw(60);
     overflow: hidden;
-    border-top: 1px solid $black;
 
     @include to(1023px) {
       flex: unset;
       max-height: 800px;
       padding-top: 100px;
+      border-top: 1px solid $black;
     }
 
     @include to(767px) {
