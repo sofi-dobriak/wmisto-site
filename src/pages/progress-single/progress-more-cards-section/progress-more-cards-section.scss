@@ -1,16 +1,37 @@
 .progress-more-section {
   padding-bottom: vw(200);
 
+  @include to(1023px) {
+    padding-bottom: 140px;
+  }
+
+  @include to(767px) {
+    padding-bottom: 60px;
+  }
+
   .progress-more-title {
     @include font-h2;
     color: $brown;
     padding: 0 vw(20);
     margin-bottom: vw(40);
+
+    @include to(1023px) {
+      padding: 0 20px;
+      margin-bottom: 40px;
+    }
+
+    @include to(767px) {
+      margin-bottom: 20px;
+    }
   }
 
   .progress-more-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-bottom: 1px solid $black;
+
+    @include to(1023px) {
+      grid-template-columns: 1fr;
+    }
   }
 }

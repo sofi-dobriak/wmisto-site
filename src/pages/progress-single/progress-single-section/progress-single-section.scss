@@ -3,6 +3,25 @@
   padding-top: 100px;
   min-height: 100vh;
 
+  @include to(1023px) {
+    padding-bottom: 140px;
+  }
+
+  @include to(767px) {
+    padding-top: 60px;
+  }
+
+  .back-link {
+    @include to(1023px) {
+      top: 20px;
+      left: 8px;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
   .progress-single-grid {
     display: grid;
     grid-template-columns: 2.3fr 1fr;
@@ -13,15 +32,31 @@
     z-index: 1;
     border-right: 1px solid $black;
     border-left: 1px solid $black;
+
+    @include to(1023px) {
+      grid-template-columns: 1fr;
+      height: auto;
+      row-gap: 20px;
+    }
   }
 
   .progress-single-visual {
-    position: relative;
     height: 100%;
     background-color: $white;
     overflow: hidden;
     border-bottom: 1px solid $black;
     border-right: 1px solid $black;
+    position: relative;
+
+    @include to(1023px) {
+      border-bottom-color: transparent;
+      height: vw-tablet(620);
+      overflow: hidden;
+    }
+
+    @include to(767px) {
+      height: 520px;
+    }
 
     .progress-single-swiper {
       width: 100%;
@@ -33,6 +68,10 @@
         align-items: center;
         justify-content: center;
         padding: 0 vw(100);
+
+        @include to(1023px) {
+          padding: 0;
+        }
       }
 
       .swiper-slide img {
@@ -41,48 +80,67 @@
         object-fit: contain;
       }
     }
+  }
 
-    .progress-single-nav {
-      display: flex;
-      align-items: center;
-      gap: vw(8);
-      position: absolute;
-      bottom: vw(40);
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
+  .progress-single-nav {
+    display: flex;
+    align-items: center;
+    gap: vw(8);
+    position: absolute;
+    z-index: 10;
 
-      .progress-single-button-prev,
-      .progress-single-button-next {
-        width: vw(64);
-        height: vw(64);
+    bottom: 40px;
+    left: 38%;
+    transform: translateX(-50%);
+
+    @include to(1023px) {
+      position: relative;
+      transform: none;
+      left: auto;
+      bottom: auto;
+      justify-content: center;
+    }
+
+    .progress-single-button-prev,
+    .progress-single-button-next {
+      width: vw(64);
+      height: vw(64);
+      background-color: $white;
+      border: 1px solid $black;
+      transition: all 0.4s ease-in-out;
+
+      @include to(1023px) {
+        width: 64px;
+        height: 64px;
+      }
+
+      @include to(767px) {
+        width: 48px;
+        height: 48px;
+      }
+
+      svg {
+        fill: $black;
+        transition: all 0.4s ease-in-out;
+      }
+
+      &:hover {
+        background-color: $brown;
+        border-color: $brown;
+
+        svg {
+          fill: $white;
+        }
+      }
+
+      &.swiper-button-disabled {
+        opacity: 1;
+        pointer-events: auto;
         background-color: $white;
         border: 1px solid $black;
-        transition: all 0.4s ease-in-out;
 
         svg {
           fill: $black;
-          transition: all 0.4s ease-in-out;
-        }
-
-        &:hover {
-          background-color: $brown;
-          border-color: $brown;
-
-          svg {
-            fill: $white;
-          }
-        }
-
-        &.swiper-button-disabled {
-          opacity: 1;
-          pointer-events: auto;
-          background-color: $white;
-          border: 1px solid $black;
-
-          svg {
-            fill: $black;
-          }
         }
       }
     }
@@ -95,16 +153,35 @@
     justify-content: space-between;
     border-bottom: 1px solid $black;
 
+    @include to(1023px) {
+      padding: 40px;
+      border-top: 1px solid $black;
+    }
+
+    @include to(767px) {
+      padding: 20px;
+    }
+
     .construction-date {
       display: flex;
       flex-direction: column;
       gap: vw(10);
       margin-bottom: vw(40);
 
+      @include to(1023px) {
+        gap: 10px;
+        flex-direction: row;
+        margin-bottom: 40px;
+      }
+
       .progress-month-year-block {
         display: flex;
         align-items: center;
         gap: vw(8);
+
+        @include to(1023px) {
+          gap: 8px;
+        }
       }
 
       .progress-day {
@@ -125,11 +202,20 @@
       .progress-text {
         @include font-body;
         margin-bottom: vw(20);
+
+        @include to(1023px) {
+          margin-bottom: 20px;
+        }
       }
 
       .progress-list {
         margin: vw(20) 0;
         padding-left: vw(20);
+
+        @include to(1023px) {
+          margin: 20px 0;
+          padding-left: 20px;
+        }
 
         .progress-item {
           @include font-body;
@@ -149,6 +235,14 @@
 
     .progress-single-link {
       width: max-content;
+
+      @include to(1023px) {
+        margin-top: 40px;
+      }
+
+      @include to(767px) {
+        margin-top: unset;
+      }
     }
   }
 }
