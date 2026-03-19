@@ -10,12 +10,17 @@
 
   @include to(1023px) {
     height: auto;
-    padding: 40px 20px;
+    padding: 0 40px 20px;
     border-bottom: 1px solid $black;
+
+    &:last-child {
+      border-bottom-color: transparent;
+    }
   }
 
   @include to(767px) {
-    padding: 20px;
+    padding: 0 0 20px;
+    border-right-color: transparent;
   }
 
   &:hover {
@@ -106,7 +111,7 @@
       position: relative;
 
       @include to(1023px) {
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 728 / 372;
         width: 100%;
         min-height: unset;
       }
