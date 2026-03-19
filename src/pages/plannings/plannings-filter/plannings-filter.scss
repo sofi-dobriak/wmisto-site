@@ -1,16 +1,20 @@
 @import "/src/app/styles/smart-grid.scss";
 
 .plannings__filter {
-  width: calc(20% - var(--gap));
+  width: calc(30% - var(--gap));
   border: 1px solid $black;
   padding: vw(40) vw(20);
 
-  &.collapsed {
-    height: 47px;
-    overflow: hidden;
+  @include to(1023px) {
+    padding: 40px 20px;
   }
 
-  @include from(1025px) {
+  // &.collapsed {
+  //   height: 47px;
+  //   overflow: hidden;
+  // }
+
+  @include from(1024px) {
     position: sticky;
     top: var(--header-h);
     max-height: calc(100vh - var(--header-h));
@@ -26,17 +30,19 @@
   }
 
   @include to(600px) {
-    padding: 12px;
-    border-radius: 20px;
-    border: 1px solid $white;
-    width: calc(100% - var(--page-side-fields) * 2);
-    margin-left: auto;
-    margin-right: auto;
-    position: sticky;
-    top: calc(var(--header-h) + 8px);
-    z-index: 2;
+    padding: 20px 40px;
+    position: relative;
+    border: 1px solid $black;
+    width: 100%;
     background-color: $white;
-    padding-top: 0;
+    // border-radius: 20px;
+    // width: calc(100% - var(--page-side-fields) * 2);
+    // margin-left: auto;
+    // margin-right: auto;
+    // position: sticky;
+    // top: calc(var(--header-h) + 8px);
+    // z-index: 2;
+    // padding-top: 0;
   }
 
   &.collapsed &-title {
@@ -53,7 +59,7 @@
     width: auto;
     margin-right: auto;
 
-    @include to(1024px) {
+    @include to(1023px) {
       margin-right: 16px;
     }
   }
@@ -70,11 +76,11 @@
       padding-left: 12px;
       padding-right: 12px;
 
-      @include from(1025px) {
+      @include from(1024px) {
         margin-bottom: 12px;
       }
 
-      @include to(1024px) {
+      @include to(1023px) {
         margin-bottom: 16px;
       }
 
@@ -82,14 +88,14 @@
       }
     }
 
-    @include to(1024px) {
+    @include to(1023px) {
       width: 100%;
       &--range {
         width: calc(50% - var(--gap) * 0.5);
       }
     }
 
-    @include from-to(601px, 1024px) {
+    @include from-to(601px, 1023px) {
       &--range {
         width: calc(40% - var(--gap));
       }
@@ -111,6 +117,11 @@
 
   &-group ~ &-group {
     margin-top: vw(32);
+
+    @include to(1023px) {
+      width: 100%;
+      margin-top: 32px;
+    }
   }
 
   .Range__item {
@@ -170,6 +181,11 @@
     height: vw-laptop(16);
 
     @include from(1512) {
+      width: 16px;
+      height: 16px;
+    }
+
+    @include to(1023px) {
       width: 16px;
       height: 16px;
     }

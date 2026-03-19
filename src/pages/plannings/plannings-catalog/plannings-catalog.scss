@@ -3,20 +3,25 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: max-content;
   gap: 20px;
-  width: calc(80% - var(--gap));
+  width: calc(70% - var(--gap));
 
-  @include to(600px) {
-    width: 100%;
-    padding-left: var(--page-side-fields);
-    padding-right: var(--page-side-fields);
+  @include to(1395px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include to(1630px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @include to(1395px) {
-    grid-template-columns: repeat(2, 1fr);
+  @include to(1023px) {
+    width: 100%;
+  }
+
+  @include to(600px) {
+    width: 100%;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -53,6 +58,10 @@
     margin-bottom: vw(12);
     transition: all 0.2s ease-in-out;
 
+    @include to(1023px) {
+      margin-bottom: 20px;
+    }
+
     &-label {
       position: absolute;
       top: 4px;
@@ -83,6 +92,11 @@
     gap: vw(16);
     margin-bottom: vw(12);
 
+    @include to(1023px) {
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
     &__title {
       @include font-h3;
       color: $brown;
@@ -97,6 +111,10 @@
     gap: vw(20);
     @include font-body;
     color: $black;
+
+    @include to(1023px) {
+      gap: 20px;
+    }
 
     &-group {
       display: flex;

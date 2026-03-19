@@ -4,11 +4,19 @@
 .plannings-section {
   padding: 140px vw(20) vw(140);
 
+  @include to(1023px) {
+    padding: 100px 20px 40px;
+  }
+
   .plannings-title {
     @include font-h1;
     color: $brown;
     margin-bottom: vw(40);
     text-align: center;
+
+    @include to(1023px) {
+      margin-bottom: 40px;
+    }
   }
 
   .plannings__content {
