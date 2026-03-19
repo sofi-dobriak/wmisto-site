@@ -1,12 +1,8 @@
 .single-flat-slider {
   padding: vw(20);
 
-  @include to(1024px) {
-    margin-bottom: var(--section-v-offset);
-  }
-
-  @include to(600px) {
-    margin-bottom: 80px;
+  @include to(1023px) {
+    padding: 0;
   }
 
   .swiper-container {
@@ -15,6 +11,7 @@
 
     @include to(1024px) {
       padding-top: 20px;
+      padding-bottom: 0;
     }
   }
 
@@ -27,6 +24,11 @@
   &__title {
     @include font-h2;
     color: $brown;
+    padding: 0 20px;
+
+    @include to(767px) {
+      @include font-mob-h3;
+    }
   }
 
   .single-flat-slider-nav {

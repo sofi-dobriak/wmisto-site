@@ -397,6 +397,10 @@
   @include from(1512) {
     font-size: 14px;
   }
+
+  @include to(1023px) {
+    font-size: 14px;
+  }
 }
 
 @mixin font-mob-h3 {

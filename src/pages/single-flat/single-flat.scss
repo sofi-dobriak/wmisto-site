@@ -6,6 +6,14 @@
   padding-top: 100px;
   padding-bottom: vw(140);
 
+  @include to(1023px) {
+    padding-bottom: 140px;
+  }
+
+  @include to(767px) {
+    padding-bottom: 60px;
+  }
+
   &__content {
     position: relative;
     display: grid;
@@ -22,25 +30,25 @@
       grid-template-columns: 1fr 2.5fr 1fr;
     }
 
-    @include to(1024px) {
+    @include to(1023px) {
       grid-template-areas:
         "top top"
         "img img"
         "info2 info1";
       grid-template-columns: 1fr 1fr;
       column-gap: 0;
-      row-gap: 20px;
+      row-gap: 140px;
     }
 
-    @include to(600px) {
+    @include to(767px) {
       grid-template-areas:
         "top"
         "img"
-        "info2"
-        "info1";
+        "info1"
+        "info2";
       grid-template-columns: 1fr;
       column-gap: 0;
-      row-gap: 30px;
+      row-gap: 60px;
     }
 
     .installment-block {
@@ -69,6 +77,10 @@
   color: $brown;
   @include font-body;
   transition: all 0.2s ease-in-out;
+
+  @include to(1023px) {
+    padding: 5px 12px;
+  }
 
   &:not(.active) {
     cursor: pointer;

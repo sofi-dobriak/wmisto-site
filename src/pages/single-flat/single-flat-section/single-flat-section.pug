@@ -32,7 +32,7 @@ include /shared/components/general-btn/general-btn.pug
     .single-flat__info-group__description 
       span Планування також зустрічається на таких поверхах:
       span 7, 8, 12, 18, 19        
-  .single-flat__info-group.hide-on-mobile
+  .single-flat__info-group
     +general-btn({ text: 'Забронювати', type: 'button', customClass:'button-main js-call-popup-open'})
 
 .single-flat__images
@@ -68,5 +68,5 @@ include /shared/components/general-btn/general-btn.pug
         span.single-flat__info2-row__title= spec.title
         span.single-flat__info2-row__value= spec.value
         
-  .single-flat__info2-group.hide-on-tablet  
+  .single-flat__info2-group
     +general-btn({type:"button", text:"Завантажити PDF", customClass:"button-main is-white"})(data-pdf-download="")

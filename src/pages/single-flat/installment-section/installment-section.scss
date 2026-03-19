@@ -10,36 +10,40 @@
       "title text"
       "img text";
 
-    @include to(1024px) {
+    @include to(1023px) {
       grid-template-areas:
         "title"
         "img"
         "text";
       grid-template-columns: 1fr;
-      padding-bottom: 80px;
+      padding: 0 20px 80px;
+      row-gap: 40px;
     }
 
-    @include from-to(601px, 1024px) {
-      row-gap: 40px;
+    @include to(767px) {
+      row-gap: 20px;
     }
   }
 
   &__text {
     grid-area: text;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     @include font-body;
     color: $black;
 
-    @include to(600px) {
-      margin-top: 20px;
-    }
-
-    p ~ p {
-      margin-top: vw(20);
-    }
-
     button {
       margin-top: vw(40);
+
+      @include to(1023px) {
+        margin-top: 40px;
+      }
+
+      @include to(767px) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -48,12 +52,25 @@
 
     @include font-h2;
     color: $brown;
+
+    @include to(1023px) {
+      max-width: 728px;
+    }
+
+    @include to(767px) {
+      @include font-mob-h3;
+    }
   }
 
   &__img {
     grid-area: img;
     overflow: hidden;
     max-width: vw(1120);
+
+    @include to(1023px) {
+      aspect-ratio: 728/460;
+      max-width: 100%;
+    }
 
     img {
       width: 100%;

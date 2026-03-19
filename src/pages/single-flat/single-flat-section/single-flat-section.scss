@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     row-gap: 40px;
 
-    @include from(1025px) {
+    @include from(1024px) {
       margin-bottom: 40px;
     }
 
@@ -26,6 +26,10 @@
     justify-content: center;
     gap: vw(20);
     margin: auto;
+
+    @include to(1023px) {
+      gap: 20px;
+    }
   }
 
   &__title {
@@ -35,6 +39,15 @@
     @include font-h2;
     color: $brown;
     margin-top: vw(40);
+
+    @include to(1023px) {
+      margin-top: 40px;
+      gap: 16px;
+    }
+
+    @include to(767px) {
+      margin-top: 80px;
+    }
   }
 
   &__tabs {
@@ -86,6 +99,16 @@
     padding-left: vw(20);
     padding-right: vw(20);
 
+    @include to(1023px) {
+      gap: 28px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @include to(767px) {
+      gap: 20px;
+    }
+
     .button-primary {
       width: 100%;
       justify-content: center;
@@ -99,12 +122,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: vw(18) vw(38);
+      justify-content: center;
       border-radius: 100px;
       border: 1px solid $ochre;
       background: $white;
       width: vw(100);
       height: vw(100);
+
+      @include to(1023px) {
+        width: 76px;
+        height: 76px;
+      }
 
       &__num {
         @include font-h3;
@@ -122,6 +150,11 @@
       width: vw(70);
       margin: 0 auto;
       fill: $blue;
+
+      @include to(1023px) {
+        height: 16px;
+        width: 70px;
+      }
     }
 
     &-group {
@@ -131,6 +164,10 @@
 
       .button-main {
         margin: 0 auto;
+
+        @include to(767px) {
+          width: 89vw;
+        }
       }
 
       &__description {
@@ -147,9 +184,9 @@
     }
 
     &-group:first-child {
-      @include to(600px) {
-        display: none;
-      }
+      // @include to(600px) {
+      //   display: none;
+      // }
     }
   }
 
@@ -157,10 +194,15 @@
     grid-area: info2;
 
     @include from-to(601px, 1024px) {
+      // padding-right: 74px;
+    }
+
+    @include to(1023px) {
+      padding-left: 20px;
       padding-right: 74px;
     }
 
-    @include from(1025px) {
+    @include from(1024px) {
       padding-left: 20px;
       padding-right: 20px;
     }
@@ -188,6 +230,14 @@
 
       .button-main {
         border-color: $brown;
+
+        .general-text {
+          color: $brown;
+        }
+
+        @include to(767px) {
+          width: 89vw;
+        }
       }
     }
 

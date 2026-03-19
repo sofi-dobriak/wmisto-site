@@ -7,6 +7,16 @@
   align-items: center;
   gap: vw(12);
 
+  @include to(1023px) {
+    top: 40px;
+    left: 20px;
+    gap: 12px;
+  }
+
+  @include to(767px) {
+    top: 0;
+  }
+
   .back-icon-wrapper {
     border-radius: 50%;
     border: 1px solid $brown;
@@ -17,12 +27,22 @@
     height: vw(64);
     background-color: $white;
 
+    @include to(1023px) {
+      width: 64px;
+      height: 64px;
+    }
+
     .back-icon {
       width: vw(24);
       height: vw(24);
       flex-shrink: 0;
       transform: rotate(90deg);
       fill: $brown;
+
+      @include to(1023px) {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 
