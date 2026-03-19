@@ -6,6 +6,7 @@ import "swiper/css/effect-fade";
 // ─── Utils ───────────────────────────────────────────────────────────────────
 
 const formatNum = (num) => (num < 10 ? `0${num}` : num);
+const isMobileViewport = () => window.innerWidth <= 767;
 
 const getSizes = () => {
   const ww = window.innerWidth;
@@ -35,28 +36,47 @@ const getSizes = () => {
 
 const getElements = () => ({
   swiperElement: document.querySelector(".advantages-swiper"),
-  totalEl: document.querySelector(".adv-js-total"),
-  currentEl: document.querySelector(".adv-js-current"),
-  nextEl: document.querySelector(".adv-js-next"),
-  countBlock: document.querySelector(".adv-js-count"),
-  prevBtn: document.querySelector(".advantages-button-prev"),
-  nextBtn: document.querySelector(".advantages-button-next"),
+  counters: [
+    {
+      totalEl: document.querySelector(".adv-js-total"),
+      currentEl: document.querySelector(".adv-js-current"),
+      nextEl: document.querySelector(".adv-js-next"),
+      countBlock: document.querySelector(".adv-js-count"),
+    },
+    {
+      totalEl: document.querySelector(".adv-tab-js-total"),
+      currentEl: document.querySelector(".adv-tab-js-current"),
+      nextEl: document.querySelector(".adv-tab-js-next"),
+      countBlock: document.querySelector(".adv-tab-js-count"),
+    },
+  ],
 });
 
 // ─── Counter ─────────────────────────────────────────────────────────────────
 
-const initCounter = (totalEl, totalSlides) => {
-  if (totalEl) {
-    totalEl.textContent = `/ ${formatNum(totalSlides)}`;
-  }
+const initCounter = (counters, totalSlides) => {
+  counters.forEach(({ totalEl }) => {
+    if (totalEl) {
+      totalEl.textContent = `/ ${formatNum(totalSlides)}`;
+    }
+  });
+};
+
+const setCurrentCounter = (counters, realIndex) => {
+  const width = window.innerWidth;
+  const currentNumber = width <= 1023 ? String(realIndex + 1) : formatNum(realIndex + 1);
+
+  counters.forEach(({ currentEl, nextEl }) => {
+    if (currentEl) currentEl.textContent = currentNumber;
+    if (nextEl) nextEl.textContent = "";
+  });
 };
 
 const animateCounter = (currentEl, nextEl, countBlock, realIndex) => {
-  // const nextNumber = formatNum(realIndex + 1);
   const width = window.innerWidth;
-  const nextNumber = width <= 1023 ? realIndex + 1 : formatNum(realIndex + 1);
+  const nextNumber = width <= 1023 ? String(realIndex + 1) : formatNum(realIndex + 1);
 
-  if (!currentEl || !nextEl || currentEl.textContent === nextNumber) return;
+  if (!currentEl || !nextEl || !countBlock || currentEl.textContent === nextNumber) return;
 
   nextEl.textContent = nextNumber;
   countBlock.classList.add("is-changing");
@@ -67,9 +87,17 @@ const animateCounter = (currentEl, nextEl, countBlock, realIndex) => {
   }, 800);
 };
 
+const animateCounters = (counters, realIndex) => {
+  counters.forEach(({ currentEl, nextEl, countBlock }) => {
+    animateCounter(currentEl, nextEl, countBlock, realIndex);
+  });
+};
+
 // ─── Translate ───────────────────────────────────────────────────────────────
 
 const applyCustomTranslate = (swiper) => {
+  if (window.innerWidth <= 767) return;
+
   const { activeW, inactiveW, gap } = getSizes();
 
   const activeIndex = swiper.activeIndex;
@@ -91,6 +119,7 @@ const applyCustomTranslate = (swiper) => {
 const initTextSwiper = () =>
   new Swiper(".advantages-text-block", {
     modules: [EffectFade, Controller],
+    slidesPerView: 1,
     allowTouchMove: false,
     speed: 800,
     initialSlide: 2,
@@ -99,19 +128,29 @@ const initTextSwiper = () =>
   });
 
 const initMainSwiper = (swiper_text, elements) => {
-  const { currentEl, nextEl, countBlock } = elements;
+  const { counters } = elements;
 
   return new Swiper(".advantages-swiper", {
     modules: [Navigation, Controller],
-    slidesPerView: "auto",
-    spaceBetween: window.innerWidth <= 767 ? 10 : window.innerWidth <= 1023 ? 16 : 20,
+    slidesPerView: 1,
+    spaceBetween: 10,
     speed: 800,
     watchSlidesProgress: true,
     initialSlide: 2,
     centeredSlides: true,
+    breakpoints: {
+      768: {
+        slidesPerView: "auto",
+        spaceBetween: 16,
+      },
+      1024: {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+      },
+    },
     on: {
       init(swiper) {
-        document.querySelector(".adv-js-current").textContent = formatNum(this.realIndex + 1);
+        setCurrentCounter(counters, this.realIndex);
         applyCustomTranslate(swiper);
       },
       slideChange() {
@@ -125,9 +164,10 @@ const initMainSwiper = (swiper_text, elements) => {
       },
       slideChangeTransitionStart(swiper) {
         swiper.emit("setTranslate", swiper, swiper.translate);
-        animateCounter(currentEl, nextEl, countBlock, swiper.realIndex);
+        animateCounters(counters, swiper.realIndex);
       },
       resize(swiper) {
+        setCurrentCounter(counters, swiper.realIndex);
         swiper.update();
         swiper.emit("setTranslate", swiper, swiper.translate);
       },
@@ -138,8 +178,11 @@ const initMainSwiper = (swiper_text, elements) => {
 // ─── Navigation buttons ───────────────────────────────────────────────────────
 
 const bindNavButtons = (swiper) => {
-  const prevBtns = document.querySelectorAll(".advantages-button-prev");
-  const nextBtns = document.querySelectorAll(".advantages-button-next");
+  const prevSelector = isMobileViewport() ? ".advantages-button-prev--mobile" : ".advantages-button-prev--desktop";
+  const nextSelector = isMobileViewport() ? ".advantages-button-next--mobile" : ".advantages-button-next--desktop";
+
+  const prevBtns = document.querySelectorAll(prevSelector);
+  const nextBtns = document.querySelectorAll(nextSelector);
 
   prevBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -170,12 +213,12 @@ function initAdvantagesSwiper() {
   }
 
   const totalSlides = elements.swiperElement.querySelectorAll(".swiper-slide").length;
-  initCounter(elements.totalEl, totalSlides);
+  initCounter(elements.counters, totalSlides);
 
   const swiper_text = initTextSwiper();
   const swiper = initMainSwiper(swiper_text, elements);
 
-  bindNavButtons(swiper, elements.prevBtn, elements.nextBtn);
+  bindNavButtons(swiper);
 }
 
 document.addEventListener("DOMContentLoaded", () => initAdvantagesSwiper());

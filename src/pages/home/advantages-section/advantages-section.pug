@@ -41,7 +41,7 @@ section.advantages-section(id="advantages")
           span.next.adv-tab-js-next
         p.total.adv-tab-js-total
       
-      +swiper-nav('advantages-nav-buttons hide-on-desktop', 'advantages-button-prev','advantages-button-next')
+      +swiper-nav('advantages-nav-buttons hide-on-desktop', 'advantages-button-prev advantages-button-prev--mobile','advantages-button-next advantages-button-next--mobile',)
       
   .adv-counter.hide-on-tablet.hide-on-mobile
     p.main-count.adv-js-count
@@ -49,10 +49,10 @@ section.advantages-section(id="advantages")
       span.next.adv-js-next
     p.total.adv-js-total
 
-  +swiper-nav('advantages-nav-buttons hide-on-tablet hide-on-mobile', 'advantages-button-prev','advantages-button-next')
+  +swiper-nav('advantages-nav-buttons hide-on-tablet hide-on-mobile', 'advantages-button-prev advantages-button-prev--desktop','advantages-button-next advantages-button-next--desktop')
 
   .advantages-text-block.swiper
-    ul.swiper-wrapper.hide-on-mobile
+    ul.swiper-wrapper
       each item in advantages
         li.swiper-slide
           p.advantages-text= item.text

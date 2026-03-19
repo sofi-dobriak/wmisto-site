@@ -12,6 +12,7 @@
 
   @include to(767px) {
     padding-top: 60px;
+    flex-direction: column;
   }
 
   .advantages-swiper {
@@ -39,6 +40,17 @@
     transform: translateY(-60%);
     max-width: vw(366);
     z-index: 10;
+
+    @include to(1023px) {
+      top: 69%;
+      left: auto;
+     transform: none;
+      max-width: 100%;
+      font-size: 24px;
+      text-transform: capitalize;
+      text-align: center;
+      width: 100%;
+    }
   }
 
   .adv-m-controls {
@@ -85,13 +97,19 @@
 
     @include to(767px) {
       width: 375px;
-      height: 375px;
+      // height: 375px;
+      height: auto;
+      top: auto;
+      bottom: 0;
 
       max-width: 100vw;
 
       .advantages-nav-buttons {
+        width: fit-content;
+        height: fit-content;
         left: 15px;
         bottom: 15px;
+        top: auto;
       }
       .adv-counter {
         right: 15px;
@@ -128,6 +146,10 @@
         width: 1em;
         text-align: right;
         height: 0.85em;
+      }
+
+      @include to(767px) {
+        height: 1em;
       }
 
       span {
@@ -184,6 +206,12 @@
       z-index: 10;
       bottom: 0;
     }
+
+    &--desktop {
+      @include to(1023px) {
+        display: none;
+      }
+    }
   }
 
   .advantages-text-block {
@@ -195,11 +223,28 @@
 
     max-width: vw-laptop(348);
 
+    @include to(1023px) {
+      position: relative;
+      transform: none;
+      top: auto;
+      right: auto;
+      left: auto;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+      padding: 57px 20px 0 20px;
+    }
+
     .swiper-wrapper {
       .swiper-slide {
         .advantages-text {
           @include font-h3;
           color: $brown;
+
+          @include to(1023px) {
+            font-size: 14px;
+            text-align: center;
+          }
         }
       }
     }
