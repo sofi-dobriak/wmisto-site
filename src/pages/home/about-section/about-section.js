@@ -57,7 +57,7 @@ const initBigSwiper = (textSwiper, els) => {
 
   const swiper = new Swiper(".slider-big", {
     modules: [Controller],
-    allowTouchMove: false,
+
     speed: 800,
     observer: true,
     observeParents: true,

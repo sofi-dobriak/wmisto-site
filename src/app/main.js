@@ -1,5 +1,3 @@
-import "./styles/index.scss";
-
 // Swiper styles.
 import "swiper/css";
 import "swiper/css/navigation";

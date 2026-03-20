@@ -5,7 +5,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/montserrat-v31-cyrillic_latin-regular.woff2") format("woff2");
+  src: url("/fonts/montserrat-v31-cyrillic_latin-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/montserrat-v31-cyrillic_latin-500.woff2") format("woff2");
+  src: url("/fonts/montserrat-v31-cyrillic_latin-500.woff2") format("woff2");
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/montserrat-v31-cyrillic_latin-600.woff2") format("woff2");
+  src: url("/fonts/montserrat-v31-cyrillic_latin-600.woff2") format("woff2");
 }
 
 @font-face {
@@ -29,7 +29,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/montserrat-v31-cyrillic_latin-700.woff2") format("woff2");
+  src: url("/fonts/montserrat-v31-cyrillic_latin-700.woff2") format("woff2");
 }
 
 @font-face {
@@ -37,7 +37,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 800;
-  src: url("../fonts/montserrat-v31-cyrillic_latin-800.woff2") format("woff2");
+  src: url("/fonts/montserrat-v31-cyrillic_latin-800.woff2") format("woff2");
 }
 
 @font-face {
@@ -45,7 +45,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 900;
-  src: url("../fonts/montserrat-v31-cyrillic_latin-900.woff2") format("woff2");
+  src: url("/fonts/montserrat-v31-cyrillic_latin-900.woff2") format("woff2");
 }
 
 //Fixel Display
@@ -54,8 +54,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplayThin.woff2") format("woff2"),
-    url("../fonts/FixelDisplayThin.woff") format("woff");
+    url("/fonts/FixelDisplayThin.woff2") format("woff2"),
+    url("/fonts/FixelDisplayThin.woff") format("woff");
   font-style: normal;
   font-weight: 100;
 }
@@ -64,8 +64,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplayExtraLight.woff2") format("woff2"),
-    url("../fonts/FixelDisplayExtraLight.woff") format("woff");
+    url("/fonts/FixelDisplayExtraLight.woff2") format("woff2"),
+    url("/fonts/FixelDisplayExtraLight.woff") format("woff");
   font-style: normal;
   font-weight: 200;
 }
@@ -74,8 +74,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplayLight.woff2") format("woff2"),
-    url("../fonts/FixelDisplayLight.woff") format("woff");
+    url("/fonts/FixelDisplayLight.woff2") format("woff2"),
+    url("/fonts/FixelDisplayLight.woff") format("woff");
   font-style: normal;
   font-weight: 300;
 }
@@ -84,8 +84,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplayRegular.woff2") format("woff2"),
-    url("../fonts/FixelDisplayRegular.woff") format("woff");
+    url("/fonts/FixelDisplayRegular.woff2") format("woff2"),
+    url("/fonts/FixelDisplayRegular.woff") format("woff");
   font-style: normal;
   font-weight: 400;
 }
@@ -94,8 +94,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplayMedium.woff2") format("woff2"),
-    url("../fonts/FixelDisplayMedium.woff") format("woff");
+    url("/fonts/FixelDisplayMedium.woff2") format("woff2"),
+    url("/fonts/FixelDisplayMedium.woff") format("woff");
   font-style: normal;
   font-weight: 500;
 }
@@ -104,8 +104,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplaySemiBold.woff2") format("woff2"),
-    url("../fonts/FixelDisplaySemiBold.woff") format("woff");
+    url("/fonts/FixelDisplaySemiBold.woff2") format("woff2"),
+    url("/fonts/FixelDisplaySemiBold.woff") format("woff");
   font-style: normal;
   font-weight: 600;
 }
@@ -114,8 +114,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplayBold.woff2") format("woff2"),
-    url("../fonts/FixelDisplayBold.woff") format("woff");
+    url("/fonts/FixelDisplayBold.woff2") format("woff2"),
+    url("/fonts/FixelDisplayBold.woff") format("woff");
   font-style: normal;
   font-weight: 700;
 }
@@ -124,8 +124,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplayExtraBold.woff2") format("woff2"),
-    url("../fonts/FixelDisplayExtraBold.woff") format("woff");
+    url("/fonts/FixelDisplayExtraBold.woff2") format("woff2"),
+    url("/fonts/FixelDisplayExtraBold.woff") format("woff");
   font-style: normal;
   font-weight: 800;
 }
@@ -134,8 +134,8 @@
   font-family: "FixelDisplay";
   font-display: swap;
   src:
-    url("../fonts/FixelDisplayBlack.woff2") format("woff2"),
-    url("../fonts/FixelDisplayBlack.woff") format("woff");
+    url("/fonts/FixelDisplayBlack.woff2") format("woff2"),
+    url("/fonts/FixelDisplayBlack.woff") format("woff");
   font-style: normal;
   font-weight: 900;
 }
@@ -147,7 +147,7 @@
   font-family: "CenturyGothic";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/CenturyGothic.woff2") format("woff2");
+  src: url("/fonts/CenturyGothic.woff2") format("woff2");
 }
 
 @font-face {
@@ -155,5 +155,5 @@
   font-family: "CenturyGothic";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/CenturyGothic-Bold.woff2") format("woff2");
+  src: url("/fonts/CenturyGothic-Bold.woff2") format("woff2");
 }

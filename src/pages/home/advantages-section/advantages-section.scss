@@ -170,6 +170,11 @@
         text-align: right;
       }
 
+      @include to(767px) {
+        font-size: 44px;
+        height: 1.5em;
+      }
+
       span {
         display: block;
         height: 1em;

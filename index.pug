@@ -18,7 +18,17 @@ html(lang="ua" data-status="local").is-loading
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/static/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    style.
+      body { opacity: 0; background: #fff; }
+  
+    script.
+      window.addEventListener('DOMContentLoaded', function() {
+        document.body.style.opacity = '1';
+      });
+
+    link(rel="preload" href="/src/app/styles/index.scss" as="style")
     link(rel="stylesheet" href="/src/app/styles/index.scss")
+
     block meta
 
     body(class= id= id_page)
