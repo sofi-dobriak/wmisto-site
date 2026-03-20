@@ -18,33 +18,21 @@ html(lang="ua" data-status="local")
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/static/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    style.
-      body { opacity: 0; background: #fff; }
-  
-    script.
-      window.addEventListener('DOMContentLoaded', function() {
-        document.body.style.opacity = '1';
-      });
-
-    link(rel="preload" href="/src/app/styles/index.scss" as="style")
     link(rel="stylesheet" href="/src/app/styles/index.scss")
 
     block meta
 
-    body(class= id= id_page)
-      include /widgets/loader/loader.html
-      
-      block header
-
-      .scroll-wrapper(data-scroll-container)
-        main.page__inner
-          .page__content
-            block content
-
-        block footer
-      
-      block modal
-
-      script(type="module" src="/src/app/main.js")
-      block scripts
+  body(class= id= id_page)
+    include /widgets/loader/loader.html
+    
+    block header
+    .scroll-wrapper(data-scroll-container)
+      main.page__inner
+        .page__content
+          block content
+      block footer
+    
+    block modal
+    script(type="module" src="/src/app/main.js")
+    block scripts
 
