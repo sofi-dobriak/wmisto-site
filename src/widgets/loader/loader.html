@@ -23,37 +23,37 @@
 
   .loader.closing {
     animation: loader-exit 0.4s ease-in-out;
-    /* animation: loader-exit 0.75s cubic-bezier(.44, .9, .43, 1) forwards; */
   }
 
   @keyframes loader-exit {
     to {
       opacity: 0;
     }
-
-    /* from {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    to {
-      clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
-    } */
   }
 </style>
+
 
 <script>
   const loader = document.querySelector('.loader');
 
   if (sessionStorage.getItem('loaderClosed')) {
     loader.remove();
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    if (sessionStorage.getItem('loaderClosed')) return;
-
+  } else {
     const video = loader.querySelector('.loader-video');
 
-    video.addEventListener('ended', () => {
+    const videoEnded = new Promise(resolve => {
+      video.addEventListener('ended', resolve, { once: true });
+    });
+
+    const pageLoaded = new Promise(resolve => {
+      if (document.readyState === 'complete') {
+        resolve();
+      } else {
+        window.addEventListener('load', resolve, { once: true });
+      }
+    });
+
+    Promise.all([videoEnded, pageLoaded]).then(() => {
       loader.addEventListener('animationend', () => {
         loader.remove();
         sessionStorage.setItem('loaderClosed', 'true');
@@ -61,5 +61,13 @@
       }, { once: true });
       loader.classList.add('closing');
     });
-  });
+
+    // якщо контент не готовий — повторюємо відео
+    video.addEventListener('ended', () => {
+      pageLoaded.then(() => { }); // вже вирішено
+      if (document.readyState !== 'complete') {
+        video.play(); // повторити відео
+      }
+    });
+  }
 </script>

@@ -99,6 +99,10 @@ export function paginationInit(containerSelector, cardSelector, paginationSelect
     }
   }
 
+  if (paginationWrapper) {
+    paginationWrapper.style.display = totalPages <= 1 ? "none" : "";
+  }
+
   if (prevBtn) prevBtn.addEventListener("click", () => renderPage(currentPage - 1));
   if (nextBtn) nextBtn.addEventListener("click", () => renderPage(currentPage + 1));
   if (loadMoreBtn) loadMoreBtn.addEventListener("click", loadMore);

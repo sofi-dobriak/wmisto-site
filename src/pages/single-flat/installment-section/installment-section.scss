@@ -36,6 +36,7 @@
 
     button {
       margin-top: vw(40);
+      max-width: fit-content;
 
       @include to(1023px) {
         margin-top: 40px;

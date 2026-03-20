@@ -303,10 +303,7 @@
     }
 
     .contacts-form-link {
-      padding: vw(14) vw(18);
-
       @include to(1023px) {
-        padding: 14px 18px;
         margin: auto;
       }
     }
