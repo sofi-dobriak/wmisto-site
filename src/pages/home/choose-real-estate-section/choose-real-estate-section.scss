@@ -121,6 +121,12 @@
         .grid-item-title {
           color: $white;
         }
+
+        .grid-item-content {
+          @include to(1023px) {
+            flex-direction: column-reverse;
+          }
+        }
       }
     }
 
@@ -137,10 +143,6 @@
       position: relative;
       z-index: 2;
       padding: vw(20);
-
-      @include to(1023px) {
-        flex-direction: column-reverse;
-      }
 
       .grid-item-title {
         @include font-h3;

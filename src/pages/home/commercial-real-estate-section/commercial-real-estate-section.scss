@@ -20,6 +20,7 @@
       flex: unset;
       height: 700px;
       padding: 100px 20px 0;
+      border-bottom: 1px solid $black;
     }
 
     @include to(767px) {
@@ -102,7 +103,6 @@
       flex: unset;
       max-height: 800px;
       padding-top: 100px;
-      border-top: 1px solid $black;
     }
 
     @include to(767px) {

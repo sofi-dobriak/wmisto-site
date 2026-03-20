@@ -177,12 +177,41 @@ const initMainSwiper = (swiper_text, elements) => {
 
 // ─── Navigation buttons ───────────────────────────────────────────────────────
 
-const bindNavButtons = (swiper) => {
-  const prevSelector = isMobileViewport() ? ".advantages-button-prev--mobile" : ".advantages-button-prev--desktop";
-  const nextSelector = isMobileViewport() ? ".advantages-button-next--mobile" : ".advantages-button-next--desktop";
+// const bindNavButtons = (swiper) => {
+//   const prevSelector = isMobileViewport()
+//     ? ".advantages-button-prev--mobile"
+//     : ".advantages-button-prev--desktop";
+//   const nextSelector = isMobileViewport()
+//     ? ".advantages-button-next--mobile"
+//     : ".advantages-button-next--desktop";
 
-  const prevBtns = document.querySelectorAll(prevSelector);
-  const nextBtns = document.querySelectorAll(nextSelector);
+//   const prevBtns = document.querySelectorAll(prevSelector);
+//   const nextBtns = document.querySelectorAll(nextSelector);
+
+//   prevBtns.forEach((btn) => {
+//     btn.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       console.log("click");
+//       if (swiper.activeIndex > 0) {
+//         swiper.slideTo(swiper.activeIndex - 1, 800);
+//       }
+//     });
+//   });
+
+//   nextBtns.forEach((btn) => {
+//     btn.addEventListener("click", (e) => {
+//       e.preventDefault();
+//       console.log("click");
+//       if (swiper.activeIndex < swiper.slides.length - 1) {
+//         swiper.slideTo(swiper.activeIndex + 1, 800);
+//       }
+//     });
+//   });
+// };
+
+const bindNavButtons = (swiper) => {
+  const prevBtns = document.querySelectorAll(".advantages-button-prev");
+  const nextBtns = document.querySelectorAll(".advantages-button-next");
 
   prevBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -202,6 +231,7 @@ const bindNavButtons = (swiper) => {
     });
   });
 };
+
 // ─── Init ─────────────────────────────────────────────────────────────────────
 
 function initAdvantagesSwiper() {

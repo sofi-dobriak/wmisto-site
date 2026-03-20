@@ -18,10 +18,6 @@ const modules = import.meta.glob(["../widgets/**/*.js", "../features/**/*.js", "
   eager: true,
 });
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   document.documentElement.classList.remove("is-loading");
 });
-
-setTimeout(() => {
-  document.documentElement.classList.remove("is-loading");
-}, 3000);
