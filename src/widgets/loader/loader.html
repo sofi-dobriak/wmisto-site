@@ -1,0 +1,65 @@
+<div class="loader">
+  <video class="loader-video" autoplay muted playsinline>
+    <source src="/video/loader.mp4" type="video/mp4">
+  </video>
+</div>
+
+<style>
+  .loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loader-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .loader.closing {
+    animation: loader-exit 0.4s ease-in-out;
+    /* animation: loader-exit 0.75s cubic-bezier(.44, .9, .43, 1) forwards; */
+  }
+
+  @keyframes loader-exit {
+    to {
+      opacity: 0;
+    }
+
+    /* from {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    to {
+      clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+    } */
+  }
+</style>
+
+<script>
+  const loader = document.querySelector('.loader');
+
+  if (sessionStorage.getItem('loaderClosed')) {
+    loader.remove();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (sessionStorage.getItem('loaderClosed')) return;
+
+    const video = loader.querySelector('.loader-video');
+
+    video.addEventListener('ended', () => {
+      loader.addEventListener('animationend', () => {
+        loader.remove();
+        sessionStorage.setItem('loaderClosed', 'true');
+        window.dispatchEvent(new Event('loader:closed'));
+      }, { once: true });
+      loader.classList.add('closing');
+    });
+  });
+</script>
