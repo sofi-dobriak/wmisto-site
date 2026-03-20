@@ -7,9 +7,27 @@
   position: relative;
   margin-bottom: vw(100);
 
+  @include to(1023px) {
+    height: 100vh;
+    min-height: 600px;
+    padding-bottom: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 140px;
+  }
+
+  @include to(767px) {
+    height: 100vh;
+    min-height: unset;
+    padding-bottom: 0;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 60px;
+  }
+
   .not-found-visual {
     position: relative;
     height: 100%;
+    overflow: hidden;
 
     .not-found-image {
       width: 100%;
@@ -38,6 +56,14 @@
     align-items: center;
     padding: vw(60);
 
+    @include to(1023px) {
+      padding: 60px;
+    }
+
+    @include to(767px) {
+      padding: 20px;
+    }
+
     .not-found-text-inner {
       margin: auto;
 
@@ -45,18 +71,35 @@
         @include font-huge;
         color: $white;
         margin-bottom: vw(20);
+
+        @include to(1023px) {
+          margin-bottom: 20px;
+          letter-spacing: normal;
+        }
       }
 
       .not-found-text {
         @include font-h3;
         color: $black;
         margin-bottom: vw(60);
+
+        @include to(1023px) {
+          margin-bottom: 60px;
+        }
+
+        @include to(767px) {
+          margin-bottom: 20px;
+        }
       }
 
       .not-found-list {
         display: flex;
         align-items: center;
         gap: vw(16);
+
+        @include to(1023px) {
+          gap: 16px;
+        }
       }
     }
   }
