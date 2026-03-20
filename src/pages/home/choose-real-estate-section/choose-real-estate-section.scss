@@ -144,6 +144,10 @@
       z-index: 2;
       padding: vw(20);
 
+      @include to(1023px) {
+        padding: 8px;
+      }
+
       .grid-item-title {
         @include font-h3;
         margin: 0;
