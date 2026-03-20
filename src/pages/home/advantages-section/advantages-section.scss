@@ -44,11 +44,19 @@
     text-transform: uppercase;
     position: absolute;
     z-index: 10;
-    top: 62%;
+    top: 60%;
     left: vw(150);
     transform: translateY(-60%);
     max-width: vw(366);
     z-index: 10;
+
+    @include from(900px) {
+      top: 72%;
+    }
+
+    @include from(1023px) {
+      top: 60%;
+    }
 
     @include to(1023px) {
       top: 65%;
@@ -60,10 +68,6 @@
       text-align: center;
       width: 100%;
       font-size: 48px;
-    }
-
-    @include from(900px) {
-      top: 72%;
     }
 
     @include to(767px) {
@@ -258,6 +262,15 @@
     left: auto;
     max-width: vw-laptop(348);
 
+    @include from(900px) {
+      bottom: 150px;
+    }
+
+    @include from(1024px) {
+      bottom: auto;
+      top: 65%;
+    }
+
     @include to(1023px) {
       position: absolute;
       transform: none;
@@ -267,10 +280,6 @@
       left: 20px;
       max-width: 100%;
       padding: 0;
-    }
-
-    @include from(900px) {
-      bottom: 150px;
     }
 
     @include to(767px) {

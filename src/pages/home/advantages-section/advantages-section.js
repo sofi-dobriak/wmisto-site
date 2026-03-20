@@ -15,7 +15,7 @@ const getSizes = () => {
     return {
       activeW: 375,
       inactiveW: 375,
-      gap: 10,
+      gap: 0,
     };
   } else if (ww <= 1023) {
     return {
@@ -133,7 +133,7 @@ const initMainSwiper = (swiper_text, elements) => {
   return new Swiper(".advantages-swiper", {
     modules: [Navigation, Controller],
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: 0,
     speed: 800,
     watchSlidesProgress: true,
     initialSlide: 2,
