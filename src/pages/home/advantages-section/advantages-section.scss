@@ -45,7 +45,7 @@
     position: absolute;
     z-index: 10;
     top: 60%;
-    left: vw(150);
+    left: vw(165);
     transform: translateY(-60%);
     max-width: vw(366);
     z-index: 10;
@@ -147,7 +147,7 @@
     gap: vw(60);
     position: absolute;
     left: calc(50% - vw(470));
-    top: calc(vw(760) - vw(100));
+    top: calc(vw(760) - vw(150));
     z-index: 10;
     pointer-events: none;
 
@@ -160,7 +160,8 @@
       gap: $gap;
       height: 1em;
       line-height: 1;
-      clip-path: inset(0% -100% 0% -100%);
+      // clip-path: inset(0% -100% -50% -100%);
+      overflow: hidden;
       line-height: normal;
       letter-spacing: normal;
 
@@ -231,6 +232,9 @@
       .advantages-button-next {
         background-color: $white;
         border-color: $white;
+
+        width: 48px;
+        height: 48px;
 
         svg {
           fill: $black;

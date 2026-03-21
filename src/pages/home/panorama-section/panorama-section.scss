@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   padding-top: vw(100);
+  padding-bottom: vw(100);
 
   @include to(1023px) {
     padding-top: 140px;
@@ -37,6 +38,7 @@
     .panorama-title {
       @include font-h1;
       color: $brown;
+      width: 100%;
     }
 
     .panorama-sign-block {

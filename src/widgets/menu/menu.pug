@@ -31,11 +31,15 @@ mixin menu
       each val, index in menu_big_links
         li.menu-big-item 
           - const isActive = index == 0 ? 'active' : ''
-          a(href=val.url class=isActive+' menu__link' data-title=val.title).menu-big-link #{val.title}
+          a(href=val.url class=isActive+' menu__link' data-title=val.title).menu-big-link
+            span.menu-link-text.real #{val.title}
+            span.menu-link-text.fake #{val.title}
       
     ul.menu-small-list 
       each val, index in menu_small_links
         li.menu-small-item 
           - const isActive = index == 0 ? 'active' : ''
-          a(href=val.url class=isActive+' menu__link' data-title=val.title).menu-small-link #{val.title}
+          a(href=val.url class=isActive+' menu__link' data-title=val.title).menu-small-link 
+            span.menu-link-text.real #{val.title}
+            span.menu-link-text.fake #{val.title}
     

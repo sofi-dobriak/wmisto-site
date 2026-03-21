@@ -5,6 +5,10 @@
   overflow: hidden;
   position: relative;
 
+  @include to(767px) {
+    height: 100svh;
+  }
+
   background:
     linear-gradient(180deg, rgba(136, 151, 180, 0) 0%, rgba(136, 151, 180, 0.9) 100%),
     linear-gradient(0deg, rgba(136, 151, 180, 0.8) 0%, rgba(136, 151, 180, 0.8) 100%);
@@ -20,6 +24,10 @@
 
   .form-left-block {
     flex: 0 0 50%;
+
+    @include to(767px) {
+      flex: 0 0 40%;
+    }
 
     .form-title {
       @include font-h1;

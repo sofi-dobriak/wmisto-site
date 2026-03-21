@@ -36,6 +36,7 @@
       @include font-h1;
       color: $brown;
       position: relative;
+      // width: 100%;
 
       @include to(1023px) {
         font-size: 64px;
@@ -207,7 +208,7 @@
 
       @include to(1023px) {
         padding: 60px;
-        border-top: 1px solid $black;
+        // border-top: 1px solid $black;
       }
 
       @include to(767px) {
@@ -280,7 +281,7 @@
               transform: rotate(30deg);
               background-color: $ochre;
               right: vw-laptop(-30);
-              bottom: 20%;
+              top: 15%;
 
               @include from(1512) {
                 height: 60px;

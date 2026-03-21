@@ -34,13 +34,13 @@ function initDiagonalAnim() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: section,
-      start: "top 50%",
+      start: "top 60%",
       toggleActions: "play none none none",
     },
   });
 
   tl.fromTo(
-    [".w-diagonal-title", ".w-diagonal-icon", ".w-diagonal-list"],
+    [".w-diagonal-left-block, .w-diagonal-right-block"],
     {
       opacity: 0,
       y: 80,

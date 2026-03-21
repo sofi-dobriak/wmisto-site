@@ -1,7 +1,8 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 document.addEventListener("DOMContentLoaded", () => {
   addClickToLocationIframe();
@@ -25,25 +26,43 @@ function initLocationAnim() {
   const section = document.querySelector(".location-section");
   if (!section) return;
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".location-title-block",
-      start: "top 50%",
-      toggleActions: "play none none none",
-    },
+  const titleSplit = SplitText.create(".location-title", {
+    type: "lines",
+    mask: "lines",
   });
 
-  tl.fromTo(
-    ".location-build-block",
-    {
-      opacity: 0,
-      y: 250,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1.5,
-      ease: "power2.out",
-    },
-  );
+  const textSplit = SplitText.create(".location-text", {
+    type: "lines",
+    mask: "lines",
+  });
+
+  const tl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        // once: true,
+        toggleActions: "play none none none",
+      },
+    })
+    .fromTo(titleSplit.lines, { y: "100%" }, { y: "0%", duration: 0.8, stagger: 0.1, ease: "power2.out" })
+    .fromTo(
+      textSplit.lines,
+      { y: "100%" },
+      { y: "0%", duration: 0.6, stagger: 0.05, ease: "power2.out" },
+      "-=0.4",
+    )
+    .fromTo(
+      ".location-build-block",
+      {
+        opacity: 0,
+        y: 250,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2.out",
+      },
+    );
 }

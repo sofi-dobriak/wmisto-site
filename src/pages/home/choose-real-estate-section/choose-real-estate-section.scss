@@ -27,6 +27,16 @@
     .choose-title {
       @include font-h1;
       color: $brown;
+      width: 100%;
+    }
+
+    .choose-plannings-link {
+      width: 20%;
+
+      @include to(1023px) {
+        width: 100%;
+        max-width: 228px;
+      }
     }
   }
 

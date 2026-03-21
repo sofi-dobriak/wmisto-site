@@ -13,10 +13,11 @@
   }
 
   .docs-title {
-    @include font-h2;
+    @include font-h1;
     color: $brown;
     margin-bottom: vw(40);
     text-align: center;
+    text-transform: uppercase;
 
     @include to(1023px) {
       margin-bottom: 40px;

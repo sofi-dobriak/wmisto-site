@@ -87,10 +87,18 @@
 
     .gallery-nav-buttons {
       position: absolute;
-      top: -2px;
+      top: -9px;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 20;
+
+      @include to(1023px) {
+        .gallery-button-prev,
+        .gallery-button-next {
+          width: 48px;
+          height: 48px;
+        }
+      }
     }
   }
 }

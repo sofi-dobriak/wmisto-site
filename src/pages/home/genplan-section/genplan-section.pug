@@ -8,7 +8,14 @@
 
 section.genplan-section(id="genplan")
   .genplan-image-block 
-    <svg class="genplan-image" xmlns="http://www.w3.org/2000/svg" width="1920" height="900" fill="none" viewBox="0 0 1920 900">
+    <svg class="genplan-image" xmlns="http://www.w3.org/2000/svg" width="1920" height="900" fill="none" viewBox="0 0 1920 900" preserveAspectRatio="xMidYMid slice">
+
+      <filter id="blur-bg">
+        <feGaussianBlur stdDeviation="8"/>
+      </filter>
+      
+      <image href="/images/genplan/Genplan-big.jpg" width="1920" height="900" preserveAspectRatio="xMidYMid slice" filter="url(#blur-bg)" opacity="0.8"/>
+
       <g style="pointer-events:none">
       <path fill="url(#a)" d="M0 0h1920v900H0z"/>
       <path fill="url(#b)" d="M1920 325c-194.36 0-386.81 14.873-566.37 43.769-179.56 28.897-342.72 71.251-480.148 124.645-137.431 53.393-246.447 116.781-320.824 186.543C478.281 749.719 440 824.49 440 900h1480V325Z"/>

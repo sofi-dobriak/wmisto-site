@@ -12,7 +12,7 @@
   }
 
   .news-catalog-title {
-    @include font-h2;
+    @include font-h1;
     color: $brown;
     text-align: center;
     margin-bottom: vw(40);

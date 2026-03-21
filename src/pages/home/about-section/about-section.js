@@ -2,6 +2,50 @@ import Swiper from "swiper";
 import { EffectFade, Controller } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-fade";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+document.addEventListener("DOMContentLoaded", initAboutAnim);
+
+function initAboutAnim() {
+  const section = document.querySelector(".about-section");
+  if (!section) return;
+
+  const titleSplit = SplitText.create(".about-title", {
+    type: "lines",
+    mask: "lines",
+  });
+
+  const textSplit = SplitText.create(".about-text", {
+    type: "lines",
+    mask: "lines",
+  });
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        once: true,
+      },
+    })
+    .fromTo(titleSplit.lines, { y: "100%" }, { y: "0%", duration: 0.8, stagger: 0.1, ease: "power2.out" })
+    .fromTo(
+      textSplit.lines,
+      { y: "100%" },
+      { y: "0%", duration: 0.6, stagger: 0.05, ease: "power2.out" },
+      "-=0.4",
+    )
+    .fromTo(
+      ".slider-block",
+      { opacity: 0, x: 60 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+      "<",
+    );
+}
 
 // ─── Utils ───────────────────────────────────────────────────────────────────
 

@@ -10,17 +10,20 @@
   }
 
   .news-title {
-    @include font-h2;
+    @include font-h1;
     color: $brown;
     text-align: center;
     margin-bottom: vw(40);
+    text-transform: uppercase;
 
     @include to(1023px) {
       margin-bottom: 40px;
+      font-size: 60px;
     }
 
     @include to(767px) {
       margin-bottom: 20px;
+      font-size: 36px;
     }
   }
 

@@ -11,17 +11,15 @@
   background-color: rgba(0, 0, 0, 0);
   visibility: hidden;
   pointer-events: none;
-  opacity: 0;
   transition: all 0.5s cubic-bezier(0.36, 1, 0.86, 1);
 
   &.is-open {
     background-color: rgba(0, 0, 0, 0.5);
     visibility: visible;
     pointer-events: auto;
-    opacity: 1;
 
     .popup-content {
-      transform: translateY(0);
+      transform: translateX(0);
     }
   }
 
@@ -36,7 +34,7 @@
     background-color: $blue;
     height: 100%;
     padding: vw(100) vw(60);
-    transform: translateY(100%);
+    transform: translateX(100%);
     display: flex;
     flex-direction: column;
     max-width: vw-laptop(480);

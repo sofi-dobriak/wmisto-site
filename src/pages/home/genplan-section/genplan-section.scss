@@ -1,6 +1,7 @@
 .genplan-section {
   height: calc(100vh - 100px);
   position: relative;
+  overflow: hidden;
 
   @include to(1023px) {
     position: static;
@@ -9,7 +10,7 @@
 
   .genplan-image-block {
     height: 100%;
-    aspect-ratio: 1920 / 900;
+    width: 100%;
     position: relative;
     overflow: hidden;
 
@@ -23,14 +24,33 @@
 
     .genplan-image {
       width: 100%;
-      height: auto;
-      object-fit: cover;
-      object-position: center;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
 
       @include to(1023px) {
         position: relative;
-        left: 40%;
+        left: 50%;
         transform: translateX(-50%);
+        width: auto;
+        height: 100%;
+      }
+
+      @include to(767px) {
+        left: 70%;
+      }
+
+      @media screen and (min-width: 530px) and (max-width: 600px) {
+        left: 70%;
+      }
+
+      @media screen and (min-width: 601px) and (max-width: 710px) {
+        left: 60%;
+      }
+
+      @media screen and (min-width: 711px) and (max-width: 767px) {
+        left: 50%;
       }
 
       .genplan-image-path {
@@ -38,9 +58,21 @@
         fill: rgba($blue, 0);
         stroke-width: 3;
         transition: $transition;
-
+        animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
         &:hover {
           fill: $blue;
+        }
+
+        @keyframes stroke-pulsation {
+          0% {
+            stroke-width: 2;
+          }
+          20% {
+            stroke-width: 6;
+          }
+          100% {
+            stroke-width: 2;
+          }
         }
       }
     }
@@ -168,9 +200,9 @@
     margin-bottom: 60px;
 
     @include to(480px) {
-      padding: 20px;
+      padding: 20px 20px 60px;
       flex-direction: column;
-      gap: 80px;
+      gap: 40px;
       justify-content: center;
       align-items: center;
     }
@@ -182,7 +214,7 @@
 
       .genplan-tab-card-icon {
         display: block;
-        margin: 0 auto 20px;
+        margin: 0 auto 40px;
       }
 
       .genplan-tab-card-text {

@@ -13,7 +13,7 @@ include /shared/components/general-btn/general-btn.pug
 section.choose-real-estate(id="choose-real-estate")
   .choose-title-block 
     h2.choose-title ПІДІБРАТИ нерухомість
-    +general-btn({href: '/plannings.html', text: 'Переглянути усі планування'})
+    +general-btn({href: '/plannings.html', text: 'Переглянути усі планування', customClass:"choose-plannings-link"})
 
   .choose-grid
     each card, index in cards

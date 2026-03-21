@@ -28,6 +28,10 @@
     max-height: 60px;
     cursor: pointer;
 
+    path {
+      fill: $black;
+    }
+
     @include from(1512) {
       width: 215px;
     }

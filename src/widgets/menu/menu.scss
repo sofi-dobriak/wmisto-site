@@ -115,3 +115,38 @@
     }
   }
 }
+
+.menu-big-link,
+.menu-small-link {
+  overflow: hidden;
+  position: relative;
+  display: block; // ← додай
+  line-height: 1.2; // ← щоб висота була явна
+
+  .menu-link-text {
+    display: block;
+    transition: $transition;
+
+    &.real {
+      transform: translateY(0%);
+    }
+
+    &.fake {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(105%);
+    }
+  }
+
+  &:hover {
+    .menu-link-text {
+      &.real {
+        transform: translateY(-105%);
+      }
+      &.fake {
+        transform: translateY(0%);
+      }
+    }
+  }
+}
