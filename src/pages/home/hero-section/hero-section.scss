@@ -94,7 +94,7 @@
         }
 
         @include to(767px) {
-          position: relative;
+          position: absolute;
           top: 0;
           left: 50%;
           transform: translate(-50%, -20%);
@@ -179,75 +179,77 @@
           }
         }
       }
+    }
 
-      .hero-link {
-        position: relative;
-        top: 65%;
+    .hero-link {
+      position: relative;
+      top: 65%;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include to(1023px) {
+        top: unset;
+        position: absolute;
+        bottom: 40px;
         left: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .hero-icon-container {
         display: flex;
         align-items: center;
-        gap: 20px;
+        justify-content: center;
+        width: vw(60);
+        height: vw(60);
+        border-radius: 50%;
+        border: 1px solid $black;
+        overflow: hidden;
+        position: relative;
 
         @include to(1023px) {
-          top: unset;
-          position: absolute;
-          bottom: 40px;
-          left: 20px;
+          width: 60px;
+          height: 60px;
         }
 
-        .hero-icon-container {
+        .hero-icon-wrapper {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          width: vw(60);
-          height: vw(60);
-          border-radius: 50%;
-          border: 1px solid $black;
-          overflow: hidden;
-          position: relative;
-
-          @include to(1023px) {
-            width: 60px;
-            height: 60px;
-          }
-
-          .hero-icon-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            animation: call-in-two-paths 1.5s ease-in-out infinite;
-          }
-
-          .hero-icon {
-            flex-shrink: 0;
-            fill: $black;
-            width: vw(24);
-            height: vw(24);
-            min-height: 100%;
-
-            @include to(1023px) {
-              width: 24px;
-              height: 24px;
-            }
-
-            &.is-secondary {
-              position: static;
-            }
-          }
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          animation: call-in-two-paths 1.5s ease-in-out infinite;
         }
 
-        .hero-link-text {
-          @include font-h4-semibold;
-          color: $black;
+        .hero-icon {
+          flex-shrink: 0;
+          fill: $black;
+          width: vw(24);
+          height: vw(24);
+          min-height: 100%;
 
           @include to(1023px) {
-            font-size: 20px;
+            width: 24px;
+            height: 24px;
           }
+
+          &.is-secondary {
+            position: static;
+          }
+        }
+      }
+
+      .hero-link-text {
+        @include font-h4-semibold;
+        color: $black;
+
+        @include to(1023px) {
+          font-size: 20px;
         }
       }
     }
