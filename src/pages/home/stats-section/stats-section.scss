@@ -64,6 +64,12 @@
       grid-template-columns: repeat(1, 1fr);
       display: flex;
       flex-direction: column;
+      height: auto;
+      overflow: visible;
+      // Legacy sticky fallback (disabled after GSAP pin migration):
+      // padding-bottom: calc(
+      //   (var(--items-count, 1) - 1) * var(--sticky-step, 10px) + var(--sticky-base-top, 100px)
+      // );
     }
 
     .stats-item {
@@ -90,13 +96,11 @@
       @include to(1023px) {
         flex-direction: row;
         overflow: visible;
-        position: sticky;
-        top: calc(100px + (var(--item-index) - 1) * 10px);
-        z-index: var(--item-index);
-
-        &:last-child {
-          top: calc(150px + (var(--item-index) - 1) * 10px);
-        }
+        // Legacy sticky fallback (disabled after GSAP pin migration):
+        // position: sticky;
+        // top: calc(var(--sticky-base-top, 100px) + (var(--item-index) - 1) * var(--sticky-step, 10px));
+        // z-index: var(--item-index);
+        height: calc(128 / 375 * 100vw);
       }
 
       .stats-title-text-block {

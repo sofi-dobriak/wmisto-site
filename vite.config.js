@@ -1,10 +1,29 @@
 import { defineConfig } from "vite";
 import pug from "pug";
 import fs from "fs";
+import crypto from "node:crypto";
 import { resolve, basename, relative, sep } from "path"; // додали relative та sep
 import { glob } from "glob";
 import { iconsSpritesheet } from "vite-plugin-icons-spritesheet";
 import { exec } from "child_process";
+
+// Node.js compatibility for Vite internals (crypto.hash is missing in older runtimes)
+if (typeof crypto.hash !== "function") {
+  crypto.hash = (algorithm, data, options) => {
+    const hash = crypto.createHash(algorithm);
+    hash.update(data);
+
+    if (typeof options === "string") {
+      return hash.digest(options);
+    }
+
+    if (options && typeof options === "object" && options.outputEncoding) {
+      return hash.digest(options.outputEncoding);
+    }
+
+    return hash.digest();
+  };
+}
 
 const entryPoints = glob.sync(["index.pug", "src/pages/**/*.pug"]).reduce((acc, path) => {
   const name = basename(path, ".pug");

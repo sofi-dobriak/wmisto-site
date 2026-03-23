@@ -4,7 +4,14 @@
   position: static;
 
   @include to(767px) {
-    height: 100dvh;
+    // iOS Safari: avoid layout jumps when address bar hides/shows
+    height: 100svh;
+    min-height: -webkit-fill-available;
+
+    @supports not (height: 100svh) {
+      height: -webkit-fill-available;
+      min-height: 100vh;
+    }
   }
 
   .hero-grid {
