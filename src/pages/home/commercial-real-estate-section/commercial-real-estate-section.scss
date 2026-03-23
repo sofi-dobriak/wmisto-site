@@ -106,7 +106,7 @@
     }
 
     @include to(767px) {
-      padding-top: 60px;
+      padding: 60px 20px 0;
       min-height: 700px;
     }
 
@@ -199,6 +199,8 @@
       right: 0;
       max-height: vw(800);
       aspect-ratio: 610 / 800;
+      opacity: 0;
+      will-change: transform, opacity;
 
       @include to(1023px) {
         max-height: vw-tablet(700);

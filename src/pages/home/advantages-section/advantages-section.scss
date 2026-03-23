@@ -31,6 +31,7 @@
 
     @include to(767px) {
       padding-bottom: 0;
+      overflow: hidden;
     }
   }
 
@@ -71,7 +72,7 @@
     }
 
     @include to(767px) {
-      top: 72%;
+      top: 74%;
       font-size: 24px;
     }
   }
@@ -123,19 +124,19 @@
       height: auto;
       top: auto;
       bottom: 0;
-
       max-width: 100vw;
 
       .advantages-nav-buttons {
         width: fit-content;
         height: fit-content;
-        left: 15px;
-        bottom: 15px;
+        left: 12px;
+        bottom: 12px;
         top: auto;
       }
+
       .adv-counter {
-        right: 15px;
-        bottom: 0;
+        right: 12px;
+        bottom: -6px;
       }
     }
   }
@@ -147,7 +148,7 @@
     gap: vw(60);
     position: absolute;
     left: calc(50% - vw(470));
-    top: calc(vw(760) - vw(150));
+    top: calc(vw(760) - vw(120));
     z-index: 10;
     pointer-events: none;
 
@@ -160,13 +161,11 @@
       gap: $gap;
       height: 1em;
       line-height: 1;
-      // clip-path: inset(0% -100% -50% -100%);
       overflow: hidden;
-      line-height: normal;
       letter-spacing: normal;
 
       @include to(1023px) {
-        font-weight: 600;
+        // font-weight: 600;
         width: 1em;
         text-align: right;
       }
@@ -174,6 +173,7 @@
       @include to(767px) {
         font-size: 44px;
         height: 1.5em;
+        width: 1.2em;
       }
 
       span {
@@ -294,13 +294,13 @@
     @include to(767px) {
       position: relative;
       transform: none;
-      top: 5px;
+      top: 10px;
       right: auto;
       left: auto;
       margin: 0;
       width: 100%;
       max-width: 100%;
-      padding: 57px 20px 0 20px;
+      padding: 60px 20px 0 20px;
     }
 
     .swiper-wrapper {

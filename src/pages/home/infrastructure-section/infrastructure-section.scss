@@ -35,33 +35,17 @@
     .infrastructure-title {
       @include font-h1;
       color: $brown;
-      position: relative;
-      // width: 100%;
+      width: 48%;
 
       @include to(1023px) {
         font-size: 64px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
       }
 
       @include to(767px) {
         @include font-mob-h3;
-      }
-
-      &::after {
-        position: absolute;
-        content: "";
-        right: vw-laptop(-40);
-        bottom: 5px;
-        width: 1px;
-        height: 80%;
-        background-color: $ochre;
-
-        @include from(1512) {
-          right: -40px;
-        }
-
-        @include to(1023px) {
-          display: none;
-        }
       }
     }
 
@@ -69,6 +53,26 @@
       @include font-h4-semibold;
       color: $black;
       max-width: vw-laptop(240);
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: vw(-10);
+        left: vw(-68);
+        bottom: 5px;
+        width: 1px;
+        height: vw(80);
+        background-color: $ochre;
+
+        @include from(1512) {
+          left: -40px;
+        }
+
+        @include to(1023px) {
+          display: none;
+        }
+      }
 
       @include from(1512) {
         max-width: 240px;
@@ -271,6 +275,7 @@
 
             @include to(767px) {
               font-size: 42px;
+              min-width: 42px;
             }
 
             &:after {

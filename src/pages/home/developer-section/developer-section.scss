@@ -1,6 +1,7 @@
 .developer-section {
   position: relative;
   padding-top: vw(200);
+  overflow: hidden;
 
   @include to(1023px) {
     padding-top: 140px;

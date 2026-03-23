@@ -376,14 +376,12 @@
 }
 
 @mixin font-huge {
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: $black;
   font-family: $default-font;
   font-size: vw(200);
   font-style: normal;
   font-weight: 400;
   line-height: 80%; /* 160px */
-  letter-spacing: -12px;
+  letter-spacing: -8px;
 }
 
 @mixin font-tiny {

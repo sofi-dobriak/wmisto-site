@@ -11,6 +11,22 @@
     justify-content: center;
     width: 100%;
     max-width: 343px;
+
+    @include to(1023px) {
+      gap: 48px;
+    }
+
+    @include to(767px) {
+      gap: 20px;
+    }
+
+    .pagination__prev,
+    .pagination__next {
+      @include to(767px) {
+        width: 48px !important;
+        height: 48px !important;
+      }
+    }
   }
 
   &__more {
@@ -19,6 +35,13 @@
     align-items: center;
     gap: vw(12);
     margin-top: vw(40);
+    color: $black;
+    -webkit-text-fill-color: $black;
+
+    @include to(767px) {
+      margin-top: 42px;
+      gap: 12px;
+    }
   }
 
   &__icon {
@@ -52,6 +75,8 @@
       background-color: transparent;
       border: none;
       max-width: 28px;
+      -webkit-appearance: none;
+      -webkit-text-fill-color: $black;
     }
 
     &__max {

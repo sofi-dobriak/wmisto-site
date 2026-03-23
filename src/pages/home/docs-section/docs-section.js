@@ -15,13 +15,16 @@ function initDocsAnim() {
     mask: "lines",
   });
 
+  const cards = section.querySelectorAll(".docs-list");
+
   gsap
     .timeline({
       scrollTrigger: {
         trigger: section,
         start: "top 75%",
-        toggleActions: "play none none reset",
+        toggleActions: "play none none none",
       },
     })
-    .fromTo(titleSplit.lines, { y: "100%" }, { y: "0%", duration: 0.8, stagger: 0.1, ease: "power2.out" });
+    .fromTo(titleSplit.lines, { y: "100%" }, { y: "0%", duration: 0.8, stagger: 0.1, ease: "power2.out" })
+    .fromTo(cards, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "-=0.4");
 }

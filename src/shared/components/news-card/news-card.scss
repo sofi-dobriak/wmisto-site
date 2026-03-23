@@ -3,10 +3,6 @@
   border-right: 1px solid $black;
   overflow: hidden;
   height: vw(600);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 
   @include to(1023px) {
     height: auto;
@@ -94,6 +90,10 @@
       color: $brown;
       text-align: left;
       margin-bottom: vw(40);
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
 
       @include to(1023px) {
         margin-bottom: 40px;

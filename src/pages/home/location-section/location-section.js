@@ -31,25 +31,19 @@ function initLocationAnim() {
     mask: "lines",
   });
 
-  const textSplit = SplitText.create(".location-text", {
-    type: "lines",
-    mask: "lines",
-  });
-
   const tl = gsap
     .timeline({
       scrollTrigger: {
         trigger: section,
-        start: "top 70%",
-        // once: true,
+        start: "top 100%",
         toggleActions: "play none none none",
       },
     })
     .fromTo(titleSplit.lines, { y: "100%" }, { y: "0%", duration: 0.8, stagger: 0.1, ease: "power2.out" })
     .fromTo(
-      textSplit.lines,
-      { y: "100%" },
-      { y: "0%", duration: 0.6, stagger: 0.05, ease: "power2.out" },
+      ".location-text",
+      { y: "100%", opacity: 0 },
+      { y: "0%", opacity: 1, duration: 0.8, ease: "power2.out" },
       "-=0.4",
     )
     .fromTo(

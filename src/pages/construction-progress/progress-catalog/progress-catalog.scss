@@ -22,12 +22,18 @@
     @include to(1023px) {
       margin-bottom: 40px;
     }
+
+    @include to(767px) {
+      max-width: 90%;
+      margin: auto;
+      margin-bottom: 40px;
+    }
   }
 
   .progress-catalog-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border-bottom: 1px solid $black;
+    border-top: 1px solid $black;
     margin-bottom: vw(140);
 
     @include to(1023px) {
@@ -37,6 +43,7 @@
 
     @include to(767px) {
       margin-bottom: 60px;
+      border-bottom: none;
     }
   }
 }

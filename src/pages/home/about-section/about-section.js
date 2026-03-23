@@ -19,30 +19,25 @@ function initAboutAnim() {
     mask: "lines",
   });
 
-  const textSplit = SplitText.create(".about-text", {
-    type: "lines",
-    mask: "lines",
-  });
-
   gsap
     .timeline({
       scrollTrigger: {
         trigger: section,
-        start: "top 70%",
+        start: "top 90%",
         once: true,
       },
     })
     .fromTo(titleSplit.lines, { y: "100%" }, { y: "0%", duration: 0.8, stagger: 0.1, ease: "power2.out" })
     .fromTo(
-      textSplit.lines,
+      ".about-text",
       { y: "100%" },
       { y: "0%", duration: 0.6, stagger: 0.05, ease: "power2.out" },
       "-=0.4",
     )
     .fromTo(
       ".slider-block",
-      { opacity: 0, x: 60 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+      { opacity: 0, y: window.innerWidth <= 767 ? 60 : 0, x: window.innerWidth > 767 ? 60 : 0 },
+      { opacity: 1, y: 0, x: 0, duration: 1, ease: "power2.out" },
       "<",
     );
 }

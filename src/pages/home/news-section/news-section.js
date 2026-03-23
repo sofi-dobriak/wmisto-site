@@ -11,25 +11,42 @@ function initNewsAnim() {
   if (!section) return;
 
   const cards = section.querySelectorAll(".news-list > li");
+  let mm = gsap.matchMedia();
 
-  const titleSplit = SplitText.create(".news-title", {
-    type: "lines",
-    mask: "lines",
+  mm.add("(min-width: 769px)", () => {
+    // ДЕСКТОП: твій оригінальний каскад
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top 70%",
+          toggleActions: "play none none reset",
+        },
+      })
+      .fromTo(
+        cards,
+        { opacity: 0, y: 150 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" },
+      );
   });
 
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top 75%",
-        toggleActions: "play none none none",
-      },
-    })
-    .fromTo(titleSplit.lines, { y: "100%" }, { y: "0%", duration: 0.8, stagger: 0.1, ease: "power2.out" })
-    .fromTo(
-      cards,
-      { opacity: 0, y: 150 },
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: "power2.out" },
-      "-=1",
-    );
+  mm.add("(max-width: 768px)", () => {
+    // МОБАЙЛ: кожна картка підвантажується окремо при доскролі
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            toggleActions: "play none none reset",
+          },
+        },
+      );
+    });
+  });
 }

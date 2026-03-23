@@ -7,6 +7,10 @@
     padding: 40px;
   }
 
+  @include to(767px) {
+    border-left: 1px solid $black;
+  }
+
   &:hover {
     .docs-link {
       .docs-title-image-block {
@@ -33,6 +37,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 40px;
+
+    @include to(767px) {
+      gap: 28px;
+    }
 
     .docs-title-image-block {
       display: flex;

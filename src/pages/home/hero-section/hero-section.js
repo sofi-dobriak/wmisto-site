@@ -11,9 +11,14 @@ function initHeroAnim() {
   if (!section) return;
 
   gsap.set(".hero-video-block", { opacity: 0, x: -350, scale: 1.5 });
+  gsap.set(".hero-text-block__bg", { x: 350 });
+  gsap.set(".hero-logo-clip", { clipPath: "inset(100% 0 0 0)" });
+  gsap.set(".hero-text", { overflow: "hidden" });
 
   const animate = () => {
-    const split = SplitText.create(" .hero-text", {
+    gsap.set(".hero-text-block", { opacity: 1 });
+
+    const split = SplitText.create(".hero-text", {
       type: "lines",
       mask: "lines",
     });
@@ -27,7 +32,7 @@ function initHeroAnim() {
       )
       .fromTo(".hero-text-block__bg", { x: 350 }, { x: 0, duration: 1, ease: "power2.out" }, "<")
       .fromTo(
-        ".hero-logo-clip, .hero-desc-block, hero-plannings-link",
+        ".hero-logo-clip",
         { clipPath: "inset(100% 0 0 0)" },
         { clipPath: "inset(0% 0 0 0)", duration: 1, ease: "power2.out" },
         "<",

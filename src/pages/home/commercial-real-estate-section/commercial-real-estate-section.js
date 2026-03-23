@@ -9,6 +9,8 @@ function initCommercialAnim() {
   const section = document.querySelector(".commercial-section");
   if (!section) return;
 
+  gsap.set(".commercial-man-image-block", { opacity: 0, x: 120 });
+
   gsap
     .timeline({
       scrollTrigger: {

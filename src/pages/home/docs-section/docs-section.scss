@@ -8,8 +8,7 @@
   }
 
   @include to(767px) {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 20px;
   }
 
   .docs-title {
@@ -30,12 +29,16 @@
 
   .docs-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     border-top: 1px solid $black;
+    grid-template-columns: repeat(2, 1fr);
     border-left: 1px solid $black;
 
     @include to(1023px) {
       grid-template-columns: 1fr;
+    }
+
+    @include to(767px) {
+      border-left: none;
     }
   }
 }

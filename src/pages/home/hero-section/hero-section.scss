@@ -3,8 +3,8 @@
   overflow: hidden;
   position: static;
 
-  @include to(1023px) {
-    height: 100svh;
+  @include to(767px) {
+    height: auto;
   }
 
   .hero-grid {
@@ -19,10 +19,12 @@
     .hero-video-block {
       flex: 0 0 50%;
       height: 100%;
+      opacity: 0;
 
       @include to(1023px) {
         flex: unset;
         height: 60%;
+        background-color: $blue;
       }
 
       .hero-video {
@@ -34,7 +36,7 @@
 
     .hero-text-block {
       flex: 0 0 50%;
-
+      opacity: 0;
       position: relative;
 
       &__bg {
@@ -44,28 +46,25 @@
         z-index: 0;
       }
 
-      &__content {
-        position: relative;
-        z-index: 1;
-        width: 100%;
+      // &__content {
+      //   position: relative;
+      //   z-index: 1;
+      //   width: 100%;
 
-        @include to(660px) {
-          top: -10%;
-        }
+      //   @include to(767px) {
+      //     position: static;
+      //     top: unset;
+      //   }
 
-        @include from(660px) {
-          top: -20%;
-        }
+      //   @include from(768px) {
+      //     width: 100%;
+      //     top: -50%;
+      //   }
 
-        @include from(768px) {
-          width: 100%;
-          top: -50%;
-        }
-
-        @include from(1024px) {
-          top: unset;
-        }
-      }
+      //   @include from(1024px) {
+      //     top: unset;
+      //   }
+      // }
 
       @include to(1023px) {
         flex: unset;
@@ -75,7 +74,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 16px 20px 50px;
+        padding: 16px 20px;
       }
 
       .hero-logo-block {
@@ -95,14 +94,17 @@
         }
 
         @include to(767px) {
-          top: 12%;
+          position: relative;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -40%);
+          width: 100%;
+          padding: 0 20px;
+          z-index: 2;
         }
 
         .hero-logo-clip {
           overflow: hidden;
-        }
-
-        .hero-logo {
           margin-bottom: 20px;
 
           @include to(1023px) {
@@ -124,6 +126,7 @@
             font-size: 48px;
             line-height: 120%;
             width: fit-content;
+            margin: auto;
           }
 
           @include to(767px) {
@@ -133,13 +136,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: auto;
           }
         }
       }
 
       .hero-desc-block {
-        display: flex;
+        display: none;
         flex-direction: column;
         gap: 16px;
         max-width: 452px;
@@ -148,8 +150,13 @@
         right: 0;
 
         @include to(767px) {
-          position: relative;
-          bottom: -60px;
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          padding: 0 20px;
+          right: auto;
         }
 
         .hero-desc {

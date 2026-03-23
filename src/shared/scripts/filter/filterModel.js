@@ -485,25 +485,45 @@ class FilterModel extends EventEmitter {
     return has(flat, key) && flat[key] >= value.min && flat[key] <= value.max;
   }
 
-  checkFloorRangeParam(flat, key, value) {
-    const floorRange = flat["floor"];
+  // checkFloorRangeParam(flat, key, value) {
+  //   const floorRange = flat["floor"];
 
-    if (floorRange.match(/,/)) {
-      const numbers = floorRange.split(",").map(Number);
+  //   if (floorRange.match(/,/)) {
+  //     const numbers = floorRange.split(",").map(Number);
+  //     let isValid = false;
+  //     for (let i = value.min; i <= value.max; i++) {
+  //       if (numbers.includes(i)) {
+  //         isValid = true;
+  //         break;
+  //       }
+  //       // if (this.isBetween(i, value.min, value.max)) {
+  //       //   isValid = true;
+  //       //   break;
+  //       // }
+  //     }
+  //     return isValid;
+  //   } else {
+  //     return has(flat, "floor") && this.isBetween(+flat["floor"], value.min, value.max);
+  //   }
+
+  //   return has(flat, key) && flat[key] >= value.min && flat[key] <= value.max;
+  // }
+
+  checkFloorRangeParam(flat, key, value) {
+    const floorRange = flat["floor_range"];
+
+    if (floorRange.match(/-/)) {
+      const [min, max] = floorRange.split("-").map(Number);
       let isValid = false;
-      for (let i = value.min; i <= value.max; i++) {
-        if (numbers.includes(i)) {
+      for (let i = min; i <= max; i++) {
+        if (this.isBetween(i, value.min, value.max)) {
           isValid = true;
           break;
         }
-        // if (this.isBetween(i, value.min, value.max)) {
-        //   isValid = true;
-        //   break;
-        // }
       }
       return isValid;
     } else {
-      return has(flat, "floor") && this.isBetween(+flat["floor"], value.min, value.max);
+      return has(flat, "floor_range") && this.isBetween(+flat["floor_range"], value.min, value.max);
     }
 
     return has(flat, key) && flat[key] >= value.min && flat[key] <= value.max;

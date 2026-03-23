@@ -3,11 +3,12 @@
   padding: vw(20);
   height: vw(620);
   overflow: hidden;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $black;
 
   @include to(1023px) {
     height: auto;
     padding: 40px 20px;
+    border-right: none;
   }
 
   @include to(767px) {

@@ -73,6 +73,10 @@ section {
   }
 }
 
+.page__content {
+  overflow-x: clip;
+}
+
 #bingc-phone-button {
   display: none !important;
 }

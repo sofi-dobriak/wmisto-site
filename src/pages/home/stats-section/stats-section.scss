@@ -61,10 +61,8 @@
 
     @include to(1023px) {
       grid-template-columns: repeat(1, 1fr);
-      @include to(1023px) {
-        display: flex;
-        flex-direction: column;
-      }
+      display: flex;
+      flex-direction: column;
     }
 
     .stats-item {
@@ -78,13 +76,26 @@
       position: relative;
       height: 100%;
 
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: $black;
+        opacity: var(--after-opacity, 0);
+        z-index: 10;
+        pointer-events: none;
+      }
+
       @include to(1023px) {
         flex-direction: row;
         overflow: visible;
         position: sticky;
         top: calc(100px + (var(--item-index) - 1) * 10px);
         z-index: var(--item-index);
-        height: auto;
+
+        &:last-child {
+          top: calc(150px + (var(--item-index) - 1) * 10px);
+        }
       }
 
       .stats-title-text-block {
@@ -115,6 +126,16 @@
         .stats-title,
         .stats-text {
           color: $white;
+        }
+
+        @include to(1023px) {
+          .stats-title {
+            color: $blue;
+          }
+
+          .stats-text {
+            color: $black;
+          }
         }
 
         .stats-image-block {

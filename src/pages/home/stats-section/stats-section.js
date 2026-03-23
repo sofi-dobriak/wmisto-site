@@ -26,4 +26,22 @@ function initStatsnAnim() {
       },
     })
     .fromTo(titleSplit.lines, { y: "100%" }, { y: "0%", duration: 0.8, stagger: 0.1, ease: "power2.out" });
+
+  const items = gsap.utils.toArray(".stats-item");
+
+  items.forEach((item, i) => {
+    // Не затемнюємо останню картку, бо на неї ніщо не наїжджає
+    if (i === items.length - 1) return;
+
+    gsap.to(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top 100px", // Починаємо затемнення, коли картка доходить до "липкого" верху
+        end: "bottom 100px", // Закінчуємо, коли наступна картка її повністю перекрила
+        scrub: true,
+      },
+      "--after-opacity": 0.5, // Ступінь затемнення (від 0 до 1)
+      ease: "none",
+    });
+  });
 }

@@ -22,12 +22,17 @@
       align-items: start;
       gap: 20px;
       margin-bottom: 20px;
+      padding: 0 20px;
     }
 
     .choose-title {
       @include font-h1;
       color: $brown;
-      width: 100%;
+      width: 80%;
+
+      @include to(1023px) {
+        width: 100%;
+      }
     }
 
     .choose-plannings-link {

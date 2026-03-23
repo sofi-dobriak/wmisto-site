@@ -5,8 +5,16 @@
   overflow: hidden;
   position: relative;
 
+  @include to(1023px) {
+    padding: 100px 60px;
+    gap: 60px;
+  }
+
   @include to(767px) {
     height: 100svh;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 40px;
   }
 
   background:

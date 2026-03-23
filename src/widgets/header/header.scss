@@ -32,6 +32,11 @@
       fill: $black;
     }
 
+    .first.fake,
+    .second.fake {
+      opacity: 0;
+    }
+
     @include from(1512) {
       width: 215px;
     }
@@ -60,6 +65,16 @@
     }
 
     &:hover {
+      .first.real,
+      .second.real {
+        opacity: 0;
+      }
+
+      .first.fake,
+      .second.fake {
+        opacity: 1;
+      }
+
       .first {
         &.real {
           animation: exit-up-fast 0.2s forwards;
