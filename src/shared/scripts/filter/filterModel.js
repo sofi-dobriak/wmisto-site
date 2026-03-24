@@ -27,7 +27,7 @@ class FilterModel extends EventEmitter {
       roomsforfilter: "checkbox",
       terrace: "checkbox",
       project: "checkbox",
-      section: "checkbox",
+      sec_name: "checkbox",
       terrace: "checkbox",
       penthouse: "checkbox",
       fountain: "checkbox",
@@ -48,7 +48,7 @@ class FilterModel extends EventEmitter {
     this.highlightFlybySvgElements$ = config.highlightFlybySvgElements$;
     this.history = config.history;
     this.i18n = config.i18n;
-    this.onChangeFilterState = config.onChangeFilterState || function () {};
+    this.onChangeFilterState = config.onChangeFilterState || function () { };
     this.isFilterEmpty = new BehaviorSubject(true);
     this.show_prices = config.show_prices;
   }
@@ -75,7 +75,7 @@ class FilterModel extends EventEmitter {
     this.deb = debounce(this.resize.bind(this), 500);
   }
 
-  mobileClosingAnimation(cb = () => {}) {
+  mobileClosingAnimation(cb = () => { }) {
     gsap
       .timeline()
       .to(this.$wrapper, {
@@ -583,7 +583,7 @@ class FilterModel extends EventEmitter {
     return settings;
   }
 
-  reduceFilter(isShow) {}
+  reduceFilter(isShow) { }
 
   changeListScrollBlocked(value) {
     this.isListScrollBlocked = value;

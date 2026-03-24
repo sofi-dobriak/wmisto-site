@@ -26,6 +26,18 @@ async function planningsGallery() {
     return acc;
   }, {});
 
+  const uniqueSecName = [...new Set(fetchedFlats.map((flat) => flat.sec_name))].sort((a, b) => (a > b ? 1 : -1));
+  document.querySelectorAll("[data-for-dynamic-section-filter]").forEach((el) => {
+    uniqueSecName.forEach((secName) => {
+      el.insertAdjacentHTML(
+        "beforeend",
+        `<label class="planning-checkbox" for="sections${secName}">
+                  <input id="sections${secName}" type="checkbox" name="" value="${secName}" data-type="sec_name" data-sec_name="${secName}"><span>${secName}</span>
+                </label>`,
+      );
+    })
+  });
+
   let paginationData = [];
   let currentPage$ = new BehaviorSubject(getUrlParam("filterPage") ? +getUrlParam("filterPage") : 1);
   let totalPages = 0;
