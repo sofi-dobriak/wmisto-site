@@ -7,28 +7,48 @@ import { glob } from "glob";
 import { iconsSpritesheet } from "vite-plugin-icons-spritesheet";
 import { exec } from "child_process";
 
-// Node.js compatibility for Vite internals (crypto.hash is missing in older runtimes)
+const normalizePath = (p) => p.replace(/\\/g, "/");
+
 if (typeof crypto.hash !== "function") {
   crypto.hash = (algorithm, data, options) => {
     const hash = crypto.createHash(algorithm);
     hash.update(data);
-
-    if (typeof options === "string") {
-      return hash.digest(options);
-    }
-
+    if (typeof options === "string") return hash.digest(options);
     if (options && typeof options === "object" && options.outputEncoding) {
       return hash.digest(options.outputEncoding);
     }
-
     return hash.digest();
   };
 }
 
 const entryPoints = glob.sync(["index.pug", "src/pages/**/*.pug"]).reduce((acc, path) => {
-  const name = basename(path, ".pug");
-  const key = name === "index" ? "index.html" : `${name}.html`;
-  acc[key] = resolve(__dirname, path);
+  const fullPath = resolve(__dirname, path);
+  const fileName = basename(path, ".pug");
+
+  if (fileName.startsWith("_")) return acc;
+
+  if (path === "index.pug") {
+    acc[`${fileName}.html`] = normalizePath(fullPath);
+    return acc;
+  }
+
+  const folderPath = resolve(fullPath, "..");
+  const folderName = basename(folderPath);
+
+  const pugsInThisFolder = fs
+    .readdirSync(folderPath)
+    .filter((file) => file.endsWith(".pug") && !file.startsWith("_"));
+
+  const isOnlyFile = pugsInThisFolder.length === 1;
+  const isMatchFolderName = pugsInThisFolder.length > 1 && fileName === folderName;
+
+  const relativeFromPages = relative(resolve(__dirname, "src/pages"), fullPath);
+  const pathDepth = relativeFromPages.split(/[\\/]/).length;
+
+  if (pathDepth === 2 && (isOnlyFile || isMatchFolderName)) {
+    acc[`${fileName}.html`] = normalizePath(fullPath);
+  }
+
   return acc;
 }, {});
 
@@ -102,6 +122,7 @@ export default defineConfig({
     },
     {
       name: "vite-plugin-pug-resolver",
+      enforce: "pre",
       resolveId(id, importer) {
         if (!importer && entryPoints[id]) {
           return resolve(__dirname, id);
@@ -173,7 +194,8 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    minify: false,
+    minify: true,
+    cssMinify: false,
     rollupOptions: {
       input: Object.keys(entryPoints),
       output: {
@@ -209,6 +231,7 @@ export default defineConfig({
     },
   },
   css: {
+    devSourcemap: true,
     preprocessorOptions: {
       scss: {
         additionalData: `
