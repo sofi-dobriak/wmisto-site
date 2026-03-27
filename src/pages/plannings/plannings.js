@@ -29,10 +29,24 @@ async function planningsGallery() {
   const uniqueSecName = [...new Set(fetchedFlats.map((flat) => flat.sec_name))].sort((a, b) => (a > b ? 1 : -1));
   document.querySelectorAll("[data-for-dynamic-section-filter]").forEach((el) => {
     uniqueSecName.forEach((secName) => {
+      if (!secName) return;
       el.insertAdjacentHTML(
         "beforeend",
         `<label class="planning-checkbox" for="sections${secName}">
                   <input id="sections${secName}" type="checkbox" name="" value="${secName}" data-type="sec_name" data-sec_name="${secName}"><span>${secName}</span>
+                </label>`,
+      );
+    })
+  });
+
+  const uniqueCustomFilter3d = [...new Set(fetchedFlats.map((flat) => flat.custom_filter_3d))].sort((a, b) => (a > b ? 1 : -1));
+  document.querySelectorAll("[data-for-dynamic-custom-filter-3d]").forEach((el) => {
+    uniqueCustomFilter3d.forEach((secName) => {
+      if (!secName) return;
+      el.insertAdjacentHTML(
+        "beforeend",
+        `<label class="planning-checkbox" for="custom_filter_3d${secName}">
+                  <input id="custom_filter_3d${secName}" type="checkbox" name="" value="${secName}" data-type="custom_filter_3d" data-custom_filter_3d="${secName}"><span>${secName}</span>
                 </label>`,
       );
     })

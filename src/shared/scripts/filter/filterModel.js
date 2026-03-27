@@ -31,7 +31,7 @@ class FilterModel extends EventEmitter {
       terrace: "checkbox",
       penthouse: "checkbox",
       fountain: "checkbox",
-      smart: "checkbox",
+      custom_filter_3d: "checkbox",
     };
 
     this.configProject = {};
