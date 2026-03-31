@@ -71,6 +71,8 @@
         @include font-huge;
         color: $white;
         margin-bottom: vw(20);
+        -webkit-text-stroke-width: unset;
+        -webkit-text-stroke-color: unset;
 
         @include to(1023px) {
           margin-bottom: 20px;

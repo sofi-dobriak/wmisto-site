@@ -21,6 +21,7 @@ function initHeroAnim() {
     const split = SplitText.create(".hero-text", {
       type: "lines",
       mask: "lines",
+      linesClass: "hero-text-line",
     });
 
     gsap

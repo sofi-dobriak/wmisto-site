@@ -48,6 +48,16 @@
       gap: vw(12);
       margin-right: vw(260);
 
+      &:hover {
+        .up-icon-wrapper {
+          background-color: $brown;
+
+          .up-icon {
+            fill: $white;
+          }
+        }
+      }
+
       @include to(1023px) {
         gap: 12px;
         margin-right: 206px;
@@ -65,6 +75,7 @@
         justify-content: center;
         width: vw(64);
         height: vw(64);
+        transition: $transition;
 
         @include to(1023px) {
           width: 64px;
@@ -81,6 +92,7 @@
           height: vw(24);
           flex-shrink: 0;
           transform: rotate(180deg);
+          transition: $transition;
 
           @include to(1023px) {
             width: 24px;

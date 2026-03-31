@@ -138,6 +138,7 @@ const initMainSwiper = (swiper_text, elements) => {
     watchSlidesProgress: true,
     initialSlide: 2,
     centeredSlides: true,
+
     breakpoints: {
       768: {
         slidesPerView: "auto",
@@ -148,13 +149,16 @@ const initMainSwiper = (swiper_text, elements) => {
         spaceBetween: 20,
       },
     },
+
     on: {
       init(swiper) {
         setCurrentCounter(counters, this.realIndex);
         applyCustomTranslate(swiper);
+        updateDisabled(swiper);
       },
-      slideChange() {
+      slideChange(swiper) {
         swiper_text.slideTo(this.activeIndex);
+        updateDisabled(swiper);
       },
       setTransition(swiper, duration) {
         swiper.wrapperEl.style.transitionDuration = `${duration}ms`;
@@ -170,6 +174,7 @@ const initMainSwiper = (swiper_text, elements) => {
         setCurrentCounter(counters, swiper.realIndex);
         swiper.update();
         swiper.emit("setTranslate", swiper, swiper.translate);
+        updateDisabled(swiper);
       },
     },
   });
@@ -229,6 +234,23 @@ const bindNavButtons = (swiper) => {
         swiper.slideTo(swiper.activeIndex + 1, 800);
       }
     });
+  });
+};
+
+const updateDisabled = (swiper) => {
+  const prevBtns = document.querySelectorAll(
+    ".advantages-button-prev--desktop, .advantages-button-prev--mobile",
+  );
+  const nextBtns = document.querySelectorAll(
+    ".advantages-button-next--desktop, .advantages-button-next--mobile",
+  );
+
+  prevBtns.forEach((btn) => {
+    btn.disabled = swiper.isBeginning;
+  });
+
+  nextBtns.forEach((btn) => {
+    btn.disabled = swiper.isEnd;
   });
 };
 

@@ -59,6 +59,7 @@
     flex-grow: 1;
     min-width: 0;
     height: 100%;
+    // padding-bottom: 0 !important;
 
     @include to(1023px) {
       grid-template-columns: repeat(1, 1fr);
@@ -101,6 +102,10 @@
         // top: calc(var(--sticky-base-top, 100px) + (var(--item-index) - 1) * var(--sticky-step, 10px));
         // z-index: var(--item-index);
         height: calc(128 / 375 * 100vw);
+      }
+
+      @include to(767px) {
+        // padding-bottom: 60px;
       }
 
       .stats-title-text-block {

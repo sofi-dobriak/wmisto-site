@@ -30,7 +30,7 @@
 
       @include to(1023px) {
         flex: unset;
-        height: 60%;
+        height: 65%;
         background-color: $blue;
       }
 
@@ -53,29 +53,9 @@
         z-index: 0;
       }
 
-      // &__content {
-      //   position: relative;
-      //   z-index: 1;
-      //   width: 100%;
-
-      //   @include to(767px) {
-      //     position: static;
-      //     top: unset;
-      //   }
-
-      //   @include from(768px) {
-      //     width: 100%;
-      //     top: -50%;
-      //   }
-
-      //   @include from(1024px) {
-      //     top: unset;
-      //   }
-      // }
-
       @include to(1023px) {
         flex: unset;
-        height: 40%;
+        height: 35%;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -119,27 +99,28 @@
           }
 
           @include to(767px) {
-            margin-bottom: 28px;
+            margin-bottom: 16px;
           }
         }
 
         .hero-text {
           @include font-hero;
           color: $black;
-          margin-left: vw(220);
+          margin-left: vw(215);
+          margin-top: 20px;
+          line-height: 1.15;
 
           @include to(1023px) {
             margin-left: 0;
             font-size: 48px;
             line-height: 120%;
             width: fit-content;
-            margin: auto;
+            margin: 0 auto;
           }
 
           @include to(767px) {
             font-size: 36px;
             text-align: center;
-
             display: flex;
             align-items: center;
             justify-content: center;
@@ -219,6 +200,11 @@
         @include to(1023px) {
           width: 60px;
           height: 60px;
+        }
+
+        @include to(767px) {
+          width: 48px;
+          height: 48px;
         }
 
         .hero-icon-wrapper {

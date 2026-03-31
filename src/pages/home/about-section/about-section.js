@@ -61,7 +61,7 @@ const getElements = () => ({
 
 const initCounter = (totalEl, slidesCount) => {
   if (totalEl) {
-    totalEl.textContent = `/ ${formatNum(slidesCount)}`;
+    totalEl.textContent = `/ ${formatNum(Math.floor(slidesCount / 2))}`;
   }
 };
 
