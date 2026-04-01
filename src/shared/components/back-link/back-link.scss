@@ -26,6 +26,15 @@
     width: vw(64);
     height: vw(64);
     background-color: $white;
+    transition: $transition;
+
+    &:hover {
+      background-color: $brown;
+
+      .back-icon {
+        fill: $white;
+      }
+    }
 
     @include to(1023px) {
       width: 64px;
@@ -43,6 +52,7 @@
       flex-shrink: 0;
       transform: rotate(90deg);
       fill: $brown;
+      transition: $transition;
 
       @include to(1023px) {
         width: 24px;

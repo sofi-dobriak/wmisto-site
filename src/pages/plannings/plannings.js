@@ -26,7 +26,9 @@ async function planningsGallery() {
     return acc;
   }, {});
 
-  const uniqueSecName = [...new Set(fetchedFlats.map((flat) => flat.sec_name))].sort((a, b) => (a > b ? 1 : -1));
+  const uniqueSecName = [...new Set(fetchedFlats.map((flat) => flat.sec_name))].sort((a, b) =>
+    a > b ? 1 : -1,
+  );
   document.querySelectorAll("[data-for-dynamic-section-filter]").forEach((el) => {
     uniqueSecName.forEach((secName) => {
       if (!secName) return;
@@ -36,10 +38,12 @@ async function planningsGallery() {
                   <input id="sections${secName}" type="checkbox" name="" value="${secName}" data-type="sec_name" data-sec_name="${secName}"><span>${secName}</span>
                 </label>`,
       );
-    })
+    });
   });
 
-  const uniqueCustomFilter3d = [...new Set(fetchedFlats.map((flat) => flat.custom_filter_3d))].sort((a, b) => (a > b ? 1 : -1));
+  const uniqueCustomFilter3d = [...new Set(fetchedFlats.map((flat) => flat.custom_filter_3d))].sort((a, b) =>
+    a > b ? 1 : -1,
+  );
   document.querySelectorAll("[data-for-dynamic-custom-filter-3d]").forEach((el) => {
     uniqueCustomFilter3d.forEach((secName) => {
       if (!secName) return;
@@ -49,7 +53,7 @@ async function planningsGallery() {
                   <input id="custom_filter_3d${secName}" type="checkbox" name="" value="${secName}" data-type="custom_filter_3d" data-custom_filter_3d="${secName}"><span>${secName}</span>
                 </label>`,
       );
-    })
+    });
   });
 
   let paginationData = [];
@@ -106,7 +110,7 @@ async function planningsGallery() {
         top: 0,
         behavior: "smooth",
       });
-    }, 800);
+    }, 300);
   });
 
   document.querySelectorAll('[data-pagination="prev"]').forEach((el) => {

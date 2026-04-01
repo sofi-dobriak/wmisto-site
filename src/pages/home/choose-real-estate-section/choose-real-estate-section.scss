@@ -6,8 +6,12 @@
   overflow: hidden;
 
   @include to(1023px) {
-    padding: 100px 0;
+    padding: 100px 0 0;
     height: auto;
+  }
+
+  @include to(767px) {
+    padding: 60px 0 0;
   }
 
   .choose-title-block {
@@ -40,6 +44,10 @@
 
       @include to(1023px) {
         width: 100%;
+        max-width: 330px;
+      }
+
+      @include to(767px) {
         max-width: 228px;
       }
     }
@@ -200,7 +208,7 @@
           transition: $transition-long;
 
           @include to(1023px) {
-            object-position: center 56%;
+            object-position: 12%;
           }
         }
       }

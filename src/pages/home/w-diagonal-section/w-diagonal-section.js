@@ -20,6 +20,7 @@ function initDiagonalSwiper() {
     slidesPerView: 1,
     loop: false,
     parallax: true,
+    spaceBetween: 1,
     navigation: {
       prevEl: ".w-diagonal-button-prev",
       nextEl: ".w-diagonal-button-next",

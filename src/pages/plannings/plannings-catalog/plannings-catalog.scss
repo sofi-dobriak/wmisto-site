@@ -5,16 +5,13 @@
   gap: 20px;
   width: calc(70% - var(--gap));
 
-  @include to(1395px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include to(1630px) {
+  @include to(1280px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
   @include to(1023px) {
     width: 100%;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @include to(600px) {

@@ -19,6 +19,10 @@
     padding: 60px 0 0;
   }
 
+  // @include to(600px) {
+  //   height: calc(var(--vh, 1vh) * 100);
+  // }
+
   .w-diagonal-left-block {
     width: 70%;
     border: 1px solid $black;
@@ -37,14 +41,19 @@
 
     .slider-block {
       width: 100%;
-      aspect-ratio: 1200/666;
+      // aspect-ratio: 1200/666;
+      aspect-ratio: unset; // ← прибери aspect-ratio
+      height: 80vh; // ← фіксована висота
 
       @include to(1023px) {
-        aspect-ratio: 728/408;
+        // aspect-ratio: 728/408;
+        height: 50vh;
       }
 
       @include to(767px) {
-        aspect-ratio: 375/220;
+        // aspect-ratio: 375/220;
+        // height: 220px;
+        height: 70vh;
       }
 
       .w-diagonal-swiper {
@@ -64,12 +73,17 @@
               left: 0;
               bottom: 0;
               right: 0;
+              background-color: $white;
 
               .slider-img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain;
                 display: block;
+
+                @include to(767px) {
+                  object-fit: cover;
+                }
               }
             }
           }

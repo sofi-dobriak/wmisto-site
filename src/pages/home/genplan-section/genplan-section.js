@@ -36,8 +36,9 @@ function initGenplanAnim() {
     .timeline({
       scrollTrigger: {
         trigger: ".tab-genplan-cards-sign-block",
-        start: "top 90%",
+        start: "top 95%",
         toggleActions: "play none none none",
+        markers: false,
       },
     })
     .fromTo(".genplan-tab-card-block", { opacity: 0, x: -100 }, { ...commonOptions, x: 0, stagger: 0.5 })
@@ -45,6 +46,7 @@ function initGenplanAnim() {
       [".genplan-tab-sign-image-block", ".genplan-tab-title-block"],
       { opacity: 0, x: 100 },
       { ...commonOptions, x: 0, stagger: 0.3 },
+      "<",
     );
 
   if (infoCard) {

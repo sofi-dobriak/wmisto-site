@@ -16,6 +16,25 @@ const modules = import.meta.glob(["../widgets/**/*.js", "../features/**/*.js", "
   eager: true,
 });
 
-document.addEventListener("gesturestart", (e) => e.preventDefault());
-document.addEventListener("gesturechange", (e) => e.preventDefault());
-document.addEventListener("gestureend", (e) => e.preventDefault());
+// const setSectionHeight = (selector) => {
+//   const section = document.querySelector(selector);
+//   if (!section) return;
+//   if (window.innerWidth <= 767) {
+//     section.style.height = `${window.innerHeight}px`;
+//   } else {
+//     section.style.height = "";
+//   }
+// };
+
+// setSectionHeight(".hero-section");
+// setSectionHeight(".genplan-section");
+// setSectionHeight(".developer-section");
+
+const vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+window.addEventListener("resize", () => {
+  if (window.screen.width < 1025) return;
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+});

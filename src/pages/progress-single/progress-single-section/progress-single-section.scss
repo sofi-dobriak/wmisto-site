@@ -134,8 +134,8 @@
       }
 
       &.swiper-button-disabled {
-        opacity: 1;
-        pointer-events: auto;
+        opacity: 0.5;
+        pointer-events: none;
         background-color: $white;
         border: 1px solid $black;
 

@@ -149,10 +149,7 @@
       }
 
       @include to(1023px) {
-        max-width: 256px;
-      }
-
-      @include to(1023px) {
+        max-width: 330px;
         margin-bottom: 68px;
       }
     }

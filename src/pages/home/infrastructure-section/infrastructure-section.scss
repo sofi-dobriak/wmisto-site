@@ -106,11 +106,12 @@
 
       @include to(1023px) {
         padding: 60px;
+        border-bottom: 1px solid $black;
       }
 
       @include to(767px) {
         padding: 40px 20px;
-        border-bottom: 1px solid $black;
+
         border-right-color: transparent;
       }
 

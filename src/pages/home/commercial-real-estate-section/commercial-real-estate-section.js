@@ -9,7 +9,7 @@ function initCommercialAnim() {
   const section = document.querySelector(".commercial-section");
   if (!section) return;
 
-  gsap.set(".commercial-man-image-block", { opacity: 0, x: 120 });
+  // gsap.set(".commercial-man-image-block", { opacity: 0, x: 120 });
 
   gsap
     .timeline({
@@ -48,11 +48,11 @@ function initCommercialAnim() {
         duration: 1.2,
         ease: "power2.out",
       },
-    )
-    .fromTo(
-      ".commercial-man-image-block",
-      { opacity: 0, x: 120 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
-      "-=0.5",
     );
+  // .fromTo(
+  //   ".commercial-man-image-block",
+  //   { opacity: 0, x: 120 },
+  //   { opacity: 1, x: 0, duration: 1, ease: "power2.out" },
+  //   "-=0.5",
+  // );
 }

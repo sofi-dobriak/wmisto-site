@@ -5,13 +5,13 @@
 
   @include to(767px) {
     // iOS Safari: avoid layout jumps when address bar hides/shows
-    height: 100svh;
-    min-height: -webkit-fill-available;
+    // height: 100svh;
+    // min-height: -webkit-fill-available;
 
-    @supports not (height: 100svh) {
-      height: -webkit-fill-available;
-      min-height: 100vh;
-    }
+    // @supports not (height: 100svh) {
+    //   height: -webkit-fill-available;
+    //   min-height: 100vh;
+    // }
   }
 
   .hero-grid {
@@ -84,7 +84,7 @@
           position: absolute;
           top: 0;
           left: 50%;
-          transform: translate(-50%, -20%);
+          transform: translate(-50%, -25%);
           width: 100%;
           padding: 0 20px;
           z-index: 2;
@@ -115,7 +115,7 @@
             font-size: 48px;
             line-height: 120%;
             width: fit-content;
-            margin: 0 auto;
+            margin: 28px auto 0;
           }
 
           @include to(767px) {
@@ -125,6 +125,12 @@
             align-items: center;
             justify-content: center;
           }
+        }
+
+        .hero-text-line {
+          padding-bottom: 0.15em;
+          margin-bottom: -0.15em;
+          padding-right: 0.1em;
         }
       }
 

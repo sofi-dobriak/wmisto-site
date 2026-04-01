@@ -136,7 +136,7 @@
 
       .adv-counter {
         right: 12px;
-        bottom: -6px;
+        bottom: 0;
       }
     }
   }
@@ -165,15 +165,15 @@
       letter-spacing: normal;
 
       @include to(1023px) {
-        // font-weight: 600;
-        width: 1em;
+        width: 1.2em;
         text-align: right;
       }
 
       @include to(767px) {
         font-size: 44px;
         height: 1.5em;
-        width: 1.2em;
+        font-size: 30px;
+        font-weight: 700;
       }
 
       span {

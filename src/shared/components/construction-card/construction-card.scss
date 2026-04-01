@@ -41,6 +41,7 @@
       aspect-ratio: 16 / 9;
       width: 100%;
       min-height: unset;
+      margin-bottom: 40px;
     }
 
     @include to(767px) {

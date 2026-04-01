@@ -15,7 +15,11 @@
     text-align: center;
 
     @include to(1023px) {
-      margin-bottom: 40px;
+      margin: 40px 0;
+    }
+
+    @include to(767px) {
+      margin-top: 10px;
     }
   }
 

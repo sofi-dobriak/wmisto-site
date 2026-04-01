@@ -15,6 +15,8 @@
 
   @include to(1023px) {
     padding: 20px;
+    background-color: rgba(245, 246, 241, 1);
+    backdrop-filter: unset;
   }
 
   @include to(767px) {

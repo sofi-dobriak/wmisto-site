@@ -199,11 +199,11 @@
         }
 
         @include to(767px) {
-          font-size: 44px;
-          height: 1.4em;
           width: 1em;
           text-align: right;
-          // font-weight: 600;
+          font-weight: 700;
+          font-size: 30px;
+          height: 1.6em;
         }
 
         span {

@@ -7,6 +7,10 @@
     padding-top: 140px;
   }
 
+  @include to(600px) {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
   .developer-image-block {
     position: absolute;
     width: 100%;
@@ -43,6 +47,8 @@
       padding: 40px;
       width: 100%;
       max-width: 500px;
+      background: rgba(212, 209, 202, 1);
+      backdrop-filter: unset;
     }
 
     @include to(767px) {

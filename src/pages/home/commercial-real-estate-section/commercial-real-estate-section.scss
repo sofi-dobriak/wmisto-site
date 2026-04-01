@@ -70,6 +70,7 @@
 
         @include to(1023px) {
           font-size: 16px;
+          width: 100%;
         }
 
         @include to(767px) {
@@ -103,11 +104,11 @@
     @include to(1023px) {
       flex: unset;
       max-height: 800px;
-      padding-top: 100px;
+      padding: 100px 20px;
     }
 
     @include to(767px) {
-      padding: 60px 20px 0;
+      padding: 60px 20px;
       min-height: 700px;
     }
 
@@ -126,9 +127,9 @@
       @include font-h3;
       color: $black;
       margin-bottom: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+      // display: flex;
+      // flex-direction: column;
+      // gap: 2px;
 
       @include to(1023px) {
         font-size: 36px;
@@ -156,6 +157,10 @@
         max-width: 340px;
       }
 
+      @include to(767px) {
+        max-width: 100%;
+      }
+
       .commercial-right-text {
         @include font-body;
         color: $black;
@@ -172,6 +177,7 @@
 
         @include to(767px) {
           font-size: 14px;
+          max-width: unset;
         }
       }
     }
@@ -200,11 +206,12 @@
       right: 0;
       max-height: vw(800);
       aspect-ratio: 610 / 800;
-      opacity: 0;
+      opacity: 1;
       will-change: transform, opacity;
 
       @include to(1023px) {
-        max-height: vw-tablet(700);
+        // max-height: vw-tablet(700);
+        max-height: 580px;
       }
 
       @include to(767px) {
