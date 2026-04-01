@@ -7,9 +7,9 @@
     padding-top: 140px;
   }
 
-  @include to(600px) {
-    height: calc(var(--vh, 1vh) * 100);
-  }
+  // @include to(600px) {
+  //   height: calc(var(--vh, 1vh) * 100);
+  // }
 
   .developer-image-block {
     position: absolute;
