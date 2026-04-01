@@ -33,17 +33,33 @@
   .progress-catalog-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid $black;
+    // border-top: 1px solid $black;
     margin-bottom: vw(140);
 
     @include to(1023px) {
       grid-template-columns: 1fr;
       margin-bottom: 140px;
+
+      .construction-item {
+        &:last-child {
+          border-bottom: 1px solid $black;
+        }
+      }
     }
 
     @include to(767px) {
       margin-bottom: 60px;
       border-bottom: none;
+    }
+
+    @include from(1024px) {
+      .construction-item {
+        border-top: none;
+
+        &:nth-child(-n + 3) {
+          border-top: 1px solid $black;
+        }
+      }
     }
   }
 }

@@ -176,6 +176,7 @@ async function getPdfLink() {
 function sliderHandler() {
   const slider = new Swiper(".js-single-flat-slider", {
     modules: [Navigation],
+    spaceBetween: 20,
     navigation: {
       nextEl: ".single-flat-slider-next",
       prevEl: ".single-flat-slider-prev",
@@ -183,19 +184,15 @@ function sliderHandler() {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 20,
       },
-      601: {
+      768: {
         slidesPerView: 2,
-        spaceBetween: 20,
       },
-      900: {
+      1024: {
         slidesPerView: 3,
-        spaceBetween: 20,
       },
       1320: {
         slidesPerView: 4,
-        spaceBetween: 40,
       },
     },
   });

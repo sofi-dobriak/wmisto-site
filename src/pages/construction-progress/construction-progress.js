@@ -1,7 +1,5 @@
-function initConstructionProgress() {}
+import { paginationInit } from "@/widgets/pagination/pagination";
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initConstructionProgress);
-} else {
-  initConstructionProgress();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  paginationInit(".progress-catalog-list ", ".construction-item");
+});

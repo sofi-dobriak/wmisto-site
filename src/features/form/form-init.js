@@ -77,7 +77,11 @@ const configureForm = (formRef, onSuccess) => {
             $field: formRef.querySelector("[data-field-name]"),
             typeInput: "name",
           }),
-          rule: yup.string().required(i18next.t("required")).trim(),
+          rule: yup
+            .string()
+            .required(i18next.t("required"))
+            .min(2, i18next.t("name_too_short", { cnt: 2 }))
+            .trim(),
           defaultMessage: i18next.t("name"),
           valid: false,
           error: [],
@@ -102,7 +106,15 @@ const configureForm = (formRef, onSuccess) => {
             $field: formRef.querySelector("[data-field-email]"),
             typeInput: "email",
           }),
-          rule: yup.string().email().trim().required(i18next.t("required")),
+          // rule: yup.string().email().trim().required(i18next.t("required")),
+          rule: yup
+            .string()
+            .required(i18next.t("required"))
+            .test("email-validation", i18next.t("invalid_email_format"), function (value) {
+              if (!value) return false;
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              return emailRegex.test(value);
+            }),
 
           valid: true,
           error: [],
@@ -154,7 +166,11 @@ const configureFormFooter = (formRef, onSuccess) => {
             $field: formRef.querySelector("[data-field-name]"),
             typeInput: "name",
           }),
-          rule: yup.string().required(i18next.t("required")).trim(),
+          rule: yup
+            .string()
+            .required(i18next.t("required"))
+            .min(2, i18next.t("name_too_short", { cnt: 2 }))
+            .trim(),
           defaultMessage: i18next.t("name"),
           valid: false,
           error: [],
@@ -212,7 +228,11 @@ const configurePartnershipForm = (formRef, onSuccess) => {
             $field: formRef.querySelector("[data-field-name]"),
             typeInput: "name",
           }),
-          rule: yup.string().required(i18next.t("required")).trim(),
+          rule: yup
+            .string()
+            .required(i18next.t("required"))
+            .min(2, i18next.t("name_too_short", { cnt: 2 }))
+            .trim(),
           defaultMessage: i18next.t("name"),
           valid: false,
           error: [],

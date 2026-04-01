@@ -1,7 +1,5 @@
-function initNews() {}
+import { paginationInit } from "@/widgets/pagination/pagination";
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initNews);
-} else {
-  initNews();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  paginationInit(".news-catalog-list", ".news-item");
+});

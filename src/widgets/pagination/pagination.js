@@ -19,6 +19,10 @@ export function paginationInit(containerSelector, cardSelector, paginationSelect
   const totalPages = Math.ceil(cards.length / perPage);
   let currentPage = 1;
 
+  console.log("pagination wrapper:", paginationWrapper);
+  console.log("total pages:", totalPages);
+  console.log("cards count:", cards.length);
+
   function animateCards(visibleCards) {
     gsap.fromTo(
       visibleCards,

@@ -7,7 +7,6 @@ const initMenu = () => {
   const menu = document.querySelector(".popup-menu");
   if (!burgerBtn || !menu) return;
 
-  const closeBtn = menu.querySelector(".popup-close, .js-close-menu");
   const menuLinks = menu.querySelectorAll(".menu__link");
 
   burgerBtn.addEventListener("click", () => {
@@ -20,7 +19,9 @@ const initMenu = () => {
       if (!href) return;
 
       if (href.includes("#")) {
-        menu.classList.remove("is-open");
+        if (typeof menu.toggle === "function") {
+          menu.toggle(false); // ← це диспатчить start-scroll → lenis.start()
+        }
       }
     });
   });

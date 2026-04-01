@@ -32,7 +32,7 @@
     grid-template-columns: repeat(3, 1fr);
 
     @include to(1023px) {
-      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
       grid-template-columns: 1fr;
     }
   }

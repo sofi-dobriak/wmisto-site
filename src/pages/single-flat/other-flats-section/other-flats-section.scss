@@ -8,6 +8,7 @@
   .swiper-container {
     padding-top: 40px;
     padding-bottom: 40px;
+    border: 1px solid $black;
 
     @include to(1024px) {
       padding-top: 20px;
@@ -19,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: vw(40);
   }
 
   &__title {
