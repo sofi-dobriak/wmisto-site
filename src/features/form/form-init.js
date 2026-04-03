@@ -107,14 +107,11 @@ const configureForm = (formRef, onSuccess) => {
             typeInput: "email",
           }),
           // rule: yup.string().email().trim().required(i18next.t("required")),
-          rule: yup
-            .string()
-            .required(i18next.t("required"))
-            .test("email-validation", i18next.t("invalid_email_format"), function (value) {
-              if (!value) return false;
-              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              return emailRegex.test(value);
-            }),
+          rule: yup.string().test("email-validation", i18next.t("invalid_email_format"), function (value) {
+            if (!value || value.trim() === "") return true;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(value);
+          }),
 
           valid: true,
           error: [],
@@ -257,8 +254,7 @@ const configurePartnershipForm = (formRef, onSuccess) => {
             $field: formRef.querySelector("[data-field-email]"),
             typeInput: "email",
           }),
-          rule: yup.string().email().trim().required(i18next.t("required")),
-
+          rule: yup.string().email().trim(),
           valid: true,
           error: [],
         },

@@ -11,10 +11,17 @@
   }
 
   @include to(767px) {
-    height: 100svh;
+    // height: 100svh;
+    min-height: 100svh;
+    height: auto; // прибирає фіксовану висоту
     justify-content: center;
     padding: 40px 20px;
     gap: 40px;
+  }
+
+  @include to(600px) {
+    min-height: calc(var(--vh, 1vh) * 100);
+    height: auto;
   }
 
   background:

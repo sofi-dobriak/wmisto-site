@@ -5,7 +5,7 @@
   gap: 20px;
   width: calc(70% - var(--gap));
 
-  @include to(1280px) {
+  @include to(1600px) {
     grid-template-columns: repeat(3, 1fr);
   }
 

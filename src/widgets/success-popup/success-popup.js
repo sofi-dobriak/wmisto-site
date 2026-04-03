@@ -13,10 +13,31 @@ const initSuccessPopup = () => {
 
       setTimeout(() => {
         successBlock?.classList.remove("is-active");
+
+        const formWrapper = parentPopup.querySelector(".contacts-form-block, [data-form-wrapper]");
+        const policy = formWrapper?.querySelector(".form__policy-wrapper");
+        if (policy) {
+          policy.style.visibility = "";
+          policy.style.opacity = "";
+        }
+        const btnSubmit = formWrapper?.querySelector("[data-btn-submit]");
+        if (btnSubmit) btnSubmit.removeAttribute("disabled");
       }, 600);
     } else {
       successBlock?.classList.remove("is-active");
     }
+
+    // шукаємо form через formRef, не через successBlock
+    const formWrapper = btn.closest(".contacts-form-block, .js-form-container, [data-form-wrapper]");
+    const policy = formWrapper?.querySelector(".form__policy-wrapper");
+    if (policy) {
+      policy.style.visibility = "";
+      policy.style.opacity = "";
+    }
+
+    // знімаємо disabled з кнопки
+    const btnSubmit = formWrapper?.querySelector("[data-btn-submit]");
+    if (btnSubmit) btnSubmit.removeAttribute("disabled");
   });
 };
 

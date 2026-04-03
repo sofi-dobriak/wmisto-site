@@ -25,7 +25,7 @@ const lang = langDetect();
           name_too_short: "Ім'я має містити щонайменше {{cnt}} символів",
           phone: "Телефон:*",
           send: "Надіслати повідомлення",
-          sending: "Надіслати повідомлення",
+          sending: "Відправляємо...",
           field_too_short: "Поле може містити тільки цифри",
           // field_too_short: "Телефон має містити принаймні {{cnt}} символів",
           field_too_long: "Телефон має містити не більше {{cnt}} символів",
@@ -166,6 +166,7 @@ export default class FormMonster {
       /*  */
       e.preventDefault();
       this.isFormSubmitted = true;
+      this.elements.$btnSubmit.setAttribute("disabled", true);
       this.changeInput()(e);
 
       /*  */
@@ -191,6 +192,8 @@ export default class FormMonster {
           this.watchedState.serverError = "front_error";
           this.watchedState.status = "failed";
         }
+      } else {
+        this.elements.$btnSubmit.removeAttribute("disabled");
       }
       return null;
     };

@@ -52,7 +52,7 @@ const renderForm = (form, elements, toast) => {
       setBtnText("sending");
 
       break;
-    case "successSend":
+    case "successSend": {
       fieldsKey.forEach((key) => {
         const field = elementsParamFn.fields[key];
         field.inputWrapper.showDefaultStyle();
@@ -64,6 +64,13 @@ const renderForm = (form, elements, toast) => {
       elementsParamFn.$form.reset();
       elementsParamFn.$btnSubmit.setAttribute("disabled", false);
       setBtnText("send");
+
+      const policy = elementsParamFn.$form.querySelector(".form__policy-wrapper");
+      if (policy) {
+        policy.style.visibility = "hidden"; // ховаємо після відправки
+        policy.style.opacity = "0";
+      }
+
       /*  */
       window.dispatchEvent(new Event("succesFormSend"));
       if (elementsParamFn.successAction === "toster") {
@@ -77,9 +84,16 @@ const renderForm = (form, elements, toast) => {
         elementsParamFn.successAction();
       }
       break;
+    }
 
-    case "filling":
+    case "filling": {
+      const policy = elementsParamFn.$form.querySelector(".form__policy-wrapper");
+      if (policy) {
+        policy.style.visibility = "";
+        policy.style.opacity = "";
+      }
       break;
+    }
     case "failed":
       // toast.addToast({
       //   type: 'error',

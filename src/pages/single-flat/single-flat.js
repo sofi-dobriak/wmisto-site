@@ -189,9 +189,6 @@ function sliderHandler() {
         slidesPerView: 2,
       },
       1024: {
-        slidesPerView: 3,
-      },
-      1320: {
         slidesPerView: 4,
       },
     },

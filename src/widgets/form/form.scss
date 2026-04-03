@@ -444,6 +444,35 @@
   @include to(1023px) {
     margin-top: 48px;
   }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: no-drop;
+    pointer-events: none;
+  }
+}
+
+.form__policy-wrapper {
+  margin-top: vw(40);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+
+  @include to(1023px) {
+    margin-top: 12px;
+  }
+
+  .policy-text,
+  .policy-link {
+    color: $black;
+    font-size: 12px;
+    width: max-content;
+  }
+
+  .policy-link {
+    text-decoration: underline;
+  }
 }
 
 .submit-btn__text {

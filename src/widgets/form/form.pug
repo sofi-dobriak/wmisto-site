@@ -28,4 +28,8 @@ mixin form(attr, customClass='')
 
       .form__button-wrapper
         +general-btn({ text: 'Надіслати повідомлення', type: 'submit', customClass:customClass })(data-btn-submit)
+      
+      .form__policy-wrapper 
+        p.policy-text Відправляючи персональні дані ви погоджуєтеся з 
+        a(href="#").policy-link Політикою обробки персональних даних.  
         
