@@ -1,6 +1,10 @@
-import { initProgressSwiper } from "./progress-single-section/progress-single-section.js";
+import {
+  initProgressSwiper,
+  applyProgressEditorStyles,
+} from "./progress-single-section/progress-single-section.js";
 
 function initConstructionProgressSingle() {
+  applyProgressEditorStyles();
   initProgressSwiper();
 }
 

@@ -35,8 +35,8 @@ async function planningsGallery() {
       el.insertAdjacentHTML(
         "beforeend",
         `<label class="planning-checkbox" for="sections${secName}">
-                  <input id="sections${secName}" type="checkbox" name="" value="${secName}" data-type="sec_name" data-sec_name="${secName}"><span>${secName}</span>
-                </label>`,
+            <input id="sections${secName}" type="checkbox" name="" value="${secName}" data-type="sec_name" data-sec_name="${secName}"><span>${secName}</span>
+          </label>`,
       );
     });
   });
@@ -50,8 +50,8 @@ async function planningsGallery() {
       el.insertAdjacentHTML(
         "beforeend",
         `<label class="planning-checkbox" for="custom_filter_3d${secName}">
-                  <input id="custom_filter_3d${secName}" type="checkbox" name="" value="${secName}" data-type="custom_filter_3d" data-custom_filter_3d="${secName}"><span>${secName}</span>
-                </label>`,
+            <input id="custom_filter_3d${secName}" type="checkbox" name="" value="${secName}" data-type="custom_filter_3d" data-custom_filter_3d="${secName}"><span>${secName}</span>
+          </label>`,
       );
     });
   });

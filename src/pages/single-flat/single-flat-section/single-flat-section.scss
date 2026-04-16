@@ -1,10 +1,10 @@
 .single-flat {
   &__top {
-    grid-area: top;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    grid-area: top;
     row-gap: 40px;
+    justify-content: space-between;
 
     @include from(1024px) {
       margin-bottom: 40px;
@@ -22,9 +22,9 @@
   &__title-tabs-block {
     display: flex;
     flex-direction: column;
+    gap: vw(20);
     align-items: center;
     justify-content: center;
-    gap: vw(20);
     margin: auto;
 
     @include to(1023px) {
@@ -34,15 +34,16 @@
 
   &__title {
     display: flex;
-    align-items: center;
     gap: vw(16);
-    @include font-h2;
-    color: $brown;
+    align-items: center;
     margin-top: vw(40);
+    color: $brown;
+
+    @include font-h2;
 
     @include to(1023px) {
-      margin-top: 40px;
       gap: 16px;
+      margin-top: 40px;
     }
 
     @include to(767px) {
@@ -52,19 +53,18 @@
 
   &__tabs {
     display: flex;
+    gap: 4px;
     align-items: center;
     justify-content: center;
-    gap: 4px;
     width: 100%;
   }
 
   &__images {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    align-content: flex-start;
     grid-area: img;
+    place-content: flex-start center;
+    align-items: flex-start;
   }
 
   &__image-block {
@@ -84,8 +84,8 @@
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: contain;
         cursor: pointer;
+        object-fit: contain;
       }
     }
   }
@@ -93,16 +93,16 @@
   &__info {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: vw(28);
     grid-area: info1;
-    padding-left: vw(20);
+    gap: vw(28);
+    align-items: center;
     padding-right: vw(20);
+    padding-left: vw(20);
 
     @include to(1023px) {
       gap: 28px;
-      padding-left: 20px;
       padding-right: 20px;
+      padding-left: 20px;
     }
 
     @include to(767px) {
@@ -110,8 +110,8 @@
     }
 
     .button-primary {
-      width: 100%;
       justify-content: center;
+      width: 100%;
     }
 
     .hide-on-mobile {
@@ -123,11 +123,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border-radius: 100px;
-      border: 1px solid $ochre;
-      background: $white;
       width: vw(100);
       height: vw(100);
+      background: $white;
+      border: 1px solid $ochre;
+      border-radius: 100px;
 
       @include to(1023px) {
         width: 76px;
@@ -136,24 +136,26 @@
 
       &__num {
         @include font-h3;
+
         color: $black;
       }
 
       &__desc {
         @include font-tiny;
+
         color: $black;
       }
     }
 
     &__icon-sign {
-      height: vw(16);
       width: vw(70);
+      height: vw(16);
       margin: 0 auto;
       fill: $blue;
 
       @include to(1023px) {
-        height: 16px;
         width: 70px;
+        height: 16px;
       }
     }
 
@@ -173,13 +175,13 @@
       &__description {
         display: flex;
         flex-wrap: wrap;
+        gap: 8px;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-
-        @include font-body;
         color: $black;
         text-align: center;
+
+        @include font-body;
       }
     }
 
@@ -198,31 +200,31 @@
     }
 
     @include to(1023px) {
-      padding-left: 20px;
       padding-right: 74px;
+      padding-left: 20px;
     }
 
     @include from(1024px) {
-      padding-left: 20px;
       padding-right: 20px;
+      padding-left: 20px;
     }
 
     @include to(600px) {
-      padding-left: 20px;
       padding-right: 20px;
+      padding-left: 20px;
 
       .button-main {
         width: max-content;
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
       }
     }
 
     &-group {
       display: flex;
       flex-direction: column;
-      margin-bottom: 32px;
       row-gap: 4px;
+      margin-bottom: 32px;
 
       @include to(600px) {
         margin-bottom: 20px;
@@ -243,9 +245,9 @@
 
     &-row {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
       gap: 8px;
+      align-items: center;
+      justify-content: space-between;
 
       &__title {
         max-width: 220px;
@@ -259,6 +261,7 @@
       &__title,
       &__value {
         @include font-body;
+
         color: $black;
       }
     }
@@ -272,14 +275,17 @@
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
     padding: 30px;
-    border-radius: 50%;
     background-color: #ffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .swal2-popup {
+    width: auto !important;
     padding: 48px 0;
+    padding-right: 20px;
+    padding-left: 20px;
     border-radius: 0;
   }
 
@@ -294,23 +300,24 @@
 
   .swal2-title {
     position: relative;
-    @include font-h2;
-    font-size: 32px;
-    text-transform: uppercase;
     padding: 0;
     margin-bottom: 20px;
+    font-size: 32px;
     color: $black;
+    text-transform: uppercase;
+
+    @include font-h2;
   }
 
   .swal2-title::after {
-    content: "";
     position: absolute;
     bottom: -12px;
     left: 50%;
-    transform: translate(-50%, 0);
     width: 50px;
     height: 1px;
+    content: "";
     background-color: #d1d9e1;
+    transform: translate(-50%, 0);
   }
 
   .swal2-actions {
@@ -318,10 +325,10 @@
 
     button {
       padding: 20px 32px;
-      border-radius: 128px;
-      background-color: $brown;
       color: $white;
+      background-color: $brown;
       border: 1px solid $brown;
+      border-radius: 128px;
 
       svg {
         stroke: $white;
@@ -337,8 +344,8 @@
 
       a {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         text-transform: uppercase;
 
         span {
@@ -349,10 +356,11 @@
   }
 
   .swal2-confirm {
+    font-weight: 300;
+    color: var(--color-black);
     background: var(--color-gradient);
     border-color: var(--border-brand-900);
-    color: var(--color-black);
-    font-weight: 300;
+
     &:hover {
       background: var(--color-yellow) !important;
       background-image: none !important;
@@ -360,14 +368,14 @@
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
   }
 }
 
 .toastify {
-  border-radius: 8px;
-  background: var(--color-yellow);
   color: var(--color-black);
+  background: var(--color-yellow);
+  border-radius: 8px;
 }

@@ -3,17 +3,17 @@
   height: calc(100vh - 100px);
 
   @include to(1023px) {
-    height: auto;
     flex-direction: column;
+    height: auto;
     border: 1px solid $black;
   }
 
   .commercial-left-block {
+    position: relative;
     flex: 0 0 50%;
     min-width: 0;
-    position: relative;
-    overflow: hidden;
     padding: vw(60);
+    overflow: hidden;
     background-color: #efeded;
 
     @include to(1023px) {
@@ -24,34 +24,35 @@
     }
 
     @include to(767px) {
-      padding-top: 60px;
       height: 530px;
+      padding-top: 60px;
     }
 
     .commercial-left-title {
       @include font-h3;
-      color: $black;
-      margin-bottom: 40px;
+
       position: relative;
       z-index: 3;
+      margin-bottom: 40px;
+      color: $black;
 
       @include to(1023px) {
         font-size: 36px;
       }
 
       @include to(767px) {
-        font-size: 24px;
         margin-bottom: 20px;
+        font-size: 24px;
       }
     }
 
     .commercial-left-texts-block {
       position: relative;
+      z-index: 3;
       display: flex;
+      gap: vw(40);
       align-items: start;
       justify-content: space-between;
-      z-index: 3;
-      gap: vw(40);
 
       @include to(1023px) {
         gap: 60px;
@@ -64,18 +65,54 @@
 
       .commercial-left-text {
         @include font-body;
-        color: $black;
-        max-width: 370px;
+
         width: 50%;
+        max-width: 370px;
+        color: $black;
 
         @include to(1023px) {
-          font-size: 16px;
           width: 100%;
+          font-size: 16px;
         }
 
         @include to(767px) {
           font-size: 14px;
         }
+      }
+    }
+
+    .commercial-phone-link {
+      position: absolute;
+      top: unset;
+      bottom: vw(220);
+      justify-content: center;
+      width: 100%;
+      padding-right: vw(120);
+
+      @include to(1023px) {
+        bottom: 100px;
+        padding-right: 40px;
+      }
+
+      @include to(767px) {
+        bottom: 60px;
+      }
+
+      .phone-text {
+        font-size: vw-laptop(20);
+
+        @include to(1023px) {
+          font-size: 16px !important;
+        }
+
+        @include to(767px) {
+          font-size: 14px !important;
+        }
+      }
+
+      .phone-icon {
+        width: 16px;
+        height: 16px;
       }
     }
 
@@ -95,9 +132,9 @@
   }
 
   .commercial-right-block {
+    position: relative;
     flex: 0 0 50%;
     min-width: 0;
-    position: relative;
     padding: vw(60);
     overflow: hidden;
 
@@ -108,37 +145,39 @@
     }
 
     @include to(767px) {
-      padding: 60px 20px;
       min-height: 700px;
+      padding: 60px 20px;
     }
 
     &::after {
-      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
-      background: linear-gradient(180deg, rgba(212, 209, 202, 0) 0%, #d4d1ca 100%);
+      z-index: -1;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      content: "";
+      background: linear-gradient(180deg, rgb(212 209 202 / 0%) 0%, #d4d1ca 100%);
     }
 
     .commercial-right-title {
       @include font-h3;
-      color: $black;
+
       margin-bottom: 40px;
+      color: $black;
+
       // display: flex;
       // flex-direction: column;
       // gap: 2px;
 
       @include to(1023px) {
-        font-size: 36px;
         margin-bottom: 36px;
+        font-size: 36px;
       }
 
       @include to(767px) {
-        font-size: 24px;
         margin-bottom: 20px;
+        font-size: 24px;
       }
     }
 
@@ -146,8 +185,8 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      margin-bottom: 20px;
       max-width: vw-laptop(340);
+      margin-bottom: 20px;
 
       @include from(1512) {
         max-width: 340px;
@@ -163,21 +202,22 @@
 
       .commercial-right-text {
         @include font-body;
-        color: $black;
+
         max-width: vw-laptop(320);
+        color: $black;
 
         @include from(1512) {
           max-width: 340px;
         }
 
         @include to(1023px) {
-          font-size: 16px;
           max-width: none;
+          font-size: 16px;
         }
 
         @include to(767px) {
-          font-size: 14px;
           max-width: unset;
+          font-size: 14px;
         }
       }
     }
@@ -202,8 +242,8 @@
 
     .commercial-man-image-block {
       position: absolute;
-      bottom: 0;
       right: 0;
+      bottom: 0;
       max-height: vw(800);
       aspect-ratio: 610 / 800;
       opacity: 1;

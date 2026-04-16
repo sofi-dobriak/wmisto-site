@@ -5,7 +5,49 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   initGenplanAnim();
+  initGenplanMobileCard();
 });
+
+function initGenplanMobileCard() {
+  const isMobile = () => window.innerWidth < 1024;
+
+  const path = document.querySelector(".genplan-image-path");
+  const infoCard = document.querySelector(".genplan-info-card");
+  if (!path || !infoCard) return;
+
+  const svgLink = path.closest("a");
+  const originalHref = svgLink?.getAttribute("href");
+
+  let isOpen = false;
+
+  const updateLinkBehavior = () => {
+    if (isMobile()) {
+      svgLink?.setAttribute("href", "javascript:void(0)");
+    } else {
+      svgLink?.setAttribute("href", originalHref);
+      isOpen = false;
+      infoCard.classList.remove("is-visible");
+    }
+  };
+
+  updateLinkBehavior();
+  window.addEventListener("resize", updateLinkBehavior);
+
+  path.addEventListener("click", (e) => {
+    if (!isMobile()) return;
+    e.preventDefault();
+    isOpen = !isOpen;
+    infoCard.classList.toggle("is-visible", isOpen);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!isMobile() || !isOpen) return;
+    if (!infoCard.contains(e.target) && !path.contains(e.target)) {
+      isOpen = false;
+      infoCard.classList.remove("is-visible");
+    }
+  });
+}
 
 function initGenplanAnim() {
   const section = document.querySelector(".genplan-section");

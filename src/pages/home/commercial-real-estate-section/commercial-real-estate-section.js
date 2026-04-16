@@ -20,7 +20,7 @@ function initCommercialAnim() {
       },
     })
     .fromTo(
-      [".commercial-left-title", ".commercial-left-texts-block"],
+      [".commercial-left-title", ".commercial-left-texts-block", ".commercial-phone-link"],
       { opacity: 0, y: 80 },
       {
         opacity: 1,

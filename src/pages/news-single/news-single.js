@@ -1,6 +1,7 @@
-import { initNewsSwiper } from "./news-single-section/news-single-section";
+import { initNewsSwiper, applyWpEditorStyles } from "./news-single-section/news-single-section";
 
 function initNewsSingle() {
+  applyWpEditorStyles();
   initNewsSwiper();
 }
 

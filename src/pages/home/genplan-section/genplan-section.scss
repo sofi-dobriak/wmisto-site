@@ -1,6 +1,6 @@
 .genplan-section {
-  height: calc(100vh - 100px);
   position: relative;
+  height: calc(100vh - 100px);
   overflow: hidden;
 
   @include to(1023px) {
@@ -9,9 +9,9 @@
   }
 
   .genplan-image-block {
-    height: 100%;
-    width: 100%;
     position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 
     @include to(1023px) {
@@ -23,42 +23,43 @@
     }
 
     .genplan-image {
-      width: 100%;
-      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
 
       @include to(1023px) {
         position: relative;
         left: 50%;
-        transform: translateX(-50%);
         width: auto;
         height: 100%;
+        transform: translateX(-50%);
       }
 
       @include to(409px) {
         left: 68%;
       }
 
-      @media screen and (min-width: 410px) and (max-width: 600px) {
+      @media screen and (width >= 410px) and (width <= 600px) {
         left: 63%;
       }
 
-      @media screen and (min-width: 601px) and (max-width: 710px) {
+      @media screen and (width >= 601px) and (width <= 710px) {
         left: 60%;
       }
 
-      @media screen and (min-width: 711px) and (max-width: 767px) {
+      @media screen and (width >= 711px) and (width <= 767px) {
         left: 50%;
       }
 
       .genplan-image-path {
-        stroke: $white;
         fill: rgba($blue, 0);
+        stroke: $white;
         stroke-width: 3;
         transition: $transition;
         animation: stroke-pulsation 1.6s infinite cubic-bezier(0, 0, 0.12, 1.02);
+
         &:hover {
           fill: $blue;
         }
@@ -67,9 +68,11 @@
           0% {
             stroke-width: 2;
           }
+
           20% {
             stroke-width: 6;
           }
+
           100% {
             stroke-width: 2;
           }
@@ -79,64 +82,93 @@
 
     .genplan-info-card {
       position: absolute;
+      top: 55%;
+      left: 39%;
       z-index: 10;
-      background: $ochre;
+      visibility: hidden;
       max-width: vw-laptop(200);
       max-height: vw-laptop(250);
       padding: vw-laptop(20);
-      opacity: 0;
-      visibility: hidden;
       pointer-events: none;
-      top: 55%;
+      background: $ochre;
+      opacity: 0;
       transition: $transition;
-      left: 39%;
+
+      &.is-visible {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .genplan-info-link {
+        display: block;
+        padding: 4px;
+        margin: 0 auto;
+        margin-top: 12px;
+        color: $white !important;
+        text-align: center;
+        text-decoration: none;
+        pointer-events: auto;
+        background-color: $brown;
+        border-radius: 2px;
+
+        @include from(1024px) {
+          display: none;
+        }
+      }
 
       @include from(1512) {
         padding: 20px;
       }
 
       @include to(1023px) {
+        top: 50%;
+        left: 27%;
         max-width: 200px;
         max-height: 250px;
         padding: 20px;
-        top: 50%;
-        left: 27%;
+      }
+
+      @include to(767px) {
+        top: 40%;
+        left: 40%;
       }
 
       .genplan-info-title {
         @include font-h3;
-        color: $black;
+
         margin-bottom: 10px;
+        color: $black;
       }
 
       .genplan-info-text {
         @include font-body;
-        color: $brown;
+
         margin-bottom: 5px;
+        color: $brown;
       }
 
       .genplan-info-icon {
         display: block;
-        fill: $blue;
         margin-bottom: 15px;
+        fill: $blue;
       }
     }
 
     &:has(.genplan-image-path:hover) {
       .genplan-info-card {
-        opacity: 1;
         visibility: visible;
+        opacity: 1;
       }
     }
   }
 
   .genplan-card-block {
-    background-color: $brown;
-    padding: vw(40);
-    max-width: vw-laptop(320);
     position: absolute;
     top: vw(150);
     left: vw(60);
+    max-width: vw-laptop(320);
+    padding: vw(40);
+    background-color: $brown;
 
     @include from(1512) {
       max-width: 320px;
@@ -149,17 +181,18 @@
 
     .genplan-card-text {
       @include font-h4-semibold;
-      color: $white;
+
       max-width: 280px;
-      text-align: center;
       margin: 0 auto;
+      color: $white;
+      text-align: center;
     }
   }
 
   .genplan-sign-image-block {
     position: absolute;
-    bottom: vw(-22.5);
     right: vw(-150);
+    bottom: vw(-22.5);
     max-width: vw(780);
     aspect-ratio: 780 / 424;
 
@@ -173,44 +206,46 @@
   .genplan-title-block {
     .genplan-title {
       position: absolute;
-      @include font-h1;
-      color: $white;
       right: vw(60);
       bottom: vw(216);
+      color: $white;
+
+      @include font-h1;
     }
 
     .genplan-text {
       position: absolute;
-      @include font-h3;
-      color: $white;
-      max-width: vw(415);
       right: vw(30);
-      z-index: 3;
       bottom: vw(100);
+      z-index: 3;
+      max-width: vw(415);
+      color: $white;
+
+      @include font-h3;
     }
   }
 
   .tab-genplan-cards-sign-block {
+    position: relative;
     display: flex;
+    gap: vw-tablet(60);
     align-items: start;
     justify-content: space-between;
-    gap: vw-tablet(60);
     padding: 60px 20px;
-    position: relative;
     margin-bottom: 60px;
 
     @include to(480px) {
-      padding: 20px 20px 60px;
       flex-direction: column;
       gap: 40px;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      padding: 20px 20px 60px;
     }
 
     .genplan-tab-card-block {
-      background-color: $brown;
-      padding: 40px 20px;
       max-width: 320px;
+      padding: 40px 20px;
+      background-color: $brown;
 
       .genplan-tab-card-icon {
         display: block;
@@ -219,26 +254,27 @@
 
       .genplan-tab-card-text {
         @include font-h4-semibold;
-        color: $white;
+
         max-width: 280px;
-        text-align: center;
         margin: 0 auto;
+        color: $white;
+        text-align: center;
       }
     }
 
     .genplan-tab-sign-image-block {
-      aspect-ratio: 630 / 307;
       position: absolute;
       right: 0;
       bottom: 0;
       z-index: -1;
+      aspect-ratio: 630 / 307;
       fill: $ochre;
 
       @include to(767px) {
-        aspect-ratio: 543 / 264;
-        max-height: 300px;
-        max-width: 400px;
         right: -20px;
+        max-width: 400px;
+        max-height: 300px;
+        aspect-ratio: 543 / 264;
       }
 
       .genplan-tab-sign-image {
@@ -257,24 +293,33 @@
 
       .genplan-tab-title {
         @include font-h1;
-        color: $black;
+
         max-width: 292px;
+        color: $black;
 
         @include to(767px) {
-          text-align: center;
           margin-bottom: 8px;
+          text-align: center;
         }
       }
 
       .genplan-tab-text {
         @include font-h3;
-        color: $black;
+
         max-width: 292px;
+        color: $black;
 
         @include to(767px) {
           text-align: center;
         }
       }
     }
+  }
+}
+
+@media (width >= 1024px) {
+  .genplan-image-block:has(.genplan-image-path:hover) .genplan-info-card {
+    visibility: visible;
+    opacity: 1;
   }
 }
