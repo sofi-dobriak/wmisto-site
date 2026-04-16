@@ -30,8 +30,8 @@
     display: grid;
     grid-template-columns: 2.3fr 1fr;
     width: 100%;
-    height: calc(100vh - 100px - vw(200));
-    max-height: calc(100vh - 100px - vw(200));
+    height: calc(100vh - 100px);
+    max-height: calc(100vh - 100px);
     margin: 0;
     overflow: hidden;
     border-right: 1px solid $black;
