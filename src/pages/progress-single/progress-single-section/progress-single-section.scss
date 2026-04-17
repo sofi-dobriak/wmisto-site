@@ -1,8 +1,6 @@
 .progress-single {
   min-height: 100vh;
-
-  // padding-top: 100px;
-  padding-top: 68px;
+  padding-top: 100px;
   padding-bottom: vw(200);
 
   @include to(1023px) {
@@ -10,7 +8,7 @@
   }
 
   @include to(767px) {
-    padding-top: 60px;
+    padding-top: 72px;
   }
 
   .back-link {
@@ -28,33 +26,31 @@
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 2.3fr 1fr;
+    grid-template-columns: 1.7fr 1fr;
     width: 100%;
-    height: calc(100vh - 100px);
-    max-height: calc(100vh - 100px);
     margin: 0;
-    overflow: hidden;
     border-right: 1px solid $black;
     border-left: 1px solid $black;
 
     @include to(1023px) {
       grid-template-columns: 1fr;
-      row-gap: 20px;
+      row-gap: 0;
       height: auto;
-      max-height: none; // На мобільних зазвичай краще дати контенту рости вниз
+      max-height: none;
     }
   }
 
   .progress-single-visual {
-    position: relative;
-    height: 100%;
-    min-height: 0;
+    position: sticky;
+    top: 100px;
+    height: calc(90vh - 100px);
     overflow: hidden;
     background-color: $white;
-    border-right: 1px solid $black;
     border-bottom: 1px solid $black;
 
     @include to(1023px) {
+      position: relative;
+      top: 0;
       height: vw-tablet(620);
       overflow: hidden;
       border-bottom-color: transparent;
@@ -73,8 +69,6 @@
         align-items: center;
         justify-content: center;
         height: 100%;
-
-        // height: max-content;
         padding: 0 vw(100);
 
         @include to(1023px) {
@@ -93,7 +87,7 @@
   .progress-single-nav {
     position: absolute;
     bottom: 20px;
-    left: 38%;
+    left: 50%;
     z-index: 10;
     display: flex;
     gap: vw(8);
@@ -101,11 +95,13 @@
     transform: translateX(-50%);
 
     @include to(1023px) {
-      position: relative;
-      bottom: auto;
-      left: auto;
-      justify-content: center;
-      transform: none;
+      gap: 8px;
+
+      // position: relative;
+      // bottom: auto;
+      // left: auto;
+      // justify-content: center;
+      // transform: none;
     }
 
     .progress-single-button-prev,
@@ -162,6 +158,7 @@
     padding: vw(40);
     overflow: visible;
     border-bottom: 1px solid $black;
+    border-left: 1px solid $black;
 
     @include to(1023px) {
       padding: 40px;
@@ -218,35 +215,7 @@
     }
 
     .progress-info-content {
-      flex: 1; // Займає все вільне місце
-      min-height: 0; // КРИТИЧНО: дозволяє блоку бути меншим за свій контент
-      padding-right: 10px; // Місце під скролбар
-      overflow-y: auto; // Вмикаємо скрол
       color: $black;
-      scrollbar-color: rgb(0 0 0 / 20%) rgb(0 0 0 / 5%); // Повзунок та Доріжка
-
-      // 2. Стилізація для Firefox (тут можливості обмежені, але працює)
-      scrollbar-width: thin; // Тонкий скрол
-
-      // 1. Стилізація для Chrome, Safari та Edge
-      &::-webkit-scrollbar {
-        width: 3px; // Робимо зовсім тоненьким
-      }
-
-      &::-webkit-scrollbar-track {
-        background: rgb(0 0 0 / 5%); // Майже прозора доріжка (світла)
-        border-radius: 10px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: rgb(0 0 0 / 20%); // Світло-сірий повзунок
-        border-radius: 10px;
-        transition: background 0.3s ease;
-
-        &:hover {
-          background: rgb(0 0 0 / 30%); // Трішки темнішає при наведенні
-        }
-      }
 
       .progress-text {
         @include font-body;

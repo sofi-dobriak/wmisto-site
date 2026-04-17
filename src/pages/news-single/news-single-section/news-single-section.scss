@@ -1,4 +1,5 @@
 .news-single-section {
+  padding-top: 100px;
   padding-bottom: vw(200);
 
   @include to(1023px) {
@@ -6,6 +7,7 @@
   }
 
   @include to(767px) {
+    padding-top: 72px;
     padding-bottom: 60px;
   }
 
@@ -30,12 +32,12 @@
     @include to(1023px) {
       position: static;
       padding: 40px;
-      margin-top: 100px;
     }
 
     @include to(767px) {
       padding: 40px 20px;
-      margin-top: 72px;
+
+      // margin-top: 72px;
     }
 
     .news-back-date-block {
@@ -128,7 +130,7 @@
   .news-single-content-block {
     min-width: 0;
     padding: vw(40);
-    margin-top: vw(100);
+    margin-top: 0;
     border-right: 1px solid $brown;
     border-bottom: 1px solid $brown;
     border-left: 1px solid $brown;
