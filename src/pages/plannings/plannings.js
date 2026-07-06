@@ -22,6 +22,7 @@ async function planningsGallery() {
   // console.log('fetchedFlats:', fetchedFlats);
 
   const flats = fetchedFlats.reduce((acc, flat) => {
+    if (flat.sale == "0") return acc;
     acc[flat.id] = flat;
     return acc;
   }, {});
