@@ -112,4 +112,18 @@
       }
     }
   }
+
+  &:disabled,
+  &.is-sold {
+    cursor: not-allowed;
+    opacity: 0.55;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover .general-text {
+      color: $white;
+    }
+  }
 }

@@ -22,7 +22,6 @@ async function planningsGallery() {
   // console.log('fetchedFlats:', fetchedFlats);
 
   const flats = fetchedFlats.reduce((acc, flat) => {
-    if (flat.sale == "0") return acc;
     acc[flat.id] = flat;
     return acc;
   }, {});
@@ -277,6 +276,12 @@ function renderTemplate(templateId, data) {
       html = html.replaceAll(`{{${key}}}`, value);
     }
   }
+
+  // Бейдж "Продано" — лише для проданих квартир (sale == 0)
+  html = html.replaceAll(
+    "{{sold_badge}}",
+    data.sale == 0 ? `<div class="planning-card__sold">Продано</div>` : "",
+  );
 
   // Створюємо елемент
   const temp = document.createElement("div");

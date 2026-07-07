@@ -39,6 +39,27 @@
   border: 1px solid transparent;
   transition: border-color 0.2s ease-in-out !important;
 
+  &__sold {
+    position: absolute;
+    top: vw(20);
+    left: vw(20);
+    z-index: 2;
+    padding: vw(6) vw(14);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    pointer-events: none;
+    background: $brown;
+
+    @include font-body;
+
+    @include to(1023px) {
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
+    }
+  }
+
   &__top {
     display: flex;
     align-items: center;

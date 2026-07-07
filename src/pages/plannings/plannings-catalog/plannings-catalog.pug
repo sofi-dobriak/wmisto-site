@@ -20,6 +20,7 @@ template#empty-planning-list
 
 template#flat-card-template
   a.planning-card(href='/single-flat?id={{id}}' data-id='{{id}}')
+    | {{sold_badge}}
     .planning-card__image
       .planning-card__image-wrap
         img(src='{{img_big}}' loading='lazy' alt='' onerror='this.style.opacity = 0;')
